@@ -1,0 +1,12 @@
+{
+  "name": "drl-sim",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "pip install -r requirements.txt && pip install -e .",
+  "hostRequirements": { "cpus": 4, "memory": "16gb" },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "ms-toolsai.jupyter"],
+      "settings": { "python.defaultInterpreterPath": "/usr/local/bin/python" }
+    }
+  }
+}

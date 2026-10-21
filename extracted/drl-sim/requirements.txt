@@ -1,0 +1,7 @@
+numpy>=1.26
+scipy>=1.11
+pandas>=2.0
+matplotlib>=3.8
+cvxpy>=1.4
+pytest>=8.0
+reportlab>=4.0   # only for docs/make_comparison_pdf.py (PDF summary)

@@ -1,0 +1,19 @@
+[NO TEXT EXTRACTION POSSIBLE]
+
+The source PDF `randomized_drl_problem_statement.pdf` is corrupted: its binary streams were
+destroyed by a lossy text round-trip (every non-UTF-8 byte was replaced by U+FFFD), so the
+compressed content streams can no longer be inflated and no PDF reader (pymupdf, pypdf, pikepdf,
+qpdf) can open the file — the cross-reference stream is present but the object graph it points to
+is not.
+
+Consequences and how the work was carried on:
+
+* The parts of the problem statement that the simulator implements were reconstructed from
+  * `randomized_drl_multiresource.txt` (the proposal, which restates the setting, the
+    multi-resource constraints, the slot reductions and the goals G1-G5), and
+  * the existing code and documentation of `extracted/drl-sim/`.
+* Every place where the reconstruction required a decision is listed explicitly as an
+  assumption (A1-A4) in `extracted/drl-sim/docs/simulation_methodology.md`, section 6, and in
+  the README of `extracted/drl-sim/`.
+* If a readable copy of this PDF becomes available, the assumptions above are the list of
+  things to re-check.
