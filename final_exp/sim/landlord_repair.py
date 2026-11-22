@@ -71,8 +71,9 @@ def landlord_repair(x, p, A, b, M, credit, tol=1e-9, max_passes=None,
         Current marginals (only used for the ``p_f / w_f`` tie-break).
     A : (4, N) array
         Constraint matrix.  Row 0 is the cardinality row (all ones), rows 1..3 are the
-        normalized CPU / RAM / disk demands.  ``A`` must be normalized so that the RHS is
-        ``b = [C, 1, 1, 1]`` (the caller passes ``An`` and ``b``).
+        raw CPU / RAM / disk demands.  The caller passes the *unnormalized* matrix and
+        ``b = [C, 1, 1, 1]``; the function uses ``w_n = max_r a_{n,r}`` and the
+        deficit-aligned rule on the raw scale.
     b : (4,) array
         Right-hand side ``[C, 1, 1, 1]``.
     M : (N,) array

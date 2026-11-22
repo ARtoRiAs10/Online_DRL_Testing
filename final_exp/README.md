@@ -109,6 +109,25 @@ final_exp/
 
 ---
 
+## 2.1 Phase-1 diagnostics (code-vs-algorithm checks)
+
+`FracPolicy` now supports three diagnostic switches:
+
+- `log_steps=True` — per-step record of `sum_n p_n`, `sum_n a_{n,r} p_n` (normalized and
+  raw), hit rank, fraction of rounded-in services evicted by repair, `c_t`, the OGD
+  gradient `c~_t`, and `p_{n*,t-1} - xbar_{n*,t-1}`;
+- `topup=True` — after repair, add the largest `p_n/w_n` services that still fit;
+- `lazy=True` — keep the previous sample path and evict only when the union is infeasible.
+
+Two entry points exercise them:
+
+```bash
+python experiments/diagnose_phase1.py --quick --seeds 3   # eta / repair / top-up / lazy
+python experiments/phase2_bound_check.py --quick --seeds 3 # G3b bound terms
+```
+
+The phase-2 utilities live in `sim/regret_bound.py` (comparator LP + RHS extraction).
+
 ## 3. Run
 
 ```bash

@@ -96,6 +96,12 @@ class Engine:
         self.fwd_srv = np.zeros(N, int); self.buf_srv = np.zeros(N, int)
         self.thr_abs = np.zeros(N)
         pol.attach(self); pol.set_horizon(T)
+        if hasattr(pol, "set_popularity_rank"):
+            counts = np.bincount(trace.n, minlength=N)
+            order = np.argsort(-counts, kind="stable")
+            rank = np.empty(N, int)
+            rank[order] = np.arange(N)
+            pol.set_popularity_rank(rank)
         cost = 0.0
         hits = dh = fw = dl = 0
         fwd_inflight = inflight_req = 0
@@ -103,6 +109,7 @@ class Engine:
         wall = time.perf_counter()
         for i in range(T):
             t, n = float(trace.t[i]), int(trace.n[i])
+            self.last_outcome = None
             while heap and heap[0][0] <= t:                      # downloads finished before t
                 tc, m = heapq.heappop(heap)
                 self.pending.pop(m, None)
@@ -118,15 +125,19 @@ class Engine:
                 util[i] = cat.a[cl].sum(0)
             l = cat.l[n]
             if pol.cached(n):
-                hits += 1; pol.on_hit(n, saved=l)
+                hits += 1; pol.on_hit(n, saved=l); self.last_outcome = "hit"
             elif n in self.pending:
                 rem = self.pending[n] - t
                 lat[i] = min(l, rem)
                 inflight_req += 1
                 if rem <= l:
                     dh += 1; self.buf_srv[n] += 1; pol.on_delayed(n, saved=l - rem)
-                else: fw += 1; fwd_inflight += 1; self.fwd_srv[n] += 1
+                    self.last_outcome = "delayed"
+                else:
+                    fw += 1; fwd_inflight += 1; self.fwd_srv[n] += 1
+                    self.last_outcome = "forward_inflight"
             else:
+                self.last_outcome = "forward"
                 if np.isnan(self.miss_ts[n]):
                     self.miss_ts[n] = t; self.fcount[n] = 0
                     self.thr_abs[n] = self.thr.draw(n) * cat.M[n]

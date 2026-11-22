@@ -44,13 +44,16 @@ class FracPolicy(Policy):
                  kstar_policy="run", download_prob_mode="budget", eta_q=0.1,
                  grad_mode="realized", q_ema_alpha=0.1, proj_mode="full",
                  rounding_mode="all", refresh_every=8, proj_tol=1e-7, proj_skip_tol=0.0,
-                 repair_mode=None):
+                 repair_mode=None, log_steps=False, topup=False, store_p=False,
+                 lazy=False):
         self.cat, self.C, self.rng, self.K = cat, C, rng, K
         N = cat.N
         rows = cat.a.T if A_rows is None else np.atleast_2d(A_rows)
         A = np.vstack([np.ones(N), rows])
         b = np.r_[float(C), np.ones(rows.shape[0])]
         self.b = b
+        self.A_raw = A
+        self.b_raw = b
         self.An = normalize(A, b)                      # An p <= 1
         self.L = np.linalg.norm(self.An, 2) ** 2
         self.amax = self.An[1:].max(0) + 1e-12         # max_r a_{n,r}
@@ -63,6 +66,9 @@ class FracPolicy(Policy):
             repair_mode = "landlord" if repair_mode else "none"
         self.repair_mode = repair_mode
         self.repair = repair_mode not in (None, "none", False)
+        self.log_steps, self.topup, self.store_p = log_steps, topup, store_p
+        self.lazy = lazy
+        self.popularity_rank = None
         self.eta_user, self.proj = eta, proj
         self.peek, self.resample_every, self.gate, self.record = peek, resample_every, gate_downloads, record
         self.repair_order, self.budget_prob = repair_order, budget_prob
@@ -111,15 +117,26 @@ class FracPolicy(Policy):
         self.benefit = np.zeros(N)                   # latency avoided during the current residency
         self.downloaded = np.zeros(N, bool)          # the service is in a residency
         self.q_ema = np.zeros(N)                     # EMA of the in-flight indicator (N2)
+        self.hit_counts_by_rank = np.zeros(N, dtype=np.int64)
+        self.step_log = []
+        self._current_rec = None
+        self.last_repair_stats = {}
+        self._g = None
         self.st = dict(raw_violations=0, path_steps=0, repairs=0, repair_evictions=0,
                        proj_calls=0, proj_iters=0, wasted_downloads=0, dropped=0,
                        kstar_redraws=0, residencies=0, unprofitable=0, dprob_updates=0,
                        active_proj=0, active_size=0.0, refreshes=0, q_ema_sum=0.0,
                        proj_skipped=0, landlord_rent_rounds=0, landlord_evictions=0,
-                       landlord_passes=0)
+                       landlord_passes=0, topup_added=0)
         self.P_hist, self.g_hist, self.n_hist = [], [], []
 
     # ----- R1: projected OGD step (eqs. 19-22) -----
+    def _update_q_ema(self, n, q):
+        """EMA update for Q.  Call this *after* the OGD gradient uses the old Q."""
+        a = self.q_ema_alpha
+        self.q_ema[n] = (1 - a) * self.q_ema[n] + a * q
+        self.st["q_ema_sum"] += float(self.q_ema[n])
+
     def _ogd(self, n, q, dm, t=1):
         l = self.cat.l[n]
         if self.grad_mode == "expectation":          # N2: expectation over the algorithm's noise
@@ -198,7 +215,7 @@ class FracPolicy(Policy):
         its download cost as credit and a service that leaves the path loses it.
         """
         before = int(self.S[k].sum())
-        landlord_repair(self.S[k], self.p, self.An, self.b, self.cat.M,
+        landlord_repair(self.S[k], self.p, self.A_raw, self.b_raw, self.cat.M,
                         self.credit[k], tol=1e-9, stats=self.landlord_stats)
         after = int(self.S[k].sum())
         if was_violation:
@@ -207,9 +224,45 @@ class FracPolicy(Policy):
         if ev:
             self.st["repair_evictions"] += ev
 
+    def _topup_path(self, k):
+        """Add the largest p_n/w_n services that still fit after repair.
+
+        This is the optional "cache not filled" fix: repair may leave capacity unused, so
+        greedily fill it by the same priority used by the stateless repair.
+        """
+        s = self.S[k]
+        idx = np.flatnonzero(~s)
+        if idx.size == 0:
+            return 0
+        prio = self.p[idx] / np.maximum(self.amax[idx], 1e-12)
+        order = idx[np.argsort(-prio)]
+        load = self.An @ s.astype(float)
+        added = 0
+        for n in order:
+            col = self.An[:, n]
+            if np.all(load + col <= 1.0 + 1e-9):
+                s[n] = True
+                load = load + col
+                added += 1
+        if added:
+            self.st["topup_added"] += added
+        return added
+
     def _refresh_path(self, k):
-        """Refresh one sample path and repair it if it violates the constraints."""
-        self.S[k] = self.U[k] < self.p
+        """Refresh one sample path and repair it if it violates the constraints.
+
+        With ``lazy=True`` the previous path is kept and the new rounding is added to it
+        (evict only when the union is infeasible).  This reduces churn: a service that
+        was cached last step is not dropped just because it missed the new sample.
+        """
+        new_sample = self.U[k] < self.p
+        rounded_in = int(new_sample.sum())
+        if self.lazy:
+            sample = self.S[k] | new_sample
+        else:
+            sample = new_sample
+        before_repair = int(sample.sum())
+        self.S[k] = sample
         self.st["path_steps"] += 1; self.st["refreshes"] += 1
         viol = bool((self.S[k] @ self.An.T > 1 + 1e-9).any())
         if viol:
@@ -219,6 +272,18 @@ class FracPolicy(Policy):
             self._landlord_repair_row(k, was_violation=viol)
         elif self.repair and viol:
             self._repair_row(k)
+        after_repair = int(self.S[k].sum())
+        evicted = max(0, before_repair - after_repair)
+        added = self._topup_path(k) if self.topup else 0
+        self.last_repair_stats[k] = {
+            "rounded_in": rounded_in,
+            "before_repair": before_repair,
+            "after_repair": after_repair,
+            "evicted": evicted,
+            "fraction": evicted / max(1, before_repair),
+            "topup_added": added,
+            "final_count": int(self.S[k].sum()),
+        }
 
     def _sample(self):
         if self.rounding_mode == "served":            # N7.2/N7.3: refresh + repair the served path
@@ -227,15 +292,10 @@ class FracPolicy(Policy):
                 k2 = (self.kstar + 1) % self.K
                 if k2 != self.kstar: self._refresh_path(k2)
         else:
-            self.S = self.U < self.p[None, :]
-            viol = (self.S @ self.An.T > 1 + 1e-9).any(1)
-            self.st["raw_violations"] += int(viol.sum()); self.st["path_steps"] += self.K
-            if self.repair_mode == "landlord":
-                # Step 0 must run for every path, feasible or not.
-                for k in range(self.K):
-                    self._landlord_repair_row(k, was_violation=bool(viol[k]))
-            elif self.repair:
-                for k in np.flatnonzero(viol): self._repair_row(k)
+            # Refresh every path through the same code path as the served mode so the
+            # per-step repair statistics are complete and consistent.
+            for k in range(self.K):
+                self._refresh_path(k)
         drop = self.mask & ~self.S[self.kstar]
         for n in np.flatnonzero(drop):
             self.mask[n] = False; self.eng.reset_miss(n); self.st["dropped"] += 1
@@ -255,25 +315,88 @@ class FracPolicy(Policy):
 
     def before_request(self, t, n, q, dm):
         self.steps += 1
-        a = self.q_ema_alpha
-        self.q_ema[n] = (1 - a) * self.q_ema[n] + a * q
-        self.st["q_ema_sum"] += float(self.q_ema[n])
+        p_before = self.p.copy()
+        s_before = self.S[self.kstar].copy()
+        rec = None
+        if self.log_steps:
+            rec = {
+                "t": float(t), "n": int(n), "q": float(q), "dm": float(dm),
+                "p_sum": float(p_before.sum()),
+                "resource_load_norm": (self.An[1:] @ p_before).tolist(),
+                "resource_load_raw": (self.cat.a.T @ p_before).tolist(),
+                "p_n_star_prev": float(p_before[n]),
+                "x_bar_n_star_prev": float(s_before[n]),
+                "p_minus_xbar": float(p_before[n] - s_before[n]),
+                "q_ema_before": float(self.q_ema[n]),
+                "q_ema_after": None,
+                "grad": None,
+                "p_n_star_after": None,
+                "outcome": None,
+                "hit_rank": None,
+                "download_started": False,
+                "c_t": 0.0,
+                "repair_evicted_fraction": None,
+                "repair_evicted": None,
+                "topup_added": None,
+                "p_sum_after": None,
+            }
+            if self.store_p:
+                rec["p_before"] = p_before.tolist()
+            self._current_rec = rec
+        self.last_repair_stats = {}
+        if self.peek:
+            self._ogd(n, q, dm, t)
+            if rec is not None:
+                rec["grad"] = float(self._g)
+                rec["p_n_star_after"] = float(self.p[n])
+        self._sample()
+        if rec is not None:
+            rs = self.last_repair_stats.get(self.kstar)
+            if rs is not None:
+                rec["repair_evicted_fraction"] = float(rs["fraction"])
+                rec["repair_evicted"] = int(rs["evicted"])
+                rec["topup_added"] = int(rs["topup_added"])
+            rec["p_sum_after"] = float(self.p.sum())
+            if self.store_p:
+                rec["p_after"] = self.p.tolist()
+        if self.peek:
+            self._update_q_ema(n, q)
         if self.resample_every and self.steps % self.resample_every == 0:
             self.kstar = int(self.rng.integers(self.K)); self.st["kstar_redraws"] += 1
         if self.kstar_policy == "step":
             self.kstar = int(self.rng.integers(self.K)); self.st["kstar_redraws"] += 1
         elif self.kstar_policy == "miss" and (not self.mask[n]) and q == 0.0:
             self.kstar = int(self.rng.integers(self.K)); self.st["kstar_redraws"] += 1
-        if self.peek: self._ogd(n, q, dm, t)
-        self._sample()
         if self.record:
             self.P_hist.append(self.p.copy()); self.g_hist.append(self._g if self.peek else
                 (1 - q) * self.cat.l[n] + q * min(self.cat.l[n], dm)); self.n_hist.append(n)
 
     def after_request(self, t, n, q, dm):
-        if not self.peek: self._ogd(n, q, dm, t)
+        if not self.peek:
+            self._ogd(n, q, dm, t)
+            self._update_q_ema(n, q)
+        rec = self._current_rec
+        if rec is not None:
+            outcome = getattr(self.eng, "last_outcome", None)
+            rec["outcome"] = outcome
+            if outcome == "hit":
+                rec["hit_rank"] = (int(self.popularity_rank[n])
+                                   if self.popularity_rank is not None else None)
+            rec["download_started"] = bool(q == 0.0 and n in getattr(self.eng, "pending", {}))
+            rec["c_t"] = float(self.cat.M[n]) if rec["download_started"] else 0.0
+            rec["q_ema_after"] = float(self.q_ema[n])
+            if rec["grad"] is None and self._g is not None:
+                rec["grad"] = float(self._g)
+            if rec["p_n_star_after"] is None:
+                rec["p_n_star_after"] = float(self.p[n])
+            self.step_log.append(rec)
+            self._current_rec = None
 
     # ----- policy interface -----
+    def set_popularity_rank(self, rank):
+        """Set the service -> popularity-rank map used by the per-step hit log."""
+        self.popularity_rank = np.asarray(rank, int)
+
     def cached(self, n): return bool(self.mask[n])
     def cached_list(self): return np.flatnonzero(self.mask)
     def allow_download(self, n, t): return (not self.gate) or bool(self.S[self.kstar, n])
@@ -298,6 +421,8 @@ class FracPolicy(Policy):
     def on_hit(self, n, saved=0.0):
         """A hit: the service was served from the cache, so `saved` latency was avoided."""
         self.benefit[n] += saved
+        if self.popularity_rank is not None:
+            self.hit_counts_by_rank[int(self.popularity_rank[n])] += 1
 
     def on_delayed(self, n, saved=0.0):
         """A delayed hit: the request was buffered; `saved` = l_n - remaining download time."""
@@ -327,4 +452,13 @@ class FracPolicy(Policy):
         d["landlord_rent_rounds"] = self.landlord_stats.get("rent_rounds", 0)
         d["landlord_evictions"] = self.landlord_stats.get("evictions", 0)
         d["landlord_passes"] = self.landlord_stats.get("passes", 0)
+        d["hit_counts_by_rank"] = self.hit_counts_by_rank.copy()
+        d["topup_added"] = self.st["topup_added"]
+        if self.log_steps and self.step_log:
+            fr = [r["repair_evicted_fraction"] for r in self.step_log
+                  if r.get("repair_evicted_fraction") is not None]
+            d["mean_repair_evicted_fraction"] = float(np.mean(fr)) if fr else 0.0
+            d["step_log"] = self.step_log
+        else:
+            d["mean_repair_evicted_fraction"] = 0.0
         return d
