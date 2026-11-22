@@ -37,6 +37,7 @@ for i in range(n_traces):
     row = dict(
         trace=i, N=N, C=C, opt=float(o["latency"]), opt_status=int(o["status"]),
         opt_gap=float(o["gap"]) if np.isfinite(o["gap"]) else None,
+        repair_mode_landlord="landlord", repair_mode_stateless="stateless",
         det_lat=float(det.latency), det_cost=float(det.cost),
         det_ratio=float(det.latency / o["latency"]),
         r3_ratio=float(np.mean([r.latency for r in r3]) / o["latency"]),

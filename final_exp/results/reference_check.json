@@ -1,0 +1,752 @@
+[
+  {
+    "query": "Edge Service Caching With Delayed Hits: Minimizing Latency and Reducing Cost",
+    "matches": [
+      {
+        "title": "Edge Service Caching With Delayed Hits: Minimizing Latency and Reducing Cost",
+        "year": 2025,
+        "doi": "https://doi.org/10.1109/tcc.2025.3605922",
+        "venue": "IEEE Transactions on Cloud Computing",
+        "authors": [
+          "Sikha Deka",
+          "Radhika Sukapuram"
+        ]
+      },
+      {
+        "title": "Edge Service Caching with Delayed Hits and Request Forwarding to Reduce Latency",
+        "year": 2024,
+        "doi": "https://doi.org/10.23919/ifipnetworking62109.2024.10619791",
+        "venue": "IFIP Networking Conference (IFIP Networking)",
+        "authors": [
+          "Sikha Deka",
+          "Radhika Sukapuram"
+        ]
+      },
+      {
+        "title": "Joint edge caching and dynamic service migration in SDN based mobile edge computing",
+        "year": 2020,
+        "doi": "https://doi.org/10.1016/j.jnca.2020.102966",
+        "venue": "Journal of Network and Computer Applications",
+        "authors": [
+          "Chunlin Li",
+          "Lei Zhu",
+          "Weigang Li"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Dynamic regret of randomized online service caching in edge computing",
+    "matches": [
+      {
+        "title": "Dynamic Regret of Randomized Online Service Caching in Edge Computing",
+        "year": 2023,
+        "doi": "https://doi.org/10.1109/infocom53939.2023.10229044",
+        "venue": "IEEE Conference on Computer Communications (INFOCOM)",
+        "authors": [
+          "Siqi Fan",
+          "I-Hong Hou",
+          "Van Sy Mai"
+        ]
+      },
+      {
+        "title": "Online Caching With no Regret: Optimistic Learning via Recommendations",
+        "year": 2023,
+        "doi": "https://doi.org/10.1109/tmc.2023.3317943",
+        "venue": "IEEE Transactions on Mobile Computing",
+        "authors": [
+          "Naram Mhaisen",
+          "George Iosifidis",
+          "Douglas J. Leith"
+        ]
+      },
+      {
+        "title": "On the Regret of Online Edge Service Hosting",
+        "year": 2023,
+        "doi": "https://doi.org/10.1145/3595244.3595257",
+        "venue": "ACM SIGMETRICS Performance Evaluation Review",
+        "authors": [
+          "Rudrabhotla Sri Prakash",
+          "Nikhil Karamchandani",
+          "Sharayu Moharir"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Amortized efficiency of list update and paging rules",
+    "matches": [
+      {
+        "title": "Amortized efficiency of list update and paging rules",
+        "year": 1985,
+        "doi": "https://doi.org/10.1145/2786.2793",
+        "venue": "Communications of the ACM",
+        "authors": [
+          "Daniel D. Sleator",
+          "Robert Endre Tarjan"
+        ]
+      },
+      {
+        "title": "Amortized efficiency of list update rules",
+        "year": 1984,
+        "doi": "https://doi.org/10.1145/800057.808718",
+        "venue": "ACM Symposium on Theory of Computing (STOC)",
+        "authors": [
+          "Daniel D. Sleator",
+          "Robert Endre Tarjan"
+        ]
+      },
+      {
+        "title": "Optimal strategies for the list update problem under the MRM alternative cost model",
+        "year": 2011,
+        "doi": "https://doi.org/10.1016/j.ipl.2011.12.001",
+        "venue": "Information Processing Letters",
+        "authors": [
+          "Alexander Golynski",
+          "Alejandro L\u00f3pez-Ort\u00edz"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Competitive paging algorithms",
+    "matches": [
+      {
+        "title": "Competitive paging algorithms",
+        "year": 1991,
+        "doi": "https://doi.org/10.1016/0196-6774(91)90041-v",
+        "venue": "Journal of Algorithms",
+        "authors": [
+          "Amos Fiat",
+          "Richard M. Karp",
+          "Michael G. Luby"
+        ]
+      },
+      {
+        "title": "On the Influence of Lookahead in Competitive Paging Algorithms",
+        "year": 1997,
+        "doi": "https://doi.org/10.1007/pl00009158",
+        "venue": "Algorithmica",
+        "authors": [
+          "Susanne Albers"
+        ]
+      },
+      {
+        "title": "The influence of lookahead in competitive paging algorithms: Extended abstract",
+        "year": 1993,
+        "doi": "https://doi.org/10.1007/3-540-57273-2_39",
+        "venue": "Lecture notes in computer science",
+        "authors": [
+          "Susanne Albers"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "On-line file caching",
+    "matches": [
+      {
+        "title": "On-Line File Caching",
+        "year": 2002,
+        "doi": "https://doi.org/10.1007/s00453-001-0124-5",
+        "venue": "Algorithmica",
+        "authors": [
+          "Neal E. Young"
+        ]
+      },
+      {
+        "title": "On-line file caching",
+        "year": 1998,
+        "doi": "https://doi.org/10.5555/314613.314658",
+        "venue": "Symposium on Discrete Algorithms",
+        "authors": [
+          "Neal E. Young"
+        ]
+      },
+      {
+        "title": "Optimal Solution of Off-line and On-line Generalized Caching",
+        "year": 1996,
+        "doi": "https://doi.org/10.7936/k7pc30mf",
+        "venue": "Open Scholarship Institutional Repository (Washington University in St. Louis)",
+        "authors": [
+          "Saied Hosseini-Khayat"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "A primal-dual randomized algorithm for weighted paging",
+    "matches": [
+      {
+        "title": "A Primal-Dual Randomized Algorithm for Weighted Paging",
+        "year": 2012,
+        "doi": "https://doi.org/10.1145/2339123.2339126",
+        "venue": "Journal of the ACM",
+        "authors": [
+          "Nikhil Bansal",
+          "Niv Buchbinder",
+          "Joseph Seffi Naor"
+        ]
+      },
+      {
+        "title": "A Primal-Dual Randomized Algorithm for Weighted Paging",
+        "year": 2007,
+        "doi": "https://doi.org/10.1109/focs.2007.43",
+        "venue": "Annual Symposium on Foundations of Computer Science",
+        "authors": [
+          "Nikhil Bansal",
+          "Niv Buchbinder",
+          "Joseph Seffi Naor"
+        ]
+      },
+      {
+        "title": "Thek-server dual and loose competitiveness for paging",
+        "year": 1994,
+        "doi": "https://doi.org/10.1007/bf01189992",
+        "venue": "Algorithmica",
+        "authors": [
+          "Neal E. Young"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Online Computation and Competitive Analysis",
+    "matches": [
+      {
+        "title": "Online Computation and Competitive Analysis",
+        "year": 1998,
+        "doi": null,
+        "venue": null,
+        "authors": [
+          "Allan Borodin",
+          "Ran El\u2010Yaniv"
+        ]
+      },
+      {
+        "title": "Review of Online Computation and Competitive Analysis by Allan Borodin and Ran EI-Yaniv",
+        "year": 1999,
+        "doi": "https://doi.org/10.1145/337885.571180",
+        "venue": "ACM SIGACT News",
+        "authors": [
+          "Neal E. Young"
+        ]
+      },
+      {
+        "title": "Online computation",
+        "year": 1996,
+        "doi": null,
+        "venue": null,
+        "authors": [
+          "Sandy Irani",
+          "Anna R. Karlin"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "The design of competitive online algorithms via a primal-dual approach",
+    "matches": [
+      {
+        "title": "The Design of Competitive Online Algorithms via a Primal\u2014Dual Approach",
+        "year": 2009,
+        "doi": "https://doi.org/10.1561/9781601982179",
+        "venue": "now publishers, Inc. eBooks",
+        "authors": [
+          "Niv Buchbinder",
+          "Joseph Seffi Naor"
+        ]
+      },
+      {
+        "title": "The Design of Competitive Online Algorithms via a Primal\u2014Dual Approach",
+        "year": 2009,
+        "doi": "https://doi.org/10.1561/0400000024",
+        "venue": "Foundations and Trends\u00ae in Theoretical Computer Science",
+        "authors": [
+          "Niv Buchbinder",
+          "Joseph Seffi Naor"
+        ]
+      },
+      {
+        "title": "Primal-Dual Techniques for Online Algorithms and Mechanisms",
+        "year": 2015,
+        "doi": "https://doi.org/10.13016/m2m61p",
+        "venue": "University Libraries (University of Maryland)",
+        "authors": [
+          "Vahid Liaghat"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Competitive snoopy caching",
+    "matches": [
+      {
+        "title": "Competitive snoopy caching",
+        "year": 1988,
+        "doi": "https://doi.org/10.1007/bf01762111",
+        "venue": "Algorithmica",
+        "authors": [
+          "Anna R. Karlin",
+          "Mark S. Manasse",
+          "Larry Rudolph"
+        ]
+      },
+      {
+        "title": "Competitive snoopy caching",
+        "year": 1986,
+        "doi": "https://doi.org/10.1109/sfcs.1986.14",
+        "venue": "Annual Symposium on Foundations of Computer Science",
+        "authors": [
+          "Anna R. Karlin",
+          "Mark S. Manasse",
+          "Larry Rudolph"
+        ]
+      },
+      {
+        "title": "Methodical Competitive Snoopy-Caching",
+        "year": 1990,
+        "doi": "https://doi.org/10.1007/978-1-4612-4476-9_39",
+        "venue": "Springer eBooks",
+        "authors": [
+          "Greg Nelson"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Competitive randomized algorithms for nonuniform problems",
+    "matches": [
+      {
+        "title": "Competitive randomized algorithms for nonuniform problems",
+        "year": 1994,
+        "doi": "https://doi.org/10.1007/bf01189993",
+        "venue": "Algorithmica",
+        "authors": [
+          "Anna R. Karlin",
+          "Mark S. Manasse",
+          "Lyle A. McGeoch"
+        ]
+      },
+      {
+        "title": "Randomized Competitive Algorithms for Generalized Caching",
+        "year": 2012,
+        "doi": "https://doi.org/10.1137/090779000",
+        "venue": "SIAM Journal on Computing",
+        "authors": [
+          "Nikhil Bansal",
+          "Niv Buchbinder",
+          "Joseph Seffi Naor"
+        ]
+      },
+      {
+        "title": "On competitive ratio for online uniform facility location problem in random-order model",
+        "year": 2026,
+        "doi": "https://doi.org/10.1016/j.tcs.2026.115878",
+        "venue": "Theoretical Computer Science",
+        "authors": [
+          "Mengzhen Li",
+          "Runjie Miao",
+          "Chenchen Wu"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Caching with delayed hits",
+    "matches": [
+      {
+        "title": "Caching with Delayed Hits",
+        "year": 2020,
+        "doi": "https://doi.org/10.1145/3387514.3405883",
+        "venue": "ACM SIGCOMM Conference (SIGCOMM)",
+        "authors": [
+          "Nirav Atre",
+          "Justine Sherry",
+          "Weina Wang"
+        ]
+      },
+      {
+        "title": "Distributed Caching with Delayed Hits",
+        "year": 2026,
+        "doi": "https://doi.org/10.1109/infocom59046.2026.11571218",
+        "venue": "IEEE Conference on Computer Communications (INFOCOM)",
+        "authors": [
+          "Kanghuai Liu",
+          "Xueyan Tang",
+          "Lin Chen"
+        ]
+      },
+      {
+        "title": "Lower Bounds for Caching with Delayed Hits",
+        "year": 2020,
+        "doi": "https://doi.org/10.48550/arxiv.2006.00376",
+        "venue": "arXiv (Cornell University)",
+        "authors": [
+          "Peter Manohar",
+          "Jalani Williams"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Online convex programming and generalized infinitesimal gradient ascent",
+    "matches": [
+      {
+        "title": "Online convex programming and generalized infinitesimal gradient ascent",
+        "year": 2003,
+        "doi": null,
+        "venue": "International Conference on Machine Learning",
+        "authors": [
+          "Martin Zinkevich"
+        ]
+      },
+      {
+        "title": "Online convex optimization in the bandit setting: gradient descent without a gradient",
+        "year": 2004,
+        "doi": "https://doi.org/10.48550/arxiv.cs/0408007",
+        "venue": "arXiv (Cornell University)",
+        "authors": [
+          "Abraham D. Flaxman",
+          "Adam Tauman Kalai",
+          "H. Brendan McMahan"
+        ]
+      },
+      {
+        "title": "On the Regret Minimization of Nonconvex Online Gradient Ascent for Online PCA",
+        "year": 2018,
+        "doi": "https://doi.org/10.48550/arxiv.1809.10491",
+        "venue": "arXiv (Cornell University)",
+        "authors": [
+          "Dan Garber"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Introduction to online convex optimization",
+    "matches": [
+      {
+        "title": "Introduction to Online Convex Optimization",
+        "year": 2016,
+        "doi": "https://doi.org/10.1561/9781680831719",
+        "venue": "now publishers, Inc. eBooks",
+        "authors": [
+          "Elad Hazan"
+        ]
+      },
+      {
+        "title": "Introduction to Online Convex Optimization",
+        "year": 2016,
+        "doi": "https://doi.org/10.1561/2400000013",
+        "venue": "Foundations and Trends\u00ae in Optimization",
+        "authors": [
+          "Elad Hazan"
+        ]
+      },
+      {
+        "title": "Online Learning: A Modern Introduction Using Convex Optimization",
+        "year": 2019,
+        "doi": "https://doi.org/10.48550/arxiv.1912.13213",
+        "venue": "arXiv (Cornell University)",
+        "authors": [
+          "Francesco Orabona"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Online learning and online convex optimization",
+    "matches": [
+      {
+        "title": "Online Learning and Online Convex Optimization",
+        "year": 2011,
+        "doi": "https://doi.org/10.1561/9781601985477",
+        "venue": "now publishers, Inc. eBooks",
+        "authors": [
+          "Shai Shalev\u2010Shwartz"
+        ]
+      },
+      {
+        "title": "Online Learning and Online Convex Optimization",
+        "year": 2012,
+        "doi": "https://doi.org/10.1561/2200000018",
+        "venue": "Foundations and Trends\u00ae in Machine Learning",
+        "authors": [
+          "Shai Shalev\u2010Shwartz"
+        ]
+      },
+      {
+        "title": "Online Learning and Online Convex Optimization with Side Information",
+        "year": 2025,
+        "doi": null,
+        "venue": "Minerva Access (University of Melbourne)",
+        "authors": [
+          "Junzhang Jia"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Dominant resource fairness: Fair allocation of multiple resource types",
+    "matches": [
+      {
+        "title": "Dominant resource fairness: fair allocation of multiple resource types",
+        "year": 2011,
+        "doi": "https://doi.org/10.5555/1972457.1972490",
+        "venue": "UC Berkeley",
+        "authors": [
+          "Ali Ghodsi",
+          "Matei Zaharia",
+          "Benjamin Hindman"
+        ]
+      },
+      {
+        "title": "An Efficient and Fair Multi-Resource Allocation Mechanism for Heterogeneous Servers",
+        "year": 2018,
+        "doi": "https://doi.org/10.1109/tpds.2018.2841915",
+        "venue": "IEEE Transactions on Parallel and Distributed Systems",
+        "authors": [
+          "Jalal Khamse-Ashari",
+          "Ioannis Lambadaris",
+          "George Kesidis"
+        ]
+      },
+      {
+        "title": "2-Dominant Resource Fairness: Fairness-Efficiency Tradeoffs in Multi-resource Allocation",
+        "year": 2018,
+        "doi": "https://doi.org/10.1109/pccc.2018.8711140",
+        "venue": "IEEE International Performance, Computing, and Communications Conference",
+        "authors": [
+          "Suhan Jiang",
+          "Jie Wu"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Multi-resource packing for cluster schedulers",
+    "matches": [
+      {
+        "title": "Multi-resource packing for cluster schedulers",
+        "year": 2014,
+        "doi": "https://doi.org/10.1145/2619239.2626334",
+        "venue": "ACM SIGCOMM Conference (SIGCOMM)",
+        "authors": [
+          "Robert Grandl",
+          "Ganesh Ananthanarayanan",
+          "Srikanth Kandula"
+        ]
+      },
+      {
+        "title": "Multi-resource packing for cluster schedulers",
+        "year": 2014,
+        "doi": "https://doi.org/10.1145/2740070.2626334",
+        "venue": "ACM SIGCOMM Computer Communication Review",
+        "authors": [
+          "Robert Grandl",
+          "Ganesh Ananthanarayanan",
+          "Srikanth Kandula"
+        ]
+      },
+      {
+        "title": "Deadline-constrained workflow scheduling in IaaS clouds with multi-resource packing",
+        "year": 2019,
+        "doi": "https://doi.org/10.1016/j.future.2019.07.043",
+        "venue": "Future Generation Computer Systems",
+        "authors": [
+          "Zhaomeng Zhu",
+          "Xueyan Tang"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Cloud programming simplified: A Berkeley view on serverless computing",
+    "matches": [
+      {
+        "title": "Cloud Programming Simplified: A Berkeley View on Serverless Computing",
+        "year": 2019,
+        "doi": "https://doi.org/10.48550/arxiv.1902.03383",
+        "venue": "arXiv (Cornell University)",
+        "authors": [
+          "Jonas, Eric",
+          "Schleier-Smith, Johann",
+          "Sreekanti, Vikram"
+        ]
+      },
+      {
+        "title": "What serverless computing is and should become: the next phase of cloud computing",
+        "year": 2021,
+        "doi": "https://doi.org/10.1145/3406011",
+        "venue": "Communications of the ACM",
+        "authors": [
+          "Johann Schleier-Smith",
+          "Vikram Sreekanti",
+          "Anurag Khandelwal"
+        ]
+      },
+      {
+        "title": "Serverless Edge Computing: Vision and Challenges",
+        "year": 2021,
+        "doi": "https://doi.org/10.1145/3437378.3444367",
+        "venue": "Australasian Computer Science Week Multiconference (ACSW)",
+        "authors": [
+          "Mohammad Sadegh Aslanpour",
+          "Adel N. Toosi",
+          "Claudio Cicconetti"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "SOCK: Rapid task provisioning with serverless-optimized containers",
+    "matches": [
+      {
+        "title": "Optimized container scheduling for data-intensive serverless edge computing",
+        "year": 2020,
+        "doi": "https://doi.org/10.1016/j.future.2020.07.017",
+        "venue": "Future Generation Computer Systems",
+        "authors": [
+          "Thomas Rausch",
+          "Alexander Rashed",
+          "Schahram Dustdar"
+        ]
+      },
+      {
+        "title": "Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider",
+        "year": 2020,
+        "doi": "https://doi.org/10.48550/arxiv.2003.03423",
+        "venue": "arXiv (Cornell University)",
+        "authors": [
+          "Mohammad Shahrad",
+          "Rodrigo Fonseca",
+          "\u00cd\u00f1igo Goiri"
+        ]
+      },
+      {
+        "title": "Kraken: Adaptive Container Provisioning for Deploying Dynamic DAGs in Serverless Platforms",
+        "year": 2021,
+        "doi": "https://doi.org/10.1145/3472883.3486992",
+        "venue": "ACM Symposium on Cloud Computing (SoCC)",
+        "authors": [
+          "Vivek M. Bhasi",
+          "Jashwant Raj Gunasekaran",
+          "Prashanth Thinakaran"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Catalyzer: Sub-millisecond startup for serverless computing with initialization-less booting",
+    "matches": [
+      {
+        "title": "Catalyzer: Sub-millisecond Startup for Serverless Computing with Initialization-less Booting",
+        "year": 2020,
+        "doi": "https://doi.org/10.1145/3373376.3378512",
+        "venue": "International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)",
+        "authors": [
+          "Dong Du",
+          "Tianyi Yu",
+          "Yubin Xia"
+        ]
+      },
+      {
+        "title": "Survey on serverless computing",
+        "year": 2021,
+        "doi": "https://doi.org/10.1186/s13677-021-00253-7",
+        "venue": "Journal of Cloud Computing Advances Systems and Applications",
+        "authors": [
+          "Hassan B. Hassan",
+          "Saman Barakat",
+          "Qusay Idrees Sarhan"
+        ]
+      },
+      {
+        "title": "Nightcore: efficient and scalable serverless computing for latency-sensitive, interactive microservices",
+        "year": 2021,
+        "doi": "https://doi.org/10.1145/3445814.3446701",
+        "venue": "International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)",
+        "authors": [
+          "Zhipeng Jia",
+          "Emmett Witchel"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Google cluster-usage traces: format + schema",
+    "matches": [
+      {
+        "title": "Analysis and Clustering of Workload in Google Cluster Trace Based on Resource Usage",
+        "year": 2016,
+        "doi": "https://doi.org/10.1109/cse-euc-dcabes.2016.271",
+        "venue": "IEEE International Conference on Computational Science and Engineering (CSE) and IEEE International Conference on Embedded and Ubiquitous Computing (EUC)",
+        "authors": [
+          "Mansaf Alam",
+          "Kashish Ara Shakil",
+          "Shuchi Sethi"
+        ]
+      },
+      {
+        "title": "10 Observations on Google Cluster Trace + 2 Measures for Cluster Utilization Enhancement",
+        "year": 2015,
+        "doi": "https://doi.org/10.48550/arxiv.1508.02111",
+        "venue": "arXiv (Cornell University)",
+        "authors": [
+          "Yuqing Zhu",
+          "Yilei Wang",
+          "Fan Wang"
+        ]
+      },
+      {
+        "title": "Analyzing Traces from a Google Data Center",
+        "year": 2018,
+        "doi": "https://doi.org/10.1109/iwcmc.2018.8450304",
+        "venue": "International Wireless Communications and Mobile Computing Conference (IWCMC)",
+        "authors": [
+          "Pascale Minet",
+          "\u00c9ric Renault",
+          "Ines Khoufi"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "The Grid Workloads Archive",
+    "matches": [
+      {
+        "title": "The Grid Workloads Archive",
+        "year": 2008,
+        "doi": "https://doi.org/10.1016/j.future.2008.02.003",
+        "venue": "Future Generation Computer Systems",
+        "authors": [
+          "Alexandru Iosup",
+          "Hui Li",
+          "Mathieu Jan"
+        ]
+      },
+      {
+        "title": "Reproducibility Archive for Qualifying Grid-Deliverable Flexibility from Heterogeneous AI Cloud Workloads: A State-Conditional Framework with Abstention",
+        "year": 2026,
+        "doi": "https://doi.org/10.5281/zenodo.22066585",
+        "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+        "authors": [
+          "ZhiYong Zhang",
+          "Haiyun Wang"
+        ]
+      },
+      {
+        "title": "Experience with using the Parallel Workloads Archive",
+        "year": 2014,
+        "doi": "https://doi.org/10.1016/j.jpdc.2014.06.013",
+        "venue": "Journal of Parallel and Distributed Computing",
+        "authors": [
+          "Dror G. Feitelson",
+          "Dan Tsafrir",
+          "David Krakov"
+        ]
+      }
+    ]
+  }
+]

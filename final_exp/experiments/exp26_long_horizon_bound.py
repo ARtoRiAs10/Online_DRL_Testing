@@ -25,7 +25,8 @@ for seed in range(seeds):
     terms = regret_bound_terms(R.extra["step_log"], cat, a.C)
     realized = float(R.latency + R.cost)
     rows.append(dict(
-        seed=seed, latency=float(R.latency), downloads=float(R.cost),
+        seed=seed, repair_mode="landlord", download_time_mode="ema",
+        latency=float(R.latency), downloads=float(R.cost),
         realized=realized, det_latency=float(det.latency), det_cost=float(det.cost),
         comparator_objective=float(terms["comparator_objective"]),
         comparator_gap=float(realized - terms["comparator_objective"]),

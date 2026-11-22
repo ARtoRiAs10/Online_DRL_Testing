@@ -40,6 +40,7 @@ for k in ks:
         rf = rand_drl(cat, tr, k, np.random.default_rng(s), K=a.K,
                       repair_mode="landlord", gate_downloads=True)
         add_family("cyclic_scan", k=k, seed=s, n_requests=len(tr),
+                   repair_mode="landlord",
                    det_lat=float(det.latency), ll_lat=float(ll.latency),
                    r3_lat=float(r3.latency), rf_lat=float(rf.latency),
                    det_cost=float(det.cost), ll_cost=float(ll.cost),
@@ -61,11 +62,13 @@ for k in ks2:
             rf = rand_drl(cat, tr, k, np.random.default_rng(s), K=a.K,
                           repair_mode="landlord", gate_downloads=True)
             add_family("large_sequence", k=k, M_over_l=ratio, seed=s,
-                       n_requests=len(tr), opt=float(opt),
-                       det_ratio=float(det.latency / opt),
+                       n_requests=len(tr), opt=float(opt), repair_mode="landlord",
+                       det_vs_opt=float(det.latency / opt),
                        ll_ratio=float(ll.latency / opt),
-                       r3_ratio=float(r3.latency / opt),
-                       rf_ratio=float(rf.latency / opt),
+                       r3_vs_det=float(r3.latency / det.latency),
+                       rf_vs_det=float(rf.latency / det.latency),
+                       r3_ratio_opt=float(r3.latency / opt),
+                       rf_ratio_opt=float(rf.latency / opt),
                        det_cost=float(det.cost), ll_cost=float(ll.cost),
                        r3_cost=float(r3.cost), rf_cost=float(rf.cost))
 
@@ -79,6 +82,7 @@ for s in range(seeds):
     rf = rand_drl(cat, tr2, 8, np.random.default_rng(s), K=a.K,
                   repair_mode="landlord", gate_downloads=True)
     add_family("deterministic_eviction", seed=s, n_requests=len(tr2),
+               repair_mode="landlord",
                n_evictions=len(ev), base_requests=len(base),
                det_lat=float(det.latency), ll_lat=float(ll.latency),
                r3_lat=float(r3.latency), rf_lat=float(rf.latency),
@@ -95,7 +99,13 @@ for fam in families:
     fr = [r for r in rows if r["family"] == fam]
     summary[fam] = {}
     for metric in ("r3_ratio", "rf_ratio"):
-        summary[fam][metric] = ms([r[metric] for r in fr])
+        vals = [r[metric] for r in fr if metric in r]
+        if vals:
+            summary[fam][metric] = ms(vals)
+    for metric in ("r3_ratio_opt", "rf_ratio_opt", "det_vs_opt"):
+        vals = [r[metric] for r in fr if metric in r]
+        if vals:
+            summary[fam][metric] = ms(vals)
     for metric in ("det_lat", "r3_lat", "rf_lat", "det_cost", "r3_cost", "rf_cost"):
         vals = [r[metric] for r in fr if metric in r]
         if vals:
@@ -110,6 +120,12 @@ for fam in families:
     det_lat = s.get("det_lat", [float("nan")])[0]
     r3_lat = s.get("r3_lat", [float("nan")])[0]
     rf_lat = s.get("rf_lat", [float("nan")])[0]
-    print(f"{fam:24s} R3/det={s['r3_ratio'][0]:.3f}  "
-          f"RF/det={s['rf_ratio'][0]:.3f}  "
+    r3_det = s.get("r3_ratio", [float("nan")])[0]
+    rf_det = s.get("rf_ratio", [float("nan")])[0]
+    print(f"{fam:24s} R3/det={r3_det:.3f}  "
+          f"RF/det={rf_det:.3f}  "
           f"lat det={det_lat:.0f} r3={r3_lat:.0f} rf={rf_lat:.0f}")
+    if "r3_ratio_opt" in s:
+        print(f"{'':24s} R3/OPT={s['r3_ratio_opt'][0]:.3f}  "
+              f"RF/OPT={s['rf_ratio_opt'][0]:.3f}  "
+              f"det/OPT={s.get('det_vs_opt', [float('nan')])[0]:.3f}")

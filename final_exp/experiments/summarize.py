@@ -380,9 +380,15 @@ def main():
         L.append(section("19. Adversarial families (cyclic scan, Large Sequence, evasive trace)"))
         rows = []
         for fam, s in d["summary"].items():
-            rows.append([fam, fmt(s.get("r3_ratio", [float("nan")])[0], 3),
-                         fmt(s.get("rf_ratio", [float("nan")])[0], 3)])
-        L.append(table(["family", "R3-only / Online-DRL", "Randomized / Online-DRL"], rows))
+            r3_det = s.get("r3_ratio", [float("nan")])[0]
+            rf_det = s.get("rf_ratio", [float("nan")])[0]
+            r3_opt = s.get("r3_ratio_opt", [float("nan")])[0]
+            rf_opt = s.get("rf_ratio_opt", [float("nan")])[0]
+            det_opt = s.get("det_vs_opt", [float("nan")])[0]
+            rows.append([fam, fmt(r3_det, 3), fmt(rf_det, 3),
+                         fmt(r3_opt, 3), fmt(rf_opt, 3), fmt(det_opt, 3)])
+        L.append(table(["family", "R3/Online-DRL", "RF/Online-DRL",
+                        "R3/OPT", "RF/OPT", "Online-DRL/OPT"], rows))
         L.append("")
         L.append("On the cyclic scan the randomized DRL is *faster* than Online-DRL "
                  "(ratio < 1) because it keeps a more useful sample; on the Large Sequence it "

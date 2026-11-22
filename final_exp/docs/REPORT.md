@@ -291,11 +291,11 @@ The stateless repair dominates the Landlord repair in this ablation: `r1r2r3_sta
 
 ## 19. Adversarial families (cyclic scan, Large Sequence, evasive trace)
 
-| family | R3-only / Online-DRL | Randomized / Online-DRL |
-|---|---|---|
-| cyclic_scan | 1.000 | 0.622 |
-| deterministic_eviction | 0.979 | 1.146 |
-| large_sequence | 34.546 | 3.460 |
+| family | R3/Online-DRL | RF/Online-DRL | R3/OPT | RF/OPT | Online-DRL/OPT |
+|---|---|---|---|---|---|
+| cyclic_scan | 1.000 | 0.622 | nan | nan | nan |
+| deterministic_eviction | 0.979 | 1.146 | nan | nan | nan |
+| large_sequence | nan | nan | 34.546 | 3.460 | 36.233 |
 
 On the cyclic scan the randomized DRL is *faster* than Online-DRL (ratio < 1) because it keeps a more useful sample; on the Large Sequence it removes most of the deterministic blow-up; on the deterministic-eviction trace it trades latency for a large cost reduction.
 

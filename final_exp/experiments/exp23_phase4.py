@@ -42,7 +42,10 @@ for seed in range(seeds):
                      gate_downloads=True, **kw)
         terms = regret_bound_terms(R.extra["step_log"], cat, a.C)
         rows.append(dict(
-            seed=seed, variant=name,
+            seed=seed, variant=name, repair_mode="landlord",
+            lazy=bool(kw.get("lazy", False)),
+            download_time_mode=kw.get("download_time_mode", "half"),
+            charge_churn=kw.get("charge_churn", "none"),
             latency=float(R.latency), cost=float(R.cost),
             hits=int(R.hits), downloads=int(R.downloads),
             churn_credit=float(R.extra.get("churn_credit", 0.0)),

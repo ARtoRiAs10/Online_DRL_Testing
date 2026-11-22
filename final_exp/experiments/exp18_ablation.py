@@ -51,6 +51,7 @@ for seed in range(seeds):
     for name, fn in VARIANTS.items():
         R = fn(cat, tr, np.random.default_rng(seed))
         rows.append(dict(seed=seed, variant=name,
+                         repair_mode=("stateless" if "stateless" in name else "landlord"),
                          latency=float(R.latency), cost=float(R.cost),
                          hits=int(R.hits), downloads=int(R.downloads),
                          delayed=int(R.delayed_hits)))

@@ -26,7 +26,7 @@ for seed in range(seeds):
     summary = summarize_step_log(R.extra["step_log"])
     realized = float(R.latency + R.cost)
     row = dict(
-        seed=seed,
+        seed=seed, repair_mode="landlord", download_time_mode="ema",
         latency=float(R.latency), downloads=float(R.cost), realized=realized,
         det_latency=float(det.latency), det_cost=float(det.cost),
         sum_F_tilde_Pt=terms["sum_F_tilde_Pt"],

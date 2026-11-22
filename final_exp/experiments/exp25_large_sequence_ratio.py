@@ -25,7 +25,7 @@ for k in ks:
             rf = rand_drl(cat, tr, k, np.random.default_rng(s), K=a.K,
                           repair_mode="landlord", gate_downloads=True)
             rows.append(dict(
-                k=k, M_over_l=ratio, seed=s, opt=float(opt),
+                k=k, M_over_l=ratio, seed=s, opt=float(opt), repair_mode="landlord",
                 det_ratio=float(det.latency / opt),
                 ll_ratio=float(ll.latency / opt),
                 r3_ratio=float(r3.latency / opt),

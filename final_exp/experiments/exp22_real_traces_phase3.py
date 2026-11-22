@@ -53,6 +53,7 @@ for name, max_rows, cfg in TRACES:
                        repair_mode="landlord", gate_downloads=True) for s in range(seeds)]
         row = dict(
             trace=name, D=D, disk_scale=disk_scale, n_services=int(cat.N), n_requests=int(len(tr)), C=int(C),
+            repair_mode="landlord",
             frac_M_lt_l=frac_cross,
             M_min=float(cat.M.min()), M_max=float(cat.M.max()),
             l_min=float(cat.l.min()), l_max=float(cat.l.max()),

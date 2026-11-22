@@ -115,7 +115,13 @@ class FracPolicy(Policy):
         # Persistent per-path Landlord credits (Algorithm 3, Step 0).  A credit is the
         # remaining "rent" a cached service has before it may be evicted.
         self.credit = np.zeros((self.K, N), float)
-        self.landlord_stats = dict(rent_rounds=0, evictions=0, passes=0)
+        self.landlord_stats = dict(rent_rounds=0, evictions=0, passes=0,
+                                   evict_mode="deficit", repair_mode="landlord")
+        self.evicted_p_sum = 0.0
+        self.evicted_p_count = 0
+        self.evicted_p_max = 0.0
+        self.evicted_top1_count = 0
+        self.evicted_log = []
         self.steps = 0
         # --- revision state ---
         self.dprob = np.ones(N)                      # Q_n: the learned download probability (N1)
@@ -200,6 +206,7 @@ class FracPolicy(Policy):
     def _repair_row(self, k):
         """Stateless v1 repair: evict in increasing order of p_n / max_r a_{n,r}."""
         s = self.S[k]
+        before_state = s.copy()
         idx = np.flatnonzero(s)
         if self.repair_order == "alignment":
             # Sec. 2.5: order candidates by the alignment <a_n, u> with the residual-capacity
@@ -220,7 +227,24 @@ class FracPolicy(Policy):
         j = int(np.argmax(feas)) if feas.any() else len(order)
         if j > 0:
             s[order[:j]] = False
+        self._log_evictions(k, before_state)
         self.st["repairs"] += 1; self.st["repair_evictions"] += j
+
+    def _log_evictions(self, k, before_state):
+        """Record the popularity of services evicted from path ``k``."""
+        ev_idx = np.flatnonzero(before_state & ~self.S[k])
+        if not ev_idx.size:
+            return
+        pv = self.p[ev_idx]
+        self.evicted_p_sum += float(pv.sum())
+        self.evicted_p_count += int(ev_idx.size)
+        self.evicted_p_max = max(self.evicted_p_max, float(pv.max()))
+        self.evicted_top1_count += int(np.sum(pv >= self.p.max() - 1e-12))
+        if self.log_steps:
+            self.evicted_log.append({
+                "step": int(self.steps), "path": int(k),
+                "services": ev_idx.tolist(), "p": pv.tolist(),
+            })
 
     def _landlord_repair_row(self, k, was_violation=False):
         """Algorithm 3 (updated Landlord-Repair) on sample path ``k``.
@@ -230,11 +254,14 @@ class FracPolicy(Policy):
         its download cost as credit and a service that leaves the path loses it.
         """
         before = int(self.S[k].sum())
+        before_state = self.S[k].copy()
         evict_mode = {
             "landlord": "deficit",
             "landlord_pop": "popularity",
             "landlord_hybrid": "hybrid",
         }.get(self.repair_mode, "deficit")
+        self.landlord_stats["evict_mode"] = evict_mode
+        self.landlord_stats["repair_mode"] = self.repair_mode
         landlord_repair(self.S[k], self.p, self.A_raw, self.b_raw, self.cat.M,
                         self.credit[k], tol=1e-9, stats=self.landlord_stats,
                         evict_mode=evict_mode, pop_weight=self.repair_pop_weight)
@@ -244,6 +271,7 @@ class FracPolicy(Policy):
         ev = max(0, before - after)
         if ev:
             self.st["repair_evictions"] += ev
+        self._log_evictions(k, before_state)
 
     def _topup_path(self, k):
         """Add the largest p_n/w_n services that still fit after repair.
@@ -490,9 +518,15 @@ class FracPolicy(Policy):
             d["n_hist"] = np.array(self.n_hist)
         d["rho_final"] = self.rho.copy()
         d["repair_mode"] = self.repair_mode
+        d["evict_mode"] = self.landlord_stats.get("evict_mode")
         d["landlord_rent_rounds"] = self.landlord_stats.get("rent_rounds", 0)
         d["landlord_evictions"] = self.landlord_stats.get("evictions", 0)
         d["landlord_passes"] = self.landlord_stats.get("passes", 0)
+        d["evicted_p_mean"] = (self.evicted_p_sum / self.evicted_p_count
+                               if self.evicted_p_count else 0.0)
+        d["evicted_p_max"] = float(self.evicted_p_max)
+        d["evicted_top1_fraction"] = (self.evicted_top1_count / self.evicted_p_count
+                                      if self.evicted_p_count else 0.0)
         d["hit_counts_by_rank"] = self.hit_counts_by_rank.copy()
         d["topup_added"] = self.st["topup_added"]
         d["churn_credit"] = float(self.churn_credit)

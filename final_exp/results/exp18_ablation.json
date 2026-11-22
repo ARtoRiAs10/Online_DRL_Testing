@@ -20,6 +20,7 @@
     {
       "seed": 0,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 29332.9822478213,
       "cost": 29106.461372035403,
       "hits": 590,
@@ -29,6 +30,7 @@
     {
       "seed": 0,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 30658.275687230576,
       "cost": 35327.88976633247,
       "hits": 524,
@@ -38,6 +40,7 @@
     {
       "seed": 0,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 40602.6386594501,
       "cost": 34655.8110913642,
       "hits": 48,
@@ -47,6 +50,7 @@
     {
       "seed": 0,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 25272.70551781456,
       "cost": 29867.89225268514,
       "hits": 784,
@@ -56,6 +60,7 @@
     {
       "seed": 0,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 40239.22772015158,
       "cost": 34255.753428290234,
       "hits": 65,
@@ -65,6 +70,7 @@
     {
       "seed": 0,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 41016.362762534154,
       "cost": 16058.86211174671,
       "hits": 35,
@@ -74,6 +80,7 @@
     {
       "seed": 0,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 24922.028819967945,
       "cost": 9904.88154397337,
       "hits": 805,
@@ -83,6 +90,7 @@
     {
       "seed": 0,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 40328.280080749355,
       "cost": 16050.7020329119,
       "hits": 64,
@@ -92,6 +100,7 @@
     {
       "seed": 1,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 34641.30625196511,
       "cost": 29232.24205013036,
       "hits": 316,
@@ -101,6 +110,7 @@
     {
       "seed": 1,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 34187.35698712833,
       "cost": 35890.05611155835,
       "hits": 326,
@@ -110,6 +120,7 @@
     {
       "seed": 1,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 39208.10406212833,
       "cost": 32066.32998468804,
       "hits": 93,
@@ -119,6 +130,7 @@
     {
       "seed": 1,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 28786.959842085653,
       "cost": 28671.400047778294,
       "hits": 601,
@@ -128,6 +140,7 @@
     {
       "seed": 1,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 36965.85355273971,
       "cost": 31437.878826359083,
       "hits": 204,
@@ -137,6 +150,7 @@
     {
       "seed": 1,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 39646.58842586247,
       "cost": 14568.745316304237,
       "hits": 77,
@@ -146,6 +160,7 @@
     {
       "seed": 1,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 27855.989060116306,
       "cost": 5208.336054345882,
       "hits": 658,
@@ -155,6 +170,7 @@
     {
       "seed": 1,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 37390.96399293545,
       "cost": 16134.975765968538,
       "hits": 177,
@@ -164,6 +180,7 @@
     {
       "seed": 2,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 26997.144042681295,
       "cost": 26240.775888377535,
       "hits": 678,
@@ -173,6 +190,7 @@
     {
       "seed": 2,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 28868.23513964294,
       "cost": 35947.894998078315,
       "hits": 586,
@@ -182,6 +200,7 @@
     {
       "seed": 2,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 40755.30110979514,
       "cost": 32018.810786592516,
       "hits": 8,
@@ -191,6 +210,7 @@
     {
       "seed": 2,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 22445.049132914057,
       "cost": 26009.180406353604,
       "hits": 916,
@@ -200,6 +220,7 @@
     {
       "seed": 2,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 40629.30110979514,
       "cost": 31948.581393264165,
       "hits": 14,
@@ -209,6 +230,7 @@
     {
       "seed": 2,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 40542.17866808969,
       "cost": 18845.898342045413,
       "hits": 29,
@@ -218,6 +240,7 @@
     {
       "seed": 2,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 22027.20182961848,
       "cost": 5946.265111805624,
       "hits": 942,
@@ -227,6 +250,7 @@
     {
       "seed": 2,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 40343.881210197855,
       "cost": 21872.83523902538,
       "hits": 31,
@@ -236,6 +260,7 @@
     {
       "seed": 3,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 34536.4399329172,
       "cost": 27405.039066451074,
       "hits": 330,
@@ -245,6 +270,7 @@
     {
       "seed": 3,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 36213.71424434849,
       "cost": 34449.166094385095,
       "hits": 244,
@@ -254,6 +280,7 @@
     {
       "seed": 3,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 40414.789853509865,
       "cost": 32179.48370931909,
       "hits": 47,
@@ -263,6 +290,7 @@
     {
       "seed": 3,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 32363.421657889827,
       "cost": 29258.852942024652,
       "hits": 435,
@@ -272,6 +300,7 @@
     {
       "seed": 3,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 40414.789853509865,
       "cost": 32179.48370931909,
       "hits": 47,
@@ -281,6 +310,7 @@
     {
       "seed": 3,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 40187.95341212623,
       "cost": 15506.204302390783,
       "hits": 59,
@@ -290,6 +320,7 @@
     {
       "seed": 3,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 30994.997117568026,
       "cost": 8176.092013615093,
       "hits": 501,
@@ -299,6 +330,7 @@
     {
       "seed": 3,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 40579.00017366266,
       "cost": 18859.22388208859,
       "hits": 38,
@@ -308,6 +340,7 @@
     {
       "seed": 4,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 35482.7041506199,
       "cost": 28552.025319947974,
       "hits": 274,
@@ -317,6 +350,7 @@
     {
       "seed": 4,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 34346.18894544254,
       "cost": 34302.248896390025,
       "hits": 302,
@@ -326,6 +360,7 @@
     {
       "seed": 4,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 38114.22794433091,
       "cost": 31703.026988158897,
       "hits": 135,
@@ -335,6 +370,7 @@
     {
       "seed": 4,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 28335.509208590473,
       "cost": 29446.80327449672,
       "hits": 629,
@@ -344,6 +380,7 @@
     {
       "seed": 4,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 37061.061585696756,
       "cost": 30839.855744512646,
       "hits": 187,
@@ -353,6 +390,7 @@
     {
       "seed": 4,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 36963.07146059199,
       "cost": 9765.292717542037,
       "hits": 207,
@@ -362,6 +400,7 @@
     {
       "seed": 4,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 29040.198276144947,
       "cost": 5150.340707465648,
       "hits": 604,
@@ -371,6 +410,7 @@
     {
       "seed": 4,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 36100.70722087758,
       "cost": 17408.14678759102,
       "hits": 240,
@@ -380,6 +420,7 @@
     {
       "seed": 5,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 34101.30666389836,
       "cost": 28694.43353882743,
       "hits": 339,
@@ -389,6 +430,7 @@
     {
       "seed": 5,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 34834.23811867624,
       "cost": 33192.79182456821,
       "hits": 297,
@@ -398,6 +440,7 @@
     {
       "seed": 5,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 40899.533908164434,
       "cost": 32033.55817204915,
       "hits": 12,
@@ -407,6 +450,7 @@
     {
       "seed": 5,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 30526.010949698073,
       "cost": 29302.267583622353,
       "hits": 522,
@@ -416,6 +460,7 @@
     {
       "seed": 5,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 40901.94187226069,
       "cost": 32033.55817204915,
       "hits": 13,
@@ -425,6 +470,7 @@
     {
       "seed": 5,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 40872.186410235525,
       "cost": 16635.29423734804,
       "hits": 10,
@@ -434,6 +480,7 @@
     {
       "seed": 5,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 31880.153064941303,
       "cost": 8858.199849312656,
       "hits": 463,
@@ -443,6 +490,7 @@
     {
       "seed": 5,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 40861.85587651353,
       "cost": 19822.660892642503,
       "hits": 12,
@@ -452,6 +500,7 @@
     {
       "seed": 6,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 30358.193310768962,
       "cost": 29478.68401516508,
       "hits": 533,
@@ -461,6 +510,7 @@
     {
       "seed": 6,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 26985.169793791167,
       "cost": 32424.204830648476,
       "hits": 693,
@@ -470,6 +520,7 @@
     {
       "seed": 6,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 41299.238041705044,
       "cost": 32805.316017770856,
       "hits": 6,
@@ -479,6 +530,7 @@
     {
       "seed": 6,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 37486.001485864355,
       "cost": 30910.54481874902,
       "hits": 188,
@@ -488,6 +540,7 @@
     {
       "seed": 6,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 41105.463405554896,
       "cost": 32805.316017770856,
       "hits": 16,
@@ -497,6 +550,7 @@
     {
       "seed": 6,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 41663.99680087471,
       "cost": 16753.966761051022,
       "hits": 2,
@@ -506,6 +560,7 @@
     {
       "seed": 6,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 38767.75829699355,
       "cost": 11416.259974884595,
       "hits": 140,
@@ -515,6 +570,7 @@
     {
       "seed": 6,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 41333.4688650164,
       "cost": 19077.86341230158,
       "hits": 16,
@@ -524,6 +580,7 @@
     {
       "seed": 7,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 30431.476101579403,
       "cost": 27835.986005441446,
       "hits": 512,
@@ -533,6 +590,7 @@
     {
       "seed": 7,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 31660.733198542865,
       "cost": 35378.19794504189,
       "hits": 432,
@@ -542,6 +600,7 @@
     {
       "seed": 7,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 40129.94964440349,
       "cost": 31482.413381649203,
       "hits": 6,
@@ -551,6 +610,7 @@
     {
       "seed": 7,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 25865.688705726763,
       "cost": 28172.86699879452,
       "hits": 755,
@@ -560,6 +620,7 @@
     {
       "seed": 7,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 39528.85738375684,
       "cost": 31394.573346204685,
       "hits": 42,
@@ -569,6 +630,7 @@
     {
       "seed": 7,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 40590.82180552393,
       "cost": 15872.373144517087,
       "hits": 6,
@@ -578,6 +640,7 @@
     {
       "seed": 7,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 26432.32889894602,
       "cost": 9720.069861144091,
       "hits": 739,
@@ -587,6 +650,7 @@
     {
       "seed": 7,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 39443.20562352497,
       "cost": 22083.635178379474,
       "hits": 56,
@@ -596,6 +660,7 @@
     {
       "seed": 8,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 28578.28386718579,
       "cost": 27809.234957671317,
       "hits": 610,
@@ -605,6 +670,7 @@
     {
       "seed": 8,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 30192.536204218093,
       "cost": 32425.97609660875,
       "hits": 534,
@@ -614,6 +680,7 @@
     {
       "seed": 8,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 39499.34825701696,
       "cost": 32501.3509329899,
       "hits": 80,
@@ -623,6 +690,7 @@
     {
       "seed": 8,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 19033.769116183215,
       "cost": 25058.57175689809,
       "hits": 1076,
@@ -632,6 +700,7 @@
     {
       "seed": 8,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 36289.6050230721,
       "cost": 31281.20186447385,
       "hits": 238,
@@ -641,6 +710,7 @@
     {
       "seed": 8,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 38403.46986231133,
       "cost": 14512.475778859009,
       "hits": 143,
@@ -650,6 +720,7 @@
     {
       "seed": 8,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 18901.05033350047,
       "cost": 3398.7343028818646,
       "hits": 1092,
@@ -659,6 +730,7 @@
     {
       "seed": 8,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 36429.36309937425,
       "cost": 17737.199593593,
       "hits": 236,
@@ -668,6 +740,7 @@
     {
       "seed": 9,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 31628.106000839238,
       "cost": 25085.158402628975,
       "hits": 456,
@@ -677,6 +750,7 @@
     {
       "seed": 9,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 31022.686380972867,
       "cost": 29461.989545960838,
       "hits": 474,
@@ -686,6 +760,7 @@
     {
       "seed": 9,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 40288.54566211799,
       "cost": 28669.353726553545,
       "hits": 25,
@@ -695,6 +770,7 @@
     {
       "seed": 9,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 16805.50039251944,
       "cost": 20420.783962168833,
       "hits": 1186,
@@ -704,6 +780,7 @@
     {
       "seed": 9,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 40153.190489472356,
       "cost": 28669.353726553545,
       "hits": 32,
@@ -713,6 +790,7 @@
     {
       "seed": 9,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 39420.96833933473,
       "cost": 20143.67663958763,
       "hits": 57,
@@ -722,6 +800,7 @@
     {
       "seed": 9,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 16589.826785600446,
       "cost": 4046.9899579503817,
       "hits": 1205,
@@ -731,6 +810,7 @@
     {
       "seed": 9,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 39814.927901463525,
       "cost": 20948.817464670632,
       "hits": 48,
@@ -740,6 +820,7 @@
     {
       "seed": 10,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 26444.917706549073,
       "cost": 26083.524562024002,
       "hits": 710,
@@ -749,6 +830,7 @@
     {
       "seed": 10,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 26263.942548038965,
       "cost": 32064.797463271076,
       "hits": 710,
@@ -758,6 +840,7 @@
     {
       "seed": 10,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 35863.4581064423,
       "cost": 28452.969915081983,
       "hits": 257,
@@ -767,6 +850,7 @@
     {
       "seed": 10,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 21658.651616750278,
       "cost": 24788.271079854072,
       "hits": 942,
@@ -776,6 +860,7 @@
     {
       "seed": 10,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 35548.38822487222,
       "cost": 28559.32439959404,
       "hits": 269,
@@ -785,6 +870,7 @@
     {
       "seed": 10,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 35630.19094750761,
       "cost": 10649.207298844496,
       "hits": 284,
@@ -794,6 +880,7 @@
     {
       "seed": 10,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 22074.49668464754,
       "cost": 4325.075195119516,
       "hits": 946,
@@ -803,6 +890,7 @@
     {
       "seed": 10,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 34968.9410201679,
       "cost": 16184.748341002783,
       "hits": 311,
@@ -812,6 +900,7 @@
     {
       "seed": 11,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 29623.861907765422,
       "cost": 26064.548491981623,
       "hits": 563,
@@ -821,6 +910,7 @@
     {
       "seed": 11,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 29083.56648374864,
       "cost": 34999.56351907014,
       "hits": 586,
@@ -830,6 +920,7 @@
     {
       "seed": 11,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 39066.58120472233,
       "cost": 30677.868410503444,
       "hits": 105,
@@ -839,6 +930,7 @@
     {
       "seed": 11,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 31562.925233249585,
       "cost": 27175.219585258557,
       "hits": 477,
@@ -848,6 +940,7 @@
     {
       "seed": 11,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 39037.342983276416,
       "cost": 30677.868410503444,
       "hits": 107,
@@ -857,6 +950,7 @@
     {
       "seed": 11,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 39702.81216866494,
       "cost": 14225.410610603132,
       "hits": 92,
@@ -866,6 +960,7 @@
     {
       "seed": 11,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 31989.08093545699,
       "cost": 7327.658546666732,
       "hits": 465,
@@ -875,6 +970,7 @@
     {
       "seed": 11,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 39131.53835484385,
       "cost": 18838.047871826257,
       "hits": 106,
@@ -884,6 +980,7 @@
     {
       "seed": 12,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 29366.66282937812,
       "cost": 29274.80708424323,
       "hits": 586,
@@ -893,6 +990,7 @@
     {
       "seed": 12,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 30731.286683930943,
       "cost": 37427.44752521134,
       "hits": 519,
@@ -902,6 +1000,7 @@
     {
       "seed": 12,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 41499.084780121346,
       "cost": 35336.24185510441,
       "hits": 2,
@@ -911,6 +1010,7 @@
     {
       "seed": 12,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 24998.514971927958,
       "cost": 30211.645870349912,
       "hits": 801,
@@ -920,6 +1020,7 @@
     {
       "seed": 12,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 41499.084780121346,
       "cost": 35336.24185510441,
       "hits": 2,
@@ -929,6 +1030,7 @@
     {
       "seed": 12,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 41258.828525069664,
       "cost": 16442.637802543715,
       "hits": 4,
@@ -938,6 +1040,7 @@
     {
       "seed": 12,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 24095.94119513091,
       "cost": 6530.129002799,
       "hits": 844,
@@ -947,6 +1050,7 @@
     {
       "seed": 12,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 41495.090287582185,
       "cost": 20720.450960191745,
       "hits": 2,
@@ -956,6 +1060,7 @@
     {
       "seed": 13,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 32876.62669667945,
       "cost": 27858.67322360998,
       "hits": 417,
@@ -965,6 +1070,7 @@
     {
       "seed": 13,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 32893.21733464346,
       "cost": 33675.41766201248,
       "hits": 410,
@@ -974,6 +1080,7 @@
     {
       "seed": 13,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 41428.908258049996,
       "cost": 32162.65717441062,
       "hits": 1,
@@ -983,6 +1090,7 @@
     {
       "seed": 13,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 37877.42683642793,
       "cost": 30294.92609696431,
       "hits": 179,
@@ -992,6 +1100,7 @@
     {
       "seed": 13,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 41428.908258049996,
       "cost": 32162.65717441062,
       "hits": 1,
@@ -1001,6 +1110,7 @@
     {
       "seed": 13,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 41637.12495516039,
       "cost": 13876.677801989417,
       "hits": 2,
@@ -1010,6 +1120,7 @@
     {
       "seed": 13,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 36572.27847881592,
       "cost": 9749.366723262578,
       "hits": 248,
@@ -1019,6 +1130,7 @@
     {
       "seed": 13,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 41257.39933741329,
       "cost": 19913.000806533008,
       "hits": 11,
@@ -1028,6 +1140,7 @@
     {
       "seed": 14,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 34926.73570679226,
       "cost": 30421.446806483775,
       "hits": 289,
@@ -1037,6 +1150,7 @@
     {
       "seed": 14,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 33860.76403447497,
       "cost": 40506.71119453271,
       "hits": 335,
@@ -1046,6 +1160,7 @@
     {
       "seed": 14,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 38882.343258322355,
       "cost": 33013.15707266081,
       "hits": 79,
@@ -1055,6 +1170,7 @@
     {
       "seed": 14,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 35083.97359950049,
       "cost": 30781.05052879151,
       "hits": 261,
@@ -1064,6 +1180,7 @@
     {
       "seed": 14,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 38690.217131471094,
       "cost": 32189.681598978583,
       "hits": 90,
@@ -1073,6 +1190,7 @@
     {
       "seed": 14,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 38630.48151637598,
       "cost": 12610.058644166778,
       "hits": 154,
@@ -1082,6 +1200,7 @@
     {
       "seed": 14,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 36088.75554900391,
       "cost": 9746.746060817768,
       "hits": 275,
@@ -1091,6 +1210,7 @@
     {
       "seed": 14,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 38544.81484616362,
       "cost": 17360.645285813145,
       "hits": 152,
@@ -1100,6 +1220,7 @@
     {
       "seed": 15,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 31878.786814947453,
       "cost": 29035.313807435203,
       "hits": 427,
@@ -1109,6 +1230,7 @@
     {
       "seed": 15,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 32844.12815310041,
       "cost": 34337.834210021094,
       "hits": 371,
@@ -1118,6 +1240,7 @@
     {
       "seed": 15,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 39643.793354648835,
       "cost": 32376.01340731417,
       "hits": 35,
@@ -1127,6 +1250,7 @@
     {
       "seed": 15,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 36390.149656844806,
       "cost": 30880.94336949312,
       "hits": 196,
@@ -1136,6 +1260,7 @@
     {
       "seed": 15,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 38525.67498378869,
       "cost": 31795.6938344147,
       "hits": 93,
@@ -1145,6 +1270,7 @@
     {
       "seed": 15,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 38670.0999462449,
       "cost": 14108.445158385704,
       "hits": 87,
@@ -1154,6 +1280,7 @@
     {
       "seed": 15,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 36222.109914761895,
       "cost": 9476.207289299908,
       "hits": 204,
@@ -1163,6 +1290,7 @@
     {
       "seed": 15,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 37909.33944537175,
       "cost": 21584.051278347546,
       "hits": 120,
@@ -1172,6 +1300,7 @@
     {
       "seed": 16,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 29595.18060239275,
       "cost": 29131.64557166843,
       "hits": 570,
@@ -1181,6 +1310,7 @@
     {
       "seed": 16,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 31941.240451867503,
       "cost": 35961.774548934816,
       "hits": 452,
@@ -1190,6 +1320,7 @@
     {
       "seed": 16,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 38024.55422235142,
       "cost": 33398.398025524184,
       "hits": 164,
@@ -1199,6 +1330,7 @@
     {
       "seed": 16,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 22003.546224757345,
       "cost": 27982.299029043483,
       "hits": 937,
@@ -1208,6 +1340,7 @@
     {
       "seed": 16,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 37952.742444790914,
       "cost": 33398.398025524184,
       "hits": 167,
@@ -1217,6 +1350,7 @@
     {
       "seed": 16,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 38708.12529151769,
       "cost": 10036.008854195657,
       "hits": 143,
@@ -1226,6 +1360,7 @@
     {
       "seed": 16,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 21570.16152051931,
       "cost": 1448.6199335680003,
       "hits": 970,
@@ -1235,6 +1370,7 @@
     {
       "seed": 16,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 38539.54124869369,
       "cost": 14986.030523292256,
       "hits": 145,
@@ -1244,6 +1380,7 @@
     {
       "seed": 17,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 31945.35641897304,
       "cost": 26223.94867351012,
       "hits": 430,
@@ -1253,6 +1390,7 @@
     {
       "seed": 17,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 31342.27784058665,
       "cost": 30196.025012130274,
       "hits": 453,
@@ -1262,6 +1400,7 @@
     {
       "seed": 17,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 35556.00605578133,
       "cost": 29220.84191838318,
       "hits": 255,
@@ -1271,6 +1410,7 @@
     {
       "seed": 17,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 22162.959846023725,
       "cost": 24766.680312084412,
       "hits": 918,
@@ -1280,6 +1420,7 @@
     {
       "seed": 17,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 34907.64846630834,
       "cost": 28814.617168685705,
       "hits": 286,
@@ -1289,6 +1430,7 @@
     {
       "seed": 17,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 35798.8442973006,
       "cost": 11836.769522613256,
       "hits": 246,
@@ -1298,6 +1440,7 @@
     {
       "seed": 17,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 21965.606494065978,
       "cost": 4839.716196663454,
       "hits": 946,
@@ -1307,6 +1450,7 @@
     {
       "seed": 17,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 34292.32406776407,
       "cost": 14697.447519857535,
       "hits": 329,
@@ -1316,6 +1460,7 @@
     {
       "seed": 18,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 35492.5126225368,
       "cost": 25861.094072854165,
       "hits": 282,
@@ -1325,6 +1470,7 @@
     {
       "seed": 18,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 35272.55293198261,
       "cost": 34396.15382910513,
       "hits": 288,
@@ -1334,6 +1480,7 @@
     {
       "seed": 18,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 41336.033288482286,
       "cost": 30937.64503165001,
       "hits": 1,
@@ -1343,6 +1490,7 @@
     {
       "seed": 18,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 33978.69921438565,
       "cost": 27132.015978790052,
       "hits": 363,
@@ -1352,6 +1500,7 @@
     {
       "seed": 18,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 41336.033288482286,
       "cost": 30937.64503165001,
       "hits": 1,
@@ -1361,6 +1510,7 @@
     {
       "seed": 18,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 41825.34026136823,
       "cost": 13972.345017454782,
       "hits": 0,
@@ -1370,6 +1520,7 @@
     {
       "seed": 18,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 34162.41836922566,
       "cost": 5697.812894922744,
       "hits": 367,
@@ -1379,6 +1530,7 @@
     {
       "seed": 18,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 41477.035533363785,
       "cost": 21085.17315327098,
       "hits": 0,
@@ -1388,6 +1540,7 @@
     {
       "seed": 19,
       "variant": "online_drl",
+      "repair_mode": "landlord",
       "latency": 35136.602545489855,
       "cost": 28401.44665676226,
       "hits": 297,
@@ -1397,6 +1550,7 @@
     {
       "seed": 19,
       "variant": "r3_only",
+      "repair_mode": "landlord",
       "latency": 34405.87151960757,
       "cost": 35982.09302642647,
       "hits": 327,
@@ -1406,6 +1560,7 @@
     {
       "seed": 19,
       "variant": "r1r2_landlord",
+      "repair_mode": "landlord",
       "latency": 41282.74810375019,
       "cost": 30585.519847335825,
       "hits": 1,
@@ -1415,6 +1570,7 @@
     {
       "seed": 19,
       "variant": "r1r2_stateless",
+      "repair_mode": "stateless",
       "latency": 34977.6842995487,
       "cost": 27788.816963543126,
       "hits": 306,
@@ -1424,6 +1580,7 @@
     {
       "seed": 19,
       "variant": "r1r2_topup",
+      "repair_mode": "landlord",
       "latency": 40988.6149602141,
       "cost": 30585.519847335825,
       "hits": 16,
@@ -1433,6 +1590,7 @@
     {
       "seed": 19,
       "variant": "r1r2r3_landlord",
+      "repair_mode": "landlord",
       "latency": 41420.26448025351,
       "cost": 20844.5470716629,
       "hits": 1,
@@ -1442,6 +1600,7 @@
     {
       "seed": 19,
       "variant": "r1r2r3_stateless",
+      "repair_mode": "stateless",
       "latency": 34043.36218150347,
       "cost": 3896.886001626987,
       "hits": 372,
@@ -1451,6 +1610,7 @@
     {
       "seed": 19,
       "variant": "r1r2r3_topup",
+      "repair_mode": "landlord",
       "latency": 41107.06808053941,
       "cost": 27007.59349064475,
       "hits": 14,

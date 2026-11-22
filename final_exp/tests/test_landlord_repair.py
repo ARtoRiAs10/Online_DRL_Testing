@@ -87,6 +87,27 @@ def test_landlord_repair_hybrid_mode_is_feasible():
     assert is_feasible(y, A, b)
 
 
+def test_landlord_variants_actually_change_the_eviction_path():
+    """The three eviction rules must not be aliases of each other."""
+    A = np.array([
+        [1.0, 1.0, 1.0, 1.0],
+        [0.6, 0.6, 0.1, 0.1],
+        [0.1, 0.1, 0.6, 0.6],
+        [0.1, 0.1, 0.1, 0.1],
+    ])
+    b = np.array([2.0, 1.0, 1.0, 1.0])
+    M = np.ones(4)
+    p = np.array([0.9, 0.9, 0.1, 0.1])
+    x = np.array([True, True, True, False])
+    outputs = {}
+    for mode in ("deficit", "popularity", "hybrid"):
+        y = landlord_repair(x.copy(), p, A, b, M, np.zeros(4),
+                            evict_mode=mode, pop_weight=0.5)
+        outputs[mode] = tuple(y.astype(int))
+    assert len(set(outputs.values())) > 1, outputs
+    assert outputs["deficit"] != outputs["popularity"]
+
+
 def test_landlord_repair_in_place():
     A, b, M = random_problem(np.random.default_rng(1))
     N = A.shape[1]

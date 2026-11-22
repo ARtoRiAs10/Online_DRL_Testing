@@ -34,6 +34,7 @@ for D, disk_scale in CONFIGS:
                    download_time_mode="ema") for s in range(seeds)]
     row = dict(
         D=D, disk_scale=disk_scale, n_services=int(cat.N), n_requests=int(len(tr)), C=int(C),
+        repair_mode="landlord", download_time_mode="ema", charge_churn="none",
         frac_M_lt_l=frac_cross,
         det_lat=float(det.latency), det_cost=float(det.cost), det_hits=int(det.hits),
         ll_lat=float(ll.latency), ll_cost=float(ll.cost), ll_hits=int(ll.hits),

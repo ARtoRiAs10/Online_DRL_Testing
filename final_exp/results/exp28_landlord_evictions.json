@@ -1,0 +1,239 @@
+{
+  "config": {
+    "N": 20,
+    "T": 2000,
+    "K": 4,
+    "C": 12,
+    "seeds": 5
+  },
+  "rows": [
+    {
+      "seed": 0,
+      "repair_mode": "landlord",
+      "latency": 41016.362762534154,
+      "cost": 16058.86211174671,
+      "hits": 35,
+      "util_max": 0.030866586392516177,
+      "repair_evictions": 6300,
+      "evicted_p_mean": 0.5117295428067805,
+      "evicted_p_max": 1.0,
+      "evicted_top1_fraction": 0.11936507936507937,
+      "mean_repair_evicted_fraction": 0.059033333333333333,
+      "det_latency": 29332.9822478213,
+      "det_cost": 29106.461372035403
+    },
+    {
+      "seed": 0,
+      "repair_mode": "stateless",
+      "latency": 24922.028819967945,
+      "cost": 9904.88154397337,
+      "hits": 805,
+      "util_max": 0.46309690100918066,
+      "repair_evictions": 5165,
+      "evicted_p_mean": 0.1689779359516198,
+      "evicted_p_max": 0.5618737819536431,
+      "evicted_top1_fraction": 0.0,
+      "mean_repair_evicted_fraction": 0.045450000000000004,
+      "det_latency": 29332.9822478213,
+      "det_cost": 29106.461372035403
+    },
+    {
+      "seed": 1,
+      "repair_mode": "landlord",
+      "latency": 39646.58842586247,
+      "cost": 14568.745316304237,
+      "hits": 77,
+      "util_max": 0.06395980935386938,
+      "repair_evictions": 2969,
+      "evicted_p_mean": 0.8120289512702094,
+      "evicted_p_max": 1.0,
+      "evicted_top1_fraction": 0.24486359043448971,
+      "mean_repair_evicted_fraction": 0.10518333333333334,
+      "det_latency": 34641.30625196511,
+      "det_cost": 29232.24205013036
+    },
+    {
+      "seed": 1,
+      "repair_mode": "stateless",
+      "latency": 27855.989060116306,
+      "cost": 5208.336054345882,
+      "hits": 658,
+      "util_max": 0.5029061947797068,
+      "repair_evictions": 2632,
+      "evicted_p_mean": 0.5719290217100539,
+      "evicted_p_max": 1.0,
+      "evicted_top1_fraction": 0.09422492401215805,
+      "mean_repair_evicted_fraction": 0.09173333333333335,
+      "det_latency": 34641.30625196511,
+      "det_cost": 29232.24205013036
+    },
+    {
+      "seed": 2,
+      "repair_mode": "landlord",
+      "latency": 40542.17866808969,
+      "cost": 18845.898342045413,
+      "hits": 29,
+      "util_max": 0.018098349295769308,
+      "repair_evictions": 7082,
+      "evicted_p_mean": 0.7413201644328224,
+      "evicted_p_max": 1.0,
+      "evicted_top1_fraction": 0.12256424738774357,
+      "mean_repair_evicted_fraction": 0.30621785714285715,
+      "det_latency": 26997.144042681295,
+      "det_cost": 26240.775888377535
+    },
+    {
+      "seed": 2,
+      "repair_mode": "stateless",
+      "latency": 22027.20182961848,
+      "cost": 5946.265111805624,
+      "hits": 942,
+      "util_max": 0.6673836308424392,
+      "repair_evictions": 4765,
+      "evicted_p_mean": 0.3055348431070312,
+      "evicted_p_max": 0.8618032641831039,
+      "evicted_top1_fraction": 0.0,
+      "mean_repair_evicted_fraction": 0.21317261904761906,
+      "det_latency": 26997.144042681295,
+      "det_cost": 26240.775888377535
+    },
+    {
+      "seed": 3,
+      "repair_mode": "landlord",
+      "latency": 40187.95341212623,
+      "cost": 15506.204302390783,
+      "hits": 59,
+      "util_max": 0.039982573700501706,
+      "repair_evictions": 4691,
+      "evicted_p_mean": 0.761309700651504,
+      "evicted_p_max": 1.0,
+      "evicted_top1_fraction": 0.24259219782562352,
+      "mean_repair_evicted_fraction": 0.15273690476190477,
+      "det_latency": 34536.4399329172,
+      "det_cost": 27405.039066451074
+    },
+    {
+      "seed": 3,
+      "repair_mode": "stateless",
+      "latency": 30994.997117568026,
+      "cost": 8176.092013615093,
+      "hits": 501,
+      "util_max": 0.38111964503831736,
+      "repair_evictions": 4471,
+      "evicted_p_mean": 0.5344324965730165,
+      "evicted_p_max": 1.0,
+      "evicted_top1_fraction": 0.2565421605904719,
+      "mean_repair_evicted_fraction": 0.14528452380952384,
+      "det_latency": 34536.4399329172,
+      "det_cost": 27405.039066451074
+    },
+    {
+      "seed": 4,
+      "repair_mode": "landlord",
+      "latency": 36963.07146059199,
+      "cost": 9765.292717542037,
+      "hits": 207,
+      "util_max": 0.19144579277534537,
+      "repair_evictions": 4150,
+      "evicted_p_mean": 0.8268972758024505,
+      "evicted_p_max": 1.0,
+      "evicted_top1_fraction": 0.5520481927710843,
+      "mean_repair_evicted_fraction": 0.05661666666666666,
+      "det_latency": 35482.7041506199,
+      "det_cost": 28552.025319947974
+    },
+    {
+      "seed": 4,
+      "repair_mode": "stateless",
+      "latency": 29040.198276144947,
+      "cost": 5150.340707465648,
+      "hits": 604,
+      "util_max": 0.6057020287231301,
+      "repair_evictions": 3297,
+      "evicted_p_mean": 0.5533240223953022,
+      "evicted_p_max": 1.0,
+      "evicted_top1_fraction": 0.01880497421898696,
+      "mean_repair_evicted_fraction": 0.05399166666666666,
+      "det_latency": 35482.7041506199,
+      "det_cost": 28552.025319947974
+    }
+  ],
+  "summary": {
+    "landlord": {
+      "latency": [
+        39671.23094584091,
+        1426.1603484650218
+      ],
+      "cost": [
+        14949.000558005839,
+        2957.8202124067207
+      ],
+      "hits": [
+        81.4,
+        65.10791042569251
+      ],
+      "util_max": [
+        0.06887062230360039,
+        0.06309586088486675
+      ],
+      "repair_evictions": [
+        5038.4,
+        1480.560245312564
+      ],
+      "evicted_p_mean": [
+        0.7306571269927533,
+        0.11390005073397774
+      ],
+      "evicted_p_max": [
+        1.0,
+        0.0
+      ],
+      "evicted_top1_fraction": [
+        0.25628666155680413,
+        0.15774797111725572
+      ],
+      "mean_repair_evicted_fraction": [
+        0.13595761904761905,
+        0.09211892555161823
+      ]
+    },
+    "stateless": {
+      "latency": [
+        26968.083020683145,
+        3159.009991973767
+      ],
+      "cost": [
+        6877.1830862411225,
+        1870.1746252526052
+      ],
+      "hits": [
+        702.0,
+        155.01612819316577
+      ],
+      "util_max": [
+        0.5240416800785548,
+        0.101787042715883
+      ],
+      "repair_evictions": [
+        4066.0,
+        949.5413629747785
+      ],
+      "evicted_p_mean": [
+        0.4268396639474047,
+        0.16114152948538402
+      ],
+      "evicted_p_max": [
+        0.8847354092273495,
+        0.17007250883086059
+      ],
+      "evicted_top1_fraction": [
+        0.07391441176432338,
+        0.09770275552774492
+      ],
+      "mean_repair_evicted_fraction": [
+        0.10992642857142858,
+        0.06249298663325887
+      ]
+    }
+  }
+}
