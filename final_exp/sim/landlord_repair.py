@@ -60,7 +60,7 @@ def is_feasible(x, A, b, tol=1e-9):
 
 
 def landlord_repair(x, p, A, b, M, credit, tol=1e-9, max_passes=None,
-                    stats=None):
+                    stats=None, evict_mode="deficit", pop_weight=0.0):
     """Repair a binary cache realization with the stateful Landlord rule.
 
     Parameters
@@ -87,6 +87,12 @@ def landlord_repair(x, p, A, b, M, credit, tol=1e-9, max_passes=None,
         most ``N``; the default is ``N + 1``.
     stats : dict | None
         Optional dictionary updated with ``rent_rounds``, ``evictions`` and ``passes``.
+    evict_mode : str
+        ``"deficit"`` (default): Algorithm 3's smallest-residual-overflow rule.
+        ``"popularity"``: among bankrupt services, evict the least popular ``p_f`` first.
+        ``"hybrid"``: minimize ``D_f - pop_weight * p_f`` (protect popular services).
+    pop_weight : float
+        Weight of the popularity term in the ``"hybrid"`` mode.
 
     Returns
     -------
@@ -150,9 +156,17 @@ def landlord_repair(x, p, A, b, M, credit, tol=1e-9, max_passes=None,
             # reduces the count by one, hence the `def_0 - 1` term.
             D = np.maximum(0.0, def_r[1:, None] - A[1:, E]).sum(axis=0)
             D = D + max(0.0, float(def_r[0]) - 1.0)
-            prio = p[E] / w[E]
-            # np.lexsort uses the LAST key as the primary key: D primary, prio secondary.
-            f_star = int(E[np.lexsort((prio, D))[0]])
+            if evict_mode == "popularity":
+                # Protect popular services: evict the least popular bankrupt service first.
+                f_star = int(E[np.argmin(p[E])])
+            elif evict_mode == "hybrid":
+                # Deficit reduction minus a popularity reward.
+                score = D - float(pop_weight) * p[E]
+                f_star = int(E[np.argmin(score)])
+            else:
+                prio = p[E] / w[E]
+                # np.lexsort uses the LAST key as the primary key: D primary, prio secondary.
+                f_star = int(E[np.lexsort((prio, D))[0]])
             x[f_star] = False
             credit[f_star] = 0.0
             E = E[E != f_star]

@@ -95,7 +95,7 @@ for mult in (1, 4, 16, 64):
         f"eta x{mult:g}", eta=base_eta * mult, repair_mode="landlord", gate_downloads=True))
 
 print("\n[2] repair ablation (gate off, to isolate repair)")
-for mode in ("none", "stateless", "landlord"):
+for mode in ("none", "stateless", "landlord", "landlord_pop", "landlord_hybrid"):
     out["repair_ablation"].append(run_one(
         f"repair={mode}", repair_mode=mode, gate_downloads=False))
 

@@ -45,7 +45,7 @@ class FracPolicy(Policy):
                  grad_mode="realized", q_ema_alpha=0.1, proj_mode="full",
                  rounding_mode="all", refresh_every=8, proj_tol=1e-7, proj_skip_tol=0.0,
                  repair_mode=None, log_steps=False, topup=False, store_p=False,
-                 lazy=False):
+                 lazy=False, repair_pop_weight=0.1):
         self.cat, self.C, self.rng, self.K = cat, C, rng, K
         N = cat.N
         rows = cat.a.T if A_rows is None else np.atleast_2d(A_rows)
@@ -68,6 +68,7 @@ class FracPolicy(Policy):
         self.repair = repair_mode not in (None, "none", False)
         self.log_steps, self.topup, self.store_p = log_steps, topup, store_p
         self.lazy = lazy
+        self.repair_pop_weight = float(repair_pop_weight)
         self.popularity_rank = None
         self.eta_user, self.proj = eta, proj
         self.peek, self.resample_every, self.gate, self.record = peek, resample_every, gate_downloads, record
@@ -215,8 +216,14 @@ class FracPolicy(Policy):
         its download cost as credit and a service that leaves the path loses it.
         """
         before = int(self.S[k].sum())
+        evict_mode = {
+            "landlord": "deficit",
+            "landlord_pop": "popularity",
+            "landlord_hybrid": "hybrid",
+        }.get(self.repair_mode, "deficit")
         landlord_repair(self.S[k], self.p, self.A_raw, self.b_raw, self.cat.M,
-                        self.credit[k], tol=1e-9, stats=self.landlord_stats)
+                        self.credit[k], tol=1e-9, stats=self.landlord_stats,
+                        evict_mode=evict_mode, pop_weight=self.repair_pop_weight)
         after = int(self.S[k].sum())
         if was_violation:
             self.st["repairs"] += 1
@@ -267,7 +274,7 @@ class FracPolicy(Policy):
         viol = bool((self.S[k] @ self.An.T > 1 + 1e-9).any())
         if viol:
             self.st["raw_violations"] += 1
-        if self.repair_mode == "landlord":
+        if self.repair_mode in ("landlord", "landlord_pop", "landlord_hybrid"):
             # Always run Step 0 (credit synchronization); repair only if needed.
             self._landlord_repair_row(k, was_violation=viol)
         elif self.repair and viol:

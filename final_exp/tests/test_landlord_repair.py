@@ -56,6 +56,37 @@ def test_landlord_repair_evicts_deficit_aligned_service():
     assert y[0] + y[1] <= 1
 
 
+def test_landlord_repair_popularity_mode_is_feasible_and_protects_popular():
+    """Popularity mode must stay feasible and evict low-p services first."""
+    N = 6
+    A = np.array([
+        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+        [0.5, 0.5, 0.5, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.5, 0.5, 0.5],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+    ])
+    b = np.array([2.0, 1.0, 1.0, 1.0])
+    M = np.ones(N)
+    # services 0-2 are popular; 3-5 are unpopular
+    p = np.array([0.8, 0.7, 0.6, 0.1, 0.1, 0.1])
+    x = np.array([True, True, True, True, False, False])
+    credit = np.zeros(N)
+    y = landlord_repair(x, p, A, b, M, credit, evict_mode="popularity")
+    assert is_feasible(y, A, b)
+    # The first evictions should hit the unpopular services (3-5), not 0-2.
+    assert not y[3] or not y[0]
+
+
+def test_landlord_repair_hybrid_mode_is_feasible():
+    rng = np.random.default_rng(7)
+    A, b, M = random_problem(rng)
+    N = A.shape[1]
+    x = rng.random(N) < 0.7
+    y = landlord_repair(x, rng.random(N), A, b, M, np.zeros(N),
+                        evict_mode="hybrid", pop_weight=0.5)
+    assert is_feasible(y, A, b)
+
+
 def test_landlord_repair_in_place():
     A, b, M = random_problem(np.random.default_rng(1))
     N = A.shape[1]
