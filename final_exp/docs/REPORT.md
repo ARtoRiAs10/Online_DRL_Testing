@@ -340,6 +340,38 @@ The comparator LP is non-trivial once `M_n` and `l_n` are comparable (`D=10000` 
 
 The bundled traces cross from `M_n < l_n` for every service to a regime where downloads are more expensive than forwarding.  The randomized DRL buys cost reduction when downloads are cheap and loses latency when they are expensive.
 
+## 23. Phase-4 EMA/churn/lazy comparison
+
+| variant | latency | cost | hits | churn credit | zeta_dl | Δlat | Δcost |
+|---|---|---|---|---|---|---|---|
+| base | 17513 | 4249 | 82 | 0 | 13.30 | +0 ±0 | +0 ±0 |
+| dl_ema | 17513 | 4249 | 82 | 0 | 13.28 | +0 ±0 | +0 ±0 |
+| churn_all | 20780 | 159 | 7 | 155,569 | 12.37 | +3267 ±531 | -4090 ±586 |
+| lazy | 17648 | 4197 | 77 | 0 | 13.54 | +134 ±183 | -52 ±122 |
+| dl_ema_lazy | 17648 | 4197 | 77 | 0 | 13.56 | +134 ±183 | -52 ±122 |
+| dl_ema_churn_lazy | 20778 | 159 | 8 | 158,669 | 11.83 | +3264 ±531 | -4090 ±586 |
+
+The download-time EMA leaves latency/cost unchanged on stationary synthetic traffic but lowers the measured download-time bias.  Charging every 0→1 transition is very conservative: cost drops from 4,249 to 159, hits from 82 to 7, and latency rises by about 3,267.
+
+## 24. EMA tracking under drift
+
+| sigma, drift | best empirical alpha | empirical RMSE | theory alpha | theory error |
+|---|---|---|---|---|
+| sigma=0.5,drift=0.0 | 0.01 | 0.035 | 1.000 | 0.500 |
+| sigma=0.5,drift=0.01 | 0.10 | 0.146 | 0.117 | 0.256 |
+| sigma=0.5,drift=0.1 | 0.30 | 0.314 | 0.543 | 0.553 |
+| sigma=0.5,drift=1.0 | 1.00 | 0.500 | 2.520 | 1.191 |
+| sigma=1.0,drift=0.0 | 0.01 | 0.070 | 1.000 | 1.000 |
+| sigma=1.0,drift=0.01 | 0.10 | 0.247 | 0.074 | 0.407 |
+| sigma=1.0,drift=0.1 | 0.30 | 0.481 | 0.342 | 0.877 |
+| sigma=1.0,drift=1.0 | 1.00 | 1.000 | 1.587 | 1.890 |
+| sigma=2.0,drift=0.0 | 0.01 | 0.140 | 1.000 | 2.000 |
+| sigma=2.0,drift=0.01 | 0.03 | 0.408 | 0.046 | 0.646 |
+| sigma=2.0,drift=0.1 | 0.30 | 0.872 | 0.215 | 1.392 |
+| sigma=2.0,drift=1.0 | 1.00 | 1.999 | 1.000 | 3.000 |
+
+The empirical trend matches the first-order expression `drift/alpha + sqrt(alpha)*sigma`: the optimal alpha grows with drift and shrinks with noise.  The constants differ because the expression is an upper bound, not an equality.
+
 ## Summary: confirmed / refuted / not testable
 
 | # | claim | verdict | evidence |

@@ -1,0 +1,1359 @@
+{
+  "config": {
+    "N": 20,
+    "T": 1000,
+    "K": 4,
+    "C": 12,
+    "seeds": 10,
+    "variants": {
+      "base": {
+        "download_time_mode": "half",
+        "charge_churn": "none",
+        "lazy": false
+      },
+      "dl_ema": {
+        "download_time_mode": "ema",
+        "charge_churn": "none",
+        "lazy": false
+      },
+      "churn_all": {
+        "download_time_mode": "half",
+        "charge_churn": "all",
+        "lazy": false
+      },
+      "lazy": {
+        "download_time_mode": "half",
+        "charge_churn": "none",
+        "lazy": true
+      },
+      "dl_ema_lazy": {
+        "download_time_mode": "ema",
+        "charge_churn": "none",
+        "lazy": true
+      },
+      "dl_ema_churn_lazy": {
+        "download_time_mode": "ema",
+        "charge_churn": "all",
+        "lazy": true
+      }
+    }
+  },
+  "rows": [
+    {
+      "seed": 0,
+      "variant": "base",
+      "latency": 18415.984013409583,
+      "cost": 5129.267776396938,
+      "hits": 76,
+      "downloads": 67,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.27543540235017133,
+      "zeta_dl_hat": 20.543822767159845,
+      "zeta_hat": 20.819258169510018,
+      "mean_dl_ema": 37.774438466168526,
+      "det_latency": 12892.17770738612,
+      "det_cost": 8416.354743139234
+    },
+    {
+      "seed": 0,
+      "variant": "dl_ema",
+      "latency": 18415.984013409583,
+      "cost": 5129.267776396938,
+      "hits": 76,
+      "downloads": 67,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.27543540235017133,
+      "zeta_dl_hat": 20.51961811916511,
+      "zeta_hat": 20.795053521515282,
+      "mean_dl_ema": 35.772384731285456,
+      "det_latency": 12892.17770738612,
+      "det_cost": 8416.354743139234
+    },
+    {
+      "seed": 0,
+      "variant": "churn_all",
+      "latency": 20874.250987378426,
+      "cost": 157.98925406342656,
+      "hits": 3,
+      "downloads": 2,
+      "churn_credit": 222978.68903412367,
+      "churn_events": 3147,
+      "zeta_q_hat": 0.016664563660066453,
+      "zeta_dl_hat": 22.013597994043188,
+      "zeta_hat": 22.030262557703253,
+      "mean_dl_ema": 37.774438466168526,
+      "det_latency": 12892.17770738612,
+      "det_cost": 8416.354743139234
+    },
+    {
+      "seed": 0,
+      "variant": "lazy",
+      "latency": 18550.02331039639,
+      "cost": 4988.262045749802,
+      "hits": 75,
+      "downloads": 65,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.280700378550176,
+      "zeta_dl_hat": 21.147079431958947,
+      "zeta_hat": 21.427779810509122,
+      "mean_dl_ema": 37.774438466168526,
+      "det_latency": 12892.17770738612,
+      "det_cost": 8416.354743139234
+    },
+    {
+      "seed": 0,
+      "variant": "dl_ema_lazy",
+      "latency": 18550.02331039639,
+      "cost": 4988.262045749802,
+      "hits": 75,
+      "downloads": 65,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.280700378550176,
+      "zeta_dl_hat": 21.2364174337995,
+      "zeta_hat": 21.517117812349674,
+      "mean_dl_ema": 36.98874208073203,
+      "det_latency": 12892.17770738612,
+      "det_cost": 8416.354743139234
+    },
+    {
+      "seed": 0,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 20874.250987378426,
+      "cost": 157.98925406342656,
+      "hits": 3,
+      "downloads": 2,
+      "churn_credit": 224761.26958614474,
+      "churn_events": 3226,
+      "zeta_q_hat": 0.016664563660066453,
+      "zeta_dl_hat": 19.15577797444508,
+      "zeta_hat": 19.172442538105145,
+      "mean_dl_ema": 37.25818694213019,
+      "det_latency": 12892.17770738612,
+      "det_cost": 8416.354743139234
+    },
+    {
+      "seed": 1,
+      "variant": "base",
+      "latency": 16791.803214580083,
+      "cost": 3683.051889875829,
+      "hits": 121,
+      "downloads": 94,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.271166182900833,
+      "zeta_dl_hat": 9.222191527305934,
+      "zeta_hat": 9.493357710206768,
+      "mean_dl_ema": 27.349163113190237,
+      "det_latency": 14146.903773049073,
+      "det_cost": 7727.8700150904115
+    },
+    {
+      "seed": 1,
+      "variant": "dl_ema",
+      "latency": 16791.803214580083,
+      "cost": 3683.051889875829,
+      "hits": 121,
+      "downloads": 94,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.271166182900833,
+      "zeta_dl_hat": 9.339904307316667,
+      "zeta_hat": 9.6110704902175,
+      "mean_dl_ema": 27.300262353489707,
+      "det_latency": 14146.903773049073,
+      "det_cost": 7727.8700150904115
+    },
+    {
+      "seed": 1,
+      "variant": "churn_all",
+      "latency": 20556.102028285393,
+      "cost": 226.32812499875408,
+      "hits": 17,
+      "downloads": 6,
+      "churn_credit": 56517.735445703474,
+      "churn_events": 1403,
+      "zeta_q_hat": 0.025194786339177384,
+      "zeta_dl_hat": 7.532346523291959,
+      "zeta_hat": 7.557541309631136,
+      "mean_dl_ema": 27.349163113190237,
+      "det_latency": 14146.903773049073,
+      "det_cost": 7727.8700150904115
+    },
+    {
+      "seed": 1,
+      "variant": "lazy",
+      "latency": 16585.24673737902,
+      "cost": 3621.8757023248804,
+      "hits": 133,
+      "downloads": 91,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2787564493821927,
+      "zeta_dl_hat": 9.268641290666226,
+      "zeta_hat": 9.54739774004842,
+      "mean_dl_ema": 27.349163113190237,
+      "det_latency": 14146.903773049073,
+      "det_cost": 7727.8700150904115
+    },
+    {
+      "seed": 1,
+      "variant": "dl_ema_lazy",
+      "latency": 16585.24673737902,
+      "cost": 3621.8757023248804,
+      "hits": 133,
+      "downloads": 91,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2787564493821927,
+      "zeta_dl_hat": 9.45964167707565,
+      "zeta_hat": 9.738398126457843,
+      "mean_dl_ema": 27.67190638531801,
+      "det_latency": 14146.903773049073,
+      "det_cost": 7727.8700150904115
+    },
+    {
+      "seed": 1,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 20430.102028285393,
+      "cost": 226.32812499875408,
+      "hits": 23,
+      "downloads": 6,
+      "churn_credit": 59699.95219467606,
+      "churn_events": 1511,
+      "zeta_q_hat": 0.025194786339177384,
+      "zeta_dl_hat": 7.7235620609224656,
+      "zeta_hat": 7.748756847261643,
+      "mean_dl_ema": 27.38434344815177,
+      "det_latency": 14146.903773049073,
+      "det_cost": 7727.8700150904115
+    },
+    {
+      "seed": 2,
+      "variant": "base",
+      "latency": 18254.978993976867,
+      "cost": 4991.462855215968,
+      "hits": 31,
+      "downloads": 148,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.28757381578038826,
+      "zeta_dl_hat": 15.60600622495939,
+      "zeta_hat": 15.89358004073978,
+      "mean_dl_ema": 31.35038610783039,
+      "det_latency": 12262.508668289107,
+      "det_cost": 7836.023028699155
+    },
+    {
+      "seed": 2,
+      "variant": "dl_ema",
+      "latency": 18254.978993976867,
+      "cost": 4991.462855215968,
+      "hits": 31,
+      "downloads": 148,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.28757381578038826,
+      "zeta_dl_hat": 15.453221496942914,
+      "zeta_hat": 15.740795312723304,
+      "mean_dl_ema": 31.17611260620431,
+      "det_latency": 12262.508668289107,
+      "det_cost": 7836.023028699155
+    },
+    {
+      "seed": 2,
+      "variant": "churn_all",
+      "latency": 20833.467841600068,
+      "cost": 184.54816667375673,
+      "hits": 2,
+      "downloads": 4,
+      "churn_credit": 92893.50483762637,
+      "churn_events": 2769,
+      "zeta_q_hat": 0.025522591381538624,
+      "zeta_dl_hat": 20.96334472073772,
+      "zeta_hat": 20.988867312119257,
+      "mean_dl_ema": 31.35038610783039,
+      "det_latency": 12262.508668289107,
+      "det_cost": 7836.023028699155
+    },
+    {
+      "seed": 2,
+      "variant": "lazy",
+      "latency": 18297.938101652362,
+      "cost": 4700.669091252263,
+      "hits": 39,
+      "downloads": 134,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2820470109397256,
+      "zeta_dl_hat": 15.430680159249953,
+      "zeta_hat": 15.712727170189678,
+      "mean_dl_ema": 31.35038610783039,
+      "det_latency": 12262.508668289107,
+      "det_cost": 7836.023028699155
+    },
+    {
+      "seed": 2,
+      "variant": "dl_ema_lazy",
+      "latency": 18297.938101652362,
+      "cost": 4700.669091252263,
+      "hits": 39,
+      "downloads": 134,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2820470109397256,
+      "zeta_dl_hat": 15.471419433463605,
+      "zeta_hat": 15.753466444403331,
+      "mean_dl_ema": 30.99642637433592,
+      "det_latency": 12262.508668289107,
+      "det_cost": 7836.023028699155
+    },
+    {
+      "seed": 2,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 20831.655921300444,
+      "cost": 184.54816667375673,
+      "hits": 3,
+      "downloads": 4,
+      "churn_credit": 96470.87308308577,
+      "churn_events": 2891,
+      "zeta_q_hat": 0.02604512827080626,
+      "zeta_dl_hat": 20.755088616716815,
+      "zeta_hat": 20.78113374498762,
+      "mean_dl_ema": 31.125904700405208,
+      "det_latency": 12262.508668289107,
+      "det_cost": 7836.023028699155
+    },
+    {
+      "seed": 3,
+      "variant": "base",
+      "latency": 16178.706773979126,
+      "cost": 3963.3603316011686,
+      "hits": 159,
+      "downloads": 78,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.28066002284525005,
+      "zeta_dl_hat": 15.474024087790628,
+      "zeta_hat": 15.754684110635878,
+      "mean_dl_ema": 29.945527859860967,
+      "det_latency": 14537.597773383224,
+      "det_cost": 7747.421411168155
+    },
+    {
+      "seed": 3,
+      "variant": "dl_ema",
+      "latency": 16178.706773979126,
+      "cost": 3963.3603316011686,
+      "hits": 159,
+      "downloads": 78,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.28066002284525005,
+      "zeta_dl_hat": 15.52110693162107,
+      "zeta_hat": 15.80176695446632,
+      "mean_dl_ema": 28.516396491164954,
+      "det_latency": 14537.597773383224,
+      "det_cost": 7747.421411168155
+    },
+    {
+      "seed": 3,
+      "variant": "churn_all",
+      "latency": 20163.32569715816,
+      "cost": 228.82317455480188,
+      "hits": 36,
+      "downloads": 4,
+      "churn_credit": 95216.4884513466,
+      "churn_events": 1736,
+      "zeta_q_hat": 0.03049694011903693,
+      "zeta_dl_hat": 19.21497977617062,
+      "zeta_hat": 19.245476716289655,
+      "mean_dl_ema": 29.945527859860967,
+      "det_latency": 14537.597773383224,
+      "det_cost": 7747.421411168155
+    },
+    {
+      "seed": 3,
+      "variant": "lazy",
+      "latency": 16283.038946985718,
+      "cost": 4006.452660852945,
+      "hits": 148,
+      "downloads": 79,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2846407369127747,
+      "zeta_dl_hat": 15.849834632757537,
+      "zeta_hat": 16.134475369670312,
+      "mean_dl_ema": 29.945527859860967,
+      "det_latency": 14537.597773383224,
+      "det_cost": 7747.421411168155
+    },
+    {
+      "seed": 3,
+      "variant": "dl_ema_lazy",
+      "latency": 16283.038946985718,
+      "cost": 4006.452660852945,
+      "hits": 148,
+      "downloads": 79,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2846407369127747,
+      "zeta_dl_hat": 15.791772318606796,
+      "zeta_hat": 16.07641305551957,
+      "mean_dl_ema": 28.74435100482745,
+      "det_latency": 14537.597773383224,
+      "det_cost": 7747.421411168155
+    },
+    {
+      "seed": 3,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 20247.32569715816,
+      "cost": 228.82317455480188,
+      "hits": 32,
+      "downloads": 4,
+      "churn_credit": 102976.18921927942,
+      "churn_events": 1856,
+      "zeta_q_hat": 0.03049694011903693,
+      "zeta_dl_hat": 19.52713673652223,
+      "zeta_hat": 19.557633676641267,
+      "mean_dl_ema": 29.441487895334042,
+      "det_latency": 14537.597773383224,
+      "det_cost": 7747.421411168155
+    },
+    {
+      "seed": 4,
+      "variant": "base",
+      "latency": 16424.6145228812,
+      "cost": 2059.267887932717,
+      "hits": 169,
+      "downloads": 56,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.1555573560742472,
+      "zeta_dl_hat": 7.372703214427836,
+      "zeta_hat": 7.528260570502083,
+      "mean_dl_ema": 30.484212794454397,
+      "det_latency": 15056.925489883706,
+      "det_cost": 8356.027894687952
+    },
+    {
+      "seed": 4,
+      "variant": "dl_ema",
+      "latency": 16424.6145228812,
+      "cost": 2059.267887932717,
+      "hits": 169,
+      "downloads": 56,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.1555573560742472,
+      "zeta_dl_hat": 7.337677897166003,
+      "zeta_hat": 7.49323525324025,
+      "mean_dl_ema": 29.946653890766065,
+      "det_latency": 15056.925489883706,
+      "det_cost": 8356.027894687952
+    },
+    {
+      "seed": 4,
+      "variant": "churn_all",
+      "latency": 20799.03984130125,
+      "cost": 172.39994854326707,
+      "hits": 7,
+      "downloads": 4,
+      "churn_credit": 102305.64287786424,
+      "churn_events": 1175,
+      "zeta_q_hat": 0.01492130442574349,
+      "zeta_dl_hat": 6.949895831895469,
+      "zeta_hat": 6.964817136321212,
+      "mean_dl_ema": 30.484212794454397,
+      "det_latency": 15056.925489883706,
+      "det_cost": 8356.027894687952
+    },
+    {
+      "seed": 4,
+      "variant": "lazy",
+      "latency": 16918.40440452463,
+      "cost": 1879.1036625382299,
+      "hits": 141,
+      "downloads": 52,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.16554325440745782,
+      "zeta_dl_hat": 7.069108340088694,
+      "zeta_hat": 7.234651594496152,
+      "mean_dl_ema": 30.484212794454397,
+      "det_latency": 15056.925489883706,
+      "det_cost": 8356.027894687952
+    },
+    {
+      "seed": 4,
+      "variant": "dl_ema_lazy",
+      "latency": 16918.40440452463,
+      "cost": 1879.1036625382299,
+      "hits": 141,
+      "downloads": 52,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.16554325440745782,
+      "zeta_dl_hat": 7.2493212374445415,
+      "zeta_hat": 7.414864491852,
+      "mean_dl_ema": 30.44225231134474,
+      "det_latency": 15056.925489883706,
+      "det_cost": 8356.027894687952
+    },
+    {
+      "seed": 4,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 20799.03984130125,
+      "cost": 172.39994854326707,
+      "hits": 7,
+      "downloads": 4,
+      "churn_credit": 101261.15811209695,
+      "churn_events": 1093,
+      "zeta_q_hat": 0.01492130442574349,
+      "zeta_dl_hat": 6.72730136813891,
+      "zeta_hat": 6.742222672564654,
+      "mean_dl_ema": 30.28560589940658,
+      "det_latency": 15056.925489883706,
+      "det_cost": 8356.027894687952
+    },
+    {
+      "seed": 5,
+      "variant": "base",
+      "latency": 17995.369316510412,
+      "cost": 4687.061208195932,
+      "hits": 38,
+      "downloads": 111,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2812536110228369,
+      "zeta_dl_hat": 11.434991763289508,
+      "zeta_hat": 11.716245374312345,
+      "mean_dl_ema": 31.226940861632443,
+      "det_latency": 13555.763254906718,
+      "det_cost": 7638.212124051079
+    },
+    {
+      "seed": 5,
+      "variant": "dl_ema",
+      "latency": 17995.369316510412,
+      "cost": 4687.061208195932,
+      "hits": 38,
+      "downloads": 111,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2812536110228369,
+      "zeta_dl_hat": 11.683632049540305,
+      "zeta_hat": 11.964885660563143,
+      "mean_dl_ema": 30.665701524027945,
+      "det_latency": 13555.763254906718,
+      "det_cost": 7638.212124051079
+    },
+    {
+      "seed": 5,
+      "variant": "churn_all",
+      "latency": 20832.51251998644,
+      "cost": 163.88638501601432,
+      "hits": 5,
+      "downloads": 5,
+      "churn_credit": 139708.53751369775,
+      "churn_events": 3004,
+      "zeta_q_hat": 0.021060102365586208,
+      "zeta_dl_hat": 8.743752589709958,
+      "zeta_hat": 8.764812692075544,
+      "mean_dl_ema": 31.226940861632443,
+      "det_latency": 13555.763254906718,
+      "det_cost": 7638.212124051079
+    },
+    {
+      "seed": 5,
+      "variant": "lazy",
+      "latency": 18331.089664823234,
+      "cost": 4951.740494969714,
+      "hits": 29,
+      "downloads": 115,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.27979147939174187,
+      "zeta_dl_hat": 12.783408261441252,
+      "zeta_hat": 13.063199740832994,
+      "mean_dl_ema": 31.226940861632443,
+      "det_latency": 13555.763254906718,
+      "det_cost": 7638.212124051079
+    },
+    {
+      "seed": 5,
+      "variant": "dl_ema_lazy",
+      "latency": 18331.089664823234,
+      "cost": 4951.740494969714,
+      "hits": 29,
+      "downloads": 115,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.27979147939174187,
+      "zeta_dl_hat": 13.000375764809682,
+      "zeta_hat": 13.280167244201424,
+      "mean_dl_ema": 31.243459880168285,
+      "det_latency": 13555.763254906718,
+      "det_cost": 7638.212124051079
+    },
+    {
+      "seed": 5,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 20834.03943892444,
+      "cost": 163.88638501601432,
+      "hits": 5,
+      "downloads": 5,
+      "churn_credit": 146465.84241736267,
+      "churn_events": 3132,
+      "zeta_q_hat": 0.01926010248878854,
+      "zeta_dl_hat": 8.789597613575125,
+      "zeta_hat": 8.808857716063914,
+      "mean_dl_ema": 31.290903741639283,
+      "det_latency": 13555.763254906718,
+      "det_cost": 7638.212124051079
+    },
+    {
+      "seed": 6,
+      "variant": "base",
+      "latency": 19256.346481249602,
+      "cost": 4748.691453779468,
+      "hits": 21,
+      "downloads": 93,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.25698243397388404,
+      "zeta_dl_hat": 19.15040111357248,
+      "zeta_hat": 19.407383547546367,
+      "mean_dl_ema": 30.279428288251943,
+      "det_latency": 12254.470245878982,
+      "det_cost": 7549.954380710978
+    },
+    {
+      "seed": 6,
+      "variant": "dl_ema",
+      "latency": 19256.346481249602,
+      "cost": 4748.691453779468,
+      "hits": 21,
+      "downloads": 93,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.25698243397388404,
+      "zeta_dl_hat": 18.924492753405797,
+      "zeta_hat": 19.181475187379682,
+      "mean_dl_ema": 29.559234536219908,
+      "det_latency": 12254.470245878982,
+      "det_cost": 7549.954380710978
+    },
+    {
+      "seed": 6,
+      "variant": "churn_all",
+      "latency": 21000.0,
+      "cost": 0.0,
+      "hits": 0,
+      "downloads": 0,
+      "churn_credit": 224078.5623695452,
+      "churn_events": 4594,
+      "zeta_q_hat": 0.0,
+      "zeta_dl_hat": 0.0,
+      "zeta_hat": 0.0,
+      "mean_dl_ema": 30.279428288251943,
+      "det_latency": 12254.470245878982,
+      "det_cost": 7549.954380710978
+    },
+    {
+      "seed": 6,
+      "variant": "lazy",
+      "latency": 18889.215318892624,
+      "cost": 4367.788848397665,
+      "hits": 41,
+      "downloads": 83,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.26122348771825915,
+      "zeta_dl_hat": 20.0978976429284,
+      "zeta_hat": 20.35912113064666,
+      "mean_dl_ema": 30.279428288251943,
+      "det_latency": 12254.470245878982,
+      "det_cost": 7549.954380710978
+    },
+    {
+      "seed": 6,
+      "variant": "dl_ema_lazy",
+      "latency": 18889.215318892624,
+      "cost": 4367.788848397665,
+      "hits": 41,
+      "downloads": 83,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.26122348771825915,
+      "zeta_dl_hat": 19.659722473213986,
+      "zeta_hat": 19.920945960932244,
+      "mean_dl_ema": 30.14781878523787,
+      "det_latency": 12254.470245878982,
+      "det_cost": 7549.954380710978
+    },
+    {
+      "seed": 6,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 21000.0,
+      "cost": 0.0,
+      "hits": 0,
+      "downloads": 0,
+      "churn_credit": 223471.0297070355,
+      "churn_events": 4634,
+      "zeta_q_hat": 0.0,
+      "zeta_dl_hat": 0.0,
+      "zeta_hat": 0.0,
+      "mean_dl_ema": 30.279428288251943,
+      "det_latency": 12254.470245878982,
+      "det_cost": 7549.954380710978
+    },
+    {
+      "seed": 7,
+      "variant": "base",
+      "latency": 17707.062856160937,
+      "cost": 4273.246839014529,
+      "hits": 28,
+      "downloads": 106,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2726882344154312,
+      "zeta_dl_hat": 12.727219194434149,
+      "zeta_hat": 12.99990742884958,
+      "mean_dl_ema": 30.457313620366797,
+      "det_latency": 13624.902246708029,
+      "det_cost": 8484.021694771178
+    },
+    {
+      "seed": 7,
+      "variant": "dl_ema",
+      "latency": 17707.062856160937,
+      "cost": 4273.246839014529,
+      "hits": 28,
+      "downloads": 106,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2726882344154312,
+      "zeta_dl_hat": 12.546249738951667,
+      "zeta_hat": 12.818937973367099,
+      "mean_dl_ema": 31.02980617658981,
+      "det_latency": 13624.902246708029,
+      "det_cost": 8484.021694771178
+    },
+    {
+      "seed": 7,
+      "variant": "churn_all",
+      "latency": 20891.800528250496,
+      "cost": 139.86735476214605,
+      "hits": 3,
+      "downloads": 3,
+      "churn_credit": 346864.6217600003,
+      "churn_events": 4867,
+      "zeta_q_hat": 0.013647853384602242,
+      "zeta_dl_hat": 15.770656443134632,
+      "zeta_hat": 15.784304296519235,
+      "mean_dl_ema": 30.457313620366797,
+      "det_latency": 13624.902246708029,
+      "det_cost": 8484.021694771178
+    },
+    {
+      "seed": 7,
+      "variant": "lazy",
+      "latency": 17893.547815231126,
+      "cost": 4364.66915275413,
+      "hits": 25,
+      "downloads": 108,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.28357921410971176,
+      "zeta_dl_hat": 12.360748649112008,
+      "zeta_hat": 12.644327863221719,
+      "mean_dl_ema": 30.457313620366797,
+      "det_latency": 13624.902246708029,
+      "det_cost": 8484.021694771178
+    },
+    {
+      "seed": 7,
+      "variant": "dl_ema_lazy",
+      "latency": 17893.547815231126,
+      "cost": 4364.66915275413,
+      "hits": 25,
+      "downloads": 108,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.28357921410971176,
+      "zeta_dl_hat": 12.06181757453736,
+      "zeta_hat": 12.345396788647072,
+      "mean_dl_ema": 28.6676088313529,
+      "det_latency": 13624.902246708029,
+      "det_cost": 8484.021694771178
+    },
+    {
+      "seed": 7,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 20912.800528250496,
+      "cost": 139.86735476214605,
+      "hits": 2,
+      "downloads": 3,
+      "churn_credit": 349417.0206867905,
+      "churn_events": 4903,
+      "zeta_q_hat": 0.013647853384602242,
+      "zeta_dl_hat": 14.539297363467588,
+      "zeta_hat": 14.55294521685219,
+      "mean_dl_ema": 29.974297368223603,
+      "det_latency": 13624.902246708029,
+      "det_cost": 8484.021694771178
+    },
+    {
+      "seed": 8,
+      "variant": "base",
+      "latency": 17387.068870372434,
+      "cost": 3972.8339825812745,
+      "hits": 92,
+      "downloads": 107,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2816872410433157,
+      "zeta_dl_hat": 12.582404691099104,
+      "zeta_hat": 12.864091932142419,
+      "mean_dl_ema": 30.126948868711374,
+      "det_latency": 11520.259474260452,
+      "det_cost": 6838.692338246173
+    },
+    {
+      "seed": 8,
+      "variant": "dl_ema",
+      "latency": 17387.068870372434,
+      "cost": 3972.8339825812745,
+      "hits": 92,
+      "downloads": 107,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2816872410433157,
+      "zeta_dl_hat": 12.618999806331763,
+      "zeta_hat": 12.900687047375078,
+      "mean_dl_ema": 30.106250106107154,
+      "det_latency": 11520.259474260452,
+      "det_cost": 6838.692338246173
+    },
+    {
+      "seed": 8,
+      "variant": "churn_all",
+      "latency": 20908.119083657162,
+      "cost": 213.37548411061965,
+      "hits": 1,
+      "downloads": 5,
+      "churn_credit": 129669.00658583402,
+      "churn_events": 3337,
+      "zeta_q_hat": 0.028452197857660465,
+      "zeta_dl_hat": 15.529256464974615,
+      "zeta_hat": 15.557708662832276,
+      "mean_dl_ema": 30.126948868711374,
+      "det_latency": 11520.259474260452,
+      "det_cost": 6838.692338246173
+    },
+    {
+      "seed": 8,
+      "variant": "lazy",
+      "latency": 17400.33923606952,
+      "cost": 4051.162657819775,
+      "hits": 85,
+      "downloads": 111,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2828755335545742,
+      "zeta_dl_hat": 12.353014188229936,
+      "zeta_hat": 12.63588972178451,
+      "mean_dl_ema": 30.126948868711374,
+      "det_latency": 11520.259474260452,
+      "det_cost": 6838.692338246173
+    },
+    {
+      "seed": 8,
+      "variant": "dl_ema_lazy",
+      "latency": 17400.33923606952,
+      "cost": 4051.162657819775,
+      "hits": 85,
+      "downloads": 111,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.2828755335545742,
+      "zeta_dl_hat": 12.489957327421623,
+      "zeta_hat": 12.772832860976196,
+      "mean_dl_ema": 29.62012461840309,
+      "det_latency": 11520.259474260452,
+      "det_cost": 6838.692338246173
+    },
+    {
+      "seed": 8,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 20908.119083657162,
+      "cost": 213.37548411061965,
+      "hits": 1,
+      "downloads": 5,
+      "churn_credit": 131679.5511450992,
+      "churn_events": 3355,
+      "zeta_q_hat": 0.028452197857660465,
+      "zeta_dl_hat": 14.944546156477722,
+      "zeta_hat": 14.972998354335383,
+      "mean_dl_ema": 30.408890952180307,
+      "det_latency": 11520.259474260452,
+      "det_cost": 6838.692338246173
+    },
+    {
+      "seed": 9,
+      "variant": "base",
+      "latency": 16722.011191615507,
+      "cost": 4982.364834846322,
+      "hits": 81,
+      "downloads": 149,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.3177968441396673,
+      "zeta_dl_hat": 8.901256762061195,
+      "zeta_hat": 9.219053606200863,
+      "mean_dl_ema": 22.47262259983387,
+      "det_latency": 12463.433494952464,
+      "det_cost": 7126.497133324956
+    },
+    {
+      "seed": 9,
+      "variant": "dl_ema",
+      "latency": 16722.011191615507,
+      "cost": 4982.364834846322,
+      "hits": 81,
+      "downloads": 149,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.3177968441396673,
+      "zeta_dl_hat": 8.827265023485118,
+      "zeta_hat": 9.145061867624786,
+      "mean_dl_ema": 21.572398733177856,
+      "det_latency": 12463.433494952464,
+      "det_cost": 7126.497133324956
+    },
+    {
+      "seed": 9,
+      "variant": "churn_all",
+      "latency": 20941.54901136045,
+      "cost": 100.14445215208673,
+      "hits": 0,
+      "downloads": 3,
+      "churn_credit": 145454.4822430034,
+      "churn_events": 3988,
+      "zeta_q_hat": 0.02075047675086684,
+      "zeta_dl_hat": 6.976007965136154,
+      "zeta_hat": 6.996758441887021,
+      "mean_dl_ema": 22.47262259983387,
+      "det_latency": 12463.433494952464,
+      "det_cost": 7126.497133324956
+    },
+    {
+      "seed": 9,
+      "variant": "lazy",
+      "latency": 17326.487027333576,
+      "cost": 5034.695840346271,
+      "hits": 55,
+      "downloads": 152,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.305243074165337,
+      "zeta_dl_hat": 9.03487145774392,
+      "zeta_hat": 9.340114531909258,
+      "mean_dl_ema": 22.47262259983387,
+      "det_latency": 12463.433494952464,
+      "det_cost": 7126.497133324956
+    },
+    {
+      "seed": 9,
+      "variant": "dl_ema_lazy",
+      "latency": 17326.487027333576,
+      "cost": 5034.695840346271,
+      "hits": 55,
+      "downloads": 152,
+      "churn_credit": 0.0,
+      "churn_events": 0,
+      "zeta_q_hat": 0.305243074165337,
+      "zeta_dl_hat": 9.150271745483657,
+      "zeta_hat": 9.455514819648995,
+      "mean_dl_ema": 22.933285832472585,
+      "det_latency": 12463.433494952464,
+      "det_cost": 7126.497133324956
+    },
+    {
+      "seed": 9,
+      "variant": "dl_ema_churn_lazy",
+      "latency": 20941.54901136045,
+      "cost": 100.14445215208673,
+      "hits": 0,
+      "downloads": 3,
+      "churn_credit": 150490.10257508812,
+      "churn_events": 4128,
+      "zeta_q_hat": 0.02075047675086684,
+      "zeta_dl_hat": 6.1102652744303585,
+      "zeta_hat": 6.131015751181225,
+      "mean_dl_ema": 22.470977292701352,
+      "det_latency": 12463.433494952464,
+      "det_cost": 7126.497133324956
+    }
+  ],
+  "summary": {
+    "base": {
+      "latency": [
+        17513.394623473574,
+        938.1938504138634
+      ],
+      "cost": [
+        4249.060905944016,
+        870.5863052594088
+      ],
+      "hits": [
+        81.6,
+        51.31120735278015
+      ],
+      "downloads": [
+        100.9,
+        29.149442533262967
+      ],
+      "churn_credit": [
+        0.0,
+        0.0
+      ],
+      "churn_events": [
+        0.0,
+        0.0
+      ],
+      "zeta_q_hat": [
+        0.2680801144546025,
+        0.04029651984543979
+      ],
+      "zeta_dl_hat": [
+        13.301502134610008,
+        4.149406850992032
+      ],
+      "zeta_hat": [
+        13.56958224906461,
+        4.160657856397271
+      ],
+      "mean_dl_ema": [
+        30.146698258030096,
+        3.574698925694276
+      ],
+      "vs_base_lat": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci_half": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "win_rate": 0.0
+      },
+      "vs_base_cost": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci_half": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "win_rate": 0.0
+      },
+      "budget_respected": 1.0
+    },
+    "dl_ema": {
+      "latency": [
+        17513.394623473574,
+        938.1938504138634
+      ],
+      "cost": [
+        4249.060905944016,
+        870.5863052594088
+      ],
+      "hits": [
+        81.6,
+        51.31120735278015
+      ],
+      "downloads": [
+        100.9,
+        29.149442533262967
+      ],
+      "churn_credit": [
+        0.0,
+        0.0
+      ],
+      "churn_events": [
+        0.0,
+        0.0
+      ],
+      "zeta_q_hat": [
+        0.2680801144546025,
+        0.04029651984543979
+      ],
+      "zeta_dl_hat": [
+        13.277216812392641,
+        4.101266141014011
+      ],
+      "zeta_hat": [
+        13.545296926847243,
+        4.112734150698291
+      ],
+      "mean_dl_ema": [
+        29.56452011490332,
+        3.391657902207737
+      ],
+      "vs_base_lat": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci_half": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "win_rate": 0.0
+      },
+      "vs_base_cost": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci_half": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "win_rate": 0.0
+      },
+      "budget_respected": 1.0
+    },
+    "churn_all": {
+      "latency": [
+        20780.016753897784,
+        234.2416646375091
+      ],
+      "cost": [
+        158.7362344874873,
+        65.06346832445024
+      ],
+      "hits": [
+        7.4,
+        10.650821564555478
+      ],
+      "downloads": [
+        3.6,
+        1.624807680927192
+      ],
+      "churn_credit": [
+        155568.7271118745,
+        81899.3835019157
+      ],
+      "churn_events": [
+        3002.0,
+        1211.1942040812448
+      ],
+      "zeta_q_hat": [
+        0.019671081628427862,
+        0.008467487416758313
+      ],
+      "zeta_dl_hat": [
+        12.369383830909431,
+        6.951876052275546
+      ],
+      "zeta_hat": [
+        12.38905491253786,
+        6.956686113076365
+      ],
+      "mean_dl_ema": [
+        30.146698258030096,
+        3.574698925694276
+      ],
+      "vs_base_lat": {
+        "mean": 3266.62213042421,
+        "sd": 856.3986233279965,
+        "ci_half": 530.8013660108192,
+        "ci_low": 2735.820764413391,
+        "ci_high": 3797.423496435029,
+        "win_rate": 0.0
+      },
+      "vs_base_cost": {
+        "mean": -4090.324671456527,
+        "sd": 944.6968006839926,
+        "ci_half": 585.5291433333638,
+        "ci_low": -4675.853814789891,
+        "ci_high": -3504.7955281231634,
+        "win_rate": 1.0
+      },
+      "budget_respected": 1.0
+    },
+    "lazy": {
+      "latency": [
+        17647.533056328823,
+        836.251364584759
+      ],
+      "cost": [
+        4196.642015700568,
+        892.7157675334025
+      ],
+      "hits": [
+        77.1,
+        45.35735882963204
+      ],
+      "downloads": [
+        99.0,
+        29.32575659723036
+      ],
+      "churn_credit": [
+        0.0,
+        0.0
+      ],
+      "churn_events": [
+        0.0,
+        0.0
+      ],
+      "zeta_q_hat": [
+        0.27044006191319503,
+        0.03636630204602581
+      ],
+      "zeta_dl_hat": [
+        13.539528405417688,
+        4.399645572721095
+      ],
+      "zeta_hat": [
+        13.809968467330881,
+        4.411632477041139
+      ],
+      "mean_dl_ema": [
+        30.146698258030096,
+        3.574698925694276
+      ],
+      "vs_base_lat": {
+        "mean": 134.13843285524544,
+        "sd": 295.3523837664794,
+        "ci_half": 183.06130403219427,
+        "ci_low": -48.92287117694883,
+        "ci_high": 317.1997368874397,
+        "win_rate": 0.2
+      },
+      "vs_base_cost": {
+        "mean": -52.41889024344705,
+        "sd": 196.46846683714762,
+        "ci_half": 121.77241734690222,
+        "ci_low": -174.19130759034925,
+        "ci_high": 69.35352710345516,
+        "win_rate": 0.5
+      },
+      "budget_respected": 1.0
+    },
+    "dl_ema_lazy": {
+      "latency": [
+        17647.533056328823,
+        836.251364584759
+      ],
+      "cost": [
+        4196.642015700568,
+        892.7157675334025
+      ],
+      "hits": [
+        77.1,
+        45.35735882963204
+      ],
+      "downloads": [
+        99.0,
+        29.32575659723036
+      ],
+      "churn_credit": [
+        0.0,
+        0.0
+      ],
+      "churn_events": [
+        0.0,
+        0.0
+      ],
+      "zeta_q_hat": [
+        0.27044006191319503,
+        0.03636630204602581
+      ],
+      "zeta_dl_hat": [
+        13.55707169858564,
+        4.295978053206769
+      ],
+      "zeta_hat": [
+        13.827511760498833,
+        4.308047017063097
+      ],
+      "mean_dl_ema": [
+        29.74559761041929,
+        3.31370639226133
+      ],
+      "vs_base_lat": {
+        "mean": 134.13843285524544,
+        "sd": 295.3523837664794,
+        "ci_half": 183.06130403219427,
+        "ci_low": -48.92287117694883,
+        "ci_high": 317.1997368874397,
+        "win_rate": 0.2
+      },
+      "vs_base_cost": {
+        "mean": -52.41889024344705,
+        "sd": 196.46846683714762,
+        "ci_half": 121.77241734690222,
+        "ci_low": -174.19130759034925,
+        "ci_high": 69.35352710345516,
+        "win_rate": 0.5
+      },
+      "budget_respected": 1.0
+    },
+    "dl_ema_churn_lazy": {
+      "latency": [
+        20777.888253761623,
+        230.11058887235788
+      ],
+      "cost": [
+        158.7362344874873,
+        65.06346832445024
+      ],
+      "hits": [
+        7.6,
+        10.355674772799693
+      ],
+      "downloads": [
+        3.6,
+        1.624807680927192
+      ],
+      "churn_credit": [
+        158669.29887266588,
+        81214.1423732025
+      ],
+      "churn_events": [
+        3072.9,
+        1219.816252556097
+      ],
+      "zeta_q_hat": [
+        0.01954333532967486,
+        0.008493809921434434
+      ],
+      "zeta_dl_hat": [
+        11.82725731646963,
+        6.591050267647665
+      ],
+      "zeta_hat": [
+        11.846800651799304,
+        6.596493558324199
+      ],
+      "mean_dl_ema": [
+        29.992002652842427,
+        3.4609538165840417
+      ],
+      "vs_base_lat": {
+        "mean": 3264.4936302880474,
+        "sd": 857.4544136772181,
+        "ci_half": 531.4557516489116,
+        "ci_low": 2733.0378786391357,
+        "ci_high": 3795.949381936959,
+        "win_rate": 0.0
+      },
+      "vs_base_cost": {
+        "mean": -4090.324671456527,
+        "sd": 944.6968006839926,
+        "ci_half": 585.5291433333638,
+        "ci_low": -4675.853814789891,
+        "ci_high": -3504.7955281231634,
+        "win_rate": 1.0
+      },
+      "budget_respected": 1.0
+    }
+  }
+}

@@ -45,7 +45,8 @@ class FracPolicy(Policy):
                  grad_mode="realized", q_ema_alpha=0.1, proj_mode="full",
                  rounding_mode="all", refresh_every=8, proj_tol=1e-7, proj_skip_tol=0.0,
                  repair_mode=None, log_steps=False, topup=False, store_p=False,
-                 lazy=False, repair_pop_weight=0.1):
+                 lazy=False, repair_pop_weight=0.1, download_time_mode="half",
+                 dl_ema_alpha=0.1, charge_churn="none"):
         self.cat, self.C, self.rng, self.K = cat, C, rng, K
         N = cat.N
         rows = cat.a.T if A_rows is None else np.atleast_2d(A_rows)
@@ -69,6 +70,9 @@ class FracPolicy(Policy):
         self.log_steps, self.topup, self.store_p = log_steps, topup, store_p
         self.lazy = lazy
         self.repair_pop_weight = float(repair_pop_weight)
+        self.download_time_mode = download_time_mode
+        self.dl_ema_alpha = float(dl_ema_alpha)
+        self.charge_churn = charge_churn
         self.popularity_rank = None
         self.eta_user, self.proj = eta, proj
         self.peek, self.resample_every, self.gate, self.record = peek, resample_every, gate_downloads, record
@@ -118,6 +122,9 @@ class FracPolicy(Policy):
         self.benefit = np.zeros(N)                   # latency avoided during the current residency
         self.downloaded = np.zeros(N, bool)          # the service is in a residency
         self.q_ema = np.zeros(N)                     # EMA of the in-flight indicator (N2)
+        self.dl_ema = 0.5 * self.cat.M.copy()        # EMA of observed remaining download time
+        self.churn_credit = 0.0                      # budget charged for 0->1 transitions
+        self.churn_events = 0
         self.hit_counts_by_rank = np.zeros(N, dtype=np.int64)
         self.step_log = []
         self._current_rec = None
@@ -138,11 +145,18 @@ class FracPolicy(Policy):
         self.q_ema[n] = (1 - a) * self.q_ema[n] + a * q
         self.st["q_ema_sum"] += float(self.q_ema[n])
 
+    def _update_dl_ema(self, n, q, dm):
+        """EMA update for the observed remaining download time."""
+        if self.download_time_mode == "ema" and q > 0:
+            a = self.dl_ema_alpha
+            self.dl_ema[n] = (1 - a) * self.dl_ema[n] + a * float(dm)
+
     def _ogd(self, n, q, dm, t=1):
         l = self.cat.l[n]
         if self.grad_mode == "expectation":          # N2: expectation over the algorithm's noise
             qe = float(self.q_ema[n])
-            dme = self.cat.M[n] / 2.0
+            dme = (float(self.dl_ema[n]) if self.download_time_mode == "ema"
+                   else self.cat.M[n] / 2.0)
             g = (1 - qe) * l + qe * min(l, dme)
         else:
             g = (1 - q) * l + q * min(l, dm)
@@ -264,6 +278,7 @@ class FracPolicy(Policy):
         """
         new_sample = self.U[k] < self.p
         rounded_in = int(new_sample.sum())
+        old = self.S[k].copy()
         if self.lazy:
             sample = self.S[k] | new_sample
         else:
@@ -282,6 +297,10 @@ class FracPolicy(Policy):
         after_repair = int(self.S[k].sum())
         evicted = max(0, before_repair - after_repair)
         added = self._topup_path(k) if self.topup else 0
+        if self.charge_churn == "all":
+            newly_cached = self.S[k] & ~old
+            self.churn_credit += float(self.cat.M[newly_cached].sum())
+            self.churn_events += int(newly_cached.sum())
         self.last_repair_stats[k] = {
             "rounded_in": rounded_in,
             "before_repair": before_repair,
@@ -336,6 +355,8 @@ class FracPolicy(Policy):
                 "p_minus_xbar": float(p_before[n] - s_before[n]),
                 "q_ema_before": float(self.q_ema[n]),
                 "q_ema_after": None,
+                "dl_ema_before": float(self.dl_ema[n]),
+                "dl_ema_after": None,
                 "grad": None,
                 "l_n": None,
                 "benefit": None,
@@ -372,6 +393,9 @@ class FracPolicy(Policy):
                 rec["p_after"] = self.p.tolist()
         if self.peek:
             self._update_q_ema(n, q)
+            self._update_dl_ema(n, q, dm)
+            if rec is not None:
+                rec["dl_ema_after"] = float(self.dl_ema[n])
         if self.resample_every and self.steps % self.resample_every == 0:
             self.kstar = int(self.rng.integers(self.K)); self.st["kstar_redraws"] += 1
         if self.kstar_policy == "step":
@@ -386,6 +410,7 @@ class FracPolicy(Policy):
         if not self.peek:
             self._ogd(n, q, dm, t)
             self._update_q_ema(n, q)
+            self._update_dl_ema(n, q, dm)
         rec = self._current_rec
         if rec is not None:
             outcome = getattr(self.eng, "last_outcome", None)
@@ -396,6 +421,7 @@ class FracPolicy(Policy):
             rec["download_started"] = bool(q == 0.0 and n in getattr(self.eng, "pending", {}))
             rec["c_t"] = float(self.cat.M[n]) if rec["download_started"] else 0.0
             rec["q_ema_after"] = float(self.q_ema[n])
+            rec["dl_ema_after"] = float(self.dl_ema[n])
             if rec["grad"] is None and self._g is not None:
                 rec["grad"] = float(self._g)
             if rec["l_n"] is None:
@@ -469,6 +495,9 @@ class FracPolicy(Policy):
         d["landlord_passes"] = self.landlord_stats.get("passes", 0)
         d["hit_counts_by_rank"] = self.hit_counts_by_rank.copy()
         d["topup_added"] = self.st["topup_added"]
+        d["churn_credit"] = float(self.churn_credit)
+        d["churn_events"] = int(self.churn_events)
+        d["mean_dl_ema"] = float(self.dl_ema.mean())
         if self.log_steps and self.step_log:
             fr = [r["repair_evicted_fraction"] for r in self.step_log
                   if r.get("repair_evicted_fraction") is not None]

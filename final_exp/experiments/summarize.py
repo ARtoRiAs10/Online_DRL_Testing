@@ -433,6 +433,42 @@ def main():
                  "buys cost reduction when downloads are cheap and loses latency when they "
                  "are expensive.")
 
+    # ---------------------------------------------------------------- exp23
+    d = load("exp23_phase4")
+    if d:
+        L.append(section("23. Phase-4 EMA/churn/lazy comparison"))
+        rows = []
+        for name, s in d["summary"].items():
+            dl = s["vs_base_lat"]; dc = s["vs_base_cost"]
+            rows.append([name, fmt(s["latency"][0], 0), fmt(s["cost"][0], 0),
+                         fmt(s["hits"][0], 0), fmt(s["churn_credit"][0], 0),
+                         fmt(s["zeta_dl_hat"][0], 2),
+                         f"{dl['mean']:+.0f} ±{dl['ci_half']:.0f}",
+                         f"{dc['mean']:+.0f} ±{dc['ci_half']:.0f}"])
+        L.append(table(["variant", "latency", "cost", "hits", "churn credit",
+                        "zeta_dl", "Δlat", "Δcost"], rows))
+        L.append("")
+        L.append("The download-time EMA leaves latency/cost unchanged on stationary "
+                 "synthetic traffic but lowers the measured download-time bias.  Charging "
+                 "every 0→1 transition is very conservative: cost drops from 4,249 to 159, "
+                 "hits from 82 to 7, and latency rises by about 3,267.")
+
+    # ---------------------------------------------------------------- exp24
+    d = load("exp24_ema_tracking")
+    if d:
+        L.append(section("24. EMA tracking under drift"))
+        rows = []
+        for key, s in d["summary"].items():
+            rows.append([key, fmt(s["best_alpha"], 2), fmt(s["best_rmse"], 3),
+                         fmt(s["theory_alpha"], 3), fmt(s["theory_error"], 3)])
+        L.append(table(["sigma, drift", "best empirical alpha", "empirical RMSE",
+                        "theory alpha", "theory error"], rows))
+        L.append("")
+        L.append("The empirical trend matches the first-order expression "
+                 "`drift/alpha + sqrt(alpha)*sigma`: the optimal alpha grows with drift "
+                 "and shrinks with noise.  The constants differ because the expression is "
+                 "an upper bound, not an equality.")
+
     # ---------------------------------------------------------------- verdicts
     L.append(section("Summary: confirmed / refuted / not testable"))
     L.append("| # | claim | verdict | evidence |")

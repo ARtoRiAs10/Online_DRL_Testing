@@ -86,6 +86,7 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
     sum_F_tilde_Pt = 0.0
     sum_abs_px = 0.0
     q_bias = []
+    dl_bias = []
     for r in step_log:
         n = int(r["n"])
         g = _as_float(r.get("grad"))
@@ -99,11 +100,15 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
         sum_abs_px += abs(_as_float(r.get("p_minus_xbar")))
         if "q_ema_before" in r and "q" in r:
             q_bias.append(abs(_as_float(r["q_ema_before"]) - _as_float(r["q"])))
+        if _as_float(r.get("q")) > 0 and "dl_ema_before" in r:
+            dl_bias.append(abs(_as_float(r["dl_ema_before"]) - _as_float(r.get("dm"))))
 
     # W is the accumulated benefit c~ = l_n - g.
     W = B
     P, comp_obj = g3b_comparator_lp(cat, C, W)
-    zeta_hat = float(np.mean(q_bias)) if q_bias else 0.0
+    zeta_q_hat = float(np.mean(q_bias)) if q_bias else 0.0
+    zeta_dl_hat = float(np.mean(dl_bias)) if dl_bias else 0.0
+    zeta_hat = zeta_q_hat + zeta_dl_hat
     if zeta is None:
         zeta = zeta_hat
 
@@ -132,7 +137,9 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
         "W": W.tolist(),
         "B": B.tolist(),
         "zeta": float(zeta),
-        "zeta_hat": zeta_hat,
+        "zeta_hat": float(zeta_hat),
+        "zeta_q_hat": float(zeta_q_hat),
+        "zeta_dl_hat": float(zeta_dl_hat),
         "sum_delta_abs_px": float(sum_abs_px),
         "base_term": float(base),
         "ema_term": float(ema_term),
@@ -141,6 +148,30 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
         "regret_bound_rhs": rhs,
         "bound_without_zeta_delta": float(comp_obj + base + budget_term),
     }
+
+
+def ema_tracking_error(alpha, sigma, drift):
+    """Tracking error of an EMA under drift and noise.
+
+    ``error(alpha) ~= drift / alpha + sqrt(alpha) * sigma``.
+    """
+    alpha = float(alpha)
+    if alpha <= 0:
+        return float("inf")
+    return float(drift) / alpha + np.sqrt(alpha) * float(sigma)
+
+
+def optimal_ema_alpha(sigma, drift):
+    """Alpha minimizing ``drift/alpha + sqrt(alpha)*sigma``.
+
+    For ``sigma > 0`` and ``drift > 0`` the minimizer is
+    ``alpha* = (2*drift/sigma)^(2/3)``.
+    """
+    sigma = float(sigma)
+    drift = float(drift)
+    if sigma <= 0 or drift <= 0:
+        return 1.0
+    return float((2.0 * drift / sigma) ** (2.0 / 3.0))
 
 
 def summarize_step_log(step_log):

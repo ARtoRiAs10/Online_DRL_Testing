@@ -143,10 +143,11 @@ class Engine:
                     self.thr_abs[n] = self.thr.draw(n) * cat.M[n]
                 self.fcount[n] += 1
                 Ti, Li = t - self.miss_ts[n], l * self.fcount[n]
-                bleft = None if self.bmax is None else self.bmax - cost
+                overhead = float(getattr(pol, "churn_credit", 0.0))
+                bleft = None if self.bmax is None else self.bmax - cost - overhead
                 p_dl = float(np.clip(pol.download_prob(n, t, bleft), 0.0, 1.0))
                 if (Ti >= self.thr_abs[n] or Li >= self.thr_abs[n]) and p_dl > 0 and pol.allow_download(n, t) \
-                        and (self.bmax is None or cost + cat.M[n] <= self.bmax) \
+                        and (self.bmax is None or cost + overhead + cat.M[n] <= self.bmax) \
                         and (p_dl >= 1.0 or self.rng.random() < p_dl):
                     self.pending[n] = t + cat.M[n]
                     heapq.heappush(heap, (t + cat.M[n], n))
