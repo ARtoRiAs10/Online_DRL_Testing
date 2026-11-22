@@ -525,6 +525,58 @@ def main():
                  "by 58% (cheap downloads) or 32% (expensive downloads), with a latency "
                  "penalty of 5.5% or 3.6%.")
 
+    # ---------------------------------------------------------------- exp29
+    d = load("exp29_stateless_headline")
+    if d:
+        L.append(section("29. Stateless headline reruns (exp01/04/12/17)"))
+        agg = d.get("exp01", {}).get("agg", {})
+        if agg:
+            rows = []
+            for k in ("lat_drl_pct", "cost_drl_pct", "lat_rand_pct", "cost_rand_pct"):
+                rows.append([k, fmt(agg[k][0], 2), fmt(agg[k][1], 2)])
+            L.append(table(["quantity vs LL-RC", "mean %", "sd %"], rows))
+            L.append("")
+        L.append("**exp12 stateless vs Landlord (mean over seeds):**")
+        rows = []
+        for tag in ("balanced", "imbalanced"):
+            for name in ("online_drl", "ll_rc", "r3_only", "rand_stateless", "rand_landlord"):
+                s = d.get("exp12", {}).get(tag, {}).get(name)
+                if s:
+                    rows.append([tag, name, fmt(s["latency"][0], 0),
+                                 fmt(s["cost"][0], 0),
+                                 fmt(s["util_max"][0], 3)])
+        L.append(table(["workload", "algorithm", "latency", "cost", "max util"], rows))
+
+    # ---------------------------------------------------------------- exp30
+    d = load("exp30_hyperparameters")
+    if d:
+        L.append(section("30. Hyperparameter sweep (randomized stateless)"))
+        rows = []
+        for r in d["rows"]:
+            rows.append([r["group"], str(r["value"]),
+                         fmt(r["latency"][0], 0), fmt(r["cost"][0], 0),
+                         fmt(r["hits"][0], 0), fmt(r["util_max"][0], 3)])
+        L.append(table(["group", "value", "latency", "cost", "hits", "max util"], rows))
+
+    # ---------------------------------------------------------------- exp31
+    d = load("exp31_alg_opt_vs_T")
+    if d:
+        L.append(section("31. ALG/OPT vs trace length T"))
+        rows = []
+        for T, s in d["summary"].items():
+            rows.append([T, s.get("n_traces"),
+                         fmt(s["det_ratio"][0], 3), fmt(s["r3_ratio"][0], 3),
+                         fmt(s["rand_landlord_ratio"][0], 3),
+                         fmt(s["rand_stateless_ratio"][0], 3),
+                         str(s.get("opt_status_counts", {}))])
+        L.append(table(["T", "traces", "Online-DRL/OPT", "R3/OPT",
+                        "Landlord/OPT", "Stateless/OPT", "OPT status"], rows))
+        L.append("")
+        L.append("The absolute ALG/OPT ratio grows with T for all algorithms, but the "
+                 "randomized stateless gap to Online-DRL closes: at T=120 it is +11% "
+                 "worse, at T=600 about -2%, and at T=1200 about -7%.  This supports "
+                 "the warm-up explanation for the short-trace MILP result.")
+
     # ---------------------------------------------------------------- verdicts
     L.append(section("Summary: confirmed / refuted / not testable"))
     L.append("| # | claim | verdict | evidence |")

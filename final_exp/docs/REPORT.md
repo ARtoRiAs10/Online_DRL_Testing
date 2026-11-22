@@ -416,6 +416,61 @@ The bound remains valid but loose at long horizons; the `M_max N sqrt(T)` churn 
 
 On the full Google trace the randomized method reduces download cost by 58% (cheap downloads) or 32% (expensive downloads), with a latency penalty of 5.5% or 3.6%.
 
+## 29. Stateless headline reruns (exp01/04/12/17)
+
+| quantity vs LL-RC | mean % | sd % |
+|---|---|---|
+| lat_drl_pct | -2.41 | 3.70 |
+| cost_drl_pct | -50.52 | 0.55 |
+| lat_rand_pct | -27.82 | 17.42 |
+| cost_rand_pct | -94.28 | 1.94 |
+
+**exp12 stateless vs Landlord (mean over seeds):**
+| workload | algorithm | latency | cost | max util |
+|---|---|---|---|---|
+| balanced | online_drl | 120,110 | 167,401 | 0.711 |
+| balanced | ll_rc | 123,573 | 334,689 | 0.718 |
+| balanced | r3_only | 119,868 | 198,166 | 0.720 |
+| balanced | rand_stateless | 89750 | 17420 | 0.644 |
+| balanced | rand_landlord | 154,018 | 58806 | 0.095 |
+| imbalanced | online_drl | 132,142 | 190,686 | 0.624 |
+| imbalanced | ll_rc | 135,919 | 386,714 | 0.624 |
+| imbalanced | r3_only | 131,891 | 227,893 | 0.622 |
+| imbalanced | rand_stateless | 91058 | 15527 | 0.722 |
+| imbalanced | rand_landlord | 150,261 | 60233 | 0.127 |
+
+## 30. Hyperparameter sweep (randomized stateless)
+
+| group | value | latency | cost | hits | max util |
+|---|---|---|---|---|---|
+| eta_mult | 1 | 22372 | 5558 | 929 | 0.577 |
+| eta_mult | 4 | 32345 | 21988 | 446 | 0.183 |
+| eta_mult | 16 | 40871 | 41370 | 32 | 0.013 |
+| eta_mult | 64 | 41333 | 41787 | 10 | 0.006 |
+| alpha | 0.05 | 22218 | 5464 | 936 | 0.583 |
+| alpha | 0.1 | 22218 | 5464 | 936 | 0.583 |
+| alpha | 0.2 | 22218 | 5464 | 936 | 0.583 |
+| alpha | 0.4 | 22218 | 5464 | 936 | 0.583 |
+| K | 2 | 23173 | 5249 | 890 | 0.533 |
+| K | 4 | 22575 | 5301 | 920 | 0.567 |
+| K | 8 | 22372 | 5558 | 929 | 0.577 |
+| proj_tol | 1e-06 | 22372 | 5558 | 929 | 0.577 |
+| proj_tol | 1e-07 | 22372 | 5558 | 929 | 0.577 |
+| proj_tol | 1e-08 | 22372 | 5558 | 929 | 0.577 |
+| proj_skip_tol | 0.0 | 22372 | 5558 | 929 | 0.577 |
+| proj_skip_tol | 0.001 | 22372 | 5558 | 929 | 0.577 |
+
+## 31. ALG/OPT vs trace length T
+
+| T | traces | Online-DRL/OPT | R3/OPT | Landlord/OPT | Stateless/OPT | OPT status |
+|---|---|---|---|---|---|---|
+| 120 | 30 | 1.168 | 1.152 | 1.427 | 1.301 | {'0': 30} |
+| 300 | 15 | 1.456 | 1.485 | 1.981 | 1.631 | {'0': 15} |
+| 600 | 10 | 1.717 | 1.761 | 2.251 | 1.675 | {'0': 10} |
+| 1200 | 5 | 1.753 | 1.819 | 2.188 | 1.622 | {'0': 4, '1': 1} |
+
+The absolute ALG/OPT ratio grows with T for all algorithms, but the randomized stateless gap to Online-DRL closes: at T=120 it is +11% worse, at T=600 about -2%, and at T=1200 about -7%.  This supports the warm-up explanation for the short-trace MILP result.
+
 ## Summary: confirmed / refuted / not testable
 
 | # | claim | verdict | evidence |
