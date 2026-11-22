@@ -469,6 +469,56 @@ def main():
                  "and shrinks with noise.  The constants differ because the expression is "
                  "an upper bound, not an equality.")
 
+    # ---------------------------------------------------------------- exp25
+    d = load("exp25_large_sequence_ratio")
+    if d:
+        L.append(section("25. Family-specific Large Sequence ratio (20 seeds, k up to 48)"))
+        rows = []
+        for key, s in d["summary"].items():
+            rows.append([key, fmt(s["det_ratio"], 3), fmt(s["ll_ratio"], 3),
+                         fmt(s["r3_ratio"][0], 3),
+                         f"{s['rf_ratio'][0]:.3f} ±{s['rf_ratio'][1]:.3f}",
+                         fmt(s["det_cost"], 0),
+                         fmt(s["rf_cost"][0], 0)])
+        L.append(table(["k, M/l", "Online-DRL/OPT", "LL-RC/OPT", "R3/OPT",
+                        "Randomized/OPT", "det cost", "rand cost"], rows))
+        L.append("")
+        L.append("Linear fits of the randomized ratio in k: " + str(d.get("fits", {})))
+
+    # ---------------------------------------------------------------- exp26
+    d = load("exp26_long_horizon_bound")
+    if d:
+        L.append(section("26. Long-horizon G3b bound (T=10000, 5 seeds)"))
+        rows = []
+        for m in ("realized", "comparator_objective", "comparator_gap",
+                  "bound", "bound_gap", "zeta_q_hat", "zeta_dl_hat",
+                  "zeta_hat", "sum_delta"):
+            rows.append([m, fmt(d["summary"][m][0], 1), fmt(d["summary"][m][1], 1)])
+        L.append(table(["quantity", "mean", "sd"], rows))
+        L.append("")
+        L.append("The bound remains valid but loose at long horizons; the "
+                 "`M_max N sqrt(T)` churn term dominates.")
+
+    # ---------------------------------------------------------------- exp27
+    d = load("exp27_full_google")
+    if d:
+        L.append(section("27. Full 50,000-request Google trace"))
+        rows = []
+        for r in d["rows"]:
+            rows.append([f"{r['D']:.0f}", f"{r['disk_scale']:.0e}",
+                         fmt(r["frac_M_lt_l"], 3),
+                         fmt(r["det_lat"], 0), fmt(r["det_cost"], 0),
+                         fmt(r["rf_lat"][0], 0), fmt(r["rf_cost"][0], 0),
+                         fmt(r["rf_hits"][0], 0),
+                         f"{r['rf_vs_det_lat']['mean']:+.0f} ±{r['rf_vs_det_lat']['ci_half']:.0f}",
+                         f"{r['rf_vs_det_cost']['mean']:+.0f} ±{r['rf_vs_det_cost']['ci_half']:.0f}"])
+        L.append(table(["D", "disk scale", "M<l", "Online-DRL lat", "Online-DRL cost",
+                        "RF lat", "RF cost", "RF hits", "Δlat", "Δcost"], rows))
+        L.append("")
+        L.append("On the full Google trace the randomized method reduces download cost "
+                 "by 58% (cheap downloads) or 32% (expensive downloads), with a latency "
+                 "penalty of 5.5% or 3.6%.")
+
     # ---------------------------------------------------------------- verdicts
     L.append(section("Summary: confirmed / refuted / not testable"))
     L.append("| # | claim | verdict | evidence |")

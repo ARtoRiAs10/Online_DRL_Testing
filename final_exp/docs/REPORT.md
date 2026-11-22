@@ -372,6 +372,50 @@ The download-time EMA leaves latency/cost unchanged on stationary synthetic traf
 
 The empirical trend matches the first-order expression `drift/alpha + sqrt(alpha)*sigma`: the optimal alpha grows with drift and shrinks with noise.  The constants differ because the expression is an upper bound, not an equality.
 
+## 25. Family-specific Large Sequence ratio (20 seeds, k up to 48)
+
+| k, M/l | Online-DRL/OPT | LL-RC/OPT | R3/OPT | Randomized/OPT | det cost | rand cost |
+|---|---|---|---|---|---|---|
+| k=9,M/l=2 | 9.000 | 3.933 | 7.721 | 2.569 ±1.247 | 636 | 96 |
+| k=9,M/l=4 | 13.667 | 3.933 | 12.592 | 3.020 ±1.440 | 1272 | 150 |
+| k=9,M/l=8 | 23.000 | 3.933 | 22.017 | 4.141 ±3.605 | 2544 | 281 |
+| k=12,M/l=2 | 11.800 | 5.133 | 10.105 | 3.015 ±1.941 | 1136 | 175 |
+| k=12,M/l=4 | 18.067 | 5.133 | 16.540 | 4.100 ±3.560 | 2272 | 335 |
+| k=12,M/l=8 | 30.600 | 5.133 | 29.213 | 5.806 ±6.244 | 4544 | 607 |
+| k=24,M/l=2 | 23.000 | 9.933 | 19.553 | 4.036 ±4.019 | 4576 | 634 |
+| k=24,M/l=4 | 35.667 | 9.933 | 32.590 | 5.564 ±6.590 | 9152 | 1221 |
+| k=24,M/l=8 | 61.000 | 9.933 | 58.179 | 5.365 ±6.849 | 18304 | 1138 |
+| k=48,M/l=2 | 45.400 | 19.533 | 38.437 | 3.189 ±0.843 | 18368 | 454 |
+| k=48,M/l=4 | 70.867 | 19.533 | 64.665 | 3.863 ±1.298 | 36736 | 742 |
+| k=48,M/l=8 | 121.800 | 19.533 | 115.960 | 4.864 ±1.832 | 73472 | 1159 |
+
+Linear fits of the randomized ratio in k: {'M/l=2': {'slope': 0.012122502872801142, 'intercept': 2.920426113762928, 'R2': 0.005941545930730485}, 'M/l=4': {'slope': 0.011270385839299823, 'intercept': 3.874682279236278, 'R2': 0.0018944800135947126}, 'M/l=8': {'slope': 7.386413860146347e-05, 'intercept': 5.042050019888626, 'R2': 4.955875776424534e-08}}
+
+## 26. Long-horizon G3b bound (T=10000, 5 seeds)
+
+| quantity | mean | sd |
+|---|---|---|
+| realized | 195,303 | 29134.7 |
+| comparator_objective | -12091.5 | 5829.0 |
+| comparator_gap | 207,394 | 33877.5 |
+| bound | 587,592 | 125,594 |
+| bound_gap | 392,290 | 137,331 |
+| zeta_q_hat | 0.2 | 0.1 |
+| zeta_dl_hat | 13.7 | 4.5 |
+| zeta_hat | 14.0 | 4.5 |
+| sum_delta | 1876.2 | 248.6 |
+
+The bound remains valid but loose at long horizons; the `M_max N sqrt(T)` churn term dominates.
+
+## 27. Full 50,000-request Google trace
+
+| D | disk scale | M<l | Online-DRL lat | Online-DRL cost | RF lat | RF cost | RF hits | Δlat | Δcost |
+|---|---|---|---|---|---|---|---|---|---|
+| 1000 | 1e+00 | 1.000 | 499,143 | 60434 | 526,665 | 25295 | 5282 | +27521 ±15120 | -35140 ±2167 |
+| 1000 | 1e+07 | 0.664 | 861,093 | 62152 | 891,890 | 42445 | 5668 | +30797 ±14316 | -19707 ±1578 |
+
+On the full Google trace the randomized method reduces download cost by 58% (cheap downloads) or 32% (expensive downloads), with a latency penalty of 5.5% or 3.6%.
+
 ## Summary: confirmed / refuted / not testable
 
 | # | claim | verdict | evidence |
