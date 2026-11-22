@@ -471,6 +471,97 @@ On the full Google trace the randomized method reduces download cost by 58% (che
 
 The absolute ALG/OPT ratio grows with T for all algorithms, but the randomized stateless gap to Online-DRL closes: at T=120 it is +11% worse, at T=600 about -2%, and at T=1200 about -7%.  This supports the warm-up explanation for the short-trace MILP result.
 
+## 32. Large Sequence ablation (R1+R2 vs +R3 vs R3 only)
+
+| k, M/l, variant | lat/OPT | sd | cost/OPT |
+|---|---|---|---|
+| k=9,M/l=2,r3_only | 7.844 | 0.149 | 14.133 |
+| k=9,M/l=2,r1r2_stateless | 2.502 | 0.544 | 6.676 |
+| k=9,M/l=2,r1r2r3_stateless | 2.289 | 0.482 | 1.529 |
+| k=9,M/l=2,r1r2r3_landlord | 2.613 | 0.385 | 2.062 |
+| k=9,M/l=4,r3_only | 12.791 | 0.233 | 28.267 |
+| k=9,M/l=4,r1r2_stateless | 2.920 | 0.756 | 12.551 |
+| k=9,M/l=4,r1r2r3_stateless | 2.716 | 0.718 | 2.471 |
+| k=9,M/l=4,r1r2r3_landlord | 3.000 | 0.613 | 3.129 |
+| k=9,M/l=8,r3_only | 22.382 | 0.218 | 56.533 |
+| k=9,M/l=8,r1r2_stateless | 3.724 | 1.404 | 24.000 |
+| k=9,M/l=8,r1r2r3_stateless | 3.547 | 1.320 | 3.982 |
+| k=9,M/l=8,r1r2r3_landlord | 3.658 | 1.391 | 4.373 |
+| k=12,M/l=2,r3_only | 10.183 | 0.155 | 18.933 |
+| k=12,M/l=2,r1r2_stateless | 2.483 | 0.941 | 8.420 |
+| k=12,M/l=2,r1r2r3_stateless | 2.343 | 0.858 | 1.520 |
+| k=12,M/l=2,r1r2r3_landlord | 2.467 | 0.772 | 1.747 |
+| k=12,M/l=4,r3_only | 16.690 | 0.218 | 37.867 |
+| k=12,M/l=4,r1r2_stateless | 3.277 | 1.525 | 16.533 |
+| k=12,M/l=4,r1r2r3_stateless | 3.043 | 1.476 | 2.800 |
+| k=12,M/l=4,r1r2r3_landlord | 3.120 | 1.425 | 3.013 |
+| k=12,M/l=8,r3_only | 29.253 | 0.371 | 75.733 |
+| k=12,M/l=8,r1r2_stateless | 3.543 | 1.628 | 30.267 |
+| k=12,M/l=8,r1r2r3_stateless | 3.423 | 1.597 | 3.573 |
+| k=12,M/l=8,r1r2r3_landlord | 3.423 | 1.597 | 3.573 |
+| k=24,M/l=2,r3_only | 19.632 | 0.096 | 38.133 |
+| k=24,M/l=2,r1r2_stateless | 2.082 | 0.088 | 14.233 |
+| k=24,M/l=2,r1r2r3_stateless | 1.985 | 0.079 | 0.617 |
+| k=24,M/l=2,r1r2r3_landlord | 2.222 | 0.247 | 1.220 |
+| k=24,M/l=4,r3_only | 32.747 | 0.280 | 76.267 |
+| k=24,M/l=4,r1r2_stateless | 2.460 | 0.137 | 27.973 |
+| k=24,M/l=4,r1r2r3_stateless | 2.357 | 0.115 | 1.213 |
+| k=24,M/l=4,r1r2r3_landlord | 2.683 | 0.374 | 2.140 |
+| k=24,M/l=8,r3_only | 58.450 | 0.180 | 152.533 |
+| k=24,M/l=8,r1r2_stateless | 3.143 | 0.159 | 55.107 |
+| k=24,M/l=8,r1r2r3_stateless | 3.037 | 0.196 | 2.147 |
+| k=24,M/l=8,r1r2r3_landlord | 3.415 | 0.380 | 3.400 |
+| k=48,M/l=2,r3_only | 38.321 | 0.006 | 76.533 |
+| k=48,M/l=2,r1r2_stateless | 2.879 | 0.415 | 27.869 |
+| k=48,M/l=2,r1r2r3_stateless | 2.722 | 0.361 | 0.783 |
+| k=48,M/l=2,r1r2r3_landlord | 2.747 | 0.345 | 0.908 |
+| k=48,M/l=4,r3_only | 64.600 | 0.253 | 153.067 |
+| k=48,M/l=4,r1r2_stateless | 3.161 | 0.075 | 54.550 |
+| k=48,M/l=4,r1r2r3_stateless | 3.011 | 0.069 | 1.089 |
+| k=48,M/l=4,r1r2r3_landlord | 3.011 | 0.069 | 1.089 |
+| k=48,M/l=8,r3_only | 115.982 | 0.253 | 306.133 |
+| k=48,M/l=8,r1r2_stateless | 4.060 | 0.129 | 107.811 |
+| k=48,M/l=8,r1r2r3_stateless | 3.938 | 0.130 | 2.144 |
+| k=48,M/l=8,r1r2r3_landlord | 3.938 | 0.130 | 2.144 |
+
+R3 alone remains linear in k.  R1+R2 (randomized rounding) is what flattens the ratio; adding R3 mainly reduces cost.
+
+## 33. Additional adversarial families
+
+| family | algorithm | latency | cost | lat/Online-DRL | cost/Online-DRL |
+|---|---|---|---|---|---|
+| bursty | online_drl | 153,225 | 169,938 | 1.000 | 1.000 |
+| bursty | ll_rc | 151,141 | 326,566 | 0.986 | 1.921 |
+| bursty | r3_only | 153,100 | 198,821 | 0.999 | 1.170 |
+| bursty | rand_stateless | 161,736 | 75899 | 1.056 | 0.446 |
+| bursty | rand_landlord | 166,445 | 90990 | 1.086 | 0.535 |
+| markov_zipf | online_drl | 139,951 | 174,192 | 1.000 | 1.000 |
+| markov_zipf | ll_rc | 142,548 | 344,959 | 1.019 | 1.980 |
+| markov_zipf | r3_only | 139,987 | 207,083 | 1.000 | 1.188 |
+| markov_zipf | rand_stateless | 103,880 | 16512 | 0.739 | 0.095 |
+| markov_zipf | rand_landlord | 157,703 | 56677 | 1.127 | 0.326 |
+| shuffled_cyclic_scan | online_drl | 101 | 101 | 1.000 | 1.000 |
+| shuffled_cyclic_scan | ll_rc | 101 | 101 | 1.000 | 1.000 |
+| shuffled_cyclic_scan | r3_only | 101 | 101 | 1.000 | 1.000 |
+| shuffled_cyclic_scan | rand_stateless | 154 | 88 | 1.459 | 0.866 |
+| shuffled_cyclic_scan | rand_landlord | 154 | 88 | 1.460 | 0.867 |
+
+## 34. Large Sequence P_t dynamics
+
+| k | M/l | gamma | mean p_sum | sd p_sum | fraction p=1 | projection iters |
+|---|---|---|---|---|---|---|
+| 9 | 2 | 2.867 | 8.066 | 1.745 | 0.068 | 10.92 |
+| 9 | 4 | 3.822 | 8.220 | 1.629 | 0.090 | 6.67 |
+| 9 | 8 | 5.822 | 8.385 | 1.475 | 0.095 | 3.65 |
+| 12 | 2 | 1.700 | 10.955 | 2.253 | 0.062 | 7.63 |
+| 12 | 4 | 1.917 | 11.139 | 2.072 | 0.075 | 4.86 |
+| 12 | 8 | 2.500 | 11.302 | 1.883 | 0.078 | 2.71 |
+| 24 | 2 | 2.017 | 22.631 | 4.008 | 0.035 | 4.97 |
+| 24 | 4 | 2.417 | 22.874 | 3.649 | 0.041 | 3.21 |
+| 24 | 8 | 3.242 | 23.114 | 3.245 | 0.047 | 1.87 |
+
+The fractional state stays near the capacity simplex; the ratio is controlled by the cyclic request pattern, not by an empty cache.
+
 ## Summary: confirmed / refuted / not testable
 
 | # | claim | verdict | evidence |

@@ -144,3 +144,62 @@ def deterministic_eviction_trace(cat, base_trace, C):
     dt = float(base_trace.t[1] - base_trace.t[0]) if len(base_trace.t) > 1 else 1.0
     t = np.arange(len(svc), dtype=float) * dt
     return Trace(t, np.asarray(svc, int)), base_trace, pol.evictions
+
+
+def shuffled_cyclic_scan(k, n_reps, seed=0, l=1.0, M=1.0):
+    """Cyclic scan over ``k+1`` services with a fresh random permutation each cycle.
+
+    This is a classic paging adversary but is not constructed against Online-DRL: the
+    request order is uniformly random within each cycle.
+    """
+    n = k + 1
+    cat = Catalog(l=np.full(n, float(l)), M=np.full(n, float(M)),
+                  a=np.ones((n, 3), float) / float(k))
+    rng = np.random.default_rng(seed)
+    svc = np.concatenate([rng.permutation(n) for _ in range(n_reps)]).astype(int)
+    t = np.arange(len(svc), dtype=float)
+    return cat, Trace(t, svc)
+
+
+def _zipf_probs(N, rho):
+    p = 1.0 / np.arange(1, N + 1, dtype=float) ** rho
+    return p / p.sum()
+
+
+def markov_zipf_world(N, T, seed=0, rho1=0.8, rho2=1.6, switch=0.01, rate=0.5, **phys):
+    """Non-stationary Zipf world with a two-state Markov switch.
+
+    The popularity law alternates between two Zipf exponents.  This creates drift
+    without constructing the sequence against Online-DRL.
+    """
+    rng = np.random.default_rng(seed)
+    raw = np.c_[rng.lognormal(0, .6, N), rng.lognormal(1, .6, N), rng.lognormal(3.5, .8, N)]
+    cat = from_physical(raw, **phys)
+    p1, p2 = _zipf_probs(N, rho1), _zipf_probs(N, rho2)
+    svc = np.empty(T, dtype=int)
+    state = 0
+    for t in range(T):
+        if rng.random() < switch:
+            state = 1 - state
+        p = p1 if state == 0 else p2
+        svc[t] = rng.choice(N, p=p)
+    arrivals = np.cumsum(rng.exponential(1.0 / rate, T))
+    return cat, Trace(arrivals, svc)
+
+
+def bursty_world(N, T, seed=0, burst_len=20, rate=0.5, **phys):
+    """Bursty random world: each burst is centred on one service with random outliers."""
+    rng = np.random.default_rng(seed)
+    raw = np.c_[rng.lognormal(0, .6, N), rng.lognormal(1, .6, N), rng.lognormal(3.5, .8, N)]
+    cat = from_physical(raw, **phys)
+    svc = np.empty(T, dtype=int)
+    i = 0
+    while i < T:
+        center = int(rng.integers(N))
+        for _ in range(burst_len):
+            if i >= T:
+                break
+            svc[i] = center if rng.random() < 0.7 else int(rng.integers(N))
+            i += 1
+    arrivals = np.cumsum(rng.exponential(1.0 / rate, T))
+    return cat, Trace(arrivals, svc)

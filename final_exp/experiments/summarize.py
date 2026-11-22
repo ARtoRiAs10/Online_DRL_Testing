@@ -577,6 +577,51 @@ def main():
                  "worse, at T=600 about -2%, and at T=1200 about -7%.  This supports "
                  "the warm-up explanation for the short-trace MILP result.")
 
+    # ---------------------------------------------------------------- exp32
+    d = load("exp32_large_sequence_ablation")
+    if d:
+        L.append(section("32. Large Sequence ablation (R1+R2 vs +R3 vs R3 only)"))
+        rows = []
+        for key, s in d["summary"].items():
+            rows.append([key, fmt(s["latency_ratio"][0], 3),
+                         fmt(s["latency_ratio"][1], 3),
+                         fmt(s["cost_ratio"][0], 3)])
+        L.append(table(["k, M/l, variant", "lat/OPT", "sd", "cost/OPT"], rows))
+        L.append("")
+        L.append("R3 alone remains linear in k.  R1+R2 (randomized rounding) is what "
+                 "flattens the ratio; adding R3 mainly reduces cost.")
+
+    # ---------------------------------------------------------------- exp33
+    d = load("exp33_adversarial_families")
+    if d:
+        L.append(section("33. Additional adversarial families"))
+        rows = []
+        for fam, s in d["summary"].items():
+            for name in ("online_drl", "ll_rc", "r3_only", "rand_stateless", "rand_landlord"):
+                if name in s:
+                    rows.append([fam, name,
+                                 fmt(s[name]["latency"][0], 0),
+                                 fmt(s[name]["cost"][0], 0),
+                                 fmt(s[name]["latency_ratio_vs_det"][0], 3),
+                                 fmt(s[name]["cost_ratio_vs_det"][0], 3)])
+        L.append(table(["family", "algorithm", "latency", "cost",
+                        "lat/Online-DRL", "cost/Online-DRL"], rows))
+
+    # ---------------------------------------------------------------- exp34
+    d = load("exp34_large_sequence_dynamics")
+    if d:
+        L.append(section("34. Large Sequence P_t dynamics"))
+        rows = []
+        for r in d["rows"]:
+            rows.append([r["k"], f"{r['M_over_l']:g}", fmt(r["gamma"], 3),
+                         fmt(r["p_sum_mean"], 3), fmt(r["p_sum_std"], 3),
+                         fmt(r["frac_at_one"], 3), fmt(r["mean_proj_iters"], 2)])
+        L.append(table(["k", "M/l", "gamma", "mean p_sum", "sd p_sum",
+                        "fraction p=1", "projection iters"], rows))
+        L.append("")
+        L.append("The fractional state stays near the capacity simplex; the ratio is "
+                 "controlled by the cyclic request pattern, not by an empty cache.")
+
     # ---------------------------------------------------------------- verdicts
     L.append(section("Summary: confirmed / refuted / not testable"))
     L.append("| # | claim | verdict | evidence |")

@@ -1,0 +1,3914 @@
+{
+  "config": {
+    "ks": [
+      9,
+      12,
+      24,
+      48
+    ],
+    "ratios": [
+      2.0,
+      4.0,
+      8.0
+    ],
+    "K": 4,
+    "variants": [
+      "r3_only",
+      "r1r2_stateless",
+      "r1r2r3_stateless",
+      "r1r2r3_landlord"
+    ]
+  },
+  "rows": [
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 7.711111111111111,
+      "cost_ratio": 14.133333333333333,
+      "latency": 347.0,
+      "cost": 636.0,
+      "hits": 67,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 3.1555555555555554,
+      "cost_ratio": 7.2444444444444445,
+      "latency": 142.0,
+      "cost": 326.0,
+      "hits": 272,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.8222222222222224,
+      "cost_ratio": 1.8222222222222222,
+      "latency": 127.0,
+      "cost": 82.0,
+      "hits": 287,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 2.8222222222222224,
+      "cost_ratio": 1.8222222222222222,
+      "latency": 127.0,
+      "cost": 82.0,
+      "hits": 287,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 7.888888888888889,
+      "cost_ratio": 14.133333333333333,
+      "latency": 355.0,
+      "cost": 636.0,
+      "hits": 59,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 1.5777777777777777,
+      "cost_ratio": 5.688888888888889,
+      "latency": 71.0,
+      "cost": 256.0,
+      "hits": 343,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 1.488888888888889,
+      "cost_ratio": 0.8,
+      "latency": 67.0,
+      "cost": 36.0,
+      "hits": 347,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 2.0444444444444443,
+      "cost_ratio": 1.5555555555555556,
+      "latency": 92.0,
+      "cost": 70.0,
+      "hits": 322,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 7.666666666666667,
+      "cost_ratio": 14.133333333333333,
+      "latency": 345.0,
+      "cost": 636.0,
+      "hits": 69,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.4444444444444446,
+      "cost_ratio": 6.533333333333333,
+      "latency": 110.0,
+      "cost": 294.0,
+      "hits": 304,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.1777777777777776,
+      "cost_ratio": 1.4222222222222223,
+      "latency": 98.0,
+      "cost": 64.0,
+      "hits": 316,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 2.466666666666667,
+      "cost_ratio": 1.9111111111111112,
+      "latency": 111.0,
+      "cost": 86.0,
+      "hits": 303,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 7.866666666666666,
+      "cost_ratio": 14.133333333333333,
+      "latency": 354.0,
+      "cost": 636.0,
+      "hits": 60,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.4,
+      "cost_ratio": 6.488888888888889,
+      "latency": 108.0,
+      "cost": 292.0,
+      "hits": 306,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.2,
+      "cost_ratio": 1.4222222222222223,
+      "latency": 99.0,
+      "cost": 64.0,
+      "hits": 315,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 2.533333333333333,
+      "cost_ratio": 2.0,
+      "latency": 114.0,
+      "cost": 90.0,
+      "hits": 300,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 8.088888888888889,
+      "cost_ratio": 14.133333333333333,
+      "latency": 364.0,
+      "cost": 636.0,
+      "hits": 50,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.933333333333333,
+      "cost_ratio": 7.4222222222222225,
+      "latency": 132.0,
+      "cost": 334.0,
+      "hits": 282,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.7555555555555555,
+      "cost_ratio": 2.1777777777777776,
+      "latency": 124.0,
+      "cost": 98.0,
+      "hits": 290,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 3.2,
+      "cost_ratio": 3.022222222222222,
+      "latency": 144.0,
+      "cost": 136.0,
+      "hits": 270,
+      "det_ratio": 9.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 12.466666666666667,
+      "cost_ratio": 28.266666666666666,
+      "latency": 561.0,
+      "cost": 1272.0,
+      "hits": 69,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 4.177777777777778,
+      "cost_ratio": 14.222222222222221,
+      "latency": 188.0,
+      "cost": 640.0,
+      "hits": 442,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 3.8222222222222224,
+      "cost_ratio": 3.7333333333333334,
+      "latency": 172.0,
+      "cost": 168.0,
+      "hits": 458,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 3.8222222222222224,
+      "cost_ratio": 3.7333333333333334,
+      "latency": 172.0,
+      "cost": 168.0,
+      "hits": 458,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 13.022222222222222,
+      "cost_ratio": 28.266666666666666,
+      "latency": 586.0,
+      "cost": 1272.0,
+      "hits": 44,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 1.9111111111111112,
+      "cost_ratio": 11.2,
+      "latency": 86.0,
+      "cost": 504.0,
+      "hits": 544,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 1.6888888888888889,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 76.0,
+      "cost": 48.0,
+      "hits": 554,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 1.9777777777777779,
+      "cost_ratio": 2.0444444444444443,
+      "latency": 89.0,
+      "cost": 92.0,
+      "hits": 541,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 12.577777777777778,
+      "cost_ratio": 28.266666666666666,
+      "latency": 566.0,
+      "cost": 1272.0,
+      "hits": 64,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 3.0,
+      "cost_ratio": 12.622222222222222,
+      "latency": 135.0,
+      "cost": 568.0,
+      "hits": 495,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.7777777777777777,
+      "cost_ratio": 2.933333333333333,
+      "latency": 125.0,
+      "cost": 132.0,
+      "hits": 505,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 3.2222222222222223,
+      "cost_ratio": 3.3777777777777778,
+      "latency": 145.0,
+      "cost": 152.0,
+      "hits": 485,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 12.844444444444445,
+      "cost_ratio": 28.266666666666666,
+      "latency": 578.0,
+      "cost": 1272.0,
+      "hits": 52,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 3.066666666666667,
+      "cost_ratio": 12.71111111111111,
+      "latency": 138.0,
+      "cost": 572.0,
+      "hits": 492,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 3.022222222222222,
+      "cost_ratio": 2.577777777777778,
+      "latency": 136.0,
+      "cost": 116.0,
+      "hits": 494,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 3.2222222222222223,
+      "cost_ratio": 3.3777777777777778,
+      "latency": 145.0,
+      "cost": 152.0,
+      "hits": 485,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 13.044444444444444,
+      "cost_ratio": 28.266666666666666,
+      "latency": 587.0,
+      "cost": 1272.0,
+      "hits": 43,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.4444444444444446,
+      "cost_ratio": 12.0,
+      "latency": 110.0,
+      "cost": 540.0,
+      "hits": 520,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.2666666666666666,
+      "cost_ratio": 2.0444444444444443,
+      "latency": 102.0,
+      "cost": 92.0,
+      "hits": 528,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 2.7555555555555555,
+      "cost_ratio": 3.111111111111111,
+      "latency": 124.0,
+      "cost": 140.0,
+      "hits": 506,
+      "det_ratio": 13.666666666666666,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 22.2,
+      "cost_ratio": 56.53333333333333,
+      "latency": 999.0,
+      "cost": 2544.0,
+      "hits": 63,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 6.177777777777778,
+      "cost_ratio": 27.91111111111111,
+      "latency": 278.0,
+      "cost": 1256.0,
+      "hits": 784,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 5.822222222222222,
+      "cost_ratio": 7.466666666666667,
+      "latency": 262.0,
+      "cost": 336.0,
+      "hits": 800,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 5.822222222222222,
+      "cost_ratio": 7.466666666666667,
+      "latency": 262.0,
+      "cost": 336.0,
+      "hits": 800,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 22.466666666666665,
+      "cost_ratio": 56.53333333333333,
+      "latency": 1011.0,
+      "cost": 2544.0,
+      "hits": 51,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.1777777777777776,
+      "cost_ratio": 21.511111111111113,
+      "latency": 98.0,
+      "cost": 968.0,
+      "hits": 964,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.1777777777777776,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 98.0,
+      "cost": 96.0,
+      "hits": 964,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 2.1777777777777776,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 98.0,
+      "cost": 96.0,
+      "hits": 964,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 22.08888888888889,
+      "cost_ratio": 56.53333333333333,
+      "latency": 994.0,
+      "cost": 2544.0,
+      "hits": 68,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 4.288888888888889,
+      "cost_ratio": 24.88888888888889,
+      "latency": 193.0,
+      "cost": 1120.0,
+      "hits": 869,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 4.2,
+      "cost_ratio": 4.977777777777778,
+      "latency": 189.0,
+      "cost": 224.0,
+      "hits": 873,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 4.7555555555555555,
+      "cost_ratio": 6.933333333333334,
+      "latency": 214.0,
+      "cost": 312.0,
+      "hits": 848,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 22.444444444444443,
+      "cost_ratio": 56.53333333333333,
+      "latency": 1010.0,
+      "cost": 2544.0,
+      "hits": 52,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.8444444444444446,
+      "cost_ratio": 22.57777777777778,
+      "latency": 128.0,
+      "cost": 1016.0,
+      "hits": 934,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.8444444444444446,
+      "cost_ratio": 2.488888888888889,
+      "latency": 128.0,
+      "cost": 112.0,
+      "hits": 934,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 2.8444444444444446,
+      "cost_ratio": 2.488888888888889,
+      "latency": 128.0,
+      "cost": 112.0,
+      "hits": 934,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r3_only",
+      "opt": 45.0,
+      "latency_ratio": 22.711111111111112,
+      "cost_ratio": 56.53333333333333,
+      "latency": 1022.0,
+      "cost": 2544.0,
+      "hits": 40,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r1r2_stateless",
+      "opt": 45.0,
+      "latency_ratio": 3.1333333333333333,
+      "cost_ratio": 23.11111111111111,
+      "latency": 141.0,
+      "cost": 1040.0,
+      "hits": 921,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r1r2r3_stateless",
+      "opt": 45.0,
+      "latency_ratio": 2.688888888888889,
+      "cost_ratio": 2.8444444444444446,
+      "latency": 121.0,
+      "cost": 128.0,
+      "hits": 941,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 9,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r1r2r3_landlord",
+      "opt": 45.0,
+      "latency_ratio": 2.688888888888889,
+      "cost_ratio": 2.8444444444444446,
+      "latency": 121.0,
+      "cost": 128.0,
+      "hits": 941,
+      "det_ratio": 23.0,
+      "ll_ratio": 3.933333333333333
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 10.316666666666666,
+      "cost_ratio": 18.933333333333334,
+      "latency": 619.0,
+      "cost": 1136.0,
+      "hits": 101,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 1.8,
+      "cost_ratio": 7.5,
+      "latency": 108.0,
+      "cost": 450.0,
+      "hits": 612,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 1.7,
+      "cost_ratio": 0.8,
+      "latency": 102.0,
+      "cost": 48.0,
+      "hits": 618,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 2.1166666666666667,
+      "cost_ratio": 1.4333333333333333,
+      "latency": 127.0,
+      "cost": 86.0,
+      "hits": 593,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 10.05,
+      "cost_ratio": 18.933333333333334,
+      "latency": 603.0,
+      "cost": 1136.0,
+      "hits": 117,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 1.9,
+      "cost_ratio": 7.633333333333334,
+      "latency": 114.0,
+      "cost": 458.0,
+      "hits": 606,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 1.8166666666666667,
+      "cost_ratio": 0.5666666666666667,
+      "latency": 109.0,
+      "cost": 34.0,
+      "hits": 611,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 1.8166666666666667,
+      "cost_ratio": 0.5666666666666667,
+      "latency": 109.0,
+      "cost": 34.0,
+      "hits": 611,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 9.95,
+      "cost_ratio": 18.933333333333334,
+      "latency": 597.0,
+      "cost": 1136.0,
+      "hits": 123,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.966666666666667,
+      "cost_ratio": 9.066666666666666,
+      "latency": 178.0,
+      "cost": 544.0,
+      "hits": 542,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.75,
+      "cost_ratio": 1.9666666666666666,
+      "latency": 165.0,
+      "cost": 118.0,
+      "hits": 555,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 2.75,
+      "cost_ratio": 1.9666666666666666,
+      "latency": 165.0,
+      "cost": 118.0,
+      "hits": 555,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 10.266666666666667,
+      "cost_ratio": 18.933333333333334,
+      "latency": 616.0,
+      "cost": 1136.0,
+      "hits": 104,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 1.6333333333333333,
+      "cost_ratio": 7.333333333333333,
+      "latency": 98.0,
+      "cost": 440.0,
+      "hits": 622,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 1.6,
+      "cost_ratio": 0.6,
+      "latency": 96.0,
+      "cost": 36.0,
+      "hits": 624,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 1.8,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 108.0,
+      "cost": 64.0,
+      "hits": 612,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 10.333333333333334,
+      "cost_ratio": 18.933333333333334,
+      "latency": 620.0,
+      "cost": 1136.0,
+      "hits": 100,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 4.116666666666666,
+      "cost_ratio": 10.566666666666666,
+      "latency": 247.0,
+      "cost": 634.0,
+      "hits": 473,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 3.85,
+      "cost_ratio": 3.6666666666666665,
+      "latency": 231.0,
+      "cost": 220.0,
+      "hits": 489,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 3.85,
+      "cost_ratio": 3.7,
+      "latency": 231.0,
+      "cost": 222.0,
+      "hits": 489,
+      "det_ratio": 11.8,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 16.633333333333333,
+      "cost_ratio": 37.86666666666667,
+      "latency": 998.0,
+      "cost": 2272.0,
+      "hits": 106,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.15,
+      "cost_ratio": 14.733333333333333,
+      "latency": 129.0,
+      "cost": 884.0,
+      "hits": 975,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 1.9166666666666667,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 115.0,
+      "cost": 64.0,
+      "hits": 989,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 2.3,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 138.0,
+      "cost": 128.0,
+      "hits": 966,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 16.366666666666667,
+      "cost_ratio": 37.86666666666667,
+      "latency": 982.0,
+      "cost": 2272.0,
+      "hits": 122,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.283333333333333,
+      "cost_ratio": 14.933333333333334,
+      "latency": 137.0,
+      "cost": 896.0,
+      "hits": 967,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.1166666666666667,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 127.0,
+      "cost": 64.0,
+      "hits": 977,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 2.1166666666666667,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 127.0,
+      "cost": 64.0,
+      "hits": 977,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 16.583333333333332,
+      "cost_ratio": 37.86666666666667,
+      "latency": 995.0,
+      "cost": 2272.0,
+      "hits": 109,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 3.9833333333333334,
+      "cost_ratio": 17.666666666666668,
+      "latency": 239.0,
+      "cost": 1060.0,
+      "hits": 865,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 3.6166666666666667,
+      "cost_ratio": 3.8666666666666667,
+      "latency": 217.0,
+      "cost": 232.0,
+      "hits": 887,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 3.6166666666666667,
+      "cost_ratio": 3.8666666666666667,
+      "latency": 217.0,
+      "cost": 232.0,
+      "hits": 887,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 16.933333333333334,
+      "cost_ratio": 37.86666666666667,
+      "latency": 1016.0,
+      "cost": 2272.0,
+      "hits": 88,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.0,
+      "cost_ratio": 14.533333333333333,
+      "latency": 120.0,
+      "cost": 872.0,
+      "hits": 984,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 1.8666666666666667,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 112.0,
+      "cost": 64.0,
+      "hits": 992,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 1.8666666666666667,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 112.0,
+      "cost": 64.0,
+      "hits": 992,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 16.933333333333334,
+      "cost_ratio": 37.86666666666667,
+      "latency": 1016.0,
+      "cost": 2272.0,
+      "hits": 88,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 5.966666666666667,
+      "cost_ratio": 20.8,
+      "latency": 358.0,
+      "cost": 1248.0,
+      "hits": 746,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 5.7,
+      "cost_ratio": 6.933333333333334,
+      "latency": 342.0,
+      "cost": 416.0,
+      "hits": 762,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 5.7,
+      "cost_ratio": 6.933333333333334,
+      "latency": 342.0,
+      "cost": 416.0,
+      "hits": 762,
+      "det_ratio": 18.066666666666666,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 28.866666666666667,
+      "cost_ratio": 75.73333333333333,
+      "latency": 1732.0,
+      "cost": 4544.0,
+      "hits": 140,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.566666666666667,
+      "cost_ratio": 28.533333333333335,
+      "latency": 154.0,
+      "cost": 1712.0,
+      "hits": 1718,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.5,
+      "cost_ratio": 2.2666666666666666,
+      "latency": 150.0,
+      "cost": 136.0,
+      "hits": 1722,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 2.5,
+      "cost_ratio": 2.2666666666666666,
+      "latency": 150.0,
+      "cost": 136.0,
+      "hits": 1722,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 28.933333333333334,
+      "cost_ratio": 75.73333333333333,
+      "latency": 1736.0,
+      "cost": 4544.0,
+      "hits": 136,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.8833333333333333,
+      "cost_ratio": 29.066666666666666,
+      "latency": 173.0,
+      "cost": 1744.0,
+      "hits": 1699,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.816666666666667,
+      "cost_ratio": 2.2666666666666666,
+      "latency": 169.0,
+      "cost": 136.0,
+      "hits": 1703,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 2.816666666666667,
+      "cost_ratio": 2.2666666666666666,
+      "latency": 169.0,
+      "cost": 136.0,
+      "hits": 1703,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 29.066666666666666,
+      "cost_ratio": 75.73333333333333,
+      "latency": 1744.0,
+      "cost": 4544.0,
+      "hits": 128,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.933333333333333,
+      "cost_ratio": 29.2,
+      "latency": 176.0,
+      "cost": 1752.0,
+      "hits": 1696,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.933333333333333,
+      "cost_ratio": 2.6666666666666665,
+      "latency": 176.0,
+      "cost": 160.0,
+      "hits": 1696,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 2.933333333333333,
+      "cost_ratio": 2.6666666666666665,
+      "latency": 176.0,
+      "cost": 160.0,
+      "hits": 1696,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 29.666666666666668,
+      "cost_ratio": 75.73333333333333,
+      "latency": 1780.0,
+      "cost": 4544.0,
+      "hits": 92,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.55,
+      "cost_ratio": 28.533333333333335,
+      "latency": 153.0,
+      "cost": 1712.0,
+      "hits": 1719,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 2.283333333333333,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 137.0,
+      "cost": 128.0,
+      "hits": 1735,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 2.283333333333333,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 137.0,
+      "cost": 128.0,
+      "hits": 1735,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r3_only",
+      "opt": 60.0,
+      "latency_ratio": 29.733333333333334,
+      "cost_ratio": 75.73333333333333,
+      "latency": 1784.0,
+      "cost": 4544.0,
+      "hits": 88,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r1r2_stateless",
+      "opt": 60.0,
+      "latency_ratio": 6.783333333333333,
+      "cost_ratio": 36.0,
+      "latency": 407.0,
+      "cost": 2160.0,
+      "hits": 1465,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r1r2r3_stateless",
+      "opt": 60.0,
+      "latency_ratio": 6.583333333333333,
+      "cost_ratio": 8.533333333333333,
+      "latency": 395.0,
+      "cost": 512.0,
+      "hits": 1477,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 12,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r1r2r3_landlord",
+      "opt": 60.0,
+      "latency_ratio": 6.583333333333333,
+      "cost_ratio": 8.533333333333333,
+      "latency": 395.0,
+      "cost": 512.0,
+      "hits": 1477,
+      "det_ratio": 30.6,
+      "ll_ratio": 5.133333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 19.675,
+      "cost_ratio": 38.13333333333333,
+      "latency": 2361.0,
+      "cost": 4576.0,
+      "hits": 423,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.1083333333333334,
+      "cost_ratio": 14.266666666666667,
+      "latency": 253.0,
+      "cost": 1712.0,
+      "hits": 2531,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.033333333333333,
+      "cost_ratio": 0.55,
+      "latency": 244.0,
+      "cost": 66.0,
+      "hits": 2540,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 2.033333333333333,
+      "cost_ratio": 0.55,
+      "latency": 244.0,
+      "cost": 66.0,
+      "hits": 2540,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 19.625,
+      "cost_ratio": 38.13333333333333,
+      "latency": 2355.0,
+      "cost": 4576.0,
+      "hits": 429,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.2333333333333334,
+      "cost_ratio": 14.4,
+      "latency": 268.0,
+      "cost": 1728.0,
+      "hits": 2516,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.1083333333333334,
+      "cost_ratio": 0.55,
+      "latency": 253.0,
+      "cost": 66.0,
+      "hits": 2531,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 2.1083333333333334,
+      "cost_ratio": 0.55,
+      "latency": 253.0,
+      "cost": 66.0,
+      "hits": 2531,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 19.716666666666665,
+      "cost_ratio": 38.13333333333333,
+      "latency": 2366.0,
+      "cost": 4576.0,
+      "hits": 418,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 1.975,
+      "cost_ratio": 14.15,
+      "latency": 237.0,
+      "cost": 1698.0,
+      "hits": 2547,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 1.8833333333333333,
+      "cost_ratio": 0.6166666666666667,
+      "latency": 226.0,
+      "cost": 74.0,
+      "hits": 2558,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 2.5083333333333333,
+      "cost_ratio": 2.1,
+      "latency": 301.0,
+      "cost": 252.0,
+      "hits": 2483,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 19.45,
+      "cost_ratio": 38.13333333333333,
+      "latency": 2334.0,
+      "cost": 4576.0,
+      "hits": 450,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.066666666666667,
+      "cost_ratio": 14.183333333333334,
+      "latency": 248.0,
+      "cost": 1702.0,
+      "hits": 2536,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 1.9666666666666666,
+      "cost_ratio": 0.8166666666666667,
+      "latency": 236.0,
+      "cost": 98.0,
+      "hits": 2548,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 3,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 2.525,
+      "cost_ratio": 2.35,
+      "latency": 303.0,
+      "cost": 282.0,
+      "hits": 2481,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 19.691666666666666,
+      "cost_ratio": 38.13333333333333,
+      "latency": 2363.0,
+      "cost": 4576.0,
+      "hits": 421,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.025,
+      "cost_ratio": 14.166666666666666,
+      "latency": 243.0,
+      "cost": 1700.0,
+      "hits": 2541,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 1.9333333333333333,
+      "cost_ratio": 0.55,
+      "latency": 232.0,
+      "cost": 66.0,
+      "hits": 2552,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 2.0,
+      "seed": 4,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 1.9333333333333333,
+      "cost_ratio": 0.55,
+      "latency": 232.0,
+      "cost": 66.0,
+      "hits": 2552,
+      "det_ratio": 23.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 32.733333333333334,
+      "cost_ratio": 76.26666666666667,
+      "latency": 3928.0,
+      "cost": 9152.0,
+      "hits": 392,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.5,
+      "cost_ratio": 28.033333333333335,
+      "latency": 300.0,
+      "cost": 3364.0,
+      "hits": 4020,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.4166666666666665,
+      "cost_ratio": 1.1,
+      "latency": 290.0,
+      "cost": 132.0,
+      "hits": 4030,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 2.4166666666666665,
+      "cost_ratio": 1.1,
+      "latency": 290.0,
+      "cost": 132.0,
+      "hits": 4030,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 32.86666666666667,
+      "cost_ratio": 76.26666666666667,
+      "latency": 3944.0,
+      "cost": 9152.0,
+      "hits": 376,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.683333333333333,
+      "cost_ratio": 28.3,
+      "latency": 322.0,
+      "cost": 3396.0,
+      "hits": 3998,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.5166666666666666,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 302.0,
+      "cost": 128.0,
+      "hits": 4018,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 2.5166666666666666,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 302.0,
+      "cost": 128.0,
+      "hits": 4018,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 32.825,
+      "cost_ratio": 76.26666666666667,
+      "latency": 3939.0,
+      "cost": 9152.0,
+      "hits": 381,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.2916666666666665,
+      "cost_ratio": 27.766666666666666,
+      "latency": 275.0,
+      "cost": 3332.0,
+      "hits": 4045,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.2083333333333335,
+      "cost_ratio": 1.1333333333333333,
+      "latency": 265.0,
+      "cost": 136.0,
+      "hits": 4055,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 3.0166666666666666,
+      "cost_ratio": 3.433333333333333,
+      "latency": 362.0,
+      "cost": 412.0,
+      "hits": 3958,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 32.233333333333334,
+      "cost_ratio": 76.26666666666667,
+      "latency": 3868.0,
+      "cost": 9152.0,
+      "hits": 452,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.4833333333333334,
+      "cost_ratio": 27.966666666666665,
+      "latency": 298.0,
+      "cost": 3356.0,
+      "hits": 4022,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.4,
+      "cost_ratio": 1.7,
+      "latency": 288.0,
+      "cost": 204.0,
+      "hits": 4032,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 3,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 3.225,
+      "cost_ratio": 4.033333333333333,
+      "latency": 387.0,
+      "cost": 484.0,
+      "hits": 3933,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 33.075,
+      "cost_ratio": 76.26666666666667,
+      "latency": 3969.0,
+      "cost": 9152.0,
+      "hits": 351,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.341666666666667,
+      "cost_ratio": 27.8,
+      "latency": 281.0,
+      "cost": 3336.0,
+      "hits": 4039,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.2416666666666667,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 269.0,
+      "cost": 128.0,
+      "hits": 4051,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 4.0,
+      "seed": 4,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 2.2416666666666667,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 269.0,
+      "cost": 128.0,
+      "hits": 4051,
+      "det_ratio": 35.666666666666664,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 58.2,
+      "cost_ratio": 152.53333333333333,
+      "latency": 6984.0,
+      "cost": 18304.0,
+      "hits": 408,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 3.275,
+      "cost_ratio": 55.333333333333336,
+      "latency": 393.0,
+      "cost": 6640.0,
+      "hits": 6999,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 3.2416666666666667,
+      "cost_ratio": 2.2,
+      "latency": 389.0,
+      "cost": 264.0,
+      "hits": 7003,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 3.2416666666666667,
+      "cost_ratio": 2.2,
+      "latency": 389.0,
+      "cost": 264.0,
+      "hits": 7003,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 58.43333333333333,
+      "cost_ratio": 152.53333333333333,
+      "latency": 7012.0,
+      "cost": 18304.0,
+      "hits": 380,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 3.3583333333333334,
+      "cost_ratio": 55.46666666666667,
+      "latency": 403.0,
+      "cost": 6656.0,
+      "hits": 6989,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 3.2583333333333333,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 391.0,
+      "cost": 256.0,
+      "hits": 7001,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 3.2583333333333333,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 391.0,
+      "cost": 256.0,
+      "hits": 7001,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 58.75833333333333,
+      "cost_ratio": 152.53333333333333,
+      "latency": 7051.0,
+      "cost": 18304.0,
+      "hits": 341,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.908333333333333,
+      "cost_ratio": 54.733333333333334,
+      "latency": 349.0,
+      "cost": 6568.0,
+      "hits": 7043,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.7416666666666667,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 329.0,
+      "cost": 256.0,
+      "hits": 7063,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 3.6333333333333333,
+      "cost_ratio": 4.733333333333333,
+      "latency": 436.0,
+      "cost": 568.0,
+      "hits": 6956,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 58.391666666666666,
+      "cost_ratio": 152.53333333333333,
+      "latency": 7007.0,
+      "cost": 18304.0,
+      "hits": 385,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 3.058333333333333,
+      "cost_ratio": 54.93333333333333,
+      "latency": 367.0,
+      "cost": 6592.0,
+      "hits": 7025,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 3.025,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 363.0,
+      "cost": 256.0,
+      "hits": 7029,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 3,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 4.025,
+      "cost_ratio": 5.8,
+      "latency": 483.0,
+      "cost": 696.0,
+      "hits": 6909,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r3_only",
+      "opt": 120.0,
+      "latency_ratio": 58.46666666666667,
+      "cost_ratio": 152.53333333333333,
+      "latency": 7016.0,
+      "cost": 18304.0,
+      "hits": 376,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r1r2_stateless",
+      "opt": 120.0,
+      "latency_ratio": 3.1166666666666667,
+      "cost_ratio": 55.06666666666667,
+      "latency": 374.0,
+      "cost": 6608.0,
+      "hits": 7018,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r1r2r3_stateless",
+      "opt": 120.0,
+      "latency_ratio": 2.9166666666666665,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 350.0,
+      "cost": 256.0,
+      "hits": 7042,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 24,
+      "M_over_l": 8.0,
+      "seed": 4,
+      "variant": "r1r2r3_landlord",
+      "opt": 120.0,
+      "latency_ratio": 2.9166666666666665,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 350.0,
+      "cost": 256.0,
+      "hits": 7042,
+      "det_ratio": 61.0,
+      "ll_ratio": 9.933333333333334
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 240.0,
+      "latency_ratio": 38.31666666666667,
+      "cost_ratio": 76.53333333333333,
+      "latency": 9196.0,
+      "cost": 18368.0,
+      "hits": 1748,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 240.0,
+      "latency_ratio": 3.466666666666667,
+      "cost_ratio": 28.433333333333334,
+      "latency": 832.0,
+      "cost": 6824.0,
+      "hits": 10112,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 240.0,
+      "latency_ratio": 3.2333333333333334,
+      "cost_ratio": 1.275,
+      "latency": 776.0,
+      "cost": 306.0,
+      "hits": 10168,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 240.0,
+      "latency_ratio": 3.2333333333333334,
+      "cost_ratio": 1.275,
+      "latency": 776.0,
+      "cost": 306.0,
+      "hits": 10168,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 240.0,
+      "latency_ratio": 38.31666666666667,
+      "cost_ratio": 76.53333333333333,
+      "latency": 9196.0,
+      "cost": 18368.0,
+      "hits": 1748,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 240.0,
+      "latency_ratio": 2.591666666666667,
+      "cost_ratio": 27.616666666666667,
+      "latency": 622.0,
+      "cost": 6628.0,
+      "hits": 10322,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 240.0,
+      "latency_ratio": 2.475,
+      "cost_ratio": 0.5416666666666666,
+      "latency": 594.0,
+      "cost": 130.0,
+      "hits": 10350,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 240.0,
+      "latency_ratio": 2.475,
+      "cost_ratio": 0.5416666666666666,
+      "latency": 594.0,
+      "cost": 130.0,
+      "hits": 10350,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 240.0,
+      "latency_ratio": 38.329166666666666,
+      "cost_ratio": 76.53333333333333,
+      "latency": 9199.0,
+      "cost": 18368.0,
+      "hits": 1745,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 240.0,
+      "latency_ratio": 2.5791666666666666,
+      "cost_ratio": 27.558333333333334,
+      "latency": 619.0,
+      "cost": 6614.0,
+      "hits": 10325,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 240.0,
+      "latency_ratio": 2.4583333333333335,
+      "cost_ratio": 0.5333333333333333,
+      "latency": 590.0,
+      "cost": 128.0,
+      "hits": 10354,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 2.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 240.0,
+      "latency_ratio": 2.533333333333333,
+      "cost_ratio": 0.9083333333333333,
+      "latency": 608.0,
+      "cost": 218.0,
+      "hits": 10336,
+      "det_ratio": 45.4,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 240.0,
+      "latency_ratio": 64.69166666666666,
+      "cost_ratio": 153.06666666666666,
+      "latency": 15526.0,
+      "cost": 36736.0,
+      "hits": 1562,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 240.0,
+      "latency_ratio": 3.2666666666666666,
+      "cost_ratio": 54.666666666666664,
+      "latency": 784.0,
+      "cost": 13120.0,
+      "hits": 16304,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 240.0,
+      "latency_ratio": 3.1083333333333334,
+      "cost_ratio": 1.1,
+      "latency": 746.0,
+      "cost": 264.0,
+      "hits": 16342,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 240.0,
+      "latency_ratio": 3.1083333333333334,
+      "cost_ratio": 1.1,
+      "latency": 746.0,
+      "cost": 264.0,
+      "hits": 16342,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 240.0,
+      "latency_ratio": 64.25416666666666,
+      "cost_ratio": 153.06666666666666,
+      "latency": 15421.0,
+      "cost": 36736.0,
+      "hits": 1667,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 240.0,
+      "latency_ratio": 3.120833333333333,
+      "cost_ratio": 54.53333333333333,
+      "latency": 749.0,
+      "cost": 13088.0,
+      "hits": 16339,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 240.0,
+      "latency_ratio": 2.9625,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 711.0,
+      "cost": 256.0,
+      "hits": 16377,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 240.0,
+      "latency_ratio": 2.9625,
+      "cost_ratio": 1.0666666666666667,
+      "latency": 711.0,
+      "cost": 256.0,
+      "hits": 16377,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 240.0,
+      "latency_ratio": 64.85416666666667,
+      "cost_ratio": 153.06666666666666,
+      "latency": 15565.0,
+      "cost": 36736.0,
+      "hits": 1523,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 240.0,
+      "latency_ratio": 3.095833333333333,
+      "cost_ratio": 54.45,
+      "latency": 743.0,
+      "cost": 13068.0,
+      "hits": 16345,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 240.0,
+      "latency_ratio": 2.9625,
+      "cost_ratio": 1.1,
+      "latency": 711.0,
+      "cost": 264.0,
+      "hits": 16377,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 4.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 240.0,
+      "latency_ratio": 2.9625,
+      "cost_ratio": 1.1,
+      "latency": 711.0,
+      "cost": 264.0,
+      "hits": 16377,
+      "det_ratio": 70.86666666666666,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r3_only",
+      "opt": 240.0,
+      "latency_ratio": 115.65,
+      "cost_ratio": 306.1333333333333,
+      "latency": 27756.0,
+      "cost": 73472.0,
+      "hits": 1620,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "opt": 240.0,
+      "latency_ratio": 4.229166666666667,
+      "cost_ratio": 108.06666666666666,
+      "latency": 1015.0,
+      "cost": 25936.0,
+      "hits": 28361,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "opt": 240.0,
+      "latency_ratio": 4.1125,
+      "cost_ratio": 2.1666666666666665,
+      "latency": 987.0,
+      "cost": 520.0,
+      "hits": 28389,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "opt": 240.0,
+      "latency_ratio": 4.1125,
+      "cost_ratio": 2.1666666666666665,
+      "latency": 987.0,
+      "cost": 520.0,
+      "hits": 28389,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r3_only",
+      "opt": 240.0,
+      "latency_ratio": 116.03333333333333,
+      "cost_ratio": 306.1333333333333,
+      "latency": 27848.0,
+      "cost": 73472.0,
+      "hits": 1528,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "opt": 240.0,
+      "latency_ratio": 4.033333333333333,
+      "cost_ratio": 107.8,
+      "latency": 968.0,
+      "cost": 25872.0,
+      "hits": 28408,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "opt": 240.0,
+      "latency_ratio": 3.9,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 936.0,
+      "cost": 512.0,
+      "hits": 28440,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "opt": 240.0,
+      "latency_ratio": 3.9,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 936.0,
+      "cost": 512.0,
+      "hits": 28440,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r3_only",
+      "opt": 240.0,
+      "latency_ratio": 116.2625,
+      "cost_ratio": 306.1333333333333,
+      "latency": 27903.0,
+      "cost": 73472.0,
+      "hits": 1473,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2_stateless",
+      "opt": 240.0,
+      "latency_ratio": 3.9166666666666665,
+      "cost_ratio": 107.56666666666666,
+      "latency": 940.0,
+      "cost": 25816.0,
+      "hits": 28436,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2r3_stateless",
+      "opt": 240.0,
+      "latency_ratio": 3.8,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 912.0,
+      "cost": 512.0,
+      "hits": 28464,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    },
+    {
+      "k": 48,
+      "M_over_l": 8.0,
+      "seed": 2,
+      "variant": "r1r2r3_landlord",
+      "opt": 240.0,
+      "latency_ratio": 3.8,
+      "cost_ratio": 2.1333333333333333,
+      "latency": 912.0,
+      "cost": 512.0,
+      "hits": 28464,
+      "det_ratio": 121.8,
+      "ll_ratio": 19.533333333333335
+    }
+  ],
+  "summary": {
+    "k=9,M/l=2,r3_only": {
+      "latency_ratio": [
+        7.844444444444446,
+        0.14940210056863637
+      ],
+      "cost_ratio": [
+        14.133333333333331,
+        1.7763568394002505e-15
+      ],
+      "latency_ratio_ci": {
+        "mean": -1.1555555555555554,
+        "sd": 0.16703662642636544,
+        "ci_half": 0.1464140585572636,
+        "ci_low": -1.301969614112819,
+        "ci_high": -1.009141496998292,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=2,r1r2_stateless": {
+      "latency_ratio": [
+        2.502222222222222,
+        0.5442584716388136
+      ],
+      "cost_ratio": [
+        6.675555555555556,
+        0.6180175394051092
+      ],
+      "latency_ratio_ci": {
+        "mean": -6.497777777777779,
+        "sd": 0.6084994699572643,
+        "ci_half": 0.5333733022060374,
+        "ci_low": -7.031151079983816,
+        "ci_high": -5.964404475571742,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=2,r1r2r3_stateless": {
+      "latency_ratio": [
+        2.288888888888889,
+        0.482176137070774
+      ],
+      "cost_ratio": [
+        1.5288888888888887,
+        0.4606811918168866
+      ],
+      "latency_ratio_ci": {
+        "mean": -6.711111111111111,
+        "sd": 0.5390893098092536,
+        "ci_half": 0.4725326143293586,
+        "ci_low": -7.1836437254404695,
+        "ci_high": -6.238578496781753,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=2,r1r2r3_landlord": {
+      "latency_ratio": [
+        2.6133333333333333,
+        0.38454077149019156
+      ],
+      "cost_ratio": [
+        2.062222222222222,
+        0.5025171208925358
+      ],
+      "latency_ratio_ci": {
+        "mean": -6.386666666666667,
+        "sd": 0.42992965258614074,
+        "ci_half": 0.37684995606038774,
+        "ci_low": -6.763516622727055,
+        "ci_high": -6.0098167106062785,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=4,r3_only": {
+      "latency_ratio": [
+        12.79111111111111,
+        0.232899066783536
+      ],
+      "cost_ratio": [
+        28.266666666666662,
+        3.552713678800501e-15
+      ],
+      "latency_ratio_ci": {
+        "mean": -0.875555555555555,
+        "sd": 0.2603890726121249,
+        "ci_half": 0.22824108544786528,
+        "ci_low": -1.1037966410034203,
+        "ci_high": -0.6473144701076897,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=4,r1r2_stateless": {
+      "latency_ratio": [
+        2.92,
+        0.7555032661644722
+      ],
+      "cost_ratio": [
+        12.55111111111111,
+        0.9952380446064643
+      ],
+      "latency_ratio_ci": {
+        "mean": -10.746666666666666,
+        "sd": 0.8446783301834385,
+        "ci_half": 0.7403932008411829,
+        "ci_low": -11.487059867507849,
+        "ci_high": -10.006273465825483,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=4,r1r2r3_stateless": {
+      "latency_ratio": [
+        2.715555555555555,
+        0.7180769930176253
+      ],
+      "cost_ratio": [
+        2.471111111111111,
+        0.8913743030557636
+      ],
+      "latency_ratio_ci": {
+        "mean": -10.95111111111111,
+        "sd": 0.8028344847330263,
+        "ci_half": 0.703715453157273,
+        "ci_low": -11.654826564268383,
+        "ci_high": -10.247395657953838,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=4,r1r2r3_landlord": {
+      "latency_ratio": [
+        3.0,
+        0.6131078490509653
+      ],
+      "cost_ratio": [
+        3.1288888888888886,
+        0.5771620650932597
+      ],
+      "latency_ratio_ci": {
+        "mean": -10.666666666666666,
+        "sd": 0.6854754140083196,
+        "ci_half": 0.6008456920699463,
+        "ci_low": -11.267512358736612,
+        "ci_high": -10.06582097459672,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=8,r3_only": {
+      "latency_ratio": [
+        22.38222222222222,
+        0.21836655104956912
+      ],
+      "cost_ratio": [
+        56.533333333333324,
+        7.105427357601002e-15
+      ],
+      "latency_ratio_ci": {
+        "mean": -0.6177777777777784,
+        "sd": 0.2441412260795073,
+        "ci_half": 0.21399922002857774,
+        "ci_low": -0.8317769978063562,
+        "ci_high": -0.4037785577492007,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=8,r1r2_stateless": {
+      "latency_ratio": [
+        3.724444444444445,
+        1.4038113903773137
+      ],
+      "cost_ratio": [
+        24.000000000000004,
+        2.2402821691766555
+      ],
+      "latency_ratio_ci": {
+        "mean": -19.275555555555552,
+        "sd": 1.5695088482360835,
+        "ci_half": 1.375735162569767,
+        "ci_low": -20.65129071812532,
+        "ci_high": -17.899820392985784,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=8,r1r2r3_stateless": {
+      "latency_ratio": [
+        3.546666666666667,
+        1.3196782249033099
+      ],
+      "cost_ratio": [
+        3.982222222222222,
+        2.003769287623875
+      ],
+      "latency_ratio_ci": {
+        "mean": -19.45333333333333,
+        "sd": 1.4754451096550283,
+        "ci_half": 1.2932846604052435,
+        "ci_low": -20.746617993738575,
+        "ci_high": -18.160048672928085,
+        "win_rate": 1.0
+      }
+    },
+    "k=9,M/l=8,r1r2r3_landlord": {
+      "latency_ratio": [
+        3.6577777777777785,
+        1.3914447594204085
+      ],
+      "cost_ratio": [
+        4.373333333333333,
+        2.325017987451991
+      ],
+      "latency_ratio_ci": {
+        "mean": -19.342222222222222,
+        "sd": 1.5556825344999374,
+        "ci_half": 1.3636158642320007,
+        "ci_low": -20.70583808645422,
+        "ci_high": -17.978606357990223,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=2,r3_only": {
+      "latency_ratio": [
+        10.183333333333334,
+        0.15456030825826197
+      ],
+      "cost_ratio": [
+        18.933333333333334,
+        0.0
+      ],
+      "latency_ratio_ci": {
+        "mean": -1.6166666666666671,
+        "sd": 0.17280367794439797,
+        "ci_half": 0.15146910209309675,
+        "ci_low": -1.7681357687597639,
+        "ci_high": -1.4651975645735704,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=2,r1r2_stateless": {
+      "latency_ratio": [
+        2.4833333333333334,
+        0.9413937657655386
+      ],
+      "cost_ratio": [
+        8.419999999999998,
+        1.238744884505639
+      ],
+      "latency_ratio_ci": {
+        "mean": -9.316666666666668,
+        "sd": 1.0525102269231295,
+        "ci_half": 0.9225658904502279,
+        "ci_low": -10.239232557116896,
+        "ci_high": -8.39410077621644,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=2,r1r2r3_stateless": {
+      "latency_ratio": [
+        2.3433333333333333,
+        0.8578137586005743
+      ],
+      "cost_ratio": [
+        1.52,
+        1.190070025950854
+      ],
+      "latency_ratio_ci": {
+        "mean": -9.456666666666667,
+        "sd": 0.9590649381327396,
+        "ci_half": 0.8406574834285628,
+        "ci_low": -10.29732415009523,
+        "ci_high": -8.616009183238104,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=2,r1r2r3_landlord": {
+      "latency_ratio": [
+        2.466666666666667,
+        0.7724420150837645
+      ],
+      "cost_ratio": [
+        1.7466666666666668,
+        1.0785999155283565
+      ],
+      "latency_ratio_ci": {
+        "mean": -9.333333333333334,
+        "sd": 0.8636164272021074,
+        "ci_half": 0.7569931747820889,
+        "ci_low": -10.090326508115423,
+        "ci_high": -8.576340158551245,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=4,r3_only": {
+      "latency_ratio": [
+        16.69,
+        0.2179704363236243
+      ],
+      "cost_ratio": [
+        37.86666666666667,
+        0.0
+      ],
+      "latency_ratio_ci": {
+        "mean": -1.3766666666666665,
+        "sd": 0.24369835635245662,
+        "ci_half": 0.21361102759715178,
+        "ci_low": -1.5902776942638184,
+        "ci_high": -1.1630556390695146,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=4,r1r2_stateless": {
+      "latency_ratio": [
+        3.2766666666666664,
+        1.524561867845608
+      ],
+      "cost_ratio": [
+        16.53333333333333,
+        2.4202846480895133
+      ],
+      "latency_ratio_ci": {
+        "mean": -14.789999999999997,
+        "sd": 1.7045119862034153,
+        "ci_half": 1.494070630488696,
+        "ci_low": -16.284070630488692,
+        "ci_high": -13.2959293695113,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=4,r1r2r3_stateless": {
+      "latency_ratio": [
+        3.043333333333334,
+        1.4764296273254762
+      ],
+      "cost_ratio": [
+        2.8,
+        2.3339046919510467
+      ],
+      "latency_ratio_ci": {
+        "mean": -15.023333333333335,
+        "sd": 1.6506985053472223,
+        "ci_half": 1.446901034778966,
+        "ci_low": -16.4702343681123,
+        "ci_high": -13.57643229855437,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=4,r1r2r3_landlord": {
+      "latency_ratio": [
+        3.12,
+        1.4249912280431767
+      ],
+      "cost_ratio": [
+        3.013333333333333,
+        2.2112439937736403
+      ],
+      "latency_ratio_ci": {
+        "mean": -14.946666666666664,
+        "sd": 1.593188626622723,
+        "ci_half": 1.3964914034823124,
+        "ci_low": -16.343158070148977,
+        "ci_high": -13.550175263184352,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=8,r3_only": {
+      "latency_ratio": [
+        29.25333333333333,
+        0.37094473981982856
+      ],
+      "cost_ratio": [
+        75.73333333333333,
+        0.0
+      ],
+      "latency_ratio_ci": {
+        "mean": -1.3466666666666676,
+        "sd": 0.41472882706655484,
+        "ci_half": 0.36352584502343194,
+        "ci_low": -1.7101925116900996,
+        "ci_high": -0.9831408216432356,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=8,r1r2_stateless": {
+      "latency_ratio": [
+        3.543333333333334,
+        1.6276294964695674
+      ],
+      "cost_ratio": [
+        30.266666666666662,
+        2.879506130494525
+      ],
+      "latency_ratio_ci": {
+        "mean": -27.056666666666665,
+        "sd": 1.8197450981448526,
+        "ci_half": 1.5950769065401753,
+        "ci_low": -28.65174357320684,
+        "ci_high": -25.46158976012649,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=8,r1r2r3_stateless": {
+      "latency_ratio": [
+        3.4233333333333333,
+        1.596614473746802
+      ],
+      "cost_ratio": [
+        3.5733333333333333,
+        2.4864432428672085
+      ],
+      "latency_ratio_ci": {
+        "mean": -27.17666666666667,
+        "sd": 1.7850692485789512,
+        "ci_half": 1.564682184271866,
+        "ci_low": -28.741348850938536,
+        "ci_high": -25.611984482394803,
+        "win_rate": 1.0
+      }
+    },
+    "k=12,M/l=8,r1r2r3_landlord": {
+      "latency_ratio": [
+        3.4233333333333333,
+        1.596614473746802
+      ],
+      "cost_ratio": [
+        3.5733333333333333,
+        2.4864432428672085
+      ],
+      "latency_ratio_ci": {
+        "mean": -27.17666666666667,
+        "sd": 1.7850692485789512,
+        "ci_half": 1.564682184271866,
+        "ci_low": -28.741348850938536,
+        "ci_high": -25.611984482394803,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=2,r3_only": {
+      "latency_ratio": [
+        19.631666666666668,
+        0.09565563234854496
+      ],
+      "cost_ratio": [
+        38.13333333333333,
+        0.0
+      ],
+      "latency_ratio_ci": {
+        "mean": -3.3683333333333336,
+        "sd": 0.10694624818103719,
+        "ci_half": 0.09374251970157406,
+        "ci_low": -3.4620758530349076,
+        "ci_high": -3.2745908136317596,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=2,r1r2_stateless": {
+      "latency_ratio": [
+        2.0816666666666666,
+        0.08778129388175795
+      ],
+      "cost_ratio": [
+        14.233333333333334,
+        0.09249624617007758
+      ],
+      "latency_ratio_ci": {
+        "mean": -20.918333333333333,
+        "sd": 0.09814247013624884,
+        "ci_half": 0.08602566800412301,
+        "ci_low": -21.004359001337455,
+        "ci_high": -20.83230766532921,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=2,r1r2r3_stateless": {
+      "latency_ratio": [
+        1.985,
+        0.07859884081701066
+      ],
+      "cost_ratio": [
+        0.6166666666666666,
+        0.10327955589886444
+      ],
+      "latency_ratio_ci": {
+        "mean": -21.015,
+        "sd": 0.0878761755097607,
+        "ci_half": 0.07702686400067064,
+        "ci_low": -21.092026864000673,
+        "ci_high": -20.93797313599933,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=2,r1r2r3_landlord": {
+      "latency_ratio": [
+        2.2216666666666667,
+        0.24724032393154996
+      ],
+      "cost_ratio": [
+        1.2200000000000002,
+        0.8243785538209979
+      ],
+      "latency_ratio_ci": {
+        "mean": -20.778333333333332,
+        "sd": 0.2764230855450066,
+        "ci_half": 0.2422955174529187,
+        "ci_low": -21.020628850786252,
+        "ci_high": -20.536037815880412,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=4,r3_only": {
+      "latency_ratio": [
+        32.74666666666667,
+        0.28000992045917916
+      ],
+      "cost_ratio": [
+        76.26666666666667,
+        0.0
+      ],
+      "latency_ratio_ci": {
+        "mean": -2.919999999999996,
+        "sd": 0.31306060826051685,
+        "ci_half": 0.27440972204999553,
+        "ci_low": -3.1944097220499916,
+        "ci_high": -2.6455902779500002,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=4,r1r2_stateless": {
+      "latency_ratio": [
+        2.46,
+        0.1373762068999658
+      ],
+      "cost_ratio": [
+        27.973333333333336,
+        0.1913693345920981
+      ],
+      "latency_ratio_ci": {
+        "mean": -33.20666666666666,
+        "sd": 0.15359126855969876,
+        "ci_half": 0.13462868276196577,
+        "ci_low": -33.34129534942863,
+        "ci_high": -33.0720379839047,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=4,r1r2r3_stateless": {
+      "latency_ratio": [
+        2.356666666666667,
+        0.11515689780083126
+      ],
+      "cost_ratio": [
+        1.2133333333333334,
+        0.24458581770458854
+      ],
+      "latency_ratio_ci": {
+        "mean": -33.31,
+        "sd": 0.12874932578032597,
+        "ci_half": 0.1128537598448134,
+        "ci_low": -33.42285375984481,
+        "ci_high": -33.19714624015519,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=4,r1r2r3_landlord": {
+      "latency_ratio": [
+        2.6833333333333336,
+        0.3737571998563298
+      ],
+      "cost_ratio": [
+        2.1399999999999997,
+        1.3147707869519394
+      ],
+      "latency_ratio_ci": {
+        "mean": -32.983333333333334,
+        "sd": 0.4178732529793646,
+        "ci_half": 0.3662820558592037,
+        "ci_low": -33.349615389192536,
+        "ci_high": -32.61705127747413,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=8,r3_only": {
+      "latency_ratio": [
+        58.45,
+        0.17973746286057135
+      ],
+      "cost_ratio": [
+        152.53333333333333,
+        0.0
+      ],
+      "latency_ratio_ci": {
+        "mean": -2.55,
+        "sd": 0.20095259252979067,
+        "ci_half": 0.17614271360335992,
+        "ci_low": -2.72614271360336,
+        "ci_high": -2.37385728639664,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=8,r1r2_stateless": {
+      "latency_ratio": [
+        3.1433333333333335,
+        0.15919938581679408
+      ],
+      "cost_ratio": [
+        55.10666666666667,
+        0.265329983228433
+      ],
+      "latency_ratio_ci": {
+        "mean": -57.85666666666667,
+        "sd": 0.1779903243312847,
+        "ci_half": 0.15601539810045903,
+        "ci_low": -58.01268206476713,
+        "ci_high": -57.70065126856621,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=8,r1r2r3_stateless": {
+      "latency_ratio": [
+        3.0366666666666666,
+        0.19632739096836296
+      ],
+      "cost_ratio": [
+        2.1466666666666665,
+        0.026666666666666748
+      ],
+      "latency_ratio_ci": {
+        "mean": -57.96333333333333,
+        "sd": 0.21950069602521907,
+        "ci_half": 0.1924008431489958,
+        "ci_low": -58.155734176482326,
+        "ci_high": -57.770932490184336,
+        "win_rate": 1.0
+      }
+    },
+    "k=24,M/l=8,r1r2r3_landlord": {
+      "latency_ratio": [
+        3.415,
+        0.3801827046156742
+      ],
+      "cost_ratio": [
+        3.4,
+        1.5611961226358888
+      ],
+      "latency_ratio_ci": {
+        "mean": -57.585,
+        "sd": 0.42505718569518525,
+        "ci_half": 0.37257905052336066,
+        "ci_low": -57.957579050523364,
+        "ci_high": -57.21242094947664,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=2,r3_only": {
+      "latency_ratio": [
+        38.32083333333333,
+        0.005892556509885886
+      ],
+      "cost_ratio": [
+        76.53333333333333,
+        0.0
+      ],
+      "latency_ratio_ci": {
+        "mean": -7.079166666666663,
+        "sd": 0.007216878364867861,
+        "ci_half": 0.008166666666663882,
+        "ci_low": -7.087333333333327,
+        "ci_high": -7.070999999999999,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=2,r1r2_stateless": {
+      "latency_ratio": [
+        2.8791666666666664,
+        0.4154565761504645
+      ],
+      "cost_ratio": [
+        27.869444444444444,
+        0.3994401946922748
+      ],
+      "latency_ratio_ci": {
+        "mean": -42.520833333333336,
+        "sd": 0.5088283109261913,
+        "ci_half": 0.5757934380776968,
+        "ci_low": -43.09662677141103,
+        "ci_high": -41.94503989525564,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=2,r1r2r3_stateless": {
+      "latency_ratio": [
+        2.7222222222222228,
+        0.36147417645927843
+      ],
+      "cost_ratio": [
+        0.7833333333333332,
+        0.3476774793247754
+      ],
+      "latency_ratio_ci": {
+        "mean": -42.67777777777778,
+        "sd": 0.442713643758999,
+        "ci_half": 0.5009776491404292,
+        "ci_low": -43.17875542691821,
+        "ci_high": -42.176800128637346,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=2,r1r2r3_landlord": {
+      "latency_ratio": [
+        2.7472222222222222,
+        0.3445564334074596
+      ],
+      "cost_ratio": [
+        0.9083333333333332,
+        0.2993820796734995
+      ],
+      "latency_ratio_ci": {
+        "mean": -42.65277777777778,
+        "sd": 0.42199372472076424,
+        "ci_half": 0.4775308535051775,
+        "ci_low": -43.13030863128296,
+        "ci_high": -42.1752469242726,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=4,r3_only": {
+      "latency_ratio": [
+        64.60000000000001,
+        0.2533799299251824
+      ],
+      "cost_ratio": [
+        153.06666666666666,
+        0.0
+      ],
+      "latency_ratio_ci": {
+        "mean": -6.266666666666661,
+        "sd": 0.3103257696894274,
+        "ci_half": 0.3511666666666707,
+        "ci_low": -6.617833333333332,
+        "ci_high": -5.915499999999991,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=4,r1r2_stateless": {
+      "latency_ratio": [
+        3.161111111111111,
+        0.07533362012400348
+      ],
+      "cost_ratio": [
+        54.54999999999999,
+        0.08923543557893697
+      ],
+      "latency_ratio_ci": {
+        "mean": -67.70555555555553,
+        "sd": 0.0922644648902347,
+        "ci_half": 0.104407070736387,
+        "ci_low": -67.80996262629192,
+        "ci_high": -67.60114848481915,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=4,r1r2r3_stateless": {
+      "latency_ratio": [
+        3.011111111111111,
+        0.06874649261535885
+      ],
+      "cost_ratio": [
+        1.088888888888889,
+        0.015713484026367772
+      ],
+      "latency_ratio_ci": {
+        "mean": -67.85555555555554,
+        "sd": 0.08419691425681769,
+        "ci_half": 0.09527777777777469,
+        "ci_low": -67.95083333333332,
+        "ci_high": -67.76027777777776,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=4,r1r2r3_landlord": {
+      "latency_ratio": [
+        3.011111111111111,
+        0.06874649261535885
+      ],
+      "cost_ratio": [
+        1.088888888888889,
+        0.015713484026367772
+      ],
+      "latency_ratio_ci": {
+        "mean": -67.85555555555554,
+        "sd": 0.08419691425681769,
+        "ci_half": 0.09527777777777469,
+        "ci_low": -67.95083333333332,
+        "ci_high": -67.76027777777776,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=8,r3_only": {
+      "latency_ratio": [
+        115.98194444444444,
+        0.25267855195343186
+      ],
+      "cost_ratio": [
+        306.1333333333333,
+        0.0
+      ],
+      "latency_ratio_ci": {
+        "mean": -5.81805555555555,
+        "sd": 0.30946676061561884,
+        "ci_half": 0.35019460639147126,
+        "ci_low": -6.168250161947022,
+        "ci_high": -5.467860949164079,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=8,r1r2_stateless": {
+      "latency_ratio": [
+        4.059722222222222,
+        0.1289349773919466
+      ],
+      "cost_ratio": [
+        107.81111111111112,
+        0.20427529234278038
+      ],
+      "latency_ratio_ci": {
+        "mean": -117.74027777777776,
+        "sd": 0.15791245230377737,
+        "ci_half": 0.1786947618181204,
+        "ci_low": -117.91897253959588,
+        "ci_high": -117.56158301595964,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=8,r1r2r3_stateless": {
+      "latency_ratio": [
+        3.9375,
+        0.1303041314259324
+      ],
+      "cost_ratio": [
+        2.1444444444444444,
+        0.015713484026367668
+      ],
+      "latency_ratio_ci": {
+        "mean": -117.8625,
+        "sd": 0.1595893166850453,
+        "ci_half": 0.18059231249788274,
+        "ci_low": -118.04309231249788,
+        "ci_high": -117.68190768750212,
+        "win_rate": 1.0
+      }
+    },
+    "k=48,M/l=8,r1r2r3_landlord": {
+      "latency_ratio": [
+        3.9375,
+        0.1303041314259324
+      ],
+      "cost_ratio": [
+        2.1444444444444444,
+        0.015713484026367668
+      ],
+      "latency_ratio_ci": {
+        "mean": -117.8625,
+        "sd": 0.1595893166850453,
+        "ci_half": 0.18059231249788274,
+        "ci_low": -118.04309231249788,
+        "ci_high": -117.68190768750212,
+        "win_rate": 1.0
+      }
+    }
+  }
+}
