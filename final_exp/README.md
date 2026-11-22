@@ -176,6 +176,16 @@ python experiments/exp16_real_traces.py --csv data/google.csv --kind google --ro
 | 16 | `exp16_real_traces` | the paper's Google traces | Sec. IV |
 | 17 | `exp17_paper_synthetic_params` | sensitivity to Zipf `rho` and request rate | paper's synthetic dataset |
 
+### Phase-3 experiments (18–22)
+
+| # | script | question |
+|---|---|---|
+| 18 | `exp18_ablation` | 20-seed paired ablation: R1+R2, +R3, R3 only, Landlord/stateless/top-up |
+| 19 | `exp19_adversarial` | cyclic scan, Large Sequence with varied `M/l`, deterministic-eviction trace, `k` up to 64 |
+| 20 | `exp20_milp` | 30 random traces (`N=10..16`) against the offline MILP |
+| 21 | `exp21_g3b_comparator` | G3b comparator LP vs realized latency + downloads |
+| 22 | `exp22_real_traces_phase3` | cross `M_n` and `l_n` on two Google traces, with CIs |
+
 ---
 
 ## 5. Headline comparison (full run, N=40, T=8000, 10 seeds)

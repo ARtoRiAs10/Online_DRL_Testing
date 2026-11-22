@@ -15,10 +15,10 @@ numerical terms of that bound and solves the comparator LP with SciPy.
 Sign convention
 ---------------
 The step log stores ``grad`` = g_t, the (positive) cost coefficient used by the OGD
-gradient for the requested service.  The plan writes the comparator objective as
-``sum_n p_n (M_n - W_n)`` with ``W_n = sum_{t:n*_t=n} c~_t``.  Here ``c~_t = -g_t``
-is the *benefit* coefficient, so ``W = -sum g_t`` and ``M_n - W_n = M_n + sum g_t``.
-Both conventions are exposed below so the paper can use either one.
+gradient for the requested service, and ``benefit`` = l_n - g_t.  The plan writes the
+comparator objective as ``sum_n p_n (M_n - W_n)`` with ``W_n = sum c~_t``; here
+``c~_t = benefit_t = l_n - g_t`` is the latency avoided by caching.  Both conventions
+are exposed below so the paper can use either one.
 """
 from __future__ import annotations
 
@@ -82,6 +82,7 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
     N = cat.N
     T = len(step_log) if T is None else int(T)
     G = np.zeros(N, float)
+    B = np.zeros(N, float)
     sum_F_tilde_Pt = 0.0
     sum_abs_px = 0.0
     q_bias = []
@@ -89,13 +90,18 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
         n = int(r["n"])
         g = _as_float(r.get("grad"))
         G[n] += g
+        # The benefit of caching is l_n - g.  Older logs without a benefit field
+        # fall back to l_n - grad (l_n is usually logged as well).
+        benefit = _as_float(r.get("benefit"),
+                            _as_float(r.get("l_n"), 0.0) - g)
+        B[n] += benefit
         sum_F_tilde_Pt += g * _as_float(r.get("p_n_star_prev"))
         sum_abs_px += abs(_as_float(r.get("p_minus_xbar")))
         if "q_ema_before" in r and "q" in r:
             q_bias.append(abs(_as_float(r["q_ema_before"]) - _as_float(r["q"])))
 
-    # W is the accumulated benefit c~ = -g.
-    W = -G
+    # W is the accumulated benefit c~ = l_n - g.
+    W = B
     P, comp_obj = g3b_comparator_lp(cat, C, W)
     zeta_hat = float(np.mean(q_bias)) if q_bias else 0.0
     if zeta is None:
@@ -104,7 +110,7 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
     lmax = float(cat.l.max())
     Mmax = float(cat.M.max())
     sum_Mp_comp = float(np.dot(cat.M, P))
-    sum_F_tilde_comp = float(np.dot(G, P))       # = -sum_n W_n P_n
+    sum_F_tilde_comp = float(np.dot(G, P))
     base = 2.0 * np.sqrt(N) * lmax * np.sqrt(T)
     churn = lmax * sum_abs_px
     ema_term = float(zeta) * T
@@ -124,6 +130,7 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
         "comparator_P": P.tolist(),
         "G": G.tolist(),
         "W": W.tolist(),
+        "B": B.tolist(),
         "zeta": float(zeta),
         "zeta_hat": zeta_hat,
         "sum_delta_abs_px": float(sum_abs_px),

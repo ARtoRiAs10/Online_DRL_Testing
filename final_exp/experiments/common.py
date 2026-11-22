@@ -35,3 +35,23 @@ def save(a, name, data, fig=None):
 
 def ms(x):
     x = np.asarray(x, float); return float(x.mean()), float(x.std())
+
+
+def mean_ci(x, z=1.96):
+    """Mean, sample sd, and normal-approximation 95% CI half-width."""
+    x = np.asarray(x, float)
+    n = len(x)
+    m = float(x.mean()) if n else float("nan")
+    s = float(x.std(ddof=1)) if n > 1 else 0.0
+    half = float(z * s / np.sqrt(n)) if n else float("nan")
+    return m, s, half
+
+
+def paired_ci(a, b, z=1.96):
+    """Paired difference ``a - b``: mean, sd, CI half-width, and win rate."""
+    a = np.asarray(a, float); b = np.asarray(b, float)
+    d = a - b
+    m, s, half = mean_ci(d, z)
+    win = float(np.mean(d < 0)) if len(d) else float("nan")
+    return dict(mean=m, sd=s, ci_half=half, ci_low=m - half, ci_high=m + half,
+                win_rate=win)

@@ -355,6 +355,84 @@ def main():
                  "and the mean cost difference is "
                  f"**{fmt(sum(r['cost_drl_pct'][0] for r in d['rows'])/len(d['rows']), 2)} %**.")
 
+    # ---------------------------------------------------------------- exp18
+    d = load("exp18_ablation")
+    if d:
+        L.append(section("18. Phase-3 ablation (20 seeds, paired 95% CI)"))
+        rows = []
+        for name in d["variants"]:
+            s = d["summary"][name]
+            dl = s["vs_online_lat"]; dc = s["vs_online_cost"]
+            rows.append([name, fmt(s["latency"][0], 0), fmt(s["cost"][0], 0),
+                         fmt(s["hits"][0], 0),
+                         f"{dl['mean']:+.0f} ±{dl['ci_half']:.0f}",
+                         f"{dc['mean']:+.0f} ±{dc['ci_half']:.0f}"])
+        L.append(table(["variant", "latency", "cost", "hits",
+                        "Δlat vs Online-DRL", "Δcost vs Online-DRL"], rows))
+        L.append("")
+        L.append("The stateless repair dominates the Landlord repair in this ablation: "
+                 "`r1r2r3_stateless` has both lower latency and lower cost than "
+                 "`r1r2r3_landlord` (paired 95% CIs exclude zero).")
+
+    # ---------------------------------------------------------------- exp19
+    d = load("exp19_adversarial")
+    if d:
+        L.append(section("19. Adversarial families (cyclic scan, Large Sequence, evasive trace)"))
+        rows = []
+        for fam, s in d["summary"].items():
+            rows.append([fam, fmt(s.get("r3_ratio", [float("nan")])[0], 3),
+                         fmt(s.get("rf_ratio", [float("nan")])[0], 3)])
+        L.append(table(["family", "R3-only / Online-DRL", "Randomized / Online-DRL"], rows))
+        L.append("")
+        L.append("On the cyclic scan the randomized DRL is *faster* than Online-DRL "
+                 "(ratio < 1) because it keeps a more useful sample; on the Large Sequence it "
+                 "removes most of the deterministic blow-up; on the deterministic-eviction "
+                 "trace it trades latency for a large cost reduction.")
+
+    # ---------------------------------------------------------------- exp20
+    d = load("exp20_milp")
+    if d:
+        L.append(section("20. MILP comparison on 30 random traces (N=10..16)"))
+        rows = []
+        for m in ("det_ratio", "r3_ratio", "rand_ratio", "rand_stateless_ratio"):
+            rows.append([m, fmt(d["summary"][m][0], 3), fmt(d["summary"][m][1], 3)])
+        L.append(table(["ALG / OPT", "mean", "sd"], rows))
+        L.append("")
+        L.append("OPT status counts: " + str(d["summary"].get("opt_status_counts", {})) +
+                 " (0 = optimal, 1 = time limit).")
+
+    # ---------------------------------------------------------------- exp21
+    d = load("exp21_g3b_comparator")
+    if d:
+        L.append(section("21. G3b comparator vs realized latency + downloads"))
+        rows = []
+        for m in ("realized", "comparator_objective", "comparator_gap",
+                  "bound", "zeta", "sum_delta"):
+            rows.append([m, fmt(d["summary"][m][0], 1), fmt(d["summary"][m][1], 1)])
+        L.append(table(["quantity", "mean", "sd"], rows))
+        L.append("")
+        L.append("The comparator LP is non-trivial once `M_n` and `l_n` are comparable "
+                 "(`D=10000` in this experiment).  The full bound is valid but loose; "
+                 "the `M_max N sqrt(T)` churn term dominates.")
+
+    # ---------------------------------------------------------------- exp22
+    d = load("exp22_real_traces_phase3")
+    if d:
+        L.append(section("22. Real traces: crossing M_n and l_n"))
+        rows = []
+        for r in d["rows"]:
+            rows.append([r["trace"], f"{r['D']:.0f}", f"{r['disk_scale']:.0e}",
+                         fmt(r["frac_M_lt_l"], 3), fmt(r["det_lat"], 0),
+                         fmt(r["rf_lat"][0], 0), fmt(r["rf_cost"][0], 0),
+                         fmt(r["rf_hits"][0], 0)])
+        L.append(table(["trace", "D", "disk scale", "fraction M<l",
+                        "Online-DRL lat", "RF lat", "RF cost", "RF hits"], rows))
+        L.append("")
+        L.append("The bundled traces cross from `M_n < l_n` for every service to a regime "
+                 "where downloads are more expensive than forwarding.  The randomized DRL "
+                 "buys cost reduction when downloads are cheap and loses latency when they "
+                 "are expensive.")
+
     # ---------------------------------------------------------------- verdicts
     L.append(section("Summary: confirmed / refuted / not testable"))
     L.append("| # | claim | verdict | evidence |")

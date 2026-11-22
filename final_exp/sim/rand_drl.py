@@ -337,6 +337,8 @@ class FracPolicy(Policy):
                 "q_ema_before": float(self.q_ema[n]),
                 "q_ema_after": None,
                 "grad": None,
+                "l_n": None,
+                "benefit": None,
                 "p_n_star_after": None,
                 "outcome": None,
                 "hit_rank": None,
@@ -355,6 +357,8 @@ class FracPolicy(Policy):
             self._ogd(n, q, dm, t)
             if rec is not None:
                 rec["grad"] = float(self._g)
+                rec["l_n"] = float(self.cat.l[n])
+                rec["benefit"] = float(self.cat.l[n] - self._g)
                 rec["p_n_star_after"] = float(self.p[n])
         self._sample()
         if rec is not None:
@@ -394,6 +398,10 @@ class FracPolicy(Policy):
             rec["q_ema_after"] = float(self.q_ema[n])
             if rec["grad"] is None and self._g is not None:
                 rec["grad"] = float(self._g)
+            if rec["l_n"] is None:
+                rec["l_n"] = float(self.cat.l[n])
+            if rec["benefit"] is None:
+                rec["benefit"] = float(self.cat.l[n] - self._g)
             if rec["p_n_star_after"] is None:
                 rec["p_n_star_after"] = float(self.p[n])
             self.step_log.append(rec)

@@ -12,6 +12,11 @@ class LandlordPolicy(Policy):
         self.size = cat.a.sum(1) if size_mode == "sum" else cat.a.max(1)
         self.credit: dict[int, float] = {}
         self.n_evict = 0
+        self.evictions = []          # (request_step, service_id) for phase-3 trace generation
+        self.step = 0
+
+    def before_request(self, t, n, q, dm):
+        self.step += 1
 
     def cached(self, n): return n in self.credit
     def cached_list(self): return list(self.credit.keys())
@@ -46,6 +51,7 @@ class LandlordPolicy(Policy):
                 need, bad = self._violated(g)
                 if not bad: break
                 del self.credit[f]; self.n_evict += 1
+                self.evictions.append((self.step, int(f)))
                 self.eng.reset_miss(f)
         self.credit[g] = self.cat.M[g]
 

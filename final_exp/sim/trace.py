@@ -39,7 +39,7 @@ def synthetic_world(N=40, T=5000, zipf=1.2, rate=0.5, seed=0, imbalance=1.0, **p
 
 
 def load_trace_csv(path, id_col, time_col, cpu_col, ram_col, disk_col, time_scale_ms=1.0,
-                   disk_unit_mb=1.0, max_rows=None, sep=",", **phys):
+                   disk_unit_mb=1.0, max_rows=None, sep=",", disk_scale=1.0, **phys):
     """Generic loader for the preprocessed Google / SHARCNet CSVs (see data/README.md).
 
     Zeros in cpu/ram/disk are replaced by the column median (as in the paper); a service's
@@ -55,7 +55,8 @@ def load_trace_csv(path, id_col, time_col, cpu_col, ram_col, disk_col, time_scal
     df = df.sort_values(time_col, kind="stable").reset_index(drop=True)
     ids, inv = np.unique(df[id_col].to_numpy(), return_inverse=True)
     first = df.groupby(id_col).first().loc[ids]
-    raw = np.c_[first[cpu_col], first[ram_col], first[disk_col] * disk_unit_mb]
+    raw = np.c_[first[cpu_col], first[ram_col],
+                first[disk_col] * disk_unit_mb * float(disk_scale)]
     t = df[time_col].to_numpy(float) * time_scale_ms
     t = t + np.arange(len(t)) * 1e-6  # strictly increasing
     return from_physical(raw, **phys), Trace(t - t[0], inv.astype(int))
@@ -98,3 +99,48 @@ def large_sequence(k, n_reps, M=6.0, Ml=12.0, l=1.0, burst_frac=0.5):
         ev.append((t, k)); t += 1 + Mm
     tt = np.array([e[0] for e in ev]); ss = np.array([e[1] for e in ev], int)
     return cat, Trace(tt, ss), (k + 2 * n_reps) * l
+
+
+def cyclic_scan(k, n_reps, l=1.0, M=1.0):
+    """Classic cyclic scan over ``k+1`` services with cache capacity ``k``.
+
+    Every service has unit latency and unit download time.  The demands are
+    ``1/k`` per resource, so any ``k`` services fit and ``k+1`` do not.
+    """
+    n = k + 1
+    cat = Catalog(l=np.full(n, float(l)), M=np.full(n, float(M)),
+                  a=np.ones((n, 3), float) / float(k))
+    t = np.arange(n_reps * n, dtype=float)
+    svc = np.tile(np.arange(n), n_reps).astype(int)
+    return cat, Trace(t, svc)
+
+
+def deterministic_eviction_trace(cat, base_trace, C):
+    """Build a trace that requests what deterministic Online-DRL just evicted.
+
+    The trace is generated using only the deterministic Landlord policy, so it is
+    fixed in advance and oblivious to the randomized algorithm's coin flips.  The
+    returned trace has one extra request after each deterministic eviction.
+
+    Returns ``(new_trace, base_trace, evictions)``.
+    """
+    from collections import defaultdict
+    from .engine import Engine, DetThreshold
+    from .landlord import LandlordPolicy
+
+    pol = LandlordPolicy(cat, C)
+    Engine(cat, pol, DetThreshold(1.0), rng=np.random.default_rng(0)).run(base_trace)
+
+    by_step = defaultdict(list)
+    for step, f in pol.evictions:
+        by_step[step].append(f)
+
+    svc = []
+    for i, n in enumerate(base_trace.n):
+        svc.append(int(n))
+        for f in by_step.get(i + 1, []):
+            svc.append(int(f))
+
+    dt = float(base_trace.t[1] - base_trace.t[0]) if len(base_trace.t) > 1 else 1.0
+    t = np.arange(len(svc), dtype=float) * dt
+    return Trace(t, np.asarray(svc, int)), base_trace, pol.evictions

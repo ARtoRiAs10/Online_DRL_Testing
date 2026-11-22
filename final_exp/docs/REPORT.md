@@ -274,6 +274,72 @@ The bundled Google traces have `M_n < l_n` for every service (with the paper-sty
 
 Online-DRL has higher latency than LL-RC in **0/12** configurations; the paper reports this on every Google trace.  The mean latency difference is **-4.22 %** and the mean cost difference is **-50.47 %**.
 
+## 18. Phase-3 ablation (20 seeds, paired 95% CI)
+
+| variant | latency | cost | hits | Δlat vs Online-DRL | Δcost vs Online-DRL |
+|---|---|---|---|---|---|
+| online_drl | 31669 | 27890 | 460 | +0 ±0 | +0 ±0 |
+| r3_only | 31880 | 34417 | 443 | +212 ±601 | +6528 ±856 |
+| r1r2_landlord | 39690 | 31814 | 68 | +8021 ±1335 | +3924 ±504 |
+| r1r2_stateless | 28381 | 27946 | 624 | -3288 ±2365 | +56 ±750 |
+| r1r2_topup | 39160 | 31565 | 94 | +7491 ±1417 | +3675 ±555 |
+| r1r2r3_landlord | 39629 | 14863 | 82 | +7961 ±1376 | -13027 ±1561 |
+| r1r2r3_stateless | 28310 | 6743 | 639 | -3359 ±2428 | -21147 ±1139 |
+| r1r2r3_topup | 39067 | 19119 | 105 | +7399 ±1462 | -8771 ±1520 |
+
+The stateless repair dominates the Landlord repair in this ablation: `r1r2r3_stateless` has both lower latency and lower cost than `r1r2r3_landlord` (paired 95% CIs exclude zero).
+
+## 19. Adversarial families (cyclic scan, Large Sequence, evasive trace)
+
+| family | R3-only / Online-DRL | Randomized / Online-DRL |
+|---|---|---|
+| cyclic_scan | 1.000 | 0.622 |
+| deterministic_eviction | 0.979 | 1.146 |
+| large_sequence | 34.546 | 3.460 |
+
+On the cyclic scan the randomized DRL is *faster* than Online-DRL (ratio < 1) because it keeps a more useful sample; on the Large Sequence it removes most of the deterministic blow-up; on the deterministic-eviction trace it trades latency for a large cost reduction.
+
+## 20. MILP comparison on 30 random traces (N=10..16)
+
+| ALG / OPT | mean | sd |
+|---|---|---|
+| det_ratio | 1.113 | 0.074 |
+| r3_ratio | 1.104 | 0.081 |
+| rand_ratio | 1.300 | 0.183 |
+| rand_stateless_ratio | 1.232 | 0.133 |
+
+OPT status counts: {'0': 30} (0 = optimal, 1 = time limit).
+
+## 21. G3b comparator vs realized latency + downloads
+
+| quantity | mean | sd |
+|---|---|---|
+| realized | 22316.2 | 1846.2 |
+| comparator_objective | -1603.5 | 528.0 |
+| comparator_gap | 23919.7 | 1996.5 |
+| bound | 135,512 | 33175.1 |
+| zeta | 0.3 | 0.0 |
+| sum_delta | 241.8 | 58.0 |
+
+The comparator LP is non-trivial once `M_n` and `l_n` are comparable (`D=10000` in this experiment).  The full bound is valid but loose; the `M_max N sqrt(T)` churn term dominates.
+
+## 22. Real traces: crossing M_n and l_n
+
+| trace | D | disk scale | fraction M<l | Online-DRL lat | RF lat | RF cost | RF hits |
+|---|---|---|---|---|---|---|---|
+| google.csv | 1000 | 1e+00 | 1.000 | 42000 | 42000 | 18854 | 0 |
+| google.csv | 1000 | 1e+06 | 0.979 | 42000 | 42000 | 21404 | 0 |
+| google.csv | 1000 | 1e+07 | 0.609 | 42000 | 42000 | 26103 | 0 |
+| google.csv | 1000 | 1e+08 | 0.156 | 42000 | 42000 | 25338 | 0 |
+| google.csv | 100 | 1e+07 | 0.156 | 42000 | 42000 | 25338 | 0 |
+| google_dataset2_30.csv | 1000 | 1e+00 | 1.000 | 9834 | 11543 | 719 | 52 |
+| google_dataset2_30.csv | 1000 | 1e+06 | 1.000 | 12319 | 13845 | 801 | 52 |
+| google_dataset2_30.csv | 1000 | 1e+07 | 0.067 | 18739 | 19714 | 1907 | 50 |
+| google_dataset2_30.csv | 1000 | 1e+08 | 0.000 | 19068 | 19957 | 11593 | 50 |
+| google_dataset2_30.csv | 100 | 1e+07 | 0.000 | 19068 | 19957 | 11593 | 50 |
+
+The bundled traces cross from `M_n < l_n` for every service to a regime where downloads are more expensive than forwarding.  The randomized DRL buys cost reduction when downloads are cheap and loses latency when they are expensive.
+
 ## Summary: confirmed / refuted / not testable
 
 | # | claim | verdict | evidence |
