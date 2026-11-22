@@ -1,0 +1,26 @@
+# Research papers, slide decks, manuscript drafts and text extractions
+# are intentionally not committed.
+*.pdf
+*.ppt
+*.pptx
+*.docx
+*.extracted.txt
+randomized_drl_*.txt
+suggestion.md
+assumption1_fix.md
+
+# Curated paper bundle and the superseded simulator
+/docs_bundle/
+/extracted/
+
+# Unrelated environment / CLI setup notes
+/scripts/
+/docs/openrouter-free-clis.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/

@@ -1,0 +1,174 @@
+{
+  "rows": [
+    {
+      "seed": 0,
+      "lat_drl_pct": -4.089618918263033,
+      "cost_drl_pct": -50.211631204036266,
+      "lat_rand_pct": 71.82199791393201,
+      "cost_rand_pct": -75.2898313456386,
+      "hits_drl": 4043,
+      "hits_llrc": 3821,
+      "hits_rand": 902,
+      "dh_drl": 137,
+      "dh_llrc": 271,
+      "dh_rand": 275,
+      "downloads_rand": 342
+    },
+    {
+      "seed": 1,
+      "lat_drl_pct": 2.488447088907413,
+      "cost_drl_pct": -51.395200576865804,
+      "lat_rand_pct": 75.9503959673937,
+      "cost_rand_pct": -67.89312134376932,
+      "hits_drl": 3445,
+      "hits_llrc": 3498,
+      "hits_rand": 178,
+      "dh_drl": 146,
+      "dh_llrc": 253,
+      "dh_rand": 239,
+      "downloads_rand": 360
+    },
+    {
+      "seed": 2,
+      "lat_drl_pct": -9.863115619410454,
+      "cost_drl_pct": -50.76758166554051,
+      "lat_rand_pct": 67.17778404047382,
+      "cost_rand_pct": -71.26381240829075,
+      "hits_drl": 3883,
+      "hits_llrc": 3375,
+      "hits_rand": 348,
+      "dh_drl": 125,
+      "dh_llrc": 250,
+      "dh_rand": 248,
+      "downloads_rand": 353
+    },
+    {
+      "seed": 3,
+      "lat_drl_pct": -1.5436177609901698,
+      "cost_drl_pct": -50.32950868484769,
+      "lat_rand_pct": 28.32440652598851,
+      "cost_rand_pct": -74.89156792675549,
+      "hits_drl": 2266,
+      "hits_llrc": 2101,
+      "hits_rand": 544,
+      "dh_drl": 263,
+      "dh_llrc": 441,
+      "dh_rand": 291,
+      "downloads_rand": 316
+    },
+    {
+      "seed": 4,
+      "lat_drl_pct": -0.21760774344125283,
+      "cost_drl_pct": -51.47449176903056,
+      "lat_rand_pct": 65.9847371365577,
+      "cost_rand_pct": -76.34041768044032,
+      "hits_drl": 3756,
+      "hits_llrc": 3688,
+      "hits_rand": 933,
+      "dh_drl": 120,
+      "dh_llrc": 249,
+      "dh_rand": 213,
+      "downloads_rand": 260
+    },
+    {
+      "seed": 5,
+      "lat_drl_pct": -0.2037589343161582,
+      "cost_drl_pct": -50.052040477875515,
+      "lat_rand_pct": 28.574559679517566,
+      "cost_rand_pct": -72.37601230221902,
+      "hits_drl": 2572,
+      "hits_llrc": 2497,
+      "hits_rand": 1012,
+      "dh_drl": 253,
+      "dh_llrc": 403,
+      "dh_rand": 352,
+      "downloads_rand": 353
+    },
+    {
+      "seed": 6,
+      "lat_drl_pct": -3.721367127358205,
+      "cost_drl_pct": -49.842203264369445,
+      "lat_rand_pct": 75.4934851848312,
+      "cost_rand_pct": -63.54428212751426,
+      "hits_drl": 3679,
+      "hits_llrc": 3446,
+      "hits_rand": 77,
+      "dh_drl": 140,
+      "dh_llrc": 274,
+      "dh_rand": 324,
+      "downloads_rand": 417
+    },
+    {
+      "seed": 7,
+      "lat_drl_pct": -6.175279510540785,
+      "cost_drl_pct": -50.793656837342326,
+      "lat_rand_pct": 22.054568234248883,
+      "cost_rand_pct": -78.43907936855068,
+      "hits_drl": 3405,
+      "hits_llrc": 2987,
+      "hits_rand": 2013,
+      "dh_drl": 225,
+      "dh_llrc": 455,
+      "dh_rand": 318,
+      "downloads_rand": 296
+    },
+    {
+      "seed": 8,
+      "lat_drl_pct": 2.7883424785974524,
+      "cost_drl_pct": -49.86965457983186,
+      "lat_rand_pct": 51.30540418267447,
+      "cost_rand_pct": -74.23829439757924,
+      "hits_drl": 2976,
+      "hits_llrc": 3046,
+      "hits_rand": 608,
+      "dh_drl": 168,
+      "dh_llrc": 310,
+      "dh_rand": 254,
+      "downloads_rand": 284
+    },
+    {
+      "seed": 9,
+      "lat_drl_pct": -3.550456226326349,
+      "cost_drl_pct": -50.42696841650925,
+      "lat_rand_pct": 64.66598182501355,
+      "cost_rand_pct": -71.20559040124859,
+      "hits_drl": 3364,
+      "hits_llrc": 3136,
+      "hits_rand": 114,
+      "dh_drl": 189,
+      "dh_llrc": 308,
+      "dh_rand": 251,
+      "downloads_rand": 331
+    }
+  ],
+  "agg": {
+    "lat_drl_pct": [
+      -2.4088032273141544,
+      3.7014854018601167
+    ],
+    "cost_drl_pct": [
+      -50.51629374762492,
+      0.5526712219099276
+    ],
+    "lat_rand_pct": [
+      55.13533206906313,
+      20.0325616606641
+    ],
+    "cost_rand_pct": [
+      -72.54820093020064,
+      4.137268475609729
+    ]
+  },
+  "paper": {
+    "latency_pct": [
+      0.016,
+      7.41
+    ],
+    "cost_pct": [
+      -92.54,
+      -77.57
+    ],
+    "latency_in_range": false,
+    "cost_in_range": false
+  }
+}

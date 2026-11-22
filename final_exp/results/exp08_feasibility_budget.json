@@ -1,0 +1,195 @@
+{
+  "Bmax": 191127.76918721313,
+  "det_latency": 145466.78765063628,
+  "paper": {
+    "G1": "the repaired state satisfies the CPU/RAM/disk and cardinality constraints a.s.",
+    "G2": "E[sum u_{n,t} M_n] <= B_max"
+  },
+  "results": {
+    "rand_landlord": {
+      "latency": [
+        147435.31345697568,
+        623.6989872317915
+      ],
+      "cost": [
+        228707.45433155066,
+        4061.071615987779
+      ],
+      "mean_cost_le_Bmax": false,
+      "frac_seeds_cost_le_Bmax": 0.0,
+      "violation_rate": [
+        0.0,
+        0.0
+      ],
+      "max_util": 1.0,
+      "raw_violation_rate": [
+        0.0,
+        0.0
+      ],
+      "repairs": [
+        0.0,
+        0.0
+      ],
+      "repair_evictions": [
+        0.0,
+        0.0
+      ],
+      "landlord_rent_rounds": [
+        0.0,
+        0.0
+      ],
+      "wasted_downloads": [
+        0.0,
+        0.0
+      ]
+    },
+    "landlord (literal, no gate)": {
+      "latency": [
+        153863.57075823462,
+        7564.663859757725
+      ],
+      "cost": [
+        245306.9730793844,
+        3773.347958606043
+      ],
+      "mean_cost_le_Bmax": false,
+      "frac_seeds_cost_le_Bmax": 0.0,
+      "violation_rate": [
+        0.0,
+        0.0
+      ],
+      "max_util": 0.9410495464914592,
+      "raw_violation_rate": [
+        0.40443125,
+        0.10566489705077087
+      ],
+      "repairs": [
+        12941.8,
+        3381.276705624667
+      ],
+      "repair_evictions": [
+        21514.9,
+        6926.207872277585
+      ],
+      "landlord_rent_rounds": [
+        21514.9,
+        6926.207872277585
+      ],
+      "wasted_downloads": [
+        708.7,
+        11.36705766678431
+      ]
+    },
+    "landlord + gate": {
+      "latency": [
+        155746.9317488671,
+        7478.143309474923
+      ],
+      "cost": [
+        55397.00815235763,
+        7306.146949187385
+      ],
+      "mean_cost_le_Bmax": true,
+      "frac_seeds_cost_le_Bmax": 1.0,
+      "violation_rate": [
+        0.0,
+        0.0
+      ],
+      "max_util": 0.9410495464914592,
+      "raw_violation_rate": [
+        0.404725,
+        0.10761714801496552
+      ],
+      "repairs": [
+        12951.2,
+        3443.748736478897
+      ],
+      "repair_evictions": [
+        21498.2,
+        6892.199747540693
+      ],
+      "landlord_rent_rounds": [
+        21498.2,
+        6892.199747540693
+      ],
+      "wasted_downloads": [
+        45.0,
+        19.094501826442084
+      ]
+    },
+    "stateless + gate": {
+      "latency": [
+        91697.35518282172,
+        14270.866247797634
+      ],
+      "cost": [
+        11208.55391575071,
+        8554.244382812743
+      ],
+      "mean_cost_le_Bmax": true,
+      "frac_seeds_cost_le_Bmax": 1.0,
+      "violation_rate": [
+        0.0,
+        0.0
+      ],
+      "max_util": 0.9899019056519222,
+      "raw_violation_rate": [
+        0.404840625,
+        0.1078727516875352
+      ],
+      "repairs": [
+        12954.9,
+        3451.9280540011255
+      ],
+      "repair_evictions": [
+        16815.7,
+        5271.39139222274
+      ],
+      "landlord_rent_rounds": [
+        0.0,
+        0.0
+      ],
+      "wasted_downloads": [
+        13.0,
+        14.567086187704115
+      ]
+    },
+    "no repair + gate": {
+      "latency": [
+        89235.70573052518,
+        14574.079319799292
+      ],
+      "cost": [
+        26630.196903652115,
+        8214.678966268062
+      ],
+      "mean_cost_le_Bmax": true,
+      "frac_seeds_cost_le_Bmax": 1.0,
+      "violation_rate": [
+        0.06048749999999999,
+        0.1036018437637574
+      ],
+      "max_util": 1.726058713694996,
+      "raw_violation_rate": [
+        0.402196875,
+        0.10822116844142889
+      ],
+      "repairs": [
+        0.0,
+        0.0
+      ],
+      "repair_evictions": [
+        0.0,
+        0.0
+      ],
+      "landlord_rent_rounds": [
+        0.0,
+        0.0
+      ],
+      "wasted_downloads": [
+        48.1,
+        26.36076630145641
+      ]
+    }
+  }
+}

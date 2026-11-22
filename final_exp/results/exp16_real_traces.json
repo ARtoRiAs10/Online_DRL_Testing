@@ -1,0 +1,239 @@
+{
+  "paper": {
+    "datasets": [
+      "Google cluster traces 2011 (dataset2)",
+      "SHARCNet"
+    ],
+    "google_note": "the paper's Google dataset2 has 1000 requests / 30 services; this workspace regenerates it from clusterdata-2011-2 with data/prepare_google.py"
+  },
+  "traces": [
+    {
+      "trace": "google_dataset2_30.csv",
+      "kind": "google",
+      "n_services": 30,
+      "n_requests": 1000,
+      "C": 15,
+      "rows": [
+        {
+          "algo": "Online-DRL",
+          "latency": 9834.243401419837,
+          "cost": 561.0001395836721,
+          "hits": 95,
+          "delayed_hits": 854,
+          "forwards": 51,
+          "downloads": 51,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "LL-RC",
+          "latency": 9834.243401419837,
+          "cost": 561.0001395836721,
+          "hits": 95,
+          "delayed_hits": 854,
+          "forwards": 51,
+          "downloads": 51,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "R3 only",
+          "latency": 9834.243401419837,
+          "cost": 561.0001395836721,
+          "hits": 95,
+          "delayed_hits": 854,
+          "forwards": 51,
+          "downloads": 51,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "Randomized DRL (updated landlord)",
+          "latency": 11164.511742938426,
+          "cost": 605.0001355071093,
+          "hits": 78,
+          "delayed_hits": 768,
+          "forwards": 154,
+          "downloads": 55,
+          "lat_vs_llrc_pct": 13.526900720461416,
+          "cost_vs_llrc_pct": 7.84313457677398
+        }
+      ],
+      "online_drl_lat_pct": 0.0,
+      "online_drl_cost_pct": 0.0,
+      "latency_in_paper_range": false,
+      "cost_in_paper_range": false
+    },
+    {
+      "trace": "google_dataset2_paper.csv",
+      "kind": "google",
+      "n_services": 6,
+      "n_requests": 1000,
+      "C": 3,
+      "rows": [
+        {
+          "algo": "Online-DRL",
+          "latency": 1016.1379430429079,
+          "cost": 396.0000575523438,
+          "hits": 940,
+          "delayed_hits": 24,
+          "forwards": 36,
+          "downloads": 36,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "LL-RC",
+          "latency": 1016.1379430429079,
+          "cost": 396.0000575523438,
+          "hits": 940,
+          "delayed_hits": 24,
+          "forwards": 36,
+          "downloads": 36,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "R3 only",
+          "latency": 1016.1379430429079,
+          "cost": 396.0000575523438,
+          "hits": 940,
+          "delayed_hits": 24,
+          "forwards": 36,
+          "downloads": 36,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "Randomized DRL (updated landlord)",
+          "latency": 1429.9119862737134,
+          "cost": 143.0000290671875,
+          "hits": 928,
+          "delayed_hits": 8,
+          "forwards": 64,
+          "downloads": 13,
+          "lat_vs_llrc_pct": 40.720263037489325,
+          "cost_vs_llrc_pct": -63.88888679686982
+        }
+      ],
+      "online_drl_lat_pct": 0.0,
+      "online_drl_cost_pct": 0.0,
+      "latency_in_paper_range": false,
+      "cost_in_paper_range": false
+    },
+    {
+      "trace": "google_dataset2.csv",
+      "kind": "google",
+      "n_services": 6,
+      "n_requests": 1000,
+      "C": 3,
+      "rows": [
+        {
+          "algo": "Online-DRL",
+          "latency": 1016.1379430429079,
+          "cost": 396.0000575523438,
+          "hits": 940,
+          "delayed_hits": 24,
+          "forwards": 36,
+          "downloads": 36,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "LL-RC",
+          "latency": 1016.1379430429079,
+          "cost": 396.0000575523438,
+          "hits": 940,
+          "delayed_hits": 24,
+          "forwards": 36,
+          "downloads": 36,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "R3 only",
+          "latency": 1016.1379430429079,
+          "cost": 396.0000575523438,
+          "hits": 940,
+          "delayed_hits": 24,
+          "forwards": 36,
+          "downloads": 36,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "Randomized DRL (updated landlord)",
+          "latency": 1429.9119862737134,
+          "cost": 143.0000290671875,
+          "hits": 928,
+          "delayed_hits": 8,
+          "forwards": 64,
+          "downloads": 13,
+          "lat_vs_llrc_pct": 40.720263037489325,
+          "cost_vs_llrc_pct": -63.88888679686982
+        }
+      ],
+      "online_drl_lat_pct": 0.0,
+      "online_drl_cost_pct": 0.0,
+      "latency_in_paper_range": false,
+      "cost_in_paper_range": false
+    },
+    {
+      "trace": "google.csv",
+      "kind": "google",
+      "n_services": 4619,
+      "n_requests": 50000,
+      "C": 50,
+      "rows": [
+        {
+          "algo": "Online-DRL",
+          "latency": 499143.1448213202,
+          "cost": 60434.00895514752,
+          "hits": 7021,
+          "delayed_hits": 37485,
+          "forwards": 5494,
+          "downloads": 5494,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "LL-RC",
+          "latency": 499143.1448213202,
+          "cost": 60434.00895514752,
+          "hits": 7021,
+          "delayed_hits": 37485,
+          "forwards": 5494,
+          "downloads": 5494,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "R3 only",
+          "latency": 499143.1448213202,
+          "cost": 60434.00895514752,
+          "hits": 7021,
+          "delayed_hits": 37485,
+          "forwards": 5494,
+          "downloads": 5494,
+          "lat_vs_llrc_pct": 0.0,
+          "cost_vs_llrc_pct": 0.0
+        },
+        {
+          "algo": "Randomized DRL (updated landlord)",
+          "latency": 534666.7323188545,
+          "cost": 26422.003644404896,
+          "hits": 4546,
+          "delayed_hits": 38938,
+          "forwards": 6516,
+          "downloads": 2402,
+          "lat_vs_llrc_pct": 7.116913828447115,
+          "cost_vs_llrc_pct": -56.27957816928116
+        }
+      ],
+      "online_drl_lat_pct": 0.0,
+      "online_drl_cost_pct": 0.0,
+      "latency_in_paper_range": false,
+      "cost_in_paper_range": false
+    }
+  ]
+}

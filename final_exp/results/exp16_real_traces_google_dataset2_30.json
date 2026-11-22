@@ -1,0 +1,63 @@
+{
+  "trace": "google_dataset2_30.csv",
+  "kind": "google",
+  "rows": [
+    {
+      "algo": "Online-DRL",
+      "latency": 9834.243401419837,
+      "cost": 561.0001395836721,
+      "hits": 95,
+      "delayed_hits": 854,
+      "forwards": 51,
+      "downloads": 51,
+      "lat_vs_llrc_pct": 0.0,
+      "cost_vs_llrc_pct": 0.0
+    },
+    {
+      "algo": "LL-RC",
+      "latency": 9834.243401419837,
+      "cost": 561.0001395836721,
+      "hits": 95,
+      "delayed_hits": 854,
+      "forwards": 51,
+      "downloads": 51,
+      "lat_vs_llrc_pct": 0.0,
+      "cost_vs_llrc_pct": 0.0
+    },
+    {
+      "algo": "R3 only",
+      "latency": 9834.243401419837,
+      "cost": 561.0001395836721,
+      "hits": 95,
+      "delayed_hits": 854,
+      "forwards": 51,
+      "downloads": 51,
+      "lat_vs_llrc_pct": 0.0,
+      "cost_vs_llrc_pct": 0.0
+    },
+    {
+      "algo": "Randomized DRL (updated landlord)",
+      "latency": 11164.511742938426,
+      "cost": 605.0001355071093,
+      "hits": 78,
+      "delayed_hits": 768,
+      "forwards": 154,
+      "downloads": 55,
+      "lat_vs_llrc_pct": 13.526900720461416,
+      "cost_vs_llrc_pct": 7.84313457677398
+    }
+  ],
+  "n_services": 30,
+  "n_requests": 1000,
+  "C": 15,
+  "paper": {
+    "latency_pct": [
+      0.016,
+      7.41
+    ],
+    "cost_pct": [
+      -92.54,
+      -77.57
+    ]
+  }
+}
