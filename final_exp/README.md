@@ -166,7 +166,7 @@ python experiments/exp16_real_traces.py --csv data/google.csv --kind google --ro
 | 06 | `exp06_ski_rental` | randomized threshold: `2 -> e/(e-1)` | Sec. III |
 | 07 | `exp07_projection` | dual-ascent projection equals the exact QP | eqs. (21)-(25) |
 | 08 | `exp08_feasibility_budget` | G1 feasibility (with/without repair) and G2 budget | goals G1/G2 |
-| 09 | `exp09_regret` | G3 surrogate regret vs `sqrt(N) l_max sqrt(T)` | Proposition 1 |
+| 09 | `exp09_regret` | G3 surrogate regret vs `sqrt(N) l_max sqrt(T)` | Proposition 2 |
 | 10 | `exp10_expected_ratio` | G4 expected ratio vs the MILP optimum | G4 |
 | 11 | `exp11_slot_reduction` | G5 slot reductions, `Lambda_phi`, violations | Sec. 2, G5 |
 | 12 | `exp12_multiresource` | CPU/RAM/disk vs slots, utilization, imbalance | Sec. 4 |
@@ -185,6 +185,19 @@ python experiments/exp16_real_traces.py --csv data/google.csv --kind google --ro
 | 20 | `exp20_milp` | 30 random traces (`N=10..16`) against the offline MILP |
 | 21 | `exp21_g3b_comparator` | G3b comparator LP vs realized latency + downloads |
 | 22 | `exp22_real_traces_phase3` | cross `M_n` and `l_n` on two Google traces, with CIs |
+
+### Phase-5 experiment (35)
+
+| # | script | question |
+|---|---|---|
+| 35 | `exp35_phase5_theory_check` | Proposition 2(i)/(ii) regret check, `ζ`/`δ` measurements, and repair-induced fetches vs rounding churn (gate-off probe) |
+
+### Phase-6 experiments (36–37)
+
+| # | script | question |
+|---|---|---|
+| 36 | `exp36_real_data_phase6` | multi-seed real-trace comparison on two Google traces, with `M/l` crossing and paired CIs |
+| 37 | `exp37_real_k_sensitivity` | is the real-trace result a `K` artifact? (stateless, K=2/4/8) |
 
 ---
 

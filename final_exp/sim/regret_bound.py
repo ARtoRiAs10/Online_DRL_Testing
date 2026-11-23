@@ -62,35 +62,72 @@ def _as_float(x, default=0.0):
 
 
 def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
-    """Extract the RHS terms of the G3b bound from a per-step log.
+    """Extract the RHS terms of the download-charged bound (G3b) and Proposition 2.
 
     Parameters
     ----------
     step_log : list[dict]
         Records written by ``FracPolicy`` with ``log_steps=True``.  Each record must
-        contain ``n``, ``grad`` and ``p_n_star_prev``; ``q_ema_before``, ``q`` and
-        ``p_minus_xbar`` are used when present.
+        contain ``n``, ``grad`` and ``p_n_star_prev``.  The phase-5 fields
+        ``c_realized``, ``c_pred``, ``delta_l1``, ``delta_round`` and ``delta_churn``
+        are used when present; older logs fall back to ``grad`` / ``p_minus_xbar``.
     cat : Catalog
     C : int
         Cache capacity used for the comparator LP.
     zeta : float | None
-        EMA-bias constant.  If None, estimated as ``mean |q_ema_before - q|``.
+        EMA-bias constant.  If None, estimated as the mean signed prediction error
+        ``c_realized - grad``.
     T : int | None
         Horizon.  Defaults to ``len(step_log)``.
+
+    Notes
+    -----
+    The G3b download-charged bound is kept only as a diagnostic.  It is **not** a
+    theorem (see ``docs/PHASE5_THEORY.md``): the ``M_max N sqrt(T)`` term does not
+    cover repair-induced fetches.  The Proposition-2 fields below are the quantities
+    that the re-derived regret bound actually uses.
     """
+    from .regret import best_fixed_value
+
     step_log = list(step_log)
     N = cat.N
     T = len(step_log) if T is None else int(T)
     G = np.zeros(N, float)
     B = np.zeros(N, float)
+    C_real = np.zeros(N, float)
+    n_seq = np.zeros(T, dtype=int)
+    c_real_seq = np.zeros(T, float)
+    g_seq = np.zeros(T, float)
+    c_pred_seq = np.zeros(T, float)
     sum_F_tilde_Pt = 0.0
     sum_abs_px = 0.0
+    sum_realized_loss = 0.0
     q_bias = []
     dl_bias = []
-    for r in step_log:
+    zeta_vals = []
+    zeta_pred_vals = []
+    delta_l1_vals = []
+    delta_round_vals = []
+    delta_churn_vals = []
+    delta_churn_all_vals = []
+    for i, r in enumerate(step_log):
         n = int(r["n"])
+        n_seq[i] = n
         g = _as_float(r.get("grad"))
         G[n] += g
+        g_seq[i] = g
+        c_real = _as_float(r.get("c_realized"), g)
+        C_real[n] += c_real
+        c_real_seq[i] = c_real
+        c_pred = _as_float(r.get("c_pred"), g)
+        c_pred_seq[i] = c_pred
+        zeta_vals.append(c_real - g)
+        zeta_pred_vals.append(c_real - c_pred)
+        delta_l1_vals.append(_as_float(r.get("delta_l1"), 0.0))
+        delta_round_vals.append(_as_float(
+            r.get("delta_round"), abs(_as_float(r.get("p_minus_xbar"), 0.0))))
+        delta_churn_vals.append(_as_float(r.get("delta_churn"), 0.0))
+        delta_churn_all_vals.append(_as_float(r.get("delta_churn_all"), 0.0))
         # The benefit of caching is l_n - g.  Older logs without a benefit field
         # fall back to l_n - grad (l_n is usually logged as well).
         benefit = _as_float(r.get("benefit"),
@@ -98,6 +135,7 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
         B[n] += benefit
         sum_F_tilde_Pt += g * _as_float(r.get("p_n_star_prev"))
         sum_abs_px += abs(_as_float(r.get("p_minus_xbar")))
+        sum_realized_loss += c_real * (1.0 - _as_float(r.get("p_n_star_prev")))
         if "q_ema_before" in r and "q" in r:
             q_bias.append(abs(_as_float(r["q_ema_before"]) - _as_float(r["q"])))
         if _as_float(r.get("q")) > 0 and "dl_ema_before" in r:
@@ -109,18 +147,36 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
     zeta_q_hat = float(np.mean(q_bias)) if q_bias else 0.0
     zeta_dl_hat = float(np.mean(dl_bias)) if dl_bias else 0.0
     zeta_hat = zeta_q_hat + zeta_dl_hat
+    zeta_signed = float(np.mean(zeta_vals)) if zeta_vals else 0.0
+    zeta_mae = float(np.mean(np.abs(zeta_vals))) if zeta_vals else 0.0
+    zeta_pred_mae = (float(np.mean(np.abs(zeta_pred_vals)))
+                     if zeta_pred_vals else 0.0)
     if zeta is None:
-        zeta = zeta_hat
+        zeta = zeta_mae
 
     lmax = float(cat.l.max())
     Mmax = float(cat.M.max())
     sum_Mp_comp = float(np.dot(cat.M, P))
     sum_F_tilde_comp = float(np.dot(G, P))
     base = 2.0 * np.sqrt(N) * lmax * np.sqrt(T)
+    base_1 = np.sqrt(N) * lmax * np.sqrt(T)
     churn = lmax * sum_abs_px
     ema_term = float(zeta) * T
     budget_term = Mmax * N * np.sqrt(T)
     rhs = float(comp_obj + base + ema_term + churn + budget_term)
+
+    # Proposition 2 terms.  The surrogate comparator is the best fixed P for the
+    # sequence of surrogate gradients G; the realized comparator is the best fixed P
+    # for the realized cost coefficients C_real.
+    surrogate_loss = float(G.sum() - sum_F_tilde_Pt)
+    surrogate_comp = float(G.sum()
+                           - best_fixed_value(n_seq, g_seq, catalog_constraints(cat, C)))
+    realized_comp = float(C_real.sum()
+                          - best_fixed_value(n_seq, c_real_seq, catalog_constraints(cat, C)))
+    surrogate_regret_pre = float(surrogate_loss - surrogate_comp)
+    realized_regret_pre = float(sum_realized_loss - realized_comp)
+    prop2_bound_1 = float(base_1)
+    prop2_bound_2 = float(2.0 * base_1 + zeta_mae * T)
 
     return {
         "N": int(N),
@@ -136,11 +192,28 @@ def regret_bound_terms(step_log, cat, C, zeta=None, T=None):
         "G": G.tolist(),
         "W": W.tolist(),
         "B": B.tolist(),
+        "C_real": C_real.tolist(),
         "zeta": float(zeta),
         "zeta_hat": float(zeta_hat),
         "zeta_q_hat": float(zeta_q_hat),
         "zeta_dl_hat": float(zeta_dl_hat),
+        "zeta_signed": zeta_signed,
+        "zeta_mae": zeta_mae,
+        "zeta_pred_mae": zeta_pred_mae,
         "sum_delta_abs_px": float(sum_abs_px),
+        "delta_l1_mean": float(np.mean(delta_l1_vals)) if delta_l1_vals else 0.0,
+        "delta_round_mean": float(np.mean(delta_round_vals)) if delta_round_vals else 0.0,
+        "delta_churn_rate": float(np.mean(delta_churn_vals)) if delta_churn_vals else 0.0,
+        "delta_churn_sum": float(np.sum(delta_churn_vals)),
+        "delta_churn_all_sum": float(np.sum(delta_churn_all_vals)),
+        "surrogate_loss": float(surrogate_loss),
+        "realized_loss": float(sum_realized_loss),
+        "surrogate_comparator": surrogate_comp,
+        "realized_comparator": realized_comp,
+        "surrogate_regret_pre": surrogate_regret_pre,
+        "realized_regret_pre": realized_regret_pre,
+        "prop2_bound_1": prop2_bound_1,
+        "prop2_bound_2": prop2_bound_2,
         "base_term": float(base),
         "ema_term": float(ema_term),
         "churn_term": float(churn),

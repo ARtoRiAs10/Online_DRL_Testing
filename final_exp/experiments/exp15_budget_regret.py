@@ -3,8 +3,10 @@
 G2: E[ sum_nt u_{n,t} M_n ] <= B_max.  The randomized trigger lowers the download probability
     to budget_left / (M_n * requests_left), so the expected spend stays inside the budget.
 G3: E[ sum_t d_t(n*_t) ] - min_{P in D_vec} sum_t Fhat_t(P) <= Reg_T = o(T).
-    Proposition 1 (multi-resource proposal): with eta = sqrt(N)/(l_max sqrt(T)) the regret of
-    projected OGD is at most sqrt(N) l_max sqrt(T) (diameter of D_vec <= sqrt(N)).
+    Proposition 2 (surrogate regret, multi-resource proposal): with
+    eta = sqrt(N)/(l_max sqrt(T)) the regret of projected OGD is at most
+    sqrt(N) l_max sqrt(T) (diameter of D_vec <= sqrt(N)); with an estimate c~_t the
+    realized bound is 2 sqrt(N) l_max sqrt(T) + zeta T.
 """
 from common import *
 from scipy.optimize import linprog
@@ -47,7 +49,7 @@ for peek in (True, False):
     from sim.regret import ogd_run, surrogate_regret
     P = ogd_run(n_seq, g_seq, An, eta, peek=peek)
     reg = surrogate_regret(n_seq, g_seq, P, An)
-    print(f"peek={peek}: surrogate regret = {reg:.1f}   Prop.1 bound sqrt(N) l_max sqrt(T) = {bound:.1f} "
+    print(f"peek={peek}: surrogate regret = {reg:.1f}   Prop.2 bound sqrt(N) l_max sqrt(T) = {bound:.1f} "
           f"-> {'OK' if reg <= bound else 'VIOLATED'}")
 fig, ax = plt.subplots(1, 2, figsize=(9, 3.4))
 ax[0].bar(range(len(budget_rows)), [r["rand_cost"][0] for r in budget_rows])

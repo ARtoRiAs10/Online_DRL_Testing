@@ -203,10 +203,10 @@ def main():
             rows.append([r["T"], fmt(r["bound"], 0), fmt(r["regret_exog_stationary"], 0),
                          fmt(r["regret_exog_standard"], 0), fmt(r["regret_endog"][0], 0),
                          fmt(r["literal_G3"][0], 0)])
-        L.append(table(["T", "Prop. 1 bound", "exog stationary", "exog shift",
+        L.append(table(["T", "Prop. 2 bound", "exog stationary", "exog shift",
                         "endogenous", "literal G3"], rows))
         L.append("")
-        L.append("The surrogate regret is always below the Proposition-1 bound.  The literal "
+        L.append("The surrogate regret is always below the Proposition-2 bound.  The literal "
                  "G3 (realized latency minus the best fixed fractional cache) is above the "
                  "bound and grows with T; the fractional comparator caches instantly while "
                  "the real system must download first.")
@@ -309,7 +309,7 @@ def main():
         L.append(table(["Bmax / det cost", "Bmax", "det cost", "det latency",
                         "rand cost", "rand latency", "respected"], rows))
         L.append("")
-        L.append(f"Proposition-1 bound for the exogenous sequence: **{fmt(d.get('bound'), 0)}**.")
+        L.append(f"Proposition-2 bound for the exogenous sequence: **{fmt(d.get('bound'), 0)}**.")
 
     # ---------------------------------------------------------------- exp16
     d = load("exp16_real_traces")
@@ -508,22 +508,24 @@ def main():
     # ---------------------------------------------------------------- exp27
     d = load("exp27_full_google")
     if d:
-        L.append(section("27. Full 50,000-request Google trace"))
+        L.append(section("27. Full 50,000-request Google trace (3 seeds, K=2)"))
         rows = []
         for r in d["rows"]:
             rows.append([f"{r['D']:.0f}", f"{r['disk_scale']:.0e}",
                          fmt(r["frac_M_lt_l"], 3),
                          fmt(r["det_lat"], 0), fmt(r["det_cost"], 0),
-                         fmt(r["rf_lat"][0], 0), fmt(r["rf_cost"][0], 0),
-                         fmt(r["rf_hits"][0], 0),
-                         f"{r['rf_vs_det_lat']['mean']:+.0f} ±{r['rf_vs_det_lat']['ci_half']:.0f}",
-                         f"{r['rf_vs_det_cost']['mean']:+.0f} ±{r['rf_vs_det_cost']['ci_half']:.0f}"])
+                         f"{r['rf_landlord_vs_det_lat']['mean']:+.0f} ±{r['rf_landlord_vs_det_lat']['ci_half']:.0f}",
+                         f"{r['rf_landlord_vs_det_cost']['mean']:+.0f} ±{r['rf_landlord_vs_det_cost']['ci_half']:.0f}",
+                         f"{r['rf_stateless_vs_det_lat']['mean']:+.0f} ±{r['rf_stateless_vs_det_lat']['ci_half']:.0f}",
+                         f"{r['rf_stateless_vs_det_cost']['mean']:+.0f} ±{r['rf_stateless_vs_det_cost']['ci_half']:.0f}"])
         L.append(table(["D", "disk scale", "M<l", "Online-DRL lat", "Online-DRL cost",
-                        "RF lat", "RF cost", "RF hits", "Δlat", "Δcost"], rows))
+                        "Landlord Δlat", "Landlord Δcost",
+                        "Stateless Δlat", "Stateless Δcost"], rows))
         L.append("")
-        L.append("On the full Google trace the randomized method reduces download cost "
-                 "by 58% (cheap downloads) or 32% (expensive downloads), with a latency "
-                 "penalty of 5.5% or 3.6%.")
+        L.append("On the full 50k Google trace the stateless repair improves both latency "
+                 "and cost (CIs exclude 0); the Landlord repair reduces cost but has a "
+                 "larger latency penalty.  The raw disk column has all M<l; the crossing "
+                 "regime uses disk_scale=1e7.")
 
     # ---------------------------------------------------------------- exp29
     d = load("exp29_stateless_headline")
@@ -622,6 +624,99 @@ def main():
         L.append("The fractional state stays near the capacity simplex; the ratio is "
                  "controlled by the cyclic request pattern, not by an empty cache.")
 
+    # ---------------------------------------------------------------- exp35
+    d = load("exp35_phase5_theory_check")
+    if d:
+        L.append(section("35. Phase-5 theory check: Proposition 2, zeta/delta, repair fetches"))
+        rows = []
+        for key, s in d["summary"].items():
+            rows.append([key,
+                         fmt(s["surrogate_regret"][0], 0),
+                         fmt(s["bound_1"][0], 0),
+                         fmt(s["realized_regret"][0], 0),
+                         fmt(s["bound_2"][0], 0),
+                         fmt(s["zeta_mae"][0], 3),
+                         fmt(s["delta_round"][0], 3),
+                         fmt(s["delta_churn_rate"][0], 4),
+                         f"{s['surrogate_hold_rate']:.2f}",
+                         f"{s['realized_hold_rate']:.2f}"])
+        L.append(table(["config", "surrogate regret", "Prop-2(i) bound",
+                        "realized regret", "Prop-2(ii) bound", "zeta_mae",
+                        "delta_round", "delta_churn", "surr. hold", "real. hold"], rows))
+        L.append("")
+        L.append("The surrogate regret is about one third of the Proposition-2(i) bound; "
+                 "the realized regret is about one sixth of the Proposition-2(ii) bound.  "
+                 "The G3b download-charged bound is a diagnostic only: it is not a "
+                 "theorem because the `M_max N sqrt(T)` term does not cover repair-induced "
+                 "fetches.")
+        L.append("")
+        L.append("**Repair-induced fetch probe (gate_downloads=False):**")
+        rows = []
+        for key, s in d.get("probe_summary", {}).items():
+            rows.append([key,
+                         fmt(s["repair_evictions"][0], 0),
+                         fmt(s["repair_evicted_requests"][0], 0),
+                         fmt(s["repair_refetches"][0], 0),
+                         fmt(s["repair_refetch_cost"][0], 0),
+                         fmt(s["delta_churn_sum"][0], 0),
+                         fmt(s["downloads"][0], 0)])
+        L.append(table(["repair rule", "evictions", "evicted requests",
+                        "refetches", "refetch cost", "rounding churn", "downloads"], rows))
+        L.append("")
+        L.append("With the default download gate on, repair-induced refetches are zero by "
+                 "construction: a download can only start if the serving sample contains "
+                 "the service, and a repair eviction removes it.")
+        L.append("")
+        L.append("**Non-peeking check (peek=False, realized gradient):**")
+        rows = []
+        for key, s in d.get("nonpeek_summary", {}).items():
+            rows.append([key,
+                         fmt(s["surrogate_regret"][0], 0),
+                         fmt(s["bound_1"][0], 0),
+                         fmt(s["realized_regret"][0], 0),
+                         fmt(s["bound_2"][0], 0),
+                         f"{s['surrogate_hold_rate']:.2f}",
+                         f"{s['realized_hold_rate']:.2f}"])
+        L.append(table(["repair rule", "surrogate regret", "Prop-2(i) bound",
+                        "realized regret", "Prop-2(ii) bound", "surr. hold", "real. hold"], rows))
+
+    # ---------------------------------------------------------------- exp36
+    d = load("exp36_real_data_phase6")
+    if d:
+        L.append(section("36. Phase-6 real data: multi-seed CIs on two Google traces"))
+        rows = []
+        for r in d["rows"]:
+            rows.append([r["trace"], f"{r['disk_scale']:.0e}",
+                         fmt(r["frac_M_lt_l"], 3),
+                         fmt(r["det_lat"], 0), fmt(r["det_cost"], 0),
+                         f"{r['rf_stateless_vs_det_lat']['mean']:+.0f} ±{r['rf_stateless_vs_det_lat']['ci_half']:.0f}",
+                         f"{r['rf_stateless_vs_det_cost']['mean']:+.0f} ±{r['rf_stateless_vs_det_cost']['ci_half']:.0f}",
+                         f"{r['rf_landlord_vs_det_lat']['mean']:+.0f} ±{r['rf_landlord_vs_det_lat']['ci_half']:.0f}",
+                         f"{r['rf_landlord_vs_det_cost']['mean']:+.0f} ±{r['rf_landlord_vs_det_cost']['ci_half']:.0f}"])
+        L.append(table(["trace", "disk scale", "M<l", "Online-DRL lat", "Online-DRL cost",
+                        "stateless Δlat", "stateless Δcost",
+                        "Landlord Δlat", "Landlord Δcost"], rows))
+        L.append("")
+        L.append("The raw Google disk column has `M_n < l_n` for every service; the "
+                 "crossing regime uses the documented `disk_scale=1e7`.  The stateless "
+                 "repair reduces cost in every row; its latency sign is trace-dependent "
+                 "(small penalty on the 10k slice and dataset2, small gain on the full 50k "
+                 "trace in exp27).")
+
+    # ---------------------------------------------------------------- exp37
+    d = load("exp37_real_k_sensitivity")
+    if d:
+        L.append(section("37. Phase-6 K sensitivity on the 10k Google slice (stateless)"))
+        rows = []
+        for r in d["rows"]:
+            rows.append([r["K"], f"{r['disk_scale']:.0e}",
+                         f"{r['vs_det_lat']['mean']:+.0f} ±{r['vs_det_lat']['ci_half']:.0f}",
+                         f"{r['vs_det_cost']['mean']:+.0f} ±{r['vs_det_cost']['ci_half']:.0f}"])
+        L.append(table(["K", "disk scale", "Δlat vs det", "Δcost vs det"], rows))
+        L.append("")
+        L.append("The sign of the latency difference is stable across `K=2,4,8`; the "
+                 "full-50k latency gain in exp27 is a trace-length effect, not a K artifact.")
+
     # ---------------------------------------------------------------- verdicts
     L.append(section("Summary: confirmed / refuted / not testable"))
     L.append("| # | claim | verdict | evidence |")
@@ -630,6 +725,10 @@ def main():
     L.append("| 2 | G2: the gated randomized DRL respects the download budget | **confirmed** | exp08, exp15 |")
     L.append("| 3 | G3: the surrogate regret is below `sqrt(N) l_max sqrt(T)` | **confirmed** | exp09 |")
     L.append("| 4 | G3 read literally (realized latency) | **refuted** | exp09: 3-10x the bound, grows with T |")
+    L.append("| 4b | Proposition 2 (surrogate regret, pre-update) | **confirmed** | exp35: ratio ~0.33 of the bound in all four configs |")
+    L.append("| 4c | G3b download-charged regret bound | **removed** | exp35: repair-induced fetches are not covered by Lemma 3; `M_max N sqrt(T)` is unjustified |")
+    L.append("| 4d | Real-trace cost reduction (stateless) | **confirmed** | exp36/exp27: cost down in every regime (CIs exclude 0) |")
+    L.append("| 4e | Real-trace latency win (stateless) | **trace-dependent** | exp27 full 50k: -2.2k to -2.4k; exp36 10k: +0.3k to +0.4k; dataset2: +0.2k to +1.3k |")
     L.append("| 5 | The updated Landlord-Repair improves latency over the stateless repair | **refuted on Zipf** | exp01, exp08: higher latency, fewer hits |")
     L.append("| 6 | The updated Landlord-Repair reduces download cost vs LL-RC | **yes, but less than the stateless repair** | exp01: -72.5 % vs LL-RC; exp08: 55 397 vs 11 209 for the stateless repair |")
     L.append("| 7 | Online-DRL has a small latency penalty and a large cost win vs LL-RC | **not testable with the bundled trace** | exp16: `M_n < l_n`, the two coincide |")

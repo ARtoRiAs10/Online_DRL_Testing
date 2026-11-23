@@ -128,7 +128,7 @@ The updated Landlord-Repair (literal and gated) is feasible on every step.  The 
 
 ## 9. G3 surrogate regret (exp09)
 
-| T | Prop. 1 bound | exog stationary | exog shift | endogenous | literal G3 |
+| T | Prop. 2 bound | exog stationary | exog shift | endogenous | literal G3 |
 |---|---|---|---|---|---|
 | 500 | 2970 | 837 | -162 | -658 | 6708 |
 | 1000 | 4200 | 1199 | -644 | -843 | 13063 |
@@ -136,7 +136,7 @@ The updated Landlord-Repair (literal and gated) is feasible on every step.  The 
 | 4000 | 8400 | 2374 | -5306 | -1168 | 50466 |
 | 8000 | 11879 | 3341 | -12144 | -1482 | 92748 |
 
-The surrogate regret is always below the Proposition-1 bound.  The literal G3 (realized latency minus the best fixed fractional cache) is above the bound and grows with T; the fractional comparator caches instantly while the real system must download first.
+The surrogate regret is always below the Proposition-2 bound.  The literal G3 (realized latency minus the best fixed fractional cache) is above the bound and grows with T; the fractional comparator caches instantly while the real system must download first.
 
 ## 10. G4 expected ratio vs the MILP optimum (exp10)
 
@@ -242,7 +242,7 @@ Fits: {"Online-DRL": {"in_N": {"a": 5.08967247587666, "b": 0.1986720868717004, "
 | 50% | 95564 | 95513 | 154,105 | 41322 | 156,977 | True |
 | 100% | 191,128 | 191,128 | 145,467 | 45805 | 156,216 | True |
 
-Proposition-1 bound for the exogenous sequence: **11879**.
+Proposition-2 bound for the exogenous sequence: **11879**.
 
 ## 16. The paper's real traces (exp16)
 
@@ -407,14 +407,14 @@ Linear fits of the randomized ratio in k: {'M/l=2': {'slope': 0.0121225028728011
 
 The bound remains valid but loose at long horizons; the `M_max N sqrt(T)` churn term dominates.
 
-## 27. Full 50,000-request Google trace
+## 27. Full 50,000-request Google trace (3 seeds, K=2)
 
-| D | disk scale | M<l | Online-DRL lat | Online-DRL cost | RF lat | RF cost | RF hits | Δlat | Δcost |
-|---|---|---|---|---|---|---|---|---|---|
-| 1000 | 1e+00 | 1.000 | 499,143 | 60434 | 526,665 | 25295 | 5282 | +27521 ±15120 | -35140 ±2167 |
-| 1000 | 1e+07 | 0.664 | 861,093 | 62152 | 891,890 | 42445 | 5668 | +30797 ±14316 | -19707 ±1578 |
+| D | disk scale | M<l | Online-DRL lat | Online-DRL cost | Landlord Δlat | Landlord Δcost | Stateless Δlat | Stateless Δcost |
+|---|---|---|---|---|---|---|---|---|
+| 1000 | 1e+00 | 1.000 | 499,143 | 60434 | +34797 ±3593 | -33781 ±1995 | -2448 ±676 | -42658 ±206 |
+| 1000 | 1e+07 | 0.664 | 861,093 | 62152 | +40789 ±1897 | -15934 ±5157 | -2215 ±782 | -33867 ±1021 |
 
-On the full Google trace the randomized method reduces download cost by 58% (cheap downloads) or 32% (expensive downloads), with a latency penalty of 5.5% or 3.6%.
+On the full 50k Google trace the stateless repair improves both latency and cost (CIs exclude 0); the Landlord repair reduces cost but has a larger latency penalty.  The raw disk column has all M<l; the crossing regime uses disk_scale=1e7.
 
 ## 29. Stateless headline reruns (exp01/04/12/17)
 
@@ -562,6 +562,57 @@ R3 alone remains linear in k.  R1+R2 (randomized rounding) is what flattens the 
 
 The fractional state stays near the capacity simplex; the ratio is controlled by the cyclic request pattern, not by an empty cache.
 
+## 35. Phase-5 theory check: Proposition 2, zeta/delta, repair fetches
+
+| config | surrogate regret | Prop-2(i) bound | realized regret | Prop-2(ii) bound | zeta_mae | delta_round | delta_churn | surr. hold | real. hold |
+|---|---|---|---|---|---|---|---|---|---|
+| realized/stateless | 3883 | 11879 | 3883 | 23759 | 0.000 | 0.106 | 0.0155 | 1.00 | 1.00 |
+| realized/landlord | 3859 | 11879 | 3859 | 23759 | 0.000 | 0.199 | 0.1067 | 1.00 | 1.00 |
+| expectation/stateless | 3891 | 11879 | 3869 | 24151 | 0.049 | 0.105 | 0.0151 | 1.00 | 1.00 |
+| expectation/landlord | 3891 | 11879 | 3826 | 26070 | 0.289 | 0.196 | 0.1071 | 1.00 | 1.00 |
+
+The surrogate regret is about one third of the Proposition-2(i) bound; the realized regret is about one sixth of the Proposition-2(ii) bound.  The G3b download-charged bound is a diagnostic only: it is not a theorem because the `M_max N sqrt(T)` term does not cover repair-induced fetches.
+
+**Repair-induced fetch probe (gate_downloads=False):**
+| repair rule | evictions | evicted requests | refetches | refetch cost | rounding churn | downloads |
+|---|---|---|---|---|---|---|
+| stateless | 18740 | 284 | 45 | 6352 | 154 | 644 |
+| landlord | 21811 | 557 | 42 | 5992 | 652 | 741 |
+
+With the default download gate on, repair-induced refetches are zero by construction: a download can only start if the serving sample contains the service, and a repair eviction removes it.
+
+**Non-peeking check (peek=False, realized gradient):**
+| repair rule | surrogate regret | Prop-2(i) bound | realized regret | Prop-2(ii) bound | surr. hold | real. hold |
+|---|---|---|---|---|---|---|
+| stateless | 3680 | 11879 | 3680 | 23759 | 1.00 | 1.00 |
+| landlord | 3676 | 11879 | 3676 | 23759 | 1.00 | 1.00 |
+
+## 36. Phase-6 real data: multi-seed CIs on two Google traces
+
+| trace | disk scale | M<l | Online-DRL lat | Online-DRL cost | stateless Δlat | stateless Δcost | Landlord Δlat | Landlord Δcost |
+|---|---|---|---|---|---|---|---|---|
+| google.csv | 1e+00 | 1.000 | 138,921 | 47366 | +309 ±152 | -20044 ±305 | +4055 ±1267 | -18284 ±547 |
+| google.csv | 1e+07 | 0.654 | 183,876 | 41940 | +443 ±179 | -3476 ±889 | +3981 ±1180 | -674 ±1656 |
+| google_dataset2_30.csv | 1e+00 | 1.000 | 9834 | 561 | +1327 ±108 | -163 ±28 | +1767 ±264 | +153 ±89 |
+| google_dataset2_30.csv | 1e+07 | 0.067 | 18739 | 1320 | +256 ±84 | -30 ±77 | +1050 ±266 | +540 ±157 |
+| google_dataset2_paper.csv | 1e+00 | 1.000 | 1016 | 396 | +228 ±205 | -303 ±61 | +841 ±775 | -117 ±207 |
+| google_dataset2_paper.csv | 1e+07 | 0.500 | 1088 | 532 | +194 ±233 | -299 ±179 | +880 ±789 | +87 ±462 |
+
+The raw Google disk column has `M_n < l_n` for every service; the crossing regime uses the documented `disk_scale=1e7`.  The stateless repair reduces cost in every row; its latency sign is trace-dependent (small penalty on the 10k slice and dataset2, small gain on the full 50k trace in exp27).
+
+## 37. Phase-6 K sensitivity on the 10k Google slice (stateless)
+
+| K | disk scale | Δlat vs det | Δcost vs det |
+|---|---|---|---|
+| 2 | 1e+00 | +229 ±89 | -19939 ±216 |
+| 4 | 1e+00 | +316 ±185 | -19895 ±264 |
+| 8 | 1e+00 | +260 ±322 | -20112 ±277 |
+| 2 | 1e+07 | +352 ±71 | -3727 ±1108 |
+| 4 | 1e+07 | +425 ±189 | -3162 ±884 |
+| 8 | 1e+07 | +439 ±337 | -4417 ±508 |
+
+The sign of the latency difference is stable across `K=2,4,8`; the full-50k latency gain in exp27 is a trace-length effect, not a K artifact.
+
 ## Summary: confirmed / refuted / not testable
 
 | # | claim | verdict | evidence |
@@ -570,6 +621,10 @@ The fractional state stays near the capacity simplex; the ratio is controlled by
 | 2 | G2: the gated randomized DRL respects the download budget | **confirmed** | exp08, exp15 |
 | 3 | G3: the surrogate regret is below `sqrt(N) l_max sqrt(T)` | **confirmed** | exp09 |
 | 4 | G3 read literally (realized latency) | **refuted** | exp09: 3-10x the bound, grows with T |
+| 4b | Proposition 2 (surrogate regret, pre-update) | **confirmed** | exp35: ratio ~0.33 of the bound in all four configs |
+| 4c | G3b download-charged regret bound | **removed** | exp35: repair-induced fetches are not covered by Lemma 3; `M_max N sqrt(T)` is unjustified |
+| 4d | Real-trace cost reduction (stateless) | **confirmed** | exp36/exp27: cost down in every regime (CIs exclude 0) |
+| 4e | Real-trace latency win (stateless) | **trace-dependent** | exp27 full 50k: -2.2k to -2.4k; exp36 10k: +0.3k to +0.4k; dataset2: +0.2k to +1.3k |
 | 5 | The updated Landlord-Repair improves latency over the stateless repair | **refuted on Zipf** | exp01, exp08: higher latency, fewer hits |
 | 6 | The updated Landlord-Repair reduces download cost vs LL-RC | **yes, but less than the stateless repair** | exp01: -72.5 % vs LL-RC; exp08: 55 397 vs 11 209 for the stateless repair |
 | 7 | Online-DRL has a small latency penalty and a large cost win vs LL-RC | **not testable with the bundled trace** | exp16: `M_n < l_n`, the two coincide |

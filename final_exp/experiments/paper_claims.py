@@ -31,7 +31,7 @@ PAPER_SKI_RENTAL = {"deterministic": 2.0, "randomized": 1.5819767068693265}  # e
 PAPER_G1 = "the repaired state satisfies the CPU/RAM/disk and cardinality constraints a.s."
 PAPER_G2 = "E[sum u_{n,t} M_n] <= B_max"
 
-# exp09: Proposition 1.
+# exp09: Proposition 2.
 PAPER_REGRET_BOUND = "sqrt(N) l_max sqrt(T)"
 
 # exp10 / exp13: expected ratio.

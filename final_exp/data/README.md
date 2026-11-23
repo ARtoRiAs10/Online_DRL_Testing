@@ -4,10 +4,9 @@ The Google CSVs are **bundled** in this folder (prepared with the paper's recipe
 
 | file | requests | services | use |
 |---|---|---|---|
-| `google.csv` | 50 000 | 4 619 | main real-trace check (exp16) |
+| `google.csv` | 50 000 | 4 619 | main real-trace check (exp16, exp27, exp36) |
 | `google_dataset2_30.csv` | 1 000 | 30 | paper-like `dataset2` (30 services) |
 | `google_dataset2_paper.csv` | 1 000 | 6 | 1 000-row slice of the paper recipe |
-| `google_dataset2.csv` | 1 000 | 6 | small slice |
 
 The simulator also runs on synthetic data by default.
 

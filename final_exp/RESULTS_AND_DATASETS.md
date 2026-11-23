@@ -111,6 +111,13 @@ The paper also evaluates on **SHARCNet** (Grid Workloads Archive).  That host (`
 | 15 | G2 budget + G3 regret | synthetic Zipf/Poisson | N=40, T=8000, imbalance=3.0, cap_mult=4, 10 seeds | exp15_budget_regret.json/.png |
 | 16 | real traces | Google cluster traces 2011 CSVs | google.csv (50k/4619), dataset2_30 (1k/30), dataset2_paper & dataset2 (1k/6); C=min(50, N//2) | exp16_real_traces*.json/.png |
 | 17 | Zipf rho / request rate | synthetic Zipf/Poisson | N=40, T=8000, C=15, 10 seeds; rho=1.0..2.0, rate=0.25..2.0 | exp17_paper_synthetic_params.json/.png |
+| 18–22 | Phase-3 ablation / adversarial / MILP / G3b / real traces | synthetic, Large Sequence, Google CSVs | 20 seeds; N=20..40, T=8000; 30 MILP instances | exp18–exp22 JSON |
+| 23–28 | Phase-4 large-sequence ablation, EMA, ratio, long-horizon, Google | synthetic, Large Sequence, Google | 5–10 seeds; k=9..48; T=10000 | exp23–exp28 JSON |
+| 29–31 | Stateless headline, hyperparameters, ALG/OPT vs T | synthetic Zipf/Poisson | 10 seeds; N=40, T=8000; T=120..1200 | exp29–exp31 JSON |
+| 32–34 | Large Sequence ablation, adversarial families, P_t dynamics | Large Sequence, shuffled cyclic, Markov-Zipf, bursty | 5–10 seeds; k=9..48 | exp32–exp34 JSON |
+| 35 | Phase-5 theory check (Proposition 2, ζ/δ, repair fetches) | synthetic Zipf/Poisson | N=40, T=8000, 10 seeds; realized/expectation × stateless/Landlord | exp35_phase5_theory_check.json |
+| 36 | Phase-6 real data | Google 10k slice, dataset2_30, dataset2_paper | 5/10/10 seeds; `disk_scale=1,1e7` | exp36_real_data_phase6.json |
+| 37 | Phase-6 K sensitivity | Google 10k slice | 3 seeds; K=2,4,8; stateless | exp37_real_k_sensitivity.json |
 
 ## 3. Full results output (all 17 experiments)
 
@@ -242,7 +249,7 @@ The updated Landlord-Repair (literal and gated) is feasible on every step.  The 
 
 ### 3.9. G3 surrogate regret (exp09)
 
-| T | Prop. 1 bound | exog stationary | exog shift | endogenous | literal G3 |
+| T | Prop. 2 bound | exog stationary | exog shift | endogenous | literal G3 |
 |---|---|---|---|---|---|
 | 500 | 2970 | 837 | -162 | -658 | 6708 |
 | 1000 | 4200 | 1199 | -644 | -843 | 13063 |

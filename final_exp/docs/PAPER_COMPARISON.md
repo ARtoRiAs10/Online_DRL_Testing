@@ -28,7 +28,6 @@ The paper's Google cluster traces, prepared with the paper's recipe
 |---|---|---|
 | `data/google_dataset2_30.csv` | 1 000 | 30 |
 | `data/google_dataset2_paper.csv` | 1 000 | 6 |
-| `data/google_dataset2.csv` | 1 000 | 6 |
 | `data/google.csv` | 50 000 | 4 619 |
 
 SHARCNet is not reachable from this codespace.  The paper's PDF text layer is damaged, so
@@ -49,7 +48,7 @@ For comparison, the **stateless** repair on the same exp08 workload gives latenc
 **91 697** and cost **11 209** — both better than the updated Landlord-Repair, but the
 stateless rule is not the algorithm of the updated PDF.
 
-## What the 17 experiments show
+## What the 37 experiments show
 
 * **G1 (feasibility)**: confirmed.  The raw sample violates the true constraints in ~40 %
   of the `(path, step)` pairs; after Landlord-Repair the violation rate is 0.
@@ -68,6 +67,20 @@ stateless rule is not the algorithm of the updated PDF.
   split is **not reproducible from the bundled traces** because `M_n < l_n` for every
   service, so Online-DRL and LL-RC coincide.  On synthetic Zipf the deterministic
   Online-DRL is -2.41 % latency / -50.5 % cost vs LL-RC.
+
+## Phase 5-6 update
+
+* **Proposition 2 (surrogate regret)**: re-derived and confirmed by exp35.  The surrogate
+  regret is ~0.33 of the `sqrt(N) l_max sqrt(T)` bound; the realized regret is ~0.15 of
+  the `2 sqrt(N) l_max sqrt(T) + ζ T` bound.  The G3b download-charged bound is removed
+  (repair-induced fetches are not covered by Lemma 3).
+* **Real traces (exp36/exp27)**: the stateless repair reduces download cost in every
+  regime (-30 to -42,658).  Its latency sign is trace-dependent: +309/+443 on the 10k
+  Google slice, -2,448/-2,215 on the full 50k Google trace.  The Landlord repair has a
+  larger latency penalty.  The K sensitivity (exp37) shows the 10k-slice latency penalty
+  is stable for K=2/4/8.
+* **M/l crossing**: the raw Google disk column has all `M_n < l_n`; the crossing regime
+  uses the documented `disk_scale=1e7`, with the fraction `M<l` reported for every row.
 
 ## Bottom line
 

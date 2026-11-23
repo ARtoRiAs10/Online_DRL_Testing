@@ -6,7 +6,7 @@ on SHARCNet.  This workspace contains the Google traces prepared with
 
   * ``data/google_dataset2_paper.csv`` -- the paper's dataset2 recipe (1000 requests,
     30 services), regenerated from clusterdata-2011-2;
-  * ``data/google_dataset2.csv``        -- a small 1000-row slice;
+  * ``data/google_dataset2_30.csv``   -- a 1000-row / 30-service slice;
   * ``data/google.csv``                 -- 50 000 requests / 4 619 services.
 
 For every trace the script runs Online-DRL, LL-RC, R3-only and the updated
@@ -31,7 +31,7 @@ candidates = []
 if opt.csv:
     candidates = [opt.csv]
 else:
-    for name in ("google_dataset2_30.csv", "google_dataset2_paper.csv", "google_dataset2.csv",
+    for name in ("google_dataset2_30.csv", "google_dataset2_paper.csv",
                  "google.csv", "sharcnet.csv"):
         p = os.path.join(DATA, name)
         if os.path.exists(p):

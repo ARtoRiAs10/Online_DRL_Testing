@@ -38,7 +38,7 @@ for r in rows:
     print(f"T={r['T']:5d} bound={r['bound']:8.0f}  stationary regret/bound={r['regret_exog_stationary']/r['bound']:+.3f}  "
           f"shifting regret/bound={r['regret_exog_standard']/r['bound']:+.3f}  literal-G3/bound={r['literal_G3'][0]/r['bound']:+.2f}")
 print("Negative regret vs the best FIXED P is possible when popularity shifts (OGD adapts).")
-print("paper Proposition 1 bound:", PAPER_REGRET_BOUND)
+print("paper Proposition 2 bound:", PAPER_REGRET_BOUND)
 print("literal G3 >> bound means the fractional comparator is unrealistically strong: it caches instantly, the real system must download first.")
 fig, ax = plt.subplots(figsize=(6, 3.8))
 ax.plot(Ts, [r["bound"] for r in rows], "k:", label="sqrt(N) lmax sqrt(T)")

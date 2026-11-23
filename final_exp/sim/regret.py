@@ -1,4 +1,4 @@
-"""Surrogate-loss regret (G3 / Proposition 1)."""
+"""Surrogate-loss regret (G3 / Proposition 2)."""
 from __future__ import annotations
 import numpy as np
 from scipy.optimize import linprog
@@ -21,20 +21,24 @@ def surrogate_regret(n_seq, g_seq, P_seq, An):
 
 
 def ogd_run(n_seq, g_seq, An, eta, peek=True, eta_sched=None):
-    """Plain projected OGD on a *given* (exogenous) gradient sequence; returns the P_t played.
+    """Projected OGD on a *given* (exogenous) gradient sequence; returns the played states.
 
-    eta_sched=None  : a constant step size eta (Prop. 1: eta = sqrt(N)/(l_max sqrt(T))).
-    eta_sched="1/sqrt(t)" : the horizon-free schedule eta_t = eta / sqrt(t) (revision R-B),
-                            for which the standard OGD bound becomes 2 sqrt(N) l_max sqrt(T).
+    The returned ``P[i]`` is always the state **before** the i-th update (the point that
+    is played at round i).  This is the convention of Proposition 2: the loss at round i
+    is evaluated at ``P[i]``, and the gradient ``g_seq[i]`` is then used to move to
+    ``P[i+1]``.  The ``peek`` flag is kept for backwards compatibility; it only controls
+    whether the caller evaluates the gradient before or after the update, not which state
+    is returned.  Earlier versions returned the post-update state when ``peek=True``,
+    which made the measured regret inconsistent with the OGD bound.
+
+    eta_sched=None  : a constant step size eta (Prop. 2: eta = sqrt(N)/(l_max sqrt(T))).
+    eta_sched="1/sqrt(t)" : the horizon-free schedule eta_t = eta / sqrt(t).
     """
     N = An.shape[1]; L = np.linalg.norm(An, 2) ** 2
     p = np.zeros(N); rho = None; P = np.zeros((len(n_seq), N), np.float32)
     for i, (n, g) in enumerate(zip(n_seq, g_seq)):
+        P[i] = p                                   # pre-update / played state
         e = eta if eta_sched is None else eta / np.sqrt(i + 1)
-        if peek:
-            z = p.copy(); z[n] += e * g; p, rho, _ = project_dual(z, An, rho, L)
-            P[i] = p
-        else:
-            P[i] = p
-            z = p.copy(); z[n] += e * g; p, rho, _ = project_dual(z, An, rho, L)
+        z = p.copy(); z[n] += e * g
+        p, rho, _ = project_dual(z, An, rho, L)
     return P

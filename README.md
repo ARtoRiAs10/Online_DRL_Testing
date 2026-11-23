@@ -15,11 +15,12 @@ the paper's Google cluster traces 2011.
 | path | content |
 |---|---|
 | `final_exp/sim/` | simulator: engine, catalog, traces, projection, OPT, algorithms, Landlord-Repair |
-| `final_exp/experiments/` | the 17 experiments, `paper_claims.py`, `summarize.py` and `run_all.py` |
+| `final_exp/experiments/` | experiments 01–37, `paper_claims.py`, `summarize.py` and `run_all.py` |
 | `final_exp/data/` | Google cluster traces prepared with the paper's recipe (`prepare_google.py`) |
 | `final_exp/results/` | generated JSON results and PNG figures from the last full run |
 | `final_exp/docs/` | generated `REPORT.md`, `PAPER_COMPARISON.md` and `RESULTS_AND_DATASETS.md` |
-| `final_exp/tests/` | unit tests for the core and the Landlord-Repair |
+| `final_exp/tests/` | unit tests for the core, the Landlord-Repair and the Phase-5 theory checks |
+| `docs/` | working notes: roadmap, phase reports (0–7), theory derivations and the final summary |
 
 ## Quick start
 
@@ -36,7 +37,9 @@ python experiments/run_all.py           # full run
 The short comparison is in [`final_exp/docs/PAPER_COMPARISON.md`](final_exp/docs/PAPER_COMPARISON.md);
 the full tables are generated in [`final_exp/docs/REPORT.md`](final_exp/docs/REPORT.md).
 [`final_exp/RESULTS_AND_DATASETS.md`](final_exp/RESULTS_AND_DATASETS.md) records every
-experiment, the dataset used for each one and the exact run conditions.
+experiment, the dataset used for each one and the exact run conditions.  The phase
+reports and theory notes are in [`docs/`](docs/): `PHASE5_THEORY.md`,
+`PHASE5_REPORT.md`, `PHASE6_REPORT.md` and `PHASE7_WRITING.md`.
 
 Headline findings:
 

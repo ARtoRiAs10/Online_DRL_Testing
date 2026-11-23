@@ -77,7 +77,7 @@ class FracPolicy(Policy):
         self.eta_user, self.proj = eta, proj
         self.peek, self.resample_every, self.gate, self.record = peek, resample_every, gate_downloads, record
         self.repair_order, self.budget_prob = repair_order, budget_prob
-        # eta_mode: "horizon"  = eta = sqrt(N)/(l_max sqrt(T))  (Prop. 1, needs the horizon T)
+        # eta_mode: "horizon"  = eta = sqrt(N)/(l_max sqrt(T))  (Prop. 2, needs the horizon T)
         #            "adaptive" = eta_t = eta / sqrt(t)         (horizon-free revision N4)
         # kstar_policy: "run"  = one serving path for the whole run (sticky, default)
         #                "miss" = redraw the serving path on every miss
@@ -98,7 +98,7 @@ class FracPolicy(Policy):
         self.kstar = int(rng.integers(K))
         self.T = None
 
-    # ----- horizon-dependent step size (Prop. 1): eta = sqrt(N) / (l_max sqrt(T)) -----
+    # ----- horizon-dependent step size (Prop. 2): eta = sqrt(N) / (l_max sqrt(T)) -----
     def set_horizon(self, T):
         N = self.cat.N
         self.T = T
@@ -122,6 +122,8 @@ class FracPolicy(Policy):
         self.evicted_p_max = 0.0
         self.evicted_top1_count = 0
         self.evicted_log = []
+        self.recently_evicted = set()
+        self.recently_evicted_by_path = [set() for _ in range(self.K)]
         self.steps = 0
         # --- revision state ---
         self.dprob = np.ones(N)                      # Q_n: the learned download probability (N1)
@@ -141,8 +143,14 @@ class FracPolicy(Policy):
                        kstar_redraws=0, residencies=0, unprofitable=0, dprob_updates=0,
                        active_proj=0, active_size=0.0, refreshes=0, q_ema_sum=0.0,
                        proj_skipped=0, landlord_rent_rounds=0, landlord_evictions=0,
-                       landlord_passes=0, topup_added=0)
-        self.P_hist, self.g_hist, self.n_hist = [], [], []
+                       landlord_passes=0, topup_added=0,
+                       repair_evicted_requests=0, repair_refetches=0,
+                       repair_refetch_cost=0.0, delta_churn_sum=0,
+                       delta_churn_all_sum=0, zeta_sum=0.0, abs_zeta_sum=0.0,
+                       zeta_count=0, delta_l1_sum=0.0, delta_round_sum=0.0)
+        self.P_hist, self.P_pre_hist, self.P_post_hist = [], [], []
+        self.g_hist, self.n_hist = [], []
+        self._p_before_step = None
 
     # ----- R1: projected OGD step (eqs. 19-22) -----
     def _update_q_ema(self, n, q):
@@ -182,7 +190,7 @@ class FracPolicy(Policy):
         if self.proj == "scale":
             # fast feasible projection: clip to the box and apply the scaling of eq. (25).
             # It is feasible but NOT the exact Euclidean projection, so the regret bound of
-            # Prop. 1 acquires an additive O(T eps) projection-error term.
+            # Prop. 2 acquires an additive O(T eps) projection-error term.
             p = np.clip(z, 0.0, 1.0)
             m = float((self.An @ p).max())
             if m > 1.0: p = p / m
@@ -245,6 +253,9 @@ class FracPolicy(Policy):
                 "step": int(self.steps), "path": int(k),
                 "services": ev_idx.tolist(), "p": pv.tolist(),
             })
+        self.recently_evicted.update(int(i) for i in ev_idx)
+        if 0 <= k < len(self.recently_evicted_by_path):
+            self.recently_evicted_by_path[k].update(int(i) for i in ev_idx)
 
     def _landlord_repair_row(self, k, was_violation=False):
         """Algorithm 3 (updated Landlord-Repair) on sample path ``k``.
@@ -370,7 +381,22 @@ class FracPolicy(Policy):
     def before_request(self, t, n, q, dm):
         self.steps += 1
         p_before = self.p.copy()
-        s_before = self.S[self.kstar].copy()
+        self._p_before_step = p_before
+        kstar_step = int(self.kstar)
+        s_before = self.S[kstar_step].copy()
+        l_n = float(self.cat.l[n])
+        # Realized cost coefficient of this request (latency if miss, min(l, dm) if the
+        # download is in flight).  This is the ``c_t`` of Proposition 2.
+        c_realized = float((1.0 - q) * l_n + q * min(l_n, dm))
+        q_ema_before = float(self.q_ema[n])
+        dl_ema_before = float(self.dl_ema[n])
+        # F_{t-1}-predictable predictor (the EMA estimate before seeing this request).
+        # Use the same download-time estimate as the gradient so the diagnostic matches
+        # the algorithm's predictor.
+        dme = (dl_ema_before if self.download_time_mode == "ema"
+               else self.cat.M[n] / 2.0)
+        c_pred = float((1.0 - q_ema_before) * l_n
+                       + q_ema_before * min(l_n, dme))
         rec = None
         if self.log_steps:
             rec = {
@@ -381,42 +407,82 @@ class FracPolicy(Policy):
                 "p_n_star_prev": float(p_before[n]),
                 "x_bar_n_star_prev": float(s_before[n]),
                 "p_minus_xbar": float(p_before[n] - s_before[n]),
-                "q_ema_before": float(self.q_ema[n]),
+                "q_ema_before": q_ema_before,
                 "q_ema_after": None,
-                "dl_ema_before": float(self.dl_ema[n]),
+                "dl_ema_before": dl_ema_before,
                 "dl_ema_after": None,
                 "grad": None,
-                "l_n": None,
+                "l_n": l_n,
                 "benefit": None,
                 "p_n_star_after": None,
                 "outcome": None,
                 "hit_rank": None,
                 "download_started": False,
                 "c_t": 0.0,
+                "c_realized": c_realized,
+                "c_pred": c_pred,
+                "zeta_pred": float(c_realized - c_pred),
+                "zeta": None,
+                "delta_l1": None,
+                "delta_round": None,
+                "delta_churn": None,
+                "delta_churn_all": None,
+                "p_minus_xbar_post": None,
                 "repair_evicted_fraction": None,
                 "repair_evicted": None,
                 "topup_added": None,
                 "p_sum_after": None,
+                "kstar_step": kstar_step,
+                "repair_evicted_request": 0,
+                "repair_refetch": False,
             }
             if self.store_p:
                 rec["p_before"] = p_before.tolist()
             self._current_rec = rec
+        if self.record:
+            self.P_pre_hist.append(p_before.copy())
         self.last_repair_stats = {}
         if self.peek:
             self._ogd(n, q, dm, t)
+            if self.record:
+                self.P_post_hist.append(self.p.copy())
             if rec is not None:
                 rec["grad"] = float(self._g)
-                rec["l_n"] = float(self.cat.l[n])
-                rec["benefit"] = float(self.cat.l[n] - self._g)
+                rec["benefit"] = float(l_n - self._g)
                 rec["p_n_star_after"] = float(self.p[n])
+                rec["zeta"] = float(c_realized - self._g)
+                rec["delta_l1"] = float(np.abs(self.p - p_before).sum())
+                self.st["delta_l1_sum"] += rec["delta_l1"]
+                self.st["zeta_sum"] += rec["zeta"]
+                self.st["abs_zeta_sum"] += abs(rec["zeta"])
+                self.st["zeta_count"] += 1
+        # Reset the per-step eviction sets *before* refreshing the paths; _log_evictions
+        # fills them during _sample().  The served path is recorded in the step log so
+        # after_request() can attribute a download to a repair eviction even if kstar is
+        # redrawn later.
+        self.recently_evicted = set()
+        self.recently_evicted_by_path = [set() for _ in range(self.K)]
         self._sample()
+        p_used = self.p
         if rec is not None:
-            rs = self.last_repair_stats.get(self.kstar)
+            rs = self.last_repair_stats.get(kstar_step)
             if rs is not None:
                 rec["repair_evicted_fraction"] = float(rs["fraction"])
                 rec["repair_evicted"] = int(rs["evicted"])
                 rec["topup_added"] = int(rs["topup_added"])
             rec["p_sum_after"] = float(self.p.sum())
+            x_after = bool(self.S[kstar_step, n])
+            rec["delta_round"] = float(abs(p_used[n] - x_after))
+            rec["p_minus_xbar_post"] = float(p_used[n] - x_after)
+            rec["delta_churn"] = int((not s_before[n]) and x_after)
+            rec["delta_churn_all"] = int(np.sum((~s_before) & self.S[kstar_step]))
+            rec["repair_evicted_request"] = int(
+                (n in self.recently_evicted_by_path[kstar_step]) and (not x_after))
+            self.st["delta_churn_sum"] += rec["delta_churn"]
+            self.st["delta_churn_all_sum"] += rec["delta_churn_all"]
+            self.st["delta_round_sum"] += rec["delta_round"]
+            if rec["repair_evicted_request"]:
+                self.st["repair_evicted_requests"] += 1
             if self.store_p:
                 rec["p_after"] = self.p.tolist()
         if self.peek:
@@ -431,14 +497,29 @@ class FracPolicy(Policy):
         elif self.kstar_policy == "miss" and (not self.mask[n]) and q == 0.0:
             self.kstar = int(self.rng.integers(self.K)); self.st["kstar_redraws"] += 1
         if self.record:
-            self.P_hist.append(self.p.copy()); self.g_hist.append(self._g if self.peek else
-                (1 - q) * self.cat.l[n] + q * min(self.cat.l[n], dm)); self.n_hist.append(n)
+            self.P_hist.append(self.p.copy())
+            self.g_hist.append(self._g if self.peek else
+                (1 - q) * l_n + q * min(l_n, dm))
+            self.n_hist.append(n)
 
     def after_request(self, t, n, q, dm):
         if not self.peek:
             self._ogd(n, q, dm, t)
             self._update_q_ema(n, q)
             self._update_dl_ema(n, q, dm)
+            if self.record:
+                self.P_post_hist.append(self.p.copy())
+            if self._current_rec is not None and self._p_before_step is not None:
+                rec_now = self._current_rec
+                rec_now["grad"] = float(self._g)
+                rec_now["zeta"] = float(
+                    rec_now.get("c_realized", 0.0) - self._g)
+                rec_now["delta_l1"] = float(
+                    np.abs(self.p - self._p_before_step).sum())
+                self.st["delta_l1_sum"] += rec_now["delta_l1"]
+                self.st["zeta_sum"] += rec_now["zeta"]
+                self.st["abs_zeta_sum"] += abs(rec_now["zeta"])
+                self.st["zeta_count"] += 1
         rec = self._current_rec
         if rec is not None:
             outcome = getattr(self.eng, "last_outcome", None)
@@ -448,10 +529,16 @@ class FracPolicy(Policy):
                                    if self.popularity_rank is not None else None)
             rec["download_started"] = bool(q == 0.0 and n in getattr(self.eng, "pending", {}))
             rec["c_t"] = float(self.cat.M[n]) if rec["download_started"] else 0.0
+            kstar_step = int(rec.get("kstar_step", self.kstar))
+            if rec["download_started"] and n in self.recently_evicted_by_path[kstar_step]:
+                rec["repair_refetch"] = True
+                self.st["repair_refetches"] += 1
+                self.st["repair_refetch_cost"] += float(self.cat.M[n])
             rec["q_ema_after"] = float(self.q_ema[n])
             rec["dl_ema_after"] = float(self.dl_ema[n])
             if rec["grad"] is None and self._g is not None:
                 rec["grad"] = float(self._g)
+                rec["zeta"] = float(rec.get("c_realized", 0.0) - self._g)
             if rec["l_n"] is None:
                 rec["l_n"] = float(self.cat.l[n])
             if rec["benefit"] is None:
@@ -515,6 +602,8 @@ class FracPolicy(Policy):
         d["dprob_hist"] = self.dprob.copy()
         if self.record:
             d["P_hist"] = np.array(self.P_hist, np.float32); d["g_hist"] = np.array(self.g_hist)
+            d["P_pre_hist"] = np.array(self.P_pre_hist, np.float32)
+            d["P_post_hist"] = np.array(self.P_post_hist, np.float32)
             d["n_hist"] = np.array(self.n_hist)
         d["rho_final"] = self.rho.copy()
         d["repair_mode"] = self.repair_mode
@@ -531,6 +620,18 @@ class FracPolicy(Policy):
         d["topup_added"] = self.st["topup_added"]
         d["churn_credit"] = float(self.churn_credit)
         d["churn_events"] = int(self.churn_events)
+        d["repair_evicted_requests"] = int(self.st["repair_evicted_requests"])
+        d["repair_refetches"] = int(self.st["repair_refetches"])
+        d["repair_refetch_cost"] = float(self.st["repair_refetch_cost"])
+        d["delta_churn_sum"] = int(self.st["delta_churn_sum"])
+        d["delta_churn_all_sum"] = int(self.st["delta_churn_all_sum"])
+        d["zeta_count"] = int(self.st["zeta_count"])
+        d["mean_zeta"] = (self.st["zeta_sum"] / self.st["zeta_count"]
+                          if self.st["zeta_count"] else 0.0)
+        d["mean_abs_zeta"] = (self.st["abs_zeta_sum"] / self.st["zeta_count"]
+                              if self.st["zeta_count"] else 0.0)
+        d["mean_delta_l1"] = (self.st["delta_l1_sum"] / max(1, self.steps))
+        d["mean_delta_round"] = (self.st["delta_round_sum"] / max(1, self.steps))
         d["mean_dl_ema"] = float(self.dl_ema.mean())
         if self.log_steps and self.step_log:
             fr = [r["repair_evicted_fraction"] for r in self.step_log
