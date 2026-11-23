@@ -203,3 +203,66 @@ def bursty_world(N, T, seed=0, burst_len=20, rate=0.5, **phys):
             i += 1
     arrivals = np.cumsum(rng.exponential(1.0 / rate, T))
     return cat, Trace(arrivals, svc)
+
+
+def hotspot_world(N=40, T=8000, seed=0, rho=1.2, switch=0.01, hot_frac=0.5,
+                  rate=0.5, **phys):
+    """Zipf popularity with a hotspot that moves with probability ``switch`` per step.
+
+    A fraction ``hot_frac`` of the probability mass is placed on the current hotspot;
+    the rest follows the Zipf law.  This is a nonstationary family that is not built
+    against Online-DRL.
+    """
+    rng = np.random.default_rng(seed)
+    raw = np.c_[rng.lognormal(0, .6, N), rng.lognormal(1, .6, N), rng.lognormal(3.5, .8, N)]
+    cat = from_physical(raw, **phys)
+    base = _zipf_probs(N, rho)
+    svc = np.empty(T, dtype=int)
+    hot = int(rng.integers(N))
+    for t in range(T):
+        if rng.random() < switch:
+            hot = int(rng.integers(N))
+        p = (1.0 - hot_frac) * base
+        p[hot] += hot_frac
+        svc[t] = rng.choice(N, p=p)
+    arrivals = np.cumsum(rng.exponential(1.0 / rate, T))
+    return cat, Trace(arrivals, svc)
+
+
+def random_walk_zipf_world(N=40, T=8000, seed=0, rho=1.2, step=0.05, rate=0.5,
+                           **phys):
+    """Zipf popularity whose log-weights follow a Gaussian random walk.
+
+    Every step adds ``N(0, step^2)`` noise to the log-popularity and renormalizes;
+    the request is then drawn from the resulting distribution.
+    """
+    rng = np.random.default_rng(seed)
+    raw = np.c_[rng.lognormal(0, .6, N), rng.lognormal(1, .6, N), rng.lognormal(3.5, .8, N)]
+    cat = from_physical(raw, **phys)
+    logp = -rho * np.log(np.arange(1, N + 1, dtype=float))
+    svc = np.empty(T, dtype=int)
+    for t in range(T):
+        logp = logp + rng.normal(0.0, step, N)
+        logp -= logp.max()
+        p = np.exp(logp)
+        p /= p.sum()
+        svc[t] = rng.choice(N, p=p)
+    arrivals = np.cumsum(rng.exponential(1.0 / rate, T))
+    return cat, Trace(arrivals, svc)
+
+
+def periodic_burst_world(N=40, T=8000, seed=0, rho=1.2, period=500, rate=0.5,
+                         **phys):
+    """Zipf popularity with a sinusoidal arrival rate (periodic bursts)."""
+    rng = np.random.default_rng(seed)
+    raw = np.c_[rng.lognormal(0, .6, N), rng.lognormal(1, .6, N), rng.lognormal(3.5, .8, N)]
+    cat = from_physical(raw, **phys)
+    p = _zipf_probs(N, rho)
+    svc = rng.choice(N, size=T, p=p).astype(int)
+    ts = np.empty(T, float)
+    t = 0.0
+    for i in range(T):
+        lam = rate * (1.0 + 0.5 * np.sin(2.0 * np.pi * i / period))
+        t += rng.exponential(1.0 / max(lam, 1e-6))
+        ts[i] = t
+    return cat, Trace(ts, svc)
