@@ -1,8 +1,8 @@
 # Phase 4 -- matched cost
 
-Levels are fractions of the mean deterministic theta=1 cost.
+Levels are fractions of the mean deterministic theta=1 cost.  Bayes-R3 uses c=0.1.
 
-## synthetic
+## synthetic -- R3
 
 | level | frac | covered | gap | 95% CI | p | p Holm | win |
 |---|---|---|---|---|---|---|---|
@@ -13,26 +13,60 @@ Levels are fractions of the mean deterministic theta=1 cost.
 
 wins 0/4; pass False
 
-## google_dataset2_30
+## synthetic -- Bayes-R3
 
 | level | frac | covered | gap | 95% CI | p | p Holm | win |
 |---|---|---|---|---|---|---|---|
-| 671.2 | 0.50 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
-| 1006.8 | 0.75 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
-| 1342.4 | 1.00 | 30/30 | +27.8 | [+22.2, +34.2] | 3.73e-09 | 1.49e-08 | False |
-| 1678.0 | 1.25 | 30/30 | -10.4 | [-18.0, -2.4] | 0.0175 | 0.0525 | True |
+| 74569.0 | 0.50 | 30/30 | -4767.8 | [-4767.8, -4767.8] | 4.32e-08 | 1.73e-07 | True |
+| 111853.5 | 0.75 | 30/30 | +80.0 | [+80.0, +80.0] | 4.32e-08 | 1.73e-07 | False |
+| 149137.9 | 1.00 | 30/30 | +438.1 | [+438.1, +438.1] | 4.32e-08 | 1.73e-07 | False |
+| 186422.4 | 1.25 | 30/30 | -1082.9 | [-1082.9, -1082.9] | 4.32e-08 | 1.73e-07 | True |
 
-wins 0/4; pass False
+wins 2/4; pass False
 
-## google_50k
+## google_dataset2_30 -- R3
 
 | level | frac | covered | gap | 95% CI | p | p Holm | win |
 |---|---|---|---|---|---|---|---|
-| 31286.3 | 0.50 | 30/30 | +972.1 | [+819.0, +1120.3] | 1.86e-09 | 7.45e-09 | False |
-| 46929.5 | 0.75 | 30/30 | +714.9 | [+606.2, +835.2] | 1.86e-09 | 7.45e-09 | False |
-| 62572.6 | 1.00 | 30/30 | +699.3 | [+552.3, +852.4] | 1.86e-09 | 7.45e-09 | False |
-| 78215.8 | 1.25 | 30/30 | +125.5 | [+38.3, +218.0] | 0.0248 | 0.0248 | False |
+| 258141.0 | 0.50 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
+| 387211.5 | 0.75 | 29/30 | +88.2 | [+56.4, +122.8] | 2.74e-06 | 1.1e-05 | False |
+| 516282.0 | 1.00 | 30/30 | +3.9 | [-1.4, +11.5] | 0.285 | 0.57 | False |
+| 645352.5 | 1.25 | 30/30 | +15.5 | [+6.3, +26.3] | 0.00167 | 0.00502 | False |
 
 wins 0/4; pass False
 
-Overall pass (R3 at matched cost): **False**; datasets passing: []
+## google_dataset2_30 -- Bayes-R3
+
+| level | frac | covered | gap | 95% CI | p | p Holm | win |
+|---|---|---|---|---|---|---|---|
+| 258141.0 | 0.50 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
+| 387211.5 | 0.75 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
+| 516282.0 | 1.00 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
+| 645352.5 | 1.25 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
+
+wins 0/4; pass False
+
+## google_50k -- R3
+
+| level | frac | covered | gap | 95% CI | p | p Holm | win |
+|---|---|---|---|---|---|---|---|
+| 4923727.9 | 0.50 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
+| 7385591.9 | 0.75 | 30/30 | +7611.8 | [+5595.1, +9646.4] | 3.54e-08 | 1.06e-07 | False |
+| 9847455.8 | 1.00 | 30/30 | -7063.9 | [-11328.7, -3041.3] | 0.000505 | 0.00101 | True |
+| 12309319.8 | 1.25 | 30/30 | -7879.5 | [-12019.8, -4507.3] | 1.3e-08 | 5.22e-08 | True |
+
+wins 2/4; pass False
+
+## google_50k -- Bayes-R3
+
+| level | frac | covered | gap | 95% CI | p | p Holm | win |
+|---|---|---|---|---|---|---|---|
+| 4923727.9 | 0.50 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
+| 7385591.9 | 0.75 | 0/30 | +nan | [+nan, +nan] | 1 | 1 | False |
+| 9847455.8 | 1.00 | 30/30 | +8583.1 | [+8583.1, +8583.1] | 4.32e-08 | 1.73e-07 | False |
+| 12309319.8 | 1.25 | 30/30 | +1529.4 | [+1529.4, +1529.4] | 4.32e-08 | 1.73e-07 | False |
+
+wins 0/4; pass False
+
+Overall R3 matched-cost pass: **False** ([])
+Overall Bayes-R3 matched-cost pass: **False** ([])

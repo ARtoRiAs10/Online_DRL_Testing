@@ -22,7 +22,7 @@ Seeds: 30
 
 | config | median | ratio to det | within 2x |
 |---|---|---|---|
-| Online-DRL | 7.365 | 1.00 | True |
-| R3 | 8.560 | 1.16 | True |
-| MG | 8.252 | 1.12 | True |
-| R3+MG | 8.249 | 1.12 | True |
+| Online-DRL | 13.630 | 1.00 | True |
+| R3 | 9.768 | 0.72 | True |
+| MG | 9.493 | 0.70 | True |
+| R3+MG | 9.228 | 0.68 | True |

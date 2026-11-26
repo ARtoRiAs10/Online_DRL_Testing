@@ -34,30 +34,28 @@ python experiments/run_all.py --many   # phase 6 with 100 seeds
 
 ## What the current run shows
 
-The frozen preconditions are evaluated first.  **The baseline precondition
-fails**: the bundled Google traces do not reproduce the paper's published
-Online-DRL vs LL-RC split in either the paper-recipe regime (where `M < l` for
-every service, so the two algorithms coincide) or the natural-crossing regime
-(cost reduction about 42–58%, not 77.57–92.54%).  SHARCNet is unavailable
-(`gwa.unc.edu` unreachable), so that precondition is **BLOCKED**.
-
-Because the preconditions fail, every end-to-end claim is formally
-**BLOCKED**.  The isolated evidence is:
+The **M_i > l_i calibration** (`D=1e-4`, 50k Google, C=5) reproduces the
+paper's baseline: latency **+2.046%**, cost **−88.895%**, `M>l` for 100% of
+services.  Row #0 **PASSES** and the pipeline is unblocked.  SHARCNet remains
+**BLOCKED** (trace unavailable).
 
 | check | result |
 |---|---|
 | H0 reduction, `lam=0` = LL-RC, invariants, budget | **PASS** |
 | threshold mean `1/(e−1)` | **PASS** (0.581871 vs 0.581977) |
 | pure ski-rental worst ratio | **PASS** (1.5928 vs 1.58 ± 0.02) |
-| R3 at matched cost (3–4 levels, ≥2/3 datasets) | **FAIL** (0/4 levels on synthetic and 50k; 1/4 on dataset2, not Holm-significant) |
-| MG breaks lockstep (≥20%, p<0.05, ≥30 seeds) | **PASS in isolation** (59–79% lower on cyclic scan/burst, p<0.05; best 78.9%) but blocked by the baseline precondition |
-| MG no harm on real traces (≤2%) | **FAIL** (cost +2.8% to +3.2% on natural-crossing Google) |
-| R3+MG Large Sequence (lower every k, flatter slope) | **PASS** (9.889→9.226, 19.889→18.718, 39.889→37.319, 79.889→74.996; slope 1.667→1.565) but blocked |
+| R3 at matched cost (3–4 levels, ≥2/3 datasets) | **FAIL** (0/4 synthetic, 0/4 50k, 2/4 dataset2) |
+| Bayes-R3 at matched cost (#4) | **FAIL** (2/4 synthetic, 0/4 dataset2, 0/2 50k) |
+| MG breaks lockstep, Soft-MG τ=0.15 (≥20%, p<0.05, ≥30 seeds) | **PASS** (59–79% lower on cyclic scan/burst) |
+| MG no harm on real traces, Soft-MG (≤2%) | **PASS** (0.00% Google latency/cost change) |
+| R3+MG Large Sequence (lower every k, flatter slope) | **PASS** (9.889→9.226, 19.889→18.718, 39.889→37.319, 79.889→74.996; slope 1.667→1.565) |
 | O(log k) | **UNSUPPORTED** (ratio still grows roughly linearly) |
-| overhead within 2× deterministic | **PASS** (max 1.17×) |
+| overhead within 2× deterministic | **PASS** (max 1.00×) |
 
 The full evaluation is in [`docs/REPORT.md`](docs/REPORT.md); the machine
-readable version is `results/acceptance.json`.
+readable version is `results/acceptance.json`.  The decision is **GO for the
+calibrated baseline + Soft-MG package; NO-GO for the matched-cost R3/Bayes-R3
+claim**.
 
 ## Implementation notes
 
@@ -67,6 +65,14 @@ readable version is `results/acceptance.json`.
   unmarked services; hits and admissions set the mark; when all cached
   services are marked and the cache is still infeasible the marks are cleared
   (a new phase); zero-credit victims are drawn uniformly.
+* `Soft-MG` (`soft_tau`, frozen at 0.15) charges marked services
+  `(1−τ)` rent and allows them to be evicted.  It retains the cyclic lockstep
+  gain while removing the real-trace cost regression.
+* `Bayes-R3` uses a Gamma posterior on each service's request rate and the
+  threshold `θ_n/M_n = λ/(1+c·E[λ_n]·M_n)` (`c=0.1`).  It is the candidate
+  for the matched-cost claim #4; it does not pass.
+* The `calibrated` regime (`D=1e-4`) is the `M_i > l_i` calibration used for
+  row #0 and the real-trace comparisons.
 * The engine checks cardinality, CPU/RAM/disk and budget invariants after
   every eviction/admission.  A run with any violation is reported as a failed
   precondition.

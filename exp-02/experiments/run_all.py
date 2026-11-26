@@ -14,6 +14,7 @@ PHASES = [
     "phase3_real_traces.py",
     "phase4_matched_cost.py",
     "phase5_ablation.py",
+    "soft_tau_sweep.py",
     "phase6_stats_overhead.py",
     "phase7_report.py",
 ]

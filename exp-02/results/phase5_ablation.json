@@ -69,6 +69,19 @@
       "violations": 0
     },
     {
+      "config": "MG soft (tau=0.15)",
+      "latency": 20226.602612311304,
+      "latency_sd": 3.73248750142067e-12,
+      "cost": 21785.997721906002,
+      "cost_sd": 0.0,
+      "hits": 1022.0,
+      "downloads": 66.0,
+      "evictions": 54.0,
+      "phase_clears": 0.0,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
       "config": "R3+MG",
       "latency": 17501.82240744383,
       "latency_sd": 1324.6919494875779,
@@ -78,6 +91,19 @@
       "downloads": 77.3,
       "evictions": 63.9,
       "phase_clears": 23.25,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "R3+MG soft (tau=0.15)",
+      "latency": 19451.11032240657,
+      "latency_sd": 978.0231235518236,
+      "cost": 27259.509909077322,
+      "cost_sd": 1173.0991764052526,
+      "hits": 1054.25,
+      "downloads": 82.3,
+      "evictions": 68.55,
+      "phase_clears": 0.0,
       "us_per_req": 0.0,
       "violations": 0
     },

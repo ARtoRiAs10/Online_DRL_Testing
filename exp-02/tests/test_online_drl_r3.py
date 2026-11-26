@@ -91,6 +91,29 @@ def test_matched_cost_curve_monotone():
     assert all(a >= b for a, b in zip(costs, costs[1:]))
 
 
+def test_soft_mg_invariants():
+    cat, tr = m.synthetic_world(N=20, T=2000, seed=0)
+    for tau in (0.1, 0.15, 0.2, 0.25):
+        r = m.drl_mg(cat, tr, 10, seed=0, soft_tau=tau)
+        assert r.extra["violations"] == {}
+        assert r.extra["marking_violations"] == 0
+        assert r.extra["phase_clears"] == 0
+
+
+def test_soft_mg_zero_equals_hard():
+    cat, tr = m.synthetic_world(N=20, T=2000, seed=0)
+    a = m.drl_mg(cat, tr, 10, seed=0, soft_tau=0.0)
+    b = m.drl_mg(cat, tr, 10, seed=0)
+    assert (a.latency, a.cost) == (b.latency, b.cost)
+
+
+def test_bayes_lam0_equals_llrc():
+    cat, tr = m.synthetic_world(N=15, T=1000, seed=0)
+    a = m.drl_bayes_r3(cat, tr, 5, lam=0.0, seed=0)
+    b = m.ll_rc(cat, tr, 5)
+    assert (a.latency, a.cost, a.downloads) == (b.latency, b.cost, b.downloads)
+
+
 def test_result_summary_keys():
     cat, tr = m.synthetic_world(N=10, T=200, seed=0)
     s = m.online_drl(cat, tr, 3).summary()

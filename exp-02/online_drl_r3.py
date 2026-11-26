@@ -123,6 +123,53 @@ class RandThreshold:
             return 0.0
         return self.lam * math.log1p((E - 1.0) * self.rng.random())
 
+    def observe(self, n: int, t: float, hit: bool):
+        pass
+
+
+class BayesThreshold:
+    """Posterior-rate (Bayes-R3) threshold.
+
+    A Gamma(alpha, beta) posterior is kept for the request rate of every
+    service.  The threshold fraction is
+
+        theta_n / M_n = lam / (1 + c * E[lambda_n] * M_n)
+
+    so a service with a high estimated request rate downloads earlier and a
+    cold service waits longer.  ``lam`` is the global scale used for the
+    matched-cost sweep; ``lam = 0`` is LL-RC.
+    """
+
+    is_random = True
+
+    def __init__(self, cat: Catalog, rng: np.random.Generator, lam: float = 1.0,
+                 c: float = 1.0, prior_shape: float = 1.0,
+                 prior_rate: float = 1.0):
+        self.cat = cat
+        self.rng = rng
+        self.lam = float(lam)
+        self.c = float(c)
+        self.alpha = np.full(cat.N, float(prior_shape))
+        self.beta = np.full(cat.N, float(prior_rate))
+        self.last_t = np.full(cat.N, np.nan)
+
+    def observe(self, n: int, t: float, hit: bool):
+        if np.isnan(self.last_t[n]):
+            self.last_t[n] = t
+            return
+        dt = max(0.0, t - self.last_t[n])
+        self.last_t[n] = t
+        # Every request carries one unit of rate evidence; the elapsed time
+        # is the exposure.
+        self.alpha[n] += 1.0
+        self.beta[n] += dt
+
+    def draw(self, n: int) -> float:
+        if self.lam == 0.0:
+            return 0.0
+        rate = self.alpha[n] / max(self.beta[n], 1e-12)
+        return self.lam / (1.0 + self.c * rate * self.cat.M[n])
+
 
 # ---------------------------------------------------------------------------
 # Policies
@@ -175,7 +222,7 @@ class LandlordPolicy(Policy):
     def __init__(self, cat: Catalog, C: int, size_mode: str = "sum",
                  tie_break: str = "deficit", victim_mode: Optional[str] = None,
                  marked: bool = False, rng: Optional[np.random.Generator] = None,
-                 tol: float = TOL):
+                 tol: float = TOL, soft_tau: float = 0.0):
         self.cat = cat
         self.C = int(C)
         self.size_mode = size_mode
@@ -184,6 +231,9 @@ class LandlordPolicy(Policy):
         # Landlord uses the residual-deficit tie-break.
         self.victim_mode = victim_mode or ("uniform" if marked else "deficit")
         self.marked_enabled = bool(marked)
+        # Soft-MG: marked services pay (1 - soft_tau) of the rent and may be
+        # evicted.  soft_tau = 0 is the hard marking-gated rule.
+        self.soft_tau = float(soft_tau)
         self.rng = np.random.default_rng(0) if rng is None else rng
         self.tol = float(tol)
         self.size = cat.a.sum(1) if size_mode == "sum" else cat.a.max(1)
@@ -224,6 +274,7 @@ class LandlordPolicy(Policy):
         return dict(evictions=self.n_evict, phase_clears=self.phase_clears,
                     marking_violations=self.marking_violations,
                     max_marked=self.max_marked,
+                    soft_tau=self.soft_tau,
                     final_cached=len(self.credit),
                     final_marked=len(self.marked))
 
@@ -277,7 +328,7 @@ class LandlordPolicy(Policy):
         return min(zero, key=lambda f: self._residual_deficit(f, need))
 
     def _evict(self, f: int):
-        if self.marked_enabled and f in self.marked and \
+        if self.marked_enabled and self.soft_tau == 0.0 and f in self.marked and \
                 any(g not in self.marked for g in self.credit):
             self.marking_violations += 1
         self.credit.pop(f, None)
@@ -288,12 +339,42 @@ class LandlordPolicy(Policy):
         self.eng.on_evict(f)
         self.eng.check_invariants(f"evict {f}")
 
+    def _admit_soft(self, g: int):
+        """Soft-MG: rent everyone, but marked items pay (1 - tau) rent."""
+        while not self._feasible_with(g):
+            if not self.credit:
+                break
+            d = min(self.credit[f] /
+                    (self.size[f] * (1.0 - self.soft_tau if f in self.marked else 1.0))
+                    for f in self.credit)
+            for f in self.credit:
+                mult = (1.0 - self.soft_tau) if f in self.marked else 1.0
+                self.credit[f] = max(0.0, self.credit[f] - d * self.size[f] * mult)
+            zero = [f for f in self.credit if self.credit[f] <= self.tol]
+            if not zero:
+                f = min(self.credit, key=lambda x: self.credit[x] / self.size[x])
+                self.credit[f] = 0.0
+                zero = [f]
+            unmarked_zero = [f for f in zero if f not in self.marked]
+            pool = unmarked_zero if unmarked_zero else zero
+            victim = self._choose_victim(pool, self._need(g))
+            self._evict(victim)
+
     def _admit(self, g: int):
         if g in self.credit:
             self.credit[g] = self.cat.M[g]
             self.last_use[g] = self.step
             if self.marked_enabled:
                 self.marked.add(g)
+            return
+
+        if self.marked_enabled and self.soft_tau > 0.0:
+            self._admit_soft(g)
+            self.credit[g] = self.cat.M[g]
+            self.last_use[g] = self.step
+            self.marked.add(g)
+            self.max_marked = max(self.max_marked, len(self.marked))
+            self.eng.check_invariants(f"admit {g}")
             return
 
         if not self.marked_enabled:
@@ -498,6 +579,8 @@ class Engine:
                 lat[i] = l
                 fw += 1
 
+            if hasattr(self.thr, "observe"):
+                self.thr.observe(n, t, pol.cached(n))
             pol.after_request(t, n, q, dm)
 
         wall = time.perf_counter() - wall
@@ -542,7 +625,7 @@ def drl_mg(cat, trace, C, seed=0, bmax=None, **kw) -> Result:
     pol = LandlordPolicy(cat, C, marked=True, rng=rng,
                          **{k: v for k, v in kw.items()
                             if k in ("size_mode", "tie_break",
-                                     "victim_mode", "tol")})
+                                     "victim_mode", "tol", "soft_tau")})
     return Engine(cat, pol, DetThreshold(kw.get("theta", 1.0)), bmax, rng=rng,
                   redraw_mode=kw.get("redraw_mode", "download_or_evict"),
                   check_invariants=kw.get("check_invariants", True)).run(trace)
@@ -554,8 +637,22 @@ def drl_r3_mg(cat, trace, C, lam=1.0, seed=0, bmax=None, **kw) -> Result:
     pol = LandlordPolicy(cat, C, marked=True, rng=rng,
                          **{k: v for k, v in kw.items()
                             if k in ("size_mode", "tie_break",
-                                     "victim_mode", "tol")})
+                                     "victim_mode", "tol", "soft_tau")})
     return Engine(cat, pol, RandThreshold(rng, lam), bmax, rng=rng,
+                  redraw_mode=kw.get("redraw_mode", "download_or_evict"),
+                  check_invariants=kw.get("check_invariants", True)).run(trace)
+
+
+def drl_bayes_r3(cat, trace, C, lam=1.0, seed=0, bmax=None, **kw) -> Result:
+    """Bayes-R3: posterior-rate threshold + deterministic Landlord."""
+    rng = np.random.default_rng(seed)
+    pol = LandlordPolicy(cat, C, **{k: v for k, v in kw.items()
+                                    if k in ("size_mode", "tie_break",
+                                             "victim_mode", "tol")})
+    thr = BayesThreshold(cat, rng, lam=lam, c=kw.get("bayes_c", 1.0),
+                         prior_shape=kw.get("prior_shape", 1.0),
+                         prior_rate=kw.get("prior_rate", 1.0))
+    return Engine(cat, pol, thr, bmax, rng=rng,
                   redraw_mode=kw.get("redraw_mode", "download_or_evict"),
                   check_invariants=kw.get("check_invariants", True)).run(trace)
 

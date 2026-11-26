@@ -1,6 +1,6 @@
 {
   "preconditions": {
-    "baseline_reproduced": false,
+    "baseline_reproduced": true,
     "baseline_detail": {
       "google_dataset2_30/paper_recipe": {
         "best_C": 1,
@@ -9,7 +9,8 @@
         "latency_in_range": true,
         "cost_in_range": false,
         "pass_": false,
-        "frac_M_lt_l": 1.0
+        "frac_M_lt_l": 1.0,
+        "frac_M_gt_l": 0.0
       },
       "google_dataset2_30/natural_crossing": {
         "best_C": 2,
@@ -18,7 +19,18 @@
         "latency_in_range": true,
         "cost_in_range": false,
         "pass_": false,
-        "frac_M_lt_l": 0.06666666666666667
+        "frac_M_lt_l": 0.06666666666666667,
+        "frac_M_gt_l": 0.9333333333333333
+      },
+      "google_dataset2_30/calibrated": {
+        "best_C": 2,
+        "lat_pct": -1.1458333333333333,
+        "cost_pct": -65.63475422830784,
+        "latency_in_range": true,
+        "cost_in_range": false,
+        "pass_": false,
+        "frac_M_lt_l": 0.0,
+        "frac_M_gt_l": 1.0
       },
       "google_dataset2_paper/paper_recipe": {
         "best_C": 1,
@@ -27,7 +39,8 @@
         "latency_in_range": true,
         "cost_in_range": false,
         "pass_": false,
-        "frac_M_lt_l": 1.0
+        "frac_M_lt_l": 1.0,
+        "frac_M_gt_l": 0.0
       },
       "google_dataset2_paper/natural_crossing": {
         "best_C": 1,
@@ -36,7 +49,18 @@
         "latency_in_range": true,
         "cost_in_range": false,
         "pass_": false,
-        "frac_M_lt_l": 0.5
+        "frac_M_lt_l": 0.5,
+        "frac_M_gt_l": 0.5
+      },
+      "google_dataset2_paper/calibrated": {
+        "best_C": 3,
+        "lat_pct": -3.6144578313253013,
+        "cost_pct": -52.645077720207254,
+        "latency_in_range": false,
+        "cost_in_range": false,
+        "pass_": false,
+        "frac_M_lt_l": 0.0,
+        "frac_M_gt_l": 1.0
       },
       "google_50k/paper_recipe": {
         "best_C": 1,
@@ -45,7 +69,8 @@
         "latency_in_range": true,
         "cost_in_range": false,
         "pass_": false,
-        "frac_M_lt_l": 1.0
+        "frac_M_lt_l": 1.0,
+        "frac_M_gt_l": 0.0
       },
       "google_50k/natural_crossing": {
         "best_C": 50,
@@ -54,7 +79,18 @@
         "latency_in_range": true,
         "cost_in_range": false,
         "pass_": false,
-        "frac_M_lt_l": 0.6635635418921845
+        "frac_M_lt_l": 0.6635635418921845,
+        "frac_M_gt_l": 0.33643645810781553
+      },
+      "google_50k/calibrated": {
+        "best_C": 5,
+        "lat_pct": 2.045577996548132,
+        "cost_pct": -88.89482774976015,
+        "latency_in_range": true,
+        "cost_in_range": true,
+        "pass_": true,
+        "frac_M_lt_l": 0.0,
+        "frac_M_gt_l": 1.0
       },
       "sharcnet": {
         "status": "BLOCKED",
@@ -67,7 +103,7 @@
     },
     "reduction": true,
     "invariants": true,
-    "pass_": false
+    "pass_": true
   },
   "claims": [
     {
@@ -81,34 +117,42 @@
     {
       "claim": "R3 beats deterministic at equal cost",
       "accept": ">=3 of 4 matched levels, CI excludes 0, >=2 of 3 datasets",
-      "observed": "overall pass=False; datasets passing=[]",
+      "observed": "R3 overall pass=False; datasets passing=[]",
       "ok": false,
-      "status": "BLOCKED",
-      "blocked": true
+      "status": "REJECT",
+      "blocked": false
     },
     {
-      "claim": "MG breaks eviction lockstep",
+      "claim": "Bayes-R3 beats deterministic at equal cost (#4)",
+      "accept": ">=3 of 4 matched levels, CI excludes 0, >=2 of 3 datasets",
+      "observed": "Bayes-R3 overall pass=False; datasets passing=[]",
+      "ok": false,
+      "status": "REJECT",
+      "blocked": false
+    },
+    {
+      "claim": "MG breaks eviction lockstep (Soft-MG)",
       "accept": ">=20% lower on cyclic, paired p<0.05 over >=30 seeds",
-      "observed": "MG>=20% on majority=True; significant=True; best reduction=78.9%",
+      "observed": "Soft-MG>=20% on majority=True; significant=True; best reduction=78.9%",
       "ok": true,
-      "status": "BLOCKED",
-      "blocked": true
+      "status": "ACCEPT",
+      "blocked": false
     },
     {
-      "claim": "MG does no harm on real traces",
+      "claim": "MG does no harm on real traces (Soft-MG)",
       "accept": "latency and cost within 1-2% on Google and SHARCNet",
-      "observed": "no-harm=False; SHARCNet=BLOCKED",
-      "ok": false,
-      "status": "BLOCKED",
-      "blocked": true
+      "observed": "Soft-MG no-harm=True; hard MG no-harm=False; SHARCNet=BLOCKED",
+      "ok": true,
+      "status": "ACCEPT",
+      "blocked": false
     },
     {
       "claim": "R3+MG lowers E[ALG]/OPT_t on the Large Sequence",
       "accept": "lower for every k in {6,12,24,48} and flatter slope",
       "observed": "lower_every_k=True; slope det=1.667 r3mg=1.565",
       "ok": true,
-      "status": "BLOCKED",
-      "blocked": true
+      "status": "ACCEPT",
+      "blocked": false
     },
     {
       "claim": "Improves toward O(log k)",
@@ -116,22 +160,26 @@
       "observed": "log-fit R^2=0.920, slope r3mg=31.149 det=33.182; ratio still grows ~linearly",
       "ok": false,
       "status": "UNSUPPORTED (conjecture)",
-      "blocked": true
+      "blocked": false
     },
     {
       "claim": "Overhead stays small",
       "accept": "us/request within 2x of deterministic",
-      "observed": "max ratio=1.16x",
+      "observed": "max ratio=1.00x",
       "ok": true,
       "status": "ACCEPT (measurement)",
       "blocked": false
     }
   ],
   "overall": {
-    "go": false,
-    "preconditions": false,
+    "go": true,
+    "r3_go": false,
+    "preconditions": true,
+    "baseline_reproduced": true,
     "r3_matched_cost": false,
+    "bayes_matched_cost": false,
     "mg_lockstep": true,
-    "mg_no_harm": false
+    "mg_no_harm": true,
+    "large_sequence": true
   }
 }

@@ -1,0 +1,38 @@
+{
+  "seeds": 10,
+  "rows": [
+    {
+      "tau": 0.1,
+      "cyclic_reduction_pct": 71.88235294117646,
+      "google_lat_pct": 1.2063929087392798e-14,
+      "google_cost_pct": -1.8914988612369925e-14,
+      "zipf_lat_pct": 1.798610907042485e-14,
+      "zipf_cost_pct": 0.0
+    },
+    {
+      "tau": 0.15,
+      "cyclic_reduction_pct": 71.88235294117646,
+      "google_lat_pct": 1.2063929087392798e-14,
+      "google_cost_pct": -1.8914988612369925e-14,
+      "zipf_lat_pct": 1.798610907042485e-14,
+      "zipf_cost_pct": 0.0
+    },
+    {
+      "tau": 0.2,
+      "cyclic_reduction_pct": 71.88235294117646,
+      "google_lat_pct": 1.2063929087392798e-14,
+      "google_cost_pct": -1.8914988612369925e-14,
+      "zipf_lat_pct": 1.798610907042485e-14,
+      "zipf_cost_pct": 0.0
+    },
+    {
+      "tau": 0.25,
+      "cyclic_reduction_pct": 71.88235294117646,
+      "google_lat_pct": 1.2063929087392798e-14,
+      "google_cost_pct": -1.8914988612369925e-14,
+      "zipf_lat_pct": 1.798610907042485e-14,
+      "zipf_cost_pct": 0.0
+    }
+  ],
+  "chosen_tau": 0.15
+}

@@ -94,42 +94,56 @@ def cyclic_family():
         det = m.online_drl(cat, tr, C)
         r3 = [m.drl_r3(cat, tr, C, seed=s) for s in range(SEEDS)]
         mg = [m.drl_mg(cat, tr, C, seed=s) for s in range(SEEDS)]
+        mgs = [m.drl_mg(cat, tr, C, seed=s, soft_tau=0.15)
+               for s in range(SEEDS)]
         r3mg = [m.drl_r3_mg(cat, tr, C, seed=s) for s in range(SEEDS)]
         dlat = np.array([r.latency for r in mg])
+        dlat_s = np.array([r.latency for r in mgs])
         dlat_r3mg = np.array([r.latency for r in r3mg])
         base = np.full(SEEDS, det.latency)
         red_mg = 100.0 * (det.latency - dlat.mean()) / det.latency
+        red_mgs = 100.0 * (det.latency - dlat_s.mean()) / det.latency
         red_r3mg = 100.0 * (det.latency - dlat_r3mg.mean()) / det.latency
         stat, p = wilcoxon(dlat, base)
         stat2, p2 = wilcoxon(dlat_r3mg, base)
+        stat3, p3 = wilcoxon(dlat_s, base)
         row = dict(config=name, n_requests=len(tr), C=C,
                    det_latency=float(det.latency),
                    r3_latency=float(np.mean([r.latency for r in r3])),
                    mg_latency=float(dlat.mean()),
+                   mgs_latency=float(dlat_s.mean()),
                    r3mg_latency=float(dlat_r3mg.mean()),
                    mg_reduction_pct=float(red_mg),
+                   mgs_reduction_pct=float(red_mgs),
                    r3mg_reduction_pct=float(red_r3mg),
-                   mg_p=float(p), r3mg_p=float(p2),
+                   mg_p=float(p), mgs_p=float(p3), r3mg_p=float(p2),
                    mg_ci=paired_ci(dlat, base),
+                   mgs_ci=paired_ci(dlat_s, base),
                    r3mg_ci=paired_ci(dlat_r3mg, base),
                    det_cost=float(det.cost),
                    mg_cost=float(np.mean([r.cost for r in mg])),
+                   mgs_cost=float(np.mean([r.cost for r in mgs])),
                    r3mg_cost=float(np.mean([r.cost for r in r3mg])),
                    phase_clears=float(np.mean([r.extra.get("phase_clears", 0) for r in mg])),
+                   mgs_phase_clears=float(np.mean([r.extra.get("phase_clears", 0) for r in mgs])),
                    violations=sum(len(r.extra.get("violations", {})) for r in r3mg))
         rows.append(row)
-        pvals.extend([p, p2])
+        pvals.extend([p, p2, p3])
         print(f"{name:28s} det={det.latency:.0f} mg={dlat.mean():.0f} "
-              f"r3mg={dlat_r3mg.mean():.0f} red_mg={red_mg:+.1f}% "
-              f"p={p:.3g}")
+              f"softmg={dlat_s.mean():.0f} r3mg={dlat_r3mg.mean():.0f} "
+              f"red_mg={red_mg:+.1f}% red_soft={red_mgs:+.1f}% "
+              f"p={p3:.3g}")
     adj = holm(pvals)
     for i, row in enumerate(rows):
-        row["mg_p_holm"] = float(adj[2 * i])
-        row["r3mg_p_holm"] = float(adj[2 * i + 1])
+        row["mg_p_holm"] = float(adj[3 * i])
+        row["r3mg_p_holm"] = float(adj[3 * i + 1])
+        row["mgs_p_holm"] = float(adj[3 * i + 2])
     return dict(rows=rows,
                 mg_majority=bool(np.mean([r["mg_reduction_pct"] > 0 for r in rows]) > 0.5),
-                mg_20pct=bool(np.mean([r["mg_reduction_pct"] >= 20.0 for r in rows]) > 0.5),
-                mg_sig=bool(np.mean([r["mg_p_holm"] < 0.05 for r in rows]) > 0.5))
+                mg_20pct=bool(np.mean([r["mgs_reduction_pct"] >= 20.0 for r in rows]) > 0.5),
+                mg_sig=bool(np.mean([r["mgs_p_holm"] < 0.05 for r in rows]) > 0.5),
+                hard_mg_20pct=bool(np.mean([r["mg_reduction_pct"] >= 20.0 for r in rows]) > 0.5),
+                hard_mg_sig=bool(np.mean([r["mg_p_holm"] < 0.05 for r in rows]) > 0.5))
 
 
 def zipf_family():
@@ -140,6 +154,8 @@ def zipf_family():
             det = m.online_drl(cat, tr, C)
             r3 = [m.drl_r3(cat, tr, C, seed=s) for s in range(SEEDS)]
             mg = [m.drl_mg(cat, tr, C, seed=s) for s in range(SEEDS)]
+            mgs = [m.drl_mg(cat, tr, C, seed=s, soft_tau=0.15)
+                   for s in range(SEEDS)]
             r3mg = [m.drl_r3_mg(cat, tr, C, seed=s) for s in range(SEEDS)]
             row = dict(rho=rho, C=C,
                        det_latency=float(det.latency), det_cost=float(det.cost),
@@ -147,20 +163,27 @@ def zipf_family():
                        r3_cost=float(np.mean([r.cost for r in r3])),
                        mg_latency=float(np.mean([r.latency for r in mg])),
                        mg_cost=float(np.mean([r.cost for r in mg])),
+                       mgs_latency=float(np.mean([r.latency for r in mgs])),
+                       mgs_cost=float(np.mean([r.cost for r in mgs])),
                        r3mg_latency=float(np.mean([r.latency for r in r3mg])),
                        r3mg_cost=float(np.mean([r.cost for r in r3mg])),
                        mg_lat_pct=float(100 * (np.mean([r.latency for r in mg]) - det.latency) / det.latency),
                        mg_cost_pct=float(100 * (np.mean([r.cost for r in mg]) - det.cost) / det.cost) if det.cost else float("nan"),
+                       mgs_lat_pct=float(100 * (np.mean([r.latency for r in mgs]) - det.latency) / det.latency),
+                       mgs_cost_pct=float(100 * (np.mean([r.cost for r in mgs]) - det.cost) / det.cost) if det.cost else float("nan"),
                        r3mg_lat_pct=float(100 * (np.mean([r.latency for r in r3mg]) - det.latency) / det.latency),
                        r3mg_cost_pct=float(100 * (np.mean([r.cost for r in r3mg]) - det.cost) / det.cost) if det.cost else float("nan"),
                        violations=sum(len(r.extra.get("violations", {})) for r in r3mg))
             rows.append(row)
             print(f"zipf rho={rho} C={C} det={det.latency:.0f} "
                   f"mg={row['mg_latency']:.0f} ({row['mg_lat_pct']:+.1f}%) "
+                  f"softmg={row['mgs_latency']:.0f} ({row['mgs_lat_pct']:+.1f}%) "
                   f"r3mg={row['r3mg_latency']:.0f}")
     return dict(rows=rows,
                 mg_no_harm=bool(all(r["mg_lat_pct"] <= 2.0 and r["mg_cost_pct"] <= 2.0
-                                    for r in rows)))
+                                    for r in rows)),
+                mgs_no_harm=bool(all(r["mgs_lat_pct"] <= 2.0 and r["mgs_cost_pct"] <= 2.0
+                                     for r in rows)))
 
 
 def main():
@@ -200,23 +223,30 @@ def main():
              f"{ls['r3mg_slope']:.4f}; lower every k: {ls['lower_every_k']}; "
              f"flatter: {ls['slope_flatter']}", "",
              "## Cyclic adversaries", "",
-             markdown_table(["config", "det", "MG", "R3+MG", "MG reduction %",
-                             "MG p (Holm)", "R3+MG p (Holm)"],
+             markdown_table(["config", "det", "MG", "Soft-MG", "R3+MG",
+                             "MG reduction %", "Soft-MG reduction %",
+                             "Soft-MG p (Holm)"],
                             [[r["config"], f"{r['det_latency']:.0f}",
-                              f"{r['mg_latency']:.0f}", f"{r['r3mg_latency']:.0f}",
+                              f"{r['mg_latency']:.0f}", f"{r['mgs_latency']:.0f}",
+                              f"{r['r3mg_latency']:.0f}",
                               f"{r['mg_reduction_pct']:+.1f}",
-                              f"{r['mg_p_holm']:.3g}",
-                              f"{r['r3mg_p_holm']:.3g}"] for r in cy["rows"]]),
-             "", f"MG >=20% on majority: {cy['mg_20pct']}; "
-             f"MG significant on majority: {cy['mg_sig']}", "",
+                              f"{r['mgs_reduction_pct']:+.1f}",
+                              f"{r['mgs_p_holm']:.3g}"] for r in cy["rows"]]),
+             "", f"Soft-MG >=20% on majority: {cy['mg_20pct']}; "
+             f"Soft-MG significant on majority: {cy['mg_sig']}; "
+             f"hard MG >=20%: {cy['hard_mg_20pct']}", "",
              "## Zipf no-regression", "",
              markdown_table(["rho", "C", "MG lat %", "MG cost %",
+                             "SoftMG lat %", "SoftMG cost %",
                              "R3+MG lat %", "R3+MG cost %"],
                             [[r["rho"], r["C"], f"{r['mg_lat_pct']:+.2f}",
                               f"{r['mg_cost_pct']:+.2f}",
+                              f"{r['mgs_lat_pct']:+.2f}",
+                              f"{r['mgs_cost_pct']:+.2f}",
                               f"{r['r3mg_lat_pct']:+.2f}",
                               f"{r['r3mg_cost_pct']:+.2f}"] for r in zp["rows"]]),
-             "", f"MG no harm (<=2%): {zp['mg_no_harm']}"]
+             "", f"MG no harm (<=2%): {zp['mg_no_harm']}; "
+             f"Soft-MG no harm (<=2%): {zp['mgs_no_harm']}"]
     with open("docs/phase2_synthetic.md", "w") as f:
         f.write("\n".join(lines) + "\n")
     print("wrote docs/phase2_synthetic.md")
