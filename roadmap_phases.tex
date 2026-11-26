@@ -1,0 +1,184 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue!50!black,linkcolor=blue!50!black}
+\setlength{\parskip}{4pt}
+\sloppy\emergencystretch=3em
+\setlist{itemsep=2pt,topsep=3pt}
+\newcommand{\cb}{$\square$\ }
+\newcommand{\gate}[1]{\par\smallskip\noindent\fbox{\parbox{0.95\textwidth}{\textbf{Exit gate.} #1}}\par\smallskip}
+
+\begin{document}
+\title{Randomized Online-DRL: Phase-wise Roadmap}
+\author{}
+\date{November 2026}
+\maketitle
+
+\noindent\textbf{Single claim:} adding randomization to the original Online-DRL improves it.
+\textbf{Where things stand (draft v3):} the experiments are broad (frontier, prefixes, MILP over $T$, six adversarial families, real traces, theory measurements), and the lemmas now have proofs. The central synthetic frontier result holds only under the project's cost accounting, which has not been audited. IDs T1--T17 refer to the TODO register of the draft.
+
+\section*{Overview}
+\begin{center}\small
+\begin{tabular}{p{0.07\textwidth}p{0.34\textwidth}p{0.14\textwidth}p{0.13\textwidth}p{0.20\textwidth}}
+\toprule
+Phase & Goal & Depends on & Effort (guess) & TODO IDs\\
+\midrule
+A & Validity audit (blocking) & --- & 3--5 days & T1, T2, T3, T9, T10, T14\\
+B & Re-establish the frontier claim & A & 1 week & T4, T5, T12\\
+C & Horizon, optimum and statistics & A & 1 week & T6, T7, T8\\
+D & Adversarial and component evidence & A, B & 1--2 weeks & T15, T17\\
+E & Real-data expansion & B & 1--2 weeks & T16\\
+F & Theory completion & B (outcome 1) & 1--2 weeks & T11\\
+G & Related work and references & --- (parallel) & 1 week & T13\\
+H & Manuscript, disclosure, submission & B--G & 1--2 weeks & T14\\
+\bottomrule
+\end{tabular}
+\end{center}
+Phases C, D, E and G can run in parallel once A is done; F should wait for the outcome of B. Effort figures are rough guesses, not derived from a work breakdown.
+
+% =====================================================
+\section*{Phase A --- Validity audit (blocking)}
+% =====================================================
+\textbf{Goal.} Make sure every reported number measures a fair comparison with Online-DRL. This can change or void the central result.
+\begin{itemize}
+  \item[\cb] \textbf{A1. Accounting audit (T1).} Instrument each run: for the serving path keep, per service, a flag ``download completed and charged since the service last entered the sample''. At every hit assert the flag; count hits that violate it. Count serving-path $0\to1$ transitions and compare with the number of charged downloads. Report three accountings: (i) current; (ii) strict (a service serves hits only after a completed charged download); (iii) charge-all ($M_n$ for every serving-path $0\to1$ transition and every repair re-add).
+  \item[\cb] \textbf{A2. \texttt{peek} mode (T2).} Define it in one sentence. List every table that used \texttt{peek=True}. Rerun with \texttt{peek=False} and report changes in hits, latency and cost, not only regret.
+  \item[\cb] \textbf{A3. Gate, trigger order and serving path (T3, T10).} Write exactly what the gate does, the order of rounding, gate and trigger within a round, what counts toward $B_{\mathrm{consumed}}$ and toward the reported cost, and what $K$ does (if one path serves, $K$ should have no effect).
+  \item[\cb] \textbf{A4. Landlord tie-break check (T14).} Log the size of the bankrupt set at every eviction; if it is always $1$, drop the deficit-alignment claim. Do the same check for the identical-results cases (\texttt{dl\_ema} against \texttt{base}).
+  \item[\cb] \textbf{A5. Invariant tests.} Turn A1, A3 and A4 into automated tests that fail the build.
+  \item[\cb] \textbf{A6. Clean rerun (T9).} Rerun every experiment from a clean checkout with the current code, record seed lists, and regenerate every table from the JSON files.
+\end{itemize}
+\textbf{Deliverables:} audit report (one page), updated result files for all three accountings, passing tests.
+\gate{All three accountings are computed for the frontier experiments, the invariant is either satisfied or the strict/charge-all accounting is adopted everywhere, and all tables regenerate from JSON.}
+\textbf{Risk and decision.} If the randomized method's advantage disappears under strict or charge-all accounting, the paper's claim changes to ``robustness and feasibility'' (see Phase B outcome 3). Do not proceed to writing the frontier claim before this phase finishes.
+
+% =====================================================
+\section*{Phase B --- Re-establish the frontier claim}
+% =====================================================
+\textbf{Goal.} Show, under the audited accounting, whether randomized (stateless) lies below Online-DRL's cost--latency frontier.
+\begin{itemize}
+  \item[\cb] \textbf{B1. Synthetic frontier.} Online-DRL over $\theta\in\{0,0.25,0.5,1,2,4,8,16\}$ and randomized stateless with $\ge10$ seeds, paired by seed and trace.
+  \item[\cb] \textbf{B2. Real-trace frontier (T4, T5).} Google $50$k (both regimes) and the $10$k slice with $\ge10$ seeds; document the regime (the Online-DRL baselines in the current frontier match neither regime of the real-data table).
+  \item[\cb] \textbf{B3. A proper test statistic.} At the randomized method's realized cost, interpolate the deterministic latency (interpolate in log cost) and report the paired latency difference with a $95\%$ interval. Also trace the randomized method's own frontier by varying $\eta$, $\alpha$ and $K$.
+  \item[\cb] \textbf{B4. Equal-cost comparison.} Replace the ``budget as allowance'' comparison by one where $B_{\max}$ equals the randomized method's realized cost.
+  \item[\cb] \textbf{B5. Why Online-DRL is flat in $\theta$ (T12).} In the synthetic world its latency changes by about $3\%$ while its cost changes $15\times$ and it removes only about $16\%$ of the all-forward latency. Check capacity, $M_n$ against $\ell_n$, number of hits, and compare the implementation with the original paper's algorithm.
+\end{itemize}
+\textbf{Deliverables:} frontier plots with error bars, a table of paired differences, a note on B5.
+\gate{Decision recorded as one of three outcomes.}
+\begin{center}\small
+\begin{tabular}{p{0.20\textwidth}p{0.36\textwidth}p{0.34\textwidth}}
+\toprule
+Outcome & Condition & Paper claim\\
+\midrule
+1 & Below the frontier (interval excludes $0$) in the synthetic world and on at least one real trace & ``Randomization improves the cost--latency tradeoff''; proceed with all phases\\
+2 & On the frontier & ``Equal tradeoff with robustness and guaranteed feasibility''; shorter paper, emphasize D and F\\
+3 & Above the frontier or advantage only under the unfair accounting & ``Robustness on adversarial inputs at a cost on average workloads''; workshop-level paper\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% =====================================================
+\section*{Phase C --- Horizon, optimum and statistics}
+% =====================================================
+\textbf{Goal.} Remove the hypotheses that are currently asserted without a test.
+\begin{itemize}
+  \item[\cb] \textbf{C1. Warm-up hypothesis (T6).} Add a $40$k prefix; add sliding windows (e.g.\ $10$k windows with stride $5$k) over the $50$k trace; test whether the latency gain is tied to the last $20$k requests or grows smoothly.
+  \item[\cb] \textbf{C2. Exact optimum for the Large Sequence (T7).} Compute the MILP (or an LP lower bound) for every $(k,M/\ell)$ used, and recompute all ratios. The closed form $(k+2n)\ell$ is an upper bound, so ratios computed with it are underestimates; currently only $k\in\{3,6\}$, $M/\ell\in\{2,4\}$ are checked.
+  \item[\cb] \textbf{C3. MILP across $T$ (T8).} Fix the instance set, report the number of instances and intervals, extend beyond $T=1200$ with an LP bound, and reconcile with the earlier $T=120$ run (Online-DRL $1.113$ there, $1.168$ now). State the MILP objective.
+  \item[\cb] \textbf{C4. Statistics.} Report medians and quantiles for heavy-tailed ratios, specify whether ratios are ratios of medians or medians of per-seed ratios, and give seeds and intervals in every table.
+\end{itemize}
+\textbf{Deliverables:} corrected Large Sequence table, horizon figure, MILP table with intervals.
+\gate{The warm-up statement is either supported by the new prefixes/windows or reworded as a trace-specific effect; all ratio tables use verified optima.}
+
+% =====================================================
+\section*{Phase D --- Adversarial and component evidence}
+% =====================================================
+\textbf{Goal.} Strengthen the robustness story and understand which component does what.
+\begin{itemize}
+  \item[\cb] \textbf{D1. Shuffled cyclic scan (T15).} Add seeds and intervals; log hits and evictions per cycle; identify why R1+R2 loses ($1.49\times$): random permutations defeating the learned $\mathbf{p}$, or repair churn? Try one mitigation (e.g.\ lazy repair that evicts only when infeasible) and report it as an ablation, not a tuned result.
+  \item[\cb] \textbf{D2. Separate R1 from R2.} Add ``fractional serving'' (expected hit probability $p_n$) and ``rounded serving'' variants to isolate the benefit of rounding from the fractional state.
+  \item[\cb] \textbf{D3. New families.} Add $2$--$3$ families not built against either algorithm (e.g.\ real-trace-derived sequences, scan plus Zipf mixtures) with larger $k$.
+  \item[\cb] \textbf{D4. Hyperparameters (T17).} Separate tuning seeds from test seeds, report the grid for $\eta$, $\alpha$, $K$, $\kappa$, $\epsilon$, and the final values.
+  \item[\cb] \textbf{D5. The role of $K$ (T3).} If a single path serves, remove $K$ from the claims or explain why $K=8$ changed results.
+\end{itemize}
+\textbf{Deliverables:} an ablation table, a family table with intervals, a hyperparameter appendix.
+\gate{Each claimed component effect has a paired interval and a stated mechanism, or is dropped.}
+
+% =====================================================
+\section*{Phase E --- Real-data expansion}
+% =====================================================
+\textbf{Goal.} Move beyond one trace family and artificial regimes.
+\begin{itemize}
+  \item[\cb] \textbf{E1. Second real trace family (T16).} An open serverless or cluster trace (for example Azure Functions or Alibaba traces) or a mirror of SHARCNet; document the preprocessing.
+  \item[\cb] \textbf{E2. Natural $M/\ell$ crossing.} Prefer a trace where $M_n$ and $\ell_n$ cross without rescaling; otherwise justify the slow-downlink and disk-rescaling regimes and report the fraction $M<\ell$ for every row.
+  \item[\cb] \textbf{E3. Seeds.} At least $5$ seeds everywhere (the $50$k frontier currently has $3$), with paired intervals.
+  \item[\cb] \textbf{E4. Report everything.} Include the small slices where latency is worse ($+13.5\%$ and $+22.4\%$ on raw dataset2 regimes).
+\end{itemize}
+\gate{Two independent real trace families with $\ge5$ seeds and a stated regime for every row.}
+
+% =====================================================
+\section*{Phase F --- Theory completion (after Phase B outcome 1)}
+% =====================================================
+\textbf{Goal.} Close the gaps that a reviewer will find.
+\begin{itemize}
+  \item[\cb] \textbf{F1. Dependent churn bound (T11).} The independence between rounding thresholds and the fractional state fails in the algorithm. Prove a bound with an explicit dependence term, or keep the lemma as an approximation and say so.
+  \item[\cb] \textbf{F2. Link to the rounded system.} The regret is for the fractional iterate while $\delta_{\mathrm{round}}=0.1$--$0.2$. State and prove a lemma bounding the latency of the rounded system by the fractional surrogate plus a distortion term, or state clearly that no link is proved.
+  \item[\cb] \textbf{F3. R3 inside the system.} Extend the single-service ski-rental lemma to include the discrete overshoot ($\le\ell_{\max}$ per episode); decide whether any claim about the full algorithm is possible.
+  \item[\cb] \textbf{F4. Restricted competitive ratio.} Attempt only if Phase B gives outcome 1: for example an analysis of the cyclic dynamics of $\mathbf{p}_t$ on the Large Sequence, or a bound for uniform sizes. Do not reintroduce a download-charged regret theorem without a corrected comparator.
+  \item[\cb] \textbf{F5. Independent proof check.} Have someone with online-learning background read every proof; move full proofs to an appendix.
+\end{itemize}
+\gate{Every ``proved'' statement has a complete proof read by someone other than the author; the rest are labelled approximations or open.}
+
+% =====================================================
+\section*{Phase G --- Related work and references (parallel)}
+% =====================================================
+\begin{itemize}
+  \item[\cb] \textbf{G1. Closest work (T13).} Read and position against recent work on caching with delayed hits (the project's reference check lists a 2026 SPAA paper on tight latency guarantees for weighted caching with delayed hits; I could not verify it). If it exists, state what it proves and how this paper differs.
+  \item[\cb] \textbf{G2. Verify every reference by hand.} Open the publisher or DOI page and check authors, title, venue, volume, pages and year. A title match in a metadata search is not verification. Check entries with suspicious details (for example a 1981 paper dated 1998, an unusual DOI prefix).
+  \item[\cb] \textbf{G3. Write discussion, not a list.} For each area (online paging, ski rental, delayed hits, edge caching, online convex optimization, multi-resource packing, serverless) state in two or three sentences what is known and how this paper differs. Target $25$--$40$ references used in the text.
+  \item[\cb] \textbf{G4. Use BibTeX with DOIs.} Cite the Google trace by its own documentation.
+\end{itemize}
+\gate{No reference is included that was not opened and checked; related-work text contains explicit difference statements.}
+
+% =====================================================
+\section*{Phase H --- Manuscript, disclosure and submission}
+% =====================================================
+\begin{itemize}
+  \item[\cb] \textbf{H1. Choose the claim} from the Phase B outcome and rewrite the abstract and introduction around it, with percentages and the baseline named in every sentence.
+  \item[\cb] \textbf{H2. Claims table} with three separate columns: proved, measured, preference. Every statement in the abstract points to a proof or a table with an interval.
+  \item[\cb] \textbf{H3. AI-use statement (T14).} State exactly what AI tools did (drafting, derivations, code, summaries) and that the authors verified the content and take responsibility. Check the venue's policy. AI cannot be an author.
+  \item[\cb] \textbf{H4. Reproducibility package.} Code, seeds, result JSONs and a one-command script that regenerates every table and figure; record library versions.
+  \item[\cb] \textbf{H5. Threats to validity:} synthetic data, constructed adversaries, regimes, hyperparameters, fractional-versus-rounded gap.
+  \item[\cb] \textbf{H6. Internal review.} Ask one reader to attack the claims; one to check the proofs; one to rerun the package.
+  \item[\cb] \textbf{H7. Target and format.} Choose a venue from the outcome (see below), use its template, then post an arXiv version.
+\end{itemize}
+\gate{Every number in the paper traces to a result file and seed list, every reference was opened, every proof was read independently.}
+
+\section*{Targets by outcome}
+\begin{center}\small
+\begin{tabular}{p{0.26\textwidth}p{0.62\textwidth}}
+\toprule
+Outcome after Phase B & Realistic target\\
+\midrule
+1 (below frontier) & After A--H with two real trace families: conference-level submission is possible; a workshop paper after A, B, C, G, H\\
+2 (on frontier) & Workshop paper or short paper with the robustness and feasibility story\\
+3 (above frontier) & Technical report or workshop paper with a negative-result framing\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{What not to do}
+\begin{itemize}
+  \item Do not write the frontier claim before Phase A is finished.
+  \item Do not attempt a competitive-ratio proof before Phase B outcome 1.
+  \item Do not add datasets before the accounting audit.
+  \item Do not tune hyperparameters on the test seeds.
+  \item Do not cite a reference that has not been opened.
+\end{itemize}
+\end{document}

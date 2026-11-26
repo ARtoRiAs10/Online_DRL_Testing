@@ -142,6 +142,8 @@ def landlord_repair(x, p, A, b, M, credit, tol=1e-9, max_passes=None,
         if d_rent < 0 and d_rent > -tol:
             d_rent = 0.0
         bankrupt = active[ratio - d_rent <= tol]
+        if stats is not None:
+            stats.setdefault("bankrupt_sizes", []).append(int(bankrupt.size))
         credit[active] = np.maximum(0.0, credit[active] - d_rent * w[active])
         credit[bankrupt] = 0.0
         if stats is not None:

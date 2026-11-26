@@ -1,0 +1,681 @@
+{
+  "config": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "synthetic": {
+      "N": 40,
+      "T": 8000,
+      "C": 12
+    },
+    "google10k": {
+      "rows": 10000,
+      "C": 12
+    }
+  },
+  "rows": [
+    {
+      "family": "synthetic",
+      "seed": 0,
+      "repair": "stateless",
+      "peek": true,
+      "K": 4,
+      "latency": 132018.68748055774,
+      "cost": 24041.166643707395,
+      "hits": 1647,
+      "downloads": 129,
+      "violations": 0,
+      "hits_checked": 1647,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 24041.166643707395,
+      "serving_entries": 597,
+      "entry_cost_serving": 143985.81248167928,
+      "charge_all_upper": 168026.9791253867,
+      "all_entries": 2723,
+      "entry_cost_all": 963047.3869052783
+    },
+    {
+      "family": "synthetic",
+      "seed": 0,
+      "repair": "stateless",
+      "peek": false,
+      "K": 4,
+      "latency": 129658.24346227612,
+      "cost": 16013.1928788593,
+      "hits": 1775,
+      "downloads": 61,
+      "violations": 0,
+      "hits_checked": 1775,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 16013.1928788593,
+      "serving_entries": 628,
+      "entry_cost_serving": 149147.94311951363,
+      "charge_all_upper": 165161.13599837292,
+      "all_entries": 2766,
+      "entry_cost_all": 971166.5584818365
+    },
+    {
+      "family": "synthetic",
+      "seed": 0,
+      "repair": "landlord",
+      "peek": true,
+      "K": 4,
+      "latency": 160896.90075189335,
+      "cost": 49748.17238902673,
+      "hits": 239,
+      "downloads": 209,
+      "violations": 0,
+      "hits_checked": 239,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 49748.17238902673,
+      "serving_entries": 2570,
+      "entry_cost_serving": 866205.8210443291,
+      "charge_all_upper": 915953.9934333558,
+      "all_entries": 18862,
+      "entry_cost_all": 9300721.265071737
+    },
+    {
+      "family": "synthetic",
+      "seed": 0,
+      "repair": "landlord",
+      "peek": false,
+      "K": 4,
+      "latency": 162325.35491218275,
+      "cost": 36113.61688339373,
+      "hits": 180,
+      "downloads": 117,
+      "violations": 0,
+      "hits_checked": 180,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 36113.61688339373,
+      "serving_entries": 2615,
+      "entry_cost_serving": 878041.5119491605,
+      "charge_all_upper": 914155.1288325542,
+      "all_entries": 18993,
+      "entry_cost_all": 9342665.324130546
+    },
+    {
+      "family": "synthetic",
+      "seed": 1,
+      "repair": "stateless",
+      "peek": true,
+      "K": 4,
+      "latency": 71655.07932700703,
+      "cost": 7679.149328899123,
+      "hits": 4580,
+      "downloads": 19,
+      "violations": 0,
+      "hits_checked": 4580,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 7679.149328899123,
+      "serving_entries": 49,
+      "entry_cost_serving": 23132.94900299734,
+      "charge_all_upper": 30812.09833189646,
+      "all_entries": 430,
+      "entry_cost_all": 218266.90388417811
+    },
+    {
+      "family": "synthetic",
+      "seed": 1,
+      "repair": "stateless",
+      "peek": false,
+      "K": 4,
+      "latency": 71289.46228177226,
+      "cost": 5622.204735742457,
+      "hits": 4602,
+      "downloads": 12,
+      "violations": 0,
+      "hits_checked": 4602,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 5622.204735742457,
+      "serving_entries": 45,
+      "entry_cost_serving": 21675.12974549918,
+      "charge_all_upper": 27297.334481241636,
+      "all_entries": 418,
+      "entry_cost_all": 212636.3525316833
+    },
+    {
+      "family": "synthetic",
+      "seed": 1,
+      "repair": "landlord",
+      "peek": true,
+      "K": 4,
+      "latency": 136005.93501210216,
+      "cost": 47597.23479359905,
+      "hits": 1454,
+      "downloads": 137,
+      "violations": 0,
+      "hits_checked": 1454,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 47597.23479359905,
+      "serving_entries": 2851,
+      "entry_cost_serving": 926950.985166746,
+      "charge_all_upper": 974548.219960345,
+      "all_entries": 10473,
+      "entry_cost_all": 3801632.8096757424
+    },
+    {
+      "family": "synthetic",
+      "seed": 1,
+      "repair": "landlord",
+      "peek": false,
+      "K": 4,
+      "latency": 138532.7392198573,
+      "cost": 40862.417107856505,
+      "hits": 1341,
+      "downloads": 114,
+      "violations": 0,
+      "hits_checked": 1341,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 40862.417107856505,
+      "serving_entries": 2792,
+      "entry_cost_serving": 902208.9594973573,
+      "charge_all_upper": 943071.3766052137,
+      "all_entries": 10310,
+      "entry_cost_all": 3744050.610383865
+    },
+    {
+      "family": "synthetic",
+      "seed": 2,
+      "repair": "stateless",
+      "peek": true,
+      "K": 4,
+      "latency": 69648.1546129598,
+      "cost": 11612.870576267644,
+      "hits": 4672,
+      "downloads": 28,
+      "violations": 0,
+      "hits_checked": 4672,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 11612.870576267644,
+      "serving_entries": 88,
+      "entry_cost_serving": 38146.97906121978,
+      "charge_all_upper": 49759.84963748742,
+      "all_entries": 675,
+      "entry_cost_all": 266840.3401534341
+    },
+    {
+      "family": "synthetic",
+      "seed": 2,
+      "repair": "stateless",
+      "peek": false,
+      "K": 4,
+      "latency": 70162.18288894833,
+      "cost": 11109.804335123044,
+      "hits": 4651,
+      "downloads": 27,
+      "violations": 0,
+      "hits_checked": 4651,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 11109.804335123044,
+      "serving_entries": 92,
+      "entry_cost_serving": 39938.25313435962,
+      "charge_all_upper": 51048.057469482665,
+      "all_entries": 688,
+      "entry_cost_all": 276274.9082469532
+    },
+    {
+      "family": "synthetic",
+      "seed": 2,
+      "repair": "landlord",
+      "peek": true,
+      "K": 4,
+      "latency": 150980.34312291743,
+      "cost": 65892.37478919709,
+      "hits": 620,
+      "downloads": 229,
+      "violations": 0,
+      "hits_checked": 620,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 65892.37478919709,
+      "serving_entries": 8208,
+      "entry_cost_serving": 2832433.9195072893,
+      "charge_all_upper": 2898326.2942964863,
+      "all_entries": 23787,
+      "entry_cost_all": 8028604.576912266
+    },
+    {
+      "family": "synthetic",
+      "seed": 2,
+      "repair": "landlord",
+      "peek": false,
+      "K": 4,
+      "latency": 152987.0367486627,
+      "cost": 58241.8391262867,
+      "hits": 529,
+      "downloads": 216,
+      "violations": 0,
+      "hits_checked": 529,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 58241.8391262867,
+      "serving_entries": 8580,
+      "entry_cost_serving": 2961484.478785607,
+      "charge_all_upper": 3019726.3179118936,
+      "all_entries": 24387,
+      "entry_cost_all": 8242962.6036688695
+    },
+    {
+      "family": "google10k",
+      "seed": 0,
+      "repair": "stateless",
+      "peek": true,
+      "K": 4,
+      "latency": 139299.95748640783,
+      "cost": 28446.003715573657,
+      "hits": 998,
+      "downloads": 2586,
+      "violations": 0,
+      "hits_checked": 998,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 28446.003715573657,
+      "serving_entries": 3061,
+      "entry_cost_serving": 33671.004870955774,
+      "charge_all_upper": 62117.00858652943,
+      "all_entries": 11986,
+      "entry_cost_all": 131846.0190225805
+    },
+    {
+      "family": "google10k",
+      "seed": 0,
+      "repair": "landlord",
+      "peek": true,
+      "K": 4,
+      "latency": 141820.83456351177,
+      "cost": 29557.004009185974,
+      "hits": 857,
+      "downloads": 2687,
+      "violations": 0,
+      "hits_checked": 857,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 29557.004009185974,
+      "serving_entries": 14273,
+      "entry_cost_serving": 157003.02309044785,
+      "charge_all_upper": 186560.02709963382,
+      "all_entries": 43825,
+      "entry_cost_all": 482075.07422390097
+    },
+    {
+      "family": "google10k",
+      "seed": 1,
+      "repair": "stateless",
+      "peek": true,
+      "K": 4,
+      "latency": 138818.58495448576,
+      "cost": 28325.003678433404,
+      "hits": 1016,
+      "downloads": 2575,
+      "violations": 0,
+      "hits_checked": 1016,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 28325.003678433404,
+      "serving_entries": 3047,
+      "entry_cost_serving": 33517.00483867573,
+      "charge_all_upper": 61842.008517109134,
+      "all_entries": 12114,
+      "entry_cost_all": 133254.01949389934
+    },
+    {
+      "family": "google10k",
+      "seed": 1,
+      "repair": "landlord",
+      "peek": true,
+      "K": 4,
+      "latency": 144792.6508595096,
+      "cost": 30514.004052714703,
+      "hits": 678,
+      "downloads": 2774,
+      "violations": 0,
+      "hits_checked": 678,
+      "strict_extra_cost": 0.0,
+      "strict_cost": 30514.004052714703,
+      "serving_entries": 16963,
+      "entry_cost_serving": 186593.0362825343,
+      "charge_all_upper": 217107.040335249,
+      "all_entries": 54838,
+      "entry_cost_all": 603218.1163754675
+    }
+  ],
+  "k_effect": [
+    {
+      "K": 1,
+      "latency": 139587.02351509215,
+      "cost": 27227.058211615593,
+      "hits": 1301,
+      "downloads": 108,
+      "violations": 0,
+      "serving_entries": 1312
+    },
+    {
+      "K": 2,
+      "latency": 132227.67244077486,
+      "cost": 24285.31100193567,
+      "hits": 1628,
+      "downloads": 129,
+      "violations": 0,
+      "serving_entries": 598
+    },
+    {
+      "K": 4,
+      "latency": 132018.68748055774,
+      "cost": 24041.166643707395,
+      "hits": 1647,
+      "downloads": 129,
+      "violations": 0,
+      "serving_entries": 597
+    },
+    {
+      "K": 8,
+      "latency": 132630.37840358037,
+      "cost": 24333.169129268368,
+      "hits": 1616,
+      "downloads": 132,
+      "violations": 0,
+      "serving_entries": 611
+    }
+  ],
+  "landlord_ties": [
+    {
+      "family": "synthetic",
+      "seed": 0,
+      "repair": "stateless",
+      "peek": true,
+      "evictions": 0,
+      "mean_size": 0.0,
+      "max_size": 0,
+      "frac_size_one": 0.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 0,
+      "repair": "stateless",
+      "peek": false,
+      "evictions": 0,
+      "mean_size": 0.0,
+      "max_size": 0,
+      "frac_size_one": 0.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 0,
+      "repair": "landlord",
+      "peek": true,
+      "evictions": 29144,
+      "mean_size": 1.0,
+      "max_size": 1,
+      "frac_size_one": 1.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 0,
+      "repair": "landlord",
+      "peek": false,
+      "evictions": 29529,
+      "mean_size": 1.0,
+      "max_size": 1,
+      "frac_size_one": 1.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 1,
+      "repair": "stateless",
+      "peek": true,
+      "evictions": 0,
+      "mean_size": 0.0,
+      "max_size": 0,
+      "frac_size_one": 0.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 1,
+      "repair": "stateless",
+      "peek": false,
+      "evictions": 0,
+      "mean_size": 0.0,
+      "max_size": 0,
+      "frac_size_one": 0.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 1,
+      "repair": "landlord",
+      "peek": true,
+      "evictions": 11179,
+      "mean_size": 1.0,
+      "max_size": 1,
+      "frac_size_one": 1.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 1,
+      "repair": "landlord",
+      "peek": false,
+      "evictions": 11092,
+      "mean_size": 1.0,
+      "max_size": 1,
+      "frac_size_one": 1.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 2,
+      "repair": "stateless",
+      "peek": true,
+      "evictions": 0,
+      "mean_size": 0.0,
+      "max_size": 0,
+      "frac_size_one": 0.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 2,
+      "repair": "stateless",
+      "peek": false,
+      "evictions": 0,
+      "mean_size": 0.0,
+      "max_size": 0,
+      "frac_size_one": 0.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 2,
+      "repair": "landlord",
+      "peek": true,
+      "evictions": 25964,
+      "mean_size": 1.0,
+      "max_size": 1,
+      "frac_size_one": 1.0
+    },
+    {
+      "family": "synthetic",
+      "seed": 2,
+      "repair": "landlord",
+      "peek": false,
+      "evictions": 26635,
+      "mean_size": 1.0,
+      "max_size": 1,
+      "frac_size_one": 1.0
+    },
+    {
+      "family": "google10k",
+      "seed": 0,
+      "repair": "stateless",
+      "peek": true,
+      "evictions": 0,
+      "mean_size": 0.0,
+      "max_size": 0,
+      "frac_size_one": 0.0
+    },
+    {
+      "family": "google10k",
+      "seed": 0,
+      "repair": "landlord",
+      "peek": true,
+      "evictions": 38568,
+      "mean_size": 1.1607550300767475,
+      "max_size": 14,
+      "frac_size_one": 0.9071769342460071
+    },
+    {
+      "family": "google10k",
+      "seed": 1,
+      "repair": "stateless",
+      "peek": true,
+      "evictions": 0,
+      "mean_size": 0.0,
+      "max_size": 0,
+      "frac_size_one": 0.0
+    },
+    {
+      "family": "google10k",
+      "seed": 1,
+      "repair": "landlord",
+      "peek": true,
+      "evictions": 49376,
+      "mean_size": 1.119957064160726,
+      "max_size": 12,
+      "frac_size_one": 0.9047310434219054
+    }
+  ],
+  "dl_mode": [
+    {
+      "seed": 0,
+      "mode": "ema",
+      "latency": 132018.68748055774,
+      "cost": 24041.166643707395,
+      "hits": 1647,
+      "downloads": 129
+    },
+    {
+      "seed": 0,
+      "mode": "half",
+      "latency": 132018.68748055774,
+      "cost": 24041.166643707395,
+      "hits": 1647,
+      "downloads": 129
+    },
+    {
+      "seed": 1,
+      "mode": "ema",
+      "latency": 71655.07932700703,
+      "cost": 7679.149328899123,
+      "hits": 4580,
+      "downloads": 19
+    },
+    {
+      "seed": 1,
+      "mode": "half",
+      "latency": 71655.07932700703,
+      "cost": 7679.149328899123,
+      "hits": 4580,
+      "downloads": 19
+    }
+  ],
+  "summary": {
+    "synthetic/stateless": {
+      "cost": [
+        14444.395516291386,
+        8540.611966774031
+      ],
+      "strict_cost": [
+        14444.395516291386,
+        8540.611966774031
+      ],
+      "charge_all_upper": [
+        82866.3090315902,
+        74357.30709219481
+      ],
+      "violations": [
+        0.0,
+        0.0
+      ],
+      "serving_entries": [
+        244.66666666666666,
+        305.7520782158861
+      ],
+      "entry_cost_serving": [
+        68421.9135152988,
+        65869.43445102834
+      ]
+    },
+    "synthetic/landlord": {
+      "cost": [
+        54412.593990607624,
+        9999.782923774073
+      ],
+      "strict_cost": [
+        54412.593990607624,
+        9999.782923774073
+      ],
+      "charge_all_upper": [
+        1596276.1692300625,
+        1127989.0145673812
+      ],
+      "violations": [
+        0.0,
+        0.0
+      ],
+      "serving_entries": [
+        4543.0,
+        3177.091279771483
+      ],
+      "entry_cost_serving": [
+        1541863.5752394546,
+        1118079.3146591894
+      ]
+    },
+    "google10k/stateless": {
+      "cost": [
+        28385.50369700353,
+        85.55994678569698
+      ],
+      "strict_cost": [
+        28385.50369700353,
+        85.55994678569698
+      ],
+      "charge_all_upper": [
+        61979.50855181928,
+        194.45441391386348
+      ],
+      "violations": [
+        0.0,
+        0.0
+      ],
+      "serving_entries": [
+        3054.0,
+        9.899494936611665
+      ],
+      "entry_cost_serving": [
+        33594.00485481575,
+        108.89446712816392
+      ]
+    },
+    "google10k/landlord": {
+      "cost": [
+        30035.50403095034,
+        676.7012203749856
+      ],
+      "strict_cost": [
+        30035.50403095034,
+        676.7012203749856
+      ],
+      "charge_all_upper": [
+        201833.53371744143,
+        21600.00020389872
+      ],
+      "violations": [
+        0.0,
+        0.0
+      ],
+      "serving_entries": [
+        15618.0,
+        1902.1172413918127
+      ],
+      "entry_cost_serving": [
+        171798.02968649106,
+        20923.298983523728
+      ]
+    }
+  },
+  "note": "current = engine download charges; strict = current + M_n for every hit without a completed charged download; charge_all_upper = current + M_n for every serving-path 0->1 transition (an upper bound, not the paper's accounting)."
+}

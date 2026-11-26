@@ -1,0 +1,2942 @@
+{
+  "config": {
+    "k": [
+      16,
+      32,
+      64
+    ],
+    "seeds": 3,
+    "families": [
+      "hotspot",
+      "random_walk_zipf",
+      "periodic_burst",
+      "markov_zipf",
+      "bursty"
+    ],
+    "grid": {
+      "eta_mult": [
+        1.0,
+        2.0,
+        4.0
+      ],
+      "alpha": [
+        0.05,
+        0.1
+      ],
+      "K": [
+        2,
+        4
+      ]
+    }
+  },
+  "rows": [
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 0,
+      "variant": "online_drl",
+      "latency": 48.0,
+      "cost": 48.0,
+      "hits": 122,
+      "downloads": 48,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 0,
+      "variant": "r3_only",
+      "latency": 48.0,
+      "cost": 48.0,
+      "hits": 122,
+      "downloads": 48,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 0,
+      "variant": "r1r2_stateless_det",
+      "latency": 61.0,
+      "cost": 61.0,
+      "hits": 109,
+      "downloads": 61,
+      "lat_ratio": 1.2708333333333333,
+      "cost_ratio": 1.2708333333333333
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 0,
+      "variant": "r1r2_stateless_det_gate",
+      "latency": 61.0,
+      "cost": 41.0,
+      "hits": 109,
+      "downloads": 41,
+      "lat_ratio": 1.2708333333333333,
+      "cost_ratio": 0.8541666666666666
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 0,
+      "variant": "r1r2r3_stateless_gate",
+      "latency": 61.0,
+      "cost": 41.0,
+      "hits": 109,
+      "downloads": 41,
+      "lat_ratio": 1.2708333333333333,
+      "cost_ratio": 0.8541666666666666
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 0,
+      "variant": "r1r2r3_stateless_nogate",
+      "latency": 61.0,
+      "cost": 61.0,
+      "hits": 109,
+      "downloads": 61,
+      "lat_ratio": 1.2708333333333333,
+      "cost_ratio": 1.2708333333333333
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 0,
+      "variant": "r1r2r3_landlord_gate",
+      "latency": 62.0,
+      "cost": 42.0,
+      "hits": 108,
+      "downloads": 42,
+      "lat_ratio": 1.2916666666666667,
+      "cost_ratio": 0.875
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 1,
+      "variant": "online_drl",
+      "latency": 50.0,
+      "cost": 50.0,
+      "hits": 120,
+      "downloads": 50,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 1,
+      "variant": "r3_only",
+      "latency": 50.0,
+      "cost": 50.0,
+      "hits": 120,
+      "downloads": 50,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 1,
+      "variant": "r1r2_stateless_det",
+      "latency": 63.0,
+      "cost": 63.0,
+      "hits": 107,
+      "downloads": 63,
+      "lat_ratio": 1.26,
+      "cost_ratio": 1.26
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 1,
+      "variant": "r1r2_stateless_det_gate",
+      "latency": 63.0,
+      "cost": 44.0,
+      "hits": 107,
+      "downloads": 44,
+      "lat_ratio": 1.26,
+      "cost_ratio": 0.88
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 1,
+      "variant": "r1r2r3_stateless_gate",
+      "latency": 63.0,
+      "cost": 44.0,
+      "hits": 107,
+      "downloads": 44,
+      "lat_ratio": 1.26,
+      "cost_ratio": 0.88
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 1,
+      "variant": "r1r2r3_stateless_nogate",
+      "latency": 63.0,
+      "cost": 63.0,
+      "hits": 107,
+      "downloads": 63,
+      "lat_ratio": 1.26,
+      "cost_ratio": 1.26
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 1,
+      "variant": "r1r2r3_landlord_gate",
+      "latency": 63.0,
+      "cost": 44.0,
+      "hits": 107,
+      "downloads": 44,
+      "lat_ratio": 1.26,
+      "cost_ratio": 0.88
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 2,
+      "variant": "online_drl",
+      "latency": 41.0,
+      "cost": 41.0,
+      "hits": 129,
+      "downloads": 41,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 2,
+      "variant": "r3_only",
+      "latency": 41.0,
+      "cost": 41.0,
+      "hits": 129,
+      "downloads": 41,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 2,
+      "variant": "r1r2_stateless_det",
+      "latency": 63.0,
+      "cost": 63.0,
+      "hits": 107,
+      "downloads": 63,
+      "lat_ratio": 1.5365853658536586,
+      "cost_ratio": 1.5365853658536586
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 2,
+      "variant": "r1r2_stateless_det_gate",
+      "latency": 63.0,
+      "cost": 43.0,
+      "hits": 107,
+      "downloads": 43,
+      "lat_ratio": 1.5365853658536586,
+      "cost_ratio": 1.048780487804878
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 2,
+      "variant": "r1r2r3_stateless_gate",
+      "latency": 63.0,
+      "cost": 43.0,
+      "hits": 107,
+      "downloads": 43,
+      "lat_ratio": 1.5365853658536586,
+      "cost_ratio": 1.048780487804878
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 2,
+      "variant": "r1r2r3_stateless_nogate",
+      "latency": 63.0,
+      "cost": 63.0,
+      "hits": 107,
+      "downloads": 63,
+      "lat_ratio": 1.5365853658536586,
+      "cost_ratio": 1.5365853658536586
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 16,
+      "seed": 2,
+      "variant": "r1r2r3_landlord_gate",
+      "latency": 64.0,
+      "cost": 44.0,
+      "hits": 106,
+      "downloads": 44,
+      "lat_ratio": 1.5609756097560976,
+      "cost_ratio": 1.0731707317073171
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 0,
+      "variant": "online_drl",
+      "latency": 69.0,
+      "cost": 69.0,
+      "hits": 261,
+      "downloads": 69,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 0,
+      "variant": "r3_only",
+      "latency": 69.0,
+      "cost": 69.0,
+      "hits": 261,
+      "downloads": 69,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 0,
+      "variant": "r1r2_stateless_det",
+      "latency": 103.0,
+      "cost": 103.0,
+      "hits": 227,
+      "downloads": 103,
+      "lat_ratio": 1.4927536231884058,
+      "cost_ratio": 1.4927536231884058
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 0,
+      "variant": "r1r2_stateless_det_gate",
+      "latency": 103.0,
+      "cost": 70.0,
+      "hits": 227,
+      "downloads": 70,
+      "lat_ratio": 1.4927536231884058,
+      "cost_ratio": 1.0144927536231885
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 0,
+      "variant": "r1r2r3_stateless_gate",
+      "latency": 103.0,
+      "cost": 70.0,
+      "hits": 227,
+      "downloads": 70,
+      "lat_ratio": 1.4927536231884058,
+      "cost_ratio": 1.0144927536231885
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 0,
+      "variant": "r1r2r3_stateless_nogate",
+      "latency": 103.0,
+      "cost": 103.0,
+      "hits": 227,
+      "downloads": 103,
+      "lat_ratio": 1.4927536231884058,
+      "cost_ratio": 1.4927536231884058
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 0,
+      "variant": "r1r2r3_landlord_gate",
+      "latency": 102.0,
+      "cost": 69.0,
+      "hits": 228,
+      "downloads": 69,
+      "lat_ratio": 1.4782608695652173,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 1,
+      "variant": "online_drl",
+      "latency": 76.0,
+      "cost": 76.0,
+      "hits": 254,
+      "downloads": 76,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 1,
+      "variant": "r3_only",
+      "latency": 76.0,
+      "cost": 76.0,
+      "hits": 254,
+      "downloads": 76,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 1,
+      "variant": "r1r2_stateless_det",
+      "latency": 96.0,
+      "cost": 96.0,
+      "hits": 234,
+      "downloads": 96,
+      "lat_ratio": 1.263157894736842,
+      "cost_ratio": 1.263157894736842
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 1,
+      "variant": "r1r2_stateless_det_gate",
+      "latency": 96.0,
+      "cost": 60.0,
+      "hits": 234,
+      "downloads": 60,
+      "lat_ratio": 1.263157894736842,
+      "cost_ratio": 0.7894736842105263
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 1,
+      "variant": "r1r2r3_stateless_gate",
+      "latency": 96.0,
+      "cost": 60.0,
+      "hits": 234,
+      "downloads": 60,
+      "lat_ratio": 1.263157894736842,
+      "cost_ratio": 0.7894736842105263
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 1,
+      "variant": "r1r2r3_stateless_nogate",
+      "latency": 96.0,
+      "cost": 96.0,
+      "hits": 234,
+      "downloads": 96,
+      "lat_ratio": 1.263157894736842,
+      "cost_ratio": 1.263157894736842
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 1,
+      "variant": "r1r2r3_landlord_gate",
+      "latency": 96.0,
+      "cost": 60.0,
+      "hits": 234,
+      "downloads": 60,
+      "lat_ratio": 1.263157894736842,
+      "cost_ratio": 0.7894736842105263
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 2,
+      "variant": "online_drl",
+      "latency": 70.0,
+      "cost": 70.0,
+      "hits": 260,
+      "downloads": 70,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 2,
+      "variant": "r3_only",
+      "latency": 70.0,
+      "cost": 70.0,
+      "hits": 260,
+      "downloads": 70,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 2,
+      "variant": "r1r2_stateless_det",
+      "latency": 98.0,
+      "cost": 98.0,
+      "hits": 232,
+      "downloads": 98,
+      "lat_ratio": 1.4,
+      "cost_ratio": 1.4
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 2,
+      "variant": "r1r2_stateless_det_gate",
+      "latency": 98.0,
+      "cost": 62.0,
+      "hits": 232,
+      "downloads": 62,
+      "lat_ratio": 1.4,
+      "cost_ratio": 0.8857142857142857
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 2,
+      "variant": "r1r2r3_stateless_gate",
+      "latency": 98.0,
+      "cost": 62.0,
+      "hits": 232,
+      "downloads": 62,
+      "lat_ratio": 1.4,
+      "cost_ratio": 0.8857142857142857
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 2,
+      "variant": "r1r2r3_stateless_nogate",
+      "latency": 98.0,
+      "cost": 98.0,
+      "hits": 232,
+      "downloads": 98,
+      "lat_ratio": 1.4,
+      "cost_ratio": 1.4
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 32,
+      "seed": 2,
+      "variant": "r1r2r3_landlord_gate",
+      "latency": 98.0,
+      "cost": 62.0,
+      "hits": 232,
+      "downloads": 62,
+      "lat_ratio": 1.4,
+      "cost_ratio": 0.8857142857142857
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 0,
+      "variant": "online_drl",
+      "latency": 98.0,
+      "cost": 98.0,
+      "hits": 552,
+      "downloads": 98,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 0,
+      "variant": "r3_only",
+      "latency": 98.0,
+      "cost": 98.0,
+      "hits": 552,
+      "downloads": 98,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 0,
+      "variant": "r1r2_stateless_det",
+      "latency": 172.0,
+      "cost": 172.0,
+      "hits": 478,
+      "downloads": 172,
+      "lat_ratio": 1.7551020408163265,
+      "cost_ratio": 1.7551020408163265
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 0,
+      "variant": "r1r2_stateless_det_gate",
+      "latency": 172.0,
+      "cost": 90.0,
+      "hits": 478,
+      "downloads": 90,
+      "lat_ratio": 1.7551020408163265,
+      "cost_ratio": 0.9183673469387755
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 0,
+      "variant": "r1r2r3_stateless_gate",
+      "latency": 172.0,
+      "cost": 90.0,
+      "hits": 478,
+      "downloads": 90,
+      "lat_ratio": 1.7551020408163265,
+      "cost_ratio": 0.9183673469387755
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 0,
+      "variant": "r1r2r3_stateless_nogate",
+      "latency": 172.0,
+      "cost": 172.0,
+      "hits": 478,
+      "downloads": 172,
+      "lat_ratio": 1.7551020408163265,
+      "cost_ratio": 1.7551020408163265
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 0,
+      "variant": "r1r2r3_landlord_gate",
+      "latency": 172.0,
+      "cost": 90.0,
+      "hits": 478,
+      "downloads": 90,
+      "lat_ratio": 1.7551020408163265,
+      "cost_ratio": 0.9183673469387755
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 1,
+      "variant": "online_drl",
+      "latency": 105.0,
+      "cost": 105.0,
+      "hits": 545,
+      "downloads": 105,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 1,
+      "variant": "r3_only",
+      "latency": 105.0,
+      "cost": 105.0,
+      "hits": 545,
+      "downloads": 105,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 1,
+      "variant": "r1r2_stateless_det",
+      "latency": 164.0,
+      "cost": 164.0,
+      "hits": 486,
+      "downloads": 164,
+      "lat_ratio": 1.561904761904762,
+      "cost_ratio": 1.561904761904762
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 1,
+      "variant": "r1r2_stateless_det_gate",
+      "latency": 164.0,
+      "cost": 89.0,
+      "hits": 486,
+      "downloads": 89,
+      "lat_ratio": 1.561904761904762,
+      "cost_ratio": 0.8476190476190476
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 1,
+      "variant": "r1r2r3_stateless_gate",
+      "latency": 164.0,
+      "cost": 89.0,
+      "hits": 486,
+      "downloads": 89,
+      "lat_ratio": 1.561904761904762,
+      "cost_ratio": 0.8476190476190476
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 1,
+      "variant": "r1r2r3_stateless_nogate",
+      "latency": 164.0,
+      "cost": 164.0,
+      "hits": 486,
+      "downloads": 164,
+      "lat_ratio": 1.561904761904762,
+      "cost_ratio": 1.561904761904762
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 1,
+      "variant": "r1r2r3_landlord_gate",
+      "latency": 163.0,
+      "cost": 88.0,
+      "hits": 487,
+      "downloads": 88,
+      "lat_ratio": 1.5523809523809524,
+      "cost_ratio": 0.8380952380952381
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 2,
+      "variant": "online_drl",
+      "latency": 109.0,
+      "cost": 109.0,
+      "hits": 541,
+      "downloads": 109,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 2,
+      "variant": "r3_only",
+      "latency": 109.0,
+      "cost": 109.0,
+      "hits": 541,
+      "downloads": 109,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 2,
+      "variant": "r1r2_stateless_det",
+      "latency": 179.0,
+      "cost": 179.0,
+      "hits": 471,
+      "downloads": 179,
+      "lat_ratio": 1.6422018348623852,
+      "cost_ratio": 1.6422018348623852
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 2,
+      "variant": "r1r2_stateless_det_gate",
+      "latency": 179.0,
+      "cost": 107.0,
+      "hits": 471,
+      "downloads": 107,
+      "lat_ratio": 1.6422018348623852,
+      "cost_ratio": 0.981651376146789
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 2,
+      "variant": "r1r2r3_stateless_gate",
+      "latency": 179.0,
+      "cost": 107.0,
+      "hits": 471,
+      "downloads": 107,
+      "lat_ratio": 1.6422018348623852,
+      "cost_ratio": 0.981651376146789
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 2,
+      "variant": "r1r2r3_stateless_nogate",
+      "latency": 179.0,
+      "cost": 179.0,
+      "hits": 471,
+      "downloads": 179,
+      "lat_ratio": 1.6422018348623852,
+      "cost_ratio": 1.6422018348623852
+    },
+    {
+      "family": "shuffled_cyclic_scan",
+      "k": 64,
+      "seed": 2,
+      "variant": "r1r2r3_landlord_gate",
+      "latency": 177.0,
+      "cost": 105.0,
+      "hits": 473,
+      "downloads": 105,
+      "lat_ratio": 1.6238532110091743,
+      "cost_ratio": 0.963302752293578
+    },
+    {
+      "family": "fractional_vs_rounded",
+      "seed": 0,
+      "variant": "rounded",
+      "latency": 132018.68748055774,
+      "cost": 24041.166643707395,
+      "hits": 1647,
+      "downloads": 129,
+      "lat_ratio": null,
+      "cost_ratio": null
+    },
+    {
+      "family": "fractional_vs_rounded",
+      "seed": 0,
+      "variant": "fractional",
+      "latency": 69076.87672418688,
+      "cost": 199072.43533587304,
+      "hits": 4634,
+      "downloads": 704,
+      "lat_ratio": null,
+      "cost_ratio": null
+    },
+    {
+      "family": "fractional_vs_rounded",
+      "seed": 1,
+      "variant": "rounded",
+      "latency": 71655.07932700703,
+      "cost": 7679.149328899123,
+      "hits": 4580,
+      "downloads": 19,
+      "lat_ratio": null,
+      "cost_ratio": null
+    },
+    {
+      "family": "fractional_vs_rounded",
+      "seed": 1,
+      "variant": "fractional",
+      "latency": 61915.80949424175,
+      "cost": 197562.54342675445,
+      "hits": 5013,
+      "downloads": 556,
+      "lat_ratio": null,
+      "cost_ratio": null
+    },
+    {
+      "family": "fractional_vs_rounded",
+      "seed": 2,
+      "variant": "rounded",
+      "latency": 69648.1546129598,
+      "cost": 11612.870576267644,
+      "hits": 4672,
+      "downloads": 28,
+      "lat_ratio": null,
+      "cost_ratio": null
+    },
+    {
+      "family": "fractional_vs_rounded",
+      "seed": 2,
+      "variant": "fractional",
+      "latency": 53897.37462213998,
+      "cost": 180152.44043496912,
+      "hits": 5402,
+      "downloads": 571,
+      "lat_ratio": null,
+      "cost_ratio": null
+    },
+    {
+      "family": "hotspot",
+      "seed": 0,
+      "variant": "online_drl",
+      "latency": 128210.28637740004,
+      "cost": 137900.5760888196,
+      "hits": 1750,
+      "downloads": 501,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "hotspot",
+      "seed": 0,
+      "variant": "r3_only",
+      "latency": 133638.34235546197,
+      "cost": 156140.42083562427,
+      "hits": 1488,
+      "downloads": 568,
+      "lat_ratio": 1.042337133247514,
+      "cost_ratio": 1.132268082296166
+    },
+    {
+      "family": "hotspot",
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "latency": 111978.33333051123,
+      "cost": 135929.89908916678,
+      "hits": 2551,
+      "downloads": 490,
+      "lat_ratio": 0.8733958599927902,
+      "cost_ratio": 0.9857094360622284
+    },
+    {
+      "family": "hotspot",
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "latency": 116686.73325901193,
+      "cost": 26076.692052928087,
+      "hits": 2385,
+      "downloads": 95,
+      "lat_ratio": 0.9101199018894057,
+      "cost_ratio": 0.18909777458893645
+    },
+    {
+      "family": "hotspot",
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "latency": 157961.34860699147,
+      "cost": 49273.214346462555,
+      "hits": 352,
+      "downloads": 206,
+      "lat_ratio": 1.2320489491928608,
+      "cost_ratio": 0.3573097063403597
+    },
+    {
+      "family": "hotspot",
+      "seed": 1,
+      "variant": "online_drl",
+      "latency": 138066.09736770048,
+      "cost": 138122.77846729557,
+      "hits": 1284,
+      "downloads": 507,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "hotspot",
+      "seed": 1,
+      "variant": "r3_only",
+      "latency": 136666.48630981945,
+      "cost": 158875.5506567606,
+      "hits": 1321,
+      "downloads": 584,
+      "lat_ratio": 0.9898627462891664,
+      "cost_ratio": 1.1502487310185323
+    },
+    {
+      "family": "hotspot",
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "latency": 118991.56309155404,
+      "cost": 136491.37302670124,
+      "hits": 2207,
+      "downloads": 488,
+      "lat_ratio": 0.8618449087805622,
+      "cost_ratio": 0.9881887299206003
+    },
+    {
+      "family": "hotspot",
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "latency": 122828.12857160615,
+      "cost": 29233.395434187107,
+      "hits": 2081,
+      "downloads": 99,
+      "lat_ratio": 0.8896327984449922,
+      "cost_ratio": 0.2116478958690288
+    },
+    {
+      "family": "hotspot",
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "latency": 162204.27945603,
+      "cost": 60630.57929941498,
+      "hits": 156,
+      "downloads": 220,
+      "lat_ratio": 1.174830624958162,
+      "cost_ratio": 0.4389614803018965
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 0,
+      "variant": "online_drl",
+      "latency": 87932.51900675369,
+      "cost": 53957.203971635194,
+      "hits": 3685,
+      "downloads": 189,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 0,
+      "variant": "r3_only",
+      "latency": 84472.51572663346,
+      "cost": 63568.53732786332,
+      "hits": 3823,
+      "downloads": 217,
+      "lat_ratio": 0.9606516074007332,
+      "cost_ratio": 1.1781288252312094
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "latency": 34921.73187409775,
+      "cost": 48123.369414628934,
+      "hits": 6317,
+      "downloads": 155,
+      "lat_ratio": 0.3971424027033227,
+      "cost_ratio": 0.8918803398324151
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "latency": 37434.50655353232,
+      "cost": 8157.565774348406,
+      "hits": 6204,
+      "downloads": 20,
+      "lat_ratio": 0.4257185734740199,
+      "cost_ratio": 0.15118585052399608
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "latency": 102479.80364241221,
+      "cost": 24454.001003704205,
+      "hits": 2930,
+      "downloads": 100,
+      "lat_ratio": 1.1654369145792494,
+      "cost_ratio": 0.45321104882601865
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 1,
+      "variant": "online_drl",
+      "latency": 53587.57581984389,
+      "cost": 35127.17458711196,
+      "hits": 5398,
+      "downloads": 139,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 1,
+      "variant": "r3_only",
+      "latency": 55883.54364696055,
+      "cost": 41261.800287063925,
+      "hits": 5263,
+      "downloads": 165,
+      "lat_ratio": 1.0428451519216968,
+      "cost_ratio": 1.1746404534967279
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "latency": 85257.45071474146,
+      "cost": 38436.634726514334,
+      "hits": 3883,
+      "downloads": 127,
+      "lat_ratio": 1.5909928637445465,
+      "cost_ratio": 1.0942136729840095
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "latency": 87325.11656951615,
+      "cost": 10730.939668035979,
+      "hits": 3795,
+      "downloads": 35,
+      "lat_ratio": 1.629577662984691,
+      "cost_ratio": 0.3054882663968404
+    },
+    {
+      "family": "random_walk_zipf",
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "latency": 155897.74332507246,
+      "cost": 38151.15892167012,
+      "hits": 351,
+      "downloads": 182,
+      "lat_ratio": 2.9092143270146273,
+      "cost_ratio": 1.0860867510724204
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 0,
+      "variant": "online_drl",
+      "latency": 128358.93392329072,
+      "cost": 183808.94920309275,
+      "hits": 1761,
+      "downloads": 692,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 0,
+      "variant": "r3_only",
+      "latency": 127517.15756962237,
+      "cost": 215626.11404826777,
+      "hits": 1789,
+      "downloads": 808,
+      "lat_ratio": 0.993442011958658,
+      "cost_ratio": 1.1730991063444896
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "latency": 81299.43137523584,
+      "cost": 172882.58500530105,
+      "hits": 4069,
+      "downloads": 612,
+      "lat_ratio": 0.6333757136361201,
+      "cost_ratio": 0.9405558638729878
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "latency": 82382.31213518837,
+      "cost": 4599.194090646632,
+      "hits": 4065,
+      "downloads": 29,
+      "lat_ratio": 0.6418120626057966,
+      "cost_ratio": 0.02502160047476756
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "latency": 144258.4021091676,
+      "cost": 41434.702124423005,
+      "hits": 1024,
+      "downloads": 240,
+      "lat_ratio": 1.1238672502171032,
+      "cost_ratio": 0.22542265925605884
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 1,
+      "variant": "online_drl",
+      "latency": 135178.55846927245,
+      "cost": 185316.48421540056,
+      "hits": 1437,
+      "downloads": 698,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 1,
+      "variant": "r3_only",
+      "latency": 130823.44993696328,
+      "cost": 216217.99243318327,
+      "hits": 1622,
+      "downloads": 815,
+      "lat_ratio": 0.9677825493804246,
+      "cost_ratio": 1.1667499162236679
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "latency": 76423.11710021718,
+      "cost": 170469.46705199635,
+      "hits": 4308,
+      "downloads": 601,
+      "lat_ratio": 0.565349401307523,
+      "cost_ratio": 0.919882911516134
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "latency": 77143.1288770736,
+      "cost": 5933.130142808302,
+      "hits": 4311,
+      "downloads": 44,
+      "lat_ratio": 0.5706757769177504,
+      "cost_ratio": 0.03201620281071161
+    },
+    {
+      "family": "periodic_burst",
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "latency": 155657.83686354285,
+      "cost": 56843.106974106784,
+      "hits": 484,
+      "downloads": 261,
+      "lat_ratio": 1.1514979788671555,
+      "cost_ratio": 0.30673529780564923
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 0,
+      "variant": "online_drl",
+      "latency": 134286.04078149606,
+      "cost": 184205.08177812595,
+      "hits": 1479,
+      "downloads": 706,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 0,
+      "variant": "r3_only",
+      "latency": 136613.78192601044,
+      "cost": 221378.58015657085,
+      "hits": 1343,
+      "downloads": 843,
+      "lat_ratio": 1.0173342004199972,
+      "cost_ratio": 1.2018049557569763
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "latency": 95217.1920875276,
+      "cost": 177246.56273796264,
+      "hits": 3401,
+      "downloads": 647,
+      "lat_ratio": 0.7090624724163291,
+      "cost_ratio": 0.9622240658455622
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "latency": 96115.7099114367,
+      "cost": 12220.69622541923,
+      "hits": 3407,
+      "downloads": 69,
+      "lat_ratio": 0.7157535463260226,
+      "cost_ratio": 0.06634288320090427
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "latency": 147595.51666501863,
+      "cost": 44554.091557496635,
+      "hits": 882,
+      "downloads": 232,
+      "lat_ratio": 1.0991128773033014,
+      "cost_ratio": 0.24187221724513444
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 1,
+      "variant": "online_drl",
+      "latency": 133907.65402510297,
+      "cost": 170987.71895665562,
+      "hits": 1514,
+      "downloads": 657,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 1,
+      "variant": "r3_only",
+      "latency": 135416.83354072034,
+      "cost": 205096.89366480126,
+      "hits": 1416,
+      "downloads": 775,
+      "lat_ratio": 1.0112703006157846,
+      "cost_ratio": 1.1994831846186107
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "latency": 80308.05870777399,
+      "cost": 159360.70630298628,
+      "hits": 4125,
+      "downloads": 589,
+      "lat_ratio": 0.5997271723744713,
+      "cost_ratio": 0.9320008903293416
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "latency": 80685.05408416099,
+      "cost": 6061.331933469785,
+      "hits": 4139,
+      "downloads": 50,
+      "lat_ratio": 0.6025425108936296,
+      "cost_ratio": 0.035448931481484335
+    },
+    {
+      "family": "markov_zipf",
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "latency": 158103.13280585737,
+      "cost": 53105.610449093634,
+      "hits": 364,
+      "downloads": 241,
+      "lat_ratio": 1.1806877953086878,
+      "cost_ratio": 0.3105814310708221
+    },
+    {
+      "family": "bursty",
+      "seed": 0,
+      "variant": "online_drl",
+      "latency": 153049.51514434902,
+      "cost": 172375.97224167926,
+      "hits": 635,
+      "downloads": 639,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "bursty",
+      "seed": 0,
+      "variant": "r3_only",
+      "latency": 151364.40950972633,
+      "cost": 198697.10388781174,
+      "hits": 700,
+      "downloads": 722,
+      "lat_ratio": 0.9889898008952633,
+      "cost_ratio": 1.1526960591075246
+    },
+    {
+      "family": "bursty",
+      "seed": 0,
+      "variant": "r1r2_stateless",
+      "latency": 161776.35208826239,
+      "cost": 180607.1968922665,
+      "hits": 204,
+      "downloads": 666,
+      "lat_ratio": 1.057019696767302,
+      "cost_ratio": 1.0477515778071824
+    },
+    {
+      "family": "bursty",
+      "seed": 0,
+      "variant": "r1r2r3_stateless",
+      "latency": 163024.16788289318,
+      "cost": 73481.40060083767,
+      "hits": 207,
+      "downloads": 257,
+      "lat_ratio": 1.0651727170068885,
+      "cost_ratio": 0.42628563392706076
+    },
+    {
+      "family": "bursty",
+      "seed": 0,
+      "variant": "r1r2r3_landlord",
+      "latency": 166948.6934791687,
+      "cost": 90236.12609603698,
+      "hits": 7,
+      "downloads": 309,
+      "lat_ratio": 1.0908149125576165,
+      "cost_ratio": 0.5234843634095456
+    },
+    {
+      "family": "bursty",
+      "seed": 1,
+      "variant": "online_drl",
+      "latency": 155896.5722270129,
+      "cost": 175119.49961180097,
+      "hits": 510,
+      "downloads": 654,
+      "lat_ratio": 1.0,
+      "cost_ratio": 1.0
+    },
+    {
+      "family": "bursty",
+      "seed": 1,
+      "variant": "r3_only",
+      "latency": 156388.22731393157,
+      "cost": 205758.50969023496,
+      "hits": 474,
+      "downloads": 755,
+      "lat_ratio": 1.003153726088363,
+      "cost_ratio": 1.1749605848940496
+    },
+    {
+      "family": "bursty",
+      "seed": 1,
+      "variant": "r1r2_stateless",
+      "latency": 161205.1325102467,
+      "cost": 184222.99904831647,
+      "hits": 250,
+      "downloads": 679,
+      "lat_ratio": 1.03405180888457,
+      "cost_ratio": 1.0519844989090068
+    },
+    {
+      "family": "bursty",
+      "seed": 1,
+      "variant": "r1r2r3_stateless",
+      "latency": 162655.6042952963,
+      "cost": 78347.4958355708,
+      "hits": 224,
+      "downloads": 278,
+      "lat_ratio": 1.0433558735238968,
+      "cost_ratio": 0.4473944706857254
+    },
+    {
+      "family": "bursty",
+      "seed": 1,
+      "variant": "r1r2r3_landlord",
+      "latency": 166525.24779667225,
+      "cost": 91523.37990530803,
+      "hits": 22,
+      "downloads": 330,
+      "lat_ratio": 1.0681777374436567,
+      "cost_ratio": 0.5226338592115326
+    }
+  ],
+  "grid": [
+    {
+      "eta_mult": 1.0,
+      "alpha": 0.05,
+      "K": 2,
+      "seed": 0,
+      "latency": 132227.67244077486,
+      "cost": 24285.31100193567,
+      "hits": 1628
+    },
+    {
+      "eta_mult": 1.0,
+      "alpha": 0.05,
+      "K": 2,
+      "seed": 1,
+      "latency": 116299.81829875469,
+      "cost": 19802.036603784887,
+      "hits": 2425
+    },
+    {
+      "eta_mult": 1.0,
+      "alpha": 0.05,
+      "K": 4,
+      "seed": 0,
+      "latency": 132018.68748055774,
+      "cost": 24041.166643707395,
+      "hits": 1647
+    },
+    {
+      "eta_mult": 1.0,
+      "alpha": 0.05,
+      "K": 4,
+      "seed": 1,
+      "latency": 71655.07932700703,
+      "cost": 7679.149328899123,
+      "hits": 4580
+    },
+    {
+      "eta_mult": 1.0,
+      "alpha": 0.1,
+      "K": 2,
+      "seed": 0,
+      "latency": 132227.67244077486,
+      "cost": 24285.31100193567,
+      "hits": 1628
+    },
+    {
+      "eta_mult": 1.0,
+      "alpha": 0.1,
+      "K": 2,
+      "seed": 1,
+      "latency": 116299.81829875469,
+      "cost": 19802.036603784887,
+      "hits": 2425
+    },
+    {
+      "eta_mult": 1.0,
+      "alpha": 0.1,
+      "K": 4,
+      "seed": 0,
+      "latency": 132018.68748055774,
+      "cost": 24041.166643707395,
+      "hits": 1647
+    },
+    {
+      "eta_mult": 1.0,
+      "alpha": 0.1,
+      "K": 4,
+      "seed": 1,
+      "latency": 71655.07932700703,
+      "cost": 7679.149328899123,
+      "hits": 4580
+    },
+    {
+      "eta_mult": 2.0,
+      "alpha": 0.05,
+      "K": 2,
+      "seed": 0,
+      "latency": 140453.88309193854,
+      "cost": 44851.561049447184,
+      "hits": 1231
+    },
+    {
+      "eta_mult": 2.0,
+      "alpha": 0.05,
+      "K": 2,
+      "seed": 1,
+      "latency": 127600.31447691494,
+      "cost": 37188.05989389349,
+      "hits": 1862
+    },
+    {
+      "eta_mult": 2.0,
+      "alpha": 0.05,
+      "K": 4,
+      "seed": 0,
+      "latency": 139983.18571425934,
+      "cost": 43991.23631238118,
+      "hits": 1240
+    },
+    {
+      "eta_mult": 2.0,
+      "alpha": 0.05,
+      "K": 4,
+      "seed": 1,
+      "latency": 75963.81297527054,
+      "cost": 18066.44036137911,
+      "hits": 4369
+    },
+    {
+      "eta_mult": 2.0,
+      "alpha": 0.1,
+      "K": 2,
+      "seed": 0,
+      "latency": 140453.88309193854,
+      "cost": 44851.561049447184,
+      "hits": 1231
+    },
+    {
+      "eta_mult": 2.0,
+      "alpha": 0.1,
+      "K": 2,
+      "seed": 1,
+      "latency": 127600.31447691494,
+      "cost": 37188.05989389349,
+      "hits": 1862
+    },
+    {
+      "eta_mult": 2.0,
+      "alpha": 0.1,
+      "K": 4,
+      "seed": 0,
+      "latency": 139983.18571425934,
+      "cost": 43991.23631238118,
+      "hits": 1240
+    },
+    {
+      "eta_mult": 2.0,
+      "alpha": 0.1,
+      "K": 4,
+      "seed": 1,
+      "latency": 75963.81297527054,
+      "cost": 18066.44036137911,
+      "hits": 4369
+    },
+    {
+      "eta_mult": 4.0,
+      "alpha": 0.05,
+      "K": 2,
+      "seed": 0,
+      "latency": 150909.7639303278,
+      "cost": 91899.18875016364,
+      "hits": 676
+    },
+    {
+      "eta_mult": 4.0,
+      "alpha": 0.05,
+      "K": 2,
+      "seed": 1,
+      "latency": 142009.84911046296,
+      "cost": 86497.44689138053,
+      "hits": 1157
+    },
+    {
+      "eta_mult": 4.0,
+      "alpha": 0.05,
+      "K": 4,
+      "seed": 0,
+      "latency": 152114.73055422923,
+      "cost": 92863.74101119139,
+      "hits": 630
+    },
+    {
+      "eta_mult": 4.0,
+      "alpha": 0.05,
+      "K": 4,
+      "seed": 1,
+      "latency": 84097.91155902226,
+      "cost": 49982.806944074444,
+      "hits": 3966
+    },
+    {
+      "eta_mult": 4.0,
+      "alpha": 0.1,
+      "K": 2,
+      "seed": 0,
+      "latency": 150909.7639303278,
+      "cost": 91899.18875016364,
+      "hits": 676
+    },
+    {
+      "eta_mult": 4.0,
+      "alpha": 0.1,
+      "K": 2,
+      "seed": 1,
+      "latency": 142009.84911046296,
+      "cost": 86497.44689138053,
+      "hits": 1157
+    },
+    {
+      "eta_mult": 4.0,
+      "alpha": 0.1,
+      "K": 4,
+      "seed": 0,
+      "latency": 152114.73055422923,
+      "cost": 92863.74101119139,
+      "hits": 630
+    },
+    {
+      "eta_mult": 4.0,
+      "alpha": 0.1,
+      "K": 4,
+      "seed": 1,
+      "latency": 84097.91155902226,
+      "cost": 49982.806944074444,
+      "hits": 3966
+    }
+  ],
+  "best": {
+    "eta_mult": 1.0,
+    "alpha": 0.05,
+    "K": 4,
+    "seed": 1,
+    "latency": 71655.07932700703,
+    "cost": 7679.149328899123,
+    "hits": 4580
+  },
+  "summary": {
+    "bursty": {
+      "online_drl": {
+        "latency": {
+          "mean": 154473.04368568095,
+          "sd": 2013.173369576813,
+          "median": 154473.04368568095,
+          "q25": 153761.279415015,
+          "q75": 155184.80795634692,
+          "min": 153049.51514434902,
+          "max": 155896.5722270129
+        },
+        "cost": {
+          "mean": 173747.7359267401,
+          "sd": 1939.966807783955,
+          "median": 173747.7359267401,
+          "q25": 173061.85408420968,
+          "q75": 174433.61776927055,
+          "min": 172375.97224167926,
+          "max": 175119.49961180097
+        },
+        "lat_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "cost_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "r1r2_stateless": {
+        "latency": {
+          "mean": 161490.74229925455,
+          "sd": 403.9132371614028,
+          "median": 161490.74229925455,
+          "q25": 161347.9374047506,
+          "q75": 161633.54719375848,
+          "min": 161205.1325102467,
+          "max": 161776.35208826239
+        },
+        "cost": {
+          "mean": 182415.0979702915,
+          "sd": 2556.758223971867,
+          "median": 182415.0979702915,
+          "q25": 181511.147431279,
+          "q75": 183319.04850930398,
+          "min": 180607.1968922665,
+          "max": 184222.99904831647
+        },
+        "lat_ratio": {
+          "mean": 1.045535752825936,
+          "sd": 0.016240749271412107,
+          "median": 1.045535752825936,
+          "q25": 1.039793780855253,
+          "q75": 1.051277724796619,
+          "min": 1.03405180888457,
+          "max": 1.057019696767302
+        },
+        "cost_ratio": {
+          "mean": 1.0498680383580945,
+          "sd": 0.0029931272153276537,
+          "median": 1.0498680383580945,
+          "q25": 1.0488098080826385,
+          "q75": 1.0509262686335508,
+          "min": 1.0477515778071824,
+          "max": 1.0519844989090068
+        }
+      },
+      "r1r2r3_landlord": {
+        "latency": {
+          "mean": 166736.9706379205,
+          "sd": 299.42131355740105,
+          "median": 166736.9706379205,
+          "q25": 166631.10921729635,
+          "q75": 166842.8320585446,
+          "min": 166525.24779667225,
+          "max": 166948.6934791687
+        },
+        "cost": {
+          "mean": 90879.7530006725,
+          "sd": 910.2258976437711,
+          "median": 90879.7530006725,
+          "q25": 90557.93954835474,
+          "q75": 91201.56645299027,
+          "min": 90236.12609603698,
+          "max": 91523.37990530803
+        },
+        "lat_ratio": {
+          "mean": 1.0794963250006366,
+          "sd": 0.01600690002998833,
+          "median": 1.0794963250006366,
+          "q25": 1.0738370312221468,
+          "q75": 1.0851556187791265,
+          "min": 1.0681777374436567,
+          "max": 1.0908149125576165
+        },
+        "cost_ratio": {
+          "mean": 0.5230591113105392,
+          "sd": 0.0006013972858426358,
+          "median": 0.5230591113105392,
+          "q25": 0.5228464852610358,
+          "q75": 0.5232717373600424,
+          "min": 0.5226338592115326,
+          "max": 0.5234843634095456
+        }
+      },
+      "r1r2r3_stateless": {
+        "latency": {
+          "mean": 162839.88608909474,
+          "sd": 260.6138120881909,
+          "median": 162839.88608909474,
+          "q25": 162747.74519219552,
+          "q75": 162932.02698599396,
+          "min": 162655.6042952963,
+          "max": 163024.16788289318
+        },
+        "cost": {
+          "mean": 75914.44821820423,
+          "sd": 3440.848938379333,
+          "median": 75914.44821820423,
+          "q25": 74697.92440952096,
+          "q75": 77130.97202688751,
+          "min": 73481.40060083767,
+          "max": 78347.4958355708
+        },
+        "lat_ratio": {
+          "mean": 1.0542642952653927,
+          "sd": 0.015426837970908991,
+          "median": 1.0542642952653927,
+          "q25": 1.0488100843946446,
+          "q75": 1.0597185061361407,
+          "min": 1.0433558735238968,
+          "max": 1.0651727170068885
+        },
+        "cost_ratio": {
+          "mean": 0.4368400523063931,
+          "sd": 0.014926201615011635,
+          "median": 0.4368400523063931,
+          "q25": 0.43156284311672694,
+          "q75": 0.44211726149605923,
+          "min": 0.42628563392706076,
+          "max": 0.4473944706857254
+        }
+      },
+      "r3_only": {
+        "latency": {
+          "mean": 153876.31841182895,
+          "sd": 3552.3756367992305,
+          "median": 153876.31841182895,
+          "q25": 152620.36396077764,
+          "q75": 155132.27286288026,
+          "min": 151364.40950972633,
+          "max": 156388.22731393157
+        },
+        "cost": {
+          "mean": 202227.80678902334,
+          "sd": 4993.167927603494,
+          "median": 202227.80678902334,
+          "q25": 200462.45533841755,
+          "q75": 203993.15823962915,
+          "min": 198697.10388781174,
+          "max": 205758.50969023496
+        },
+        "lat_ratio": {
+          "mean": 0.9960717634918131,
+          "sd": 0.010015407552259716,
+          "median": 0.9960717634918131,
+          "q25": 0.9925307821935383,
+          "q75": 0.999612744790088,
+          "min": 0.9889898008952633,
+          "max": 1.003153726088363
+        },
+        "cost_ratio": {
+          "mean": 1.163828322000787,
+          "sd": 0.015743397163554614,
+          "median": 1.163828322000787,
+          "q25": 1.158262190554156,
+          "q75": 1.1693944534474183,
+          "min": 1.1526960591075246,
+          "max": 1.1749605848940496
+        }
+      }
+    },
+    "fractional_vs_rounded": {
+      "fractional": {
+        "latency": {
+          "mean": 61630.02028018954,
+          "sd": 7593.785460668677,
+          "median": 61915.80949424175,
+          "q25": 57906.592058190865,
+          "q75": 65496.343109214315,
+          "min": 53897.37462213998,
+          "max": 69076.87672418688
+        },
+        "cost": {
+          "mean": 192262.47306586555,
+          "sd": 10514.733051073501,
+          "median": 197562.54342675445,
+          "q25": 188857.49193086178,
+          "q75": 198317.48938131373,
+          "min": 180152.44043496912,
+          "max": 199072.43533587304
+        },
+        "lat_ratio": {
+          "mean": NaN,
+          "sd": 0.0,
+          "median": NaN,
+          "q25": NaN,
+          "q75": NaN,
+          "min": NaN,
+          "max": NaN
+        },
+        "cost_ratio": {
+          "mean": NaN,
+          "sd": 0.0,
+          "median": NaN,
+          "q25": NaN,
+          "q75": NaN,
+          "min": NaN,
+          "max": NaN
+        }
+      },
+      "rounded": {
+        "latency": {
+          "mean": 91107.30714017486,
+          "sd": 35444.501939208625,
+          "median": 71655.07932700703,
+          "q25": 70651.61696998341,
+          "q75": 101836.88340378238,
+          "min": 69648.1546129598,
+          "max": 132018.68748055774
+        },
+        "cost": {
+          "mean": 14444.395516291386,
+          "sd": 8540.611966774031,
+          "median": 11612.870576267644,
+          "q25": 9646.009952583383,
+          "q75": 17827.01860998752,
+          "min": 7679.149328899123,
+          "max": 24041.166643707395
+        },
+        "lat_ratio": {
+          "mean": NaN,
+          "sd": 0.0,
+          "median": NaN,
+          "q25": NaN,
+          "q75": NaN,
+          "min": NaN,
+          "max": NaN
+        },
+        "cost_ratio": {
+          "mean": NaN,
+          "sd": 0.0,
+          "median": NaN,
+          "q25": NaN,
+          "q75": NaN,
+          "min": NaN,
+          "max": NaN
+        }
+      }
+    },
+    "hotspot": {
+      "online_drl": {
+        "latency": {
+          "mean": 133138.19187255026,
+          "sd": 6969.110785334341,
+          "median": 133138.19187255026,
+          "q25": 130674.23912497515,
+          "q75": 135602.14462012536,
+          "min": 128210.28637740004,
+          "max": 138066.09736770048
+        },
+        "cost": {
+          "mean": 138011.67727805758,
+          "sd": 157.12080861614547,
+          "median": 138011.67727805758,
+          "q25": 137956.1266834386,
+          "q75": 138067.22787267657,
+          "min": 137900.5760888196,
+          "max": 138122.77846729557
+        },
+        "lat_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "cost_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "r1r2_stateless": {
+        "latency": {
+          "mean": 115484.94821103264,
+          "sd": 4959.102322052679,
+          "median": 115484.94821103264,
+          "q25": 113731.64077077193,
+          "q75": 117238.25565129334,
+          "min": 111978.33333051123,
+          "max": 118991.56309155404
+        },
+        "cost": {
+          "mean": 136210.63605793403,
+          "sd": 397.02202869013234,
+          "median": 136210.63605793403,
+          "q25": 136070.2675735504,
+          "q75": 136351.00454231762,
+          "min": 135929.89908916678,
+          "max": 136491.37302670124
+        },
+        "lat_ratio": {
+          "mean": 0.8676203843866762,
+          "sd": 0.008167755931321422,
+          "median": 0.8676203843866762,
+          "q25": 0.8647326465836191,
+          "q75": 0.8705081221897333,
+          "min": 0.8618449087805622,
+          "max": 0.8733958599927902
+        },
+        "cost_ratio": {
+          "mean": 0.9869490829914143,
+          "sd": 0.001753125499808907,
+          "median": 0.9869490829914143,
+          "q25": 0.9863292595268214,
+          "q75": 0.9875689064560073,
+          "min": 0.9857094360622284,
+          "max": 0.9881887299206003
+        }
+      },
+      "r1r2r3_landlord": {
+        "latency": {
+          "mean": 160082.81403151073,
+          "sd": 3000.20517546074,
+          "median": 160082.81403151073,
+          "q25": 159022.0813192511,
+          "q75": 161143.54674377036,
+          "min": 157961.34860699147,
+          "max": 162204.27945603
+        },
+        "cost": {
+          "mean": 54951.89682293877,
+          "sd": 8030.869774643095,
+          "median": 54951.89682293877,
+          "q25": 52112.55558470066,
+          "q75": 57791.238061176875,
+          "min": 49273.214346462555,
+          "max": 60630.57929941498
+        },
+        "lat_ratio": {
+          "mean": 1.2034397870755114,
+          "sd": 0.04045946507448613,
+          "median": 1.2034397870755114,
+          "q25": 1.1891352060168368,
+          "q75": 1.217744368134186,
+          "min": 1.174830624958162,
+          "max": 1.2320489491928608
+        },
+        "cost_ratio": {
+          "mean": 0.39813559332112813,
+          "sd": 0.057736523064113865,
+          "median": 0.39813559332112813,
+          "q25": 0.3777226498307439,
+          "q75": 0.41854853681151233,
+          "min": 0.3573097063403597,
+          "max": 0.4389614803018965
+        }
+      },
+      "r1r2r3_stateless": {
+        "latency": {
+          "mean": 119757.43091530904,
+          "sd": 4342.622271482651,
+          "median": 119757.43091530904,
+          "q25": 118222.0820871605,
+          "q75": 121292.77974345759,
+          "min": 116686.73325901193,
+          "max": 122828.12857160615
+        },
+        "cost": {
+          "mean": 27655.043743557595,
+          "sd": 2232.126367082756,
+          "median": 27655.043743557595,
+          "q25": 26865.867898242843,
+          "q75": 28444.21958887235,
+          "min": 26076.692052928087,
+          "max": 29233.395434187107
+        },
+        "lat_ratio": {
+          "mean": 0.8998763501671989,
+          "sd": 0.01448656977241507,
+          "median": 0.8998763501671989,
+          "q25": 0.8947545743060956,
+          "q75": 0.9049981260283023,
+          "min": 0.8896327984449922,
+          "max": 0.9101199018894057
+        },
+        "cost_ratio": {
+          "mean": 0.20037283522898264,
+          "sd": 0.015945343673732366,
+          "median": 0.20037283522898264,
+          "q25": 0.19473530490895954,
+          "q75": 0.2060103655490057,
+          "min": 0.18909777458893645,
+          "max": 0.2116478958690288
+        }
+      },
+      "r3_only": {
+        "latency": {
+          "mean": 135152.4143326407,
+          "sd": 2141.2211245352223,
+          "median": 135152.4143326407,
+          "q25": 134395.37834405134,
+          "q75": 135909.45032123008,
+          "min": 133638.34235546197,
+          "max": 136666.48630981945
+        },
+        "cost": {
+          "mean": 157507.98574619245,
+          "sd": 1934.028843951049,
+          "median": 157507.98574619245,
+          "q25": 156824.20329090836,
+          "q75": 158191.76820147652,
+          "min": 156140.42083562427,
+          "max": 158875.5506567606
+        },
+        "lat_ratio": {
+          "mean": 1.0160999397683401,
+          "sd": 0.03710499485685453,
+          "median": 1.0160999397683401,
+          "q25": 1.0029813430287533,
+          "q75": 1.0292185365079272,
+          "min": 0.9898627462891664,
+          "max": 1.042337133247514
+        },
+        "cost_ratio": {
+          "mean": 1.1412584066573492,
+          "sd": 0.012714238641718497,
+          "median": 1.1412584066573492,
+          "q25": 1.1367632444767575,
+          "q75": 1.1457535688379408,
+          "min": 1.132268082296166,
+          "max": 1.1502487310185323
+        }
+      }
+    },
+    "markov_zipf": {
+      "online_drl": {
+        "latency": {
+          "mean": 134096.84740329953,
+          "sd": 267.55984135674186,
+          "median": 134096.84740329953,
+          "q25": 134002.25071420125,
+          "q75": 134191.44409239778,
+          "min": 133907.65402510297,
+          "max": 134286.04078149606
+        },
+        "cost": {
+          "mean": 177596.40036739077,
+          "sd": 9346.086880464632,
+          "median": 177596.40036739077,
+          "q25": 174292.0596620232,
+          "q75": 180900.74107275836,
+          "min": 170987.71895665562,
+          "max": 184205.08177812595
+        },
+        "lat_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "cost_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "r1r2_stateless": {
+        "latency": {
+          "mean": 87762.62539765079,
+          "sd": 10542.349314438485,
+          "median": 87762.62539765079,
+          "q25": 84035.3420527124,
+          "q75": 91489.90874258919,
+          "min": 80308.05870777399,
+          "max": 95217.1920875276
+        },
+        "cost": {
+          "mean": 168303.63452047447,
+          "sd": 12647.210372500835,
+          "median": 168303.63452047447,
+          "q25": 163832.17041173036,
+          "q75": 172775.09862921856,
+          "min": 159360.70630298628,
+          "max": 177246.56273796264
+        },
+        "lat_ratio": {
+          "mean": 0.6543948223954001,
+          "sd": 0.07731173208266351,
+          "median": 0.6543948223954001,
+          "q25": 0.6270609973849357,
+          "q75": 0.6817286474058647,
+          "min": 0.5997271723744713,
+          "max": 0.7090624724163291
+        },
+        "cost_ratio": {
+          "mean": 0.9471124780874519,
+          "sd": 0.021371012356510788,
+          "median": 0.9471124780874519,
+          "q25": 0.9395566842083968,
+          "q75": 0.954668271966507,
+          "min": 0.9320008903293416,
+          "max": 0.9622240658455622
+        }
+      },
+      "r1r2r3_landlord": {
+        "latency": {
+          "mean": 152849.324735438,
+          "sd": 7430.006627292295,
+          "median": 152849.324735438,
+          "q25": 150222.4207002283,
+          "q75": 155476.2287706477,
+          "min": 147595.51666501863,
+          "max": 158103.13280585737
+        },
+        "cost": {
+          "mean": 48829.85100329513,
+          "sd": 6046.836997693107,
+          "median": 48829.85100329513,
+          "q25": 46691.97128039588,
+          "q75": 50967.730726194386,
+          "min": 44554.091557496635,
+          "max": 53105.610449093634
+        },
+        "lat_ratio": {
+          "mean": 1.1399003363059945,
+          "sd": 0.05768217769634532,
+          "median": 1.1399003363059945,
+          "q25": 1.119506606804648,
+          "q75": 1.1602940658073413,
+          "min": 1.0991128773033014,
+          "max": 1.1806877953086878
+        },
+        "cost_ratio": {
+          "mean": 0.2762268241579783,
+          "sd": 0.04858475102614022,
+          "median": 0.2762268241579783,
+          "q25": 0.25904952070155635,
+          "q75": 0.29340412761440016,
+          "min": 0.24187221724513444,
+          "max": 0.3105814310708221
+        }
+      },
+      "r1r2r3_stateless": {
+        "latency": {
+          "mean": 88400.38199779885,
+          "sd": 10911.12137362237,
+          "median": 88400.38199779885,
+          "q25": 84542.71804097992,
+          "q75": 92258.04595461777,
+          "min": 80685.05408416099,
+          "max": 96115.7099114367
+        },
+        "cost": {
+          "mean": 9141.014079444507,
+          "sd": 4355.32825863573,
+          "median": 9141.014079444507,
+          "q25": 7601.173006457147,
+          "q75": 10680.855152431868,
+          "min": 6061.331933469785,
+          "max": 12220.69622541923
+        },
+        "lat_ratio": {
+          "mean": 0.6591480286098261,
+          "sd": 0.08005229085939558,
+          "median": 0.6591480286098261,
+          "q25": 0.6308452697517279,
+          "q75": 0.6874507874679243,
+          "min": 0.6025425108936296,
+          "max": 0.7157535463260226
+        },
+        "cost_ratio": {
+          "mean": 0.0508959073411943,
+          "sd": 0.021845322758451635,
+          "median": 0.0508959073411943,
+          "q25": 0.04317241941133932,
+          "q75": 0.058619395271049285,
+          "min": 0.035448931481484335,
+          "max": 0.06634288320090427
+        }
+      },
+      "r3_only": {
+        "latency": {
+          "mean": 136015.3077333654,
+          "sd": 846.3703199689203,
+          "median": 136015.3077333654,
+          "q25": 135716.07063704287,
+          "q75": 136314.54482968792,
+          "min": 135416.83354072034,
+          "max": 136613.78192601044
+        },
+        "cost": {
+          "mean": 213237.73691068607,
+          "sd": 11512.890927483688,
+          "median": 213237.73691068607,
+          "q25": 209167.31528774367,
+          "q75": 217308.15853362845,
+          "min": 205096.89366480126,
+          "max": 221378.58015657085
+        },
+        "lat_ratio": {
+          "mean": 1.014302250517891,
+          "sd": 0.004287824671994525,
+          "median": 1.014302250517891,
+          "q25": 1.0127862755668378,
+          "q75": 1.015818225468944,
+          "min": 1.0112703006157846,
+          "max": 1.0173342004199972
+        },
+        "cost_ratio": {
+          "mean": 1.2006440701877934,
+          "sd": 0.001641740116301543,
+          "median": 1.2006440701877934,
+          "q25": 1.2000636274032022,
+          "q75": 1.2012245129723849,
+          "min": 1.1994831846186107,
+          "max": 1.2018049557569763
+        }
+      }
+    },
+    "periodic_burst": {
+      "online_drl": {
+        "latency": {
+          "mean": 131768.74619628157,
+          "sd": 4822.202761609911,
+          "median": 131768.74619628157,
+          "q25": 130063.84005978616,
+          "q75": 133473.652332777,
+          "min": 128358.93392329072,
+          "max": 135178.55846927245
+        },
+        "cost": {
+          "mean": 184562.71670924666,
+          "sd": 1065.9882300789975,
+          "median": 184562.71670924666,
+          "q25": 184185.8329561697,
+          "q75": 184939.6004623236,
+          "min": 183808.94920309275,
+          "max": 185316.48421540056
+        },
+        "lat_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "cost_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "r1r2_stateless": {
+        "latency": {
+          "mean": 78861.27423772651,
+          "sd": 3448.074891062463,
+          "median": 78861.27423772651,
+          "q25": 77642.19566897184,
+          "q75": 80080.35280648118,
+          "min": 76423.11710021718,
+          "max": 81299.43137523584
+        },
+        "cost": {
+          "mean": 171676.02602864872,
+          "sd": 1706.3320685847532,
+          "median": 171676.02602864872,
+          "q25": 171072.74654032252,
+          "q75": 172279.30551697488,
+          "min": 170469.46705199635,
+          "max": 172882.58500530105
+        },
+        "lat_ratio": {
+          "mean": 0.5993625574718215,
+          "sd": 0.04810186674666507,
+          "median": 0.5993625574718215,
+          "q25": 0.5823559793896722,
+          "q75": 0.6163691355539709,
+          "min": 0.565349401307523,
+          "max": 0.6333757136361201
+        },
+        "cost_ratio": {
+          "mean": 0.9302193876945609,
+          "sd": 0.014617984798677775,
+          "median": 0.9302193876945609,
+          "q25": 0.9250511496053475,
+          "q75": 0.9353876257837743,
+          "min": 0.919882911516134,
+          "max": 0.9405558638729878
+        }
+      },
+      "r1r2r3_landlord": {
+        "latency": {
+          "mean": 149958.11948635522,
+          "sd": 8060.617616512346,
+          "median": 149958.11948635522,
+          "q25": 147108.2607977614,
+          "q75": 152807.97817494904,
+          "min": 144258.4021091676,
+          "max": 155657.83686354285
+        },
+        "cost": {
+          "mean": 49138.904549264895,
+          "sd": 10895.387556479085,
+          "median": 49138.904549264895,
+          "q25": 45286.80333684395,
+          "q75": 52991.00576168584,
+          "min": 41434.702124423005,
+          "max": 56843.106974106784
+        },
+        "lat_ratio": {
+          "mean": 1.1376826145421295,
+          "sd": 0.019537875597577428,
+          "median": 1.1376826145421295,
+          "q25": 1.1307749323796163,
+          "q75": 1.1445902967046424,
+          "min": 1.1238672502171032,
+          "max": 1.1514979788671555
+        },
+        "cost_ratio": {
+          "mean": 0.26607897853085405,
+          "sd": 0.057496718114586044,
+          "median": 0.26607897853085405,
+          "q25": 0.24575081889345643,
+          "q75": 0.28640713816825164,
+          "min": 0.22542265925605884,
+          "max": 0.30673529780564923
+        }
+      },
+      "r1r2r3_stateless": {
+        "latency": {
+          "mean": 79762.72050613098,
+          "sd": 3704.662009691988,
+          "median": 79762.72050613098,
+          "q25": 78452.9246916023,
+          "q75": 81072.51632065968,
+          "min": 77143.1288770736,
+          "max": 82382.31213518837
+        },
+        "cost": {
+          "mean": 5266.162116727466,
+          "sd": 943.2352281527291,
+          "median": 5266.162116727466,
+          "q25": 4932.678103687049,
+          "q75": 5599.646129767884,
+          "min": 4599.194090646632,
+          "max": 5933.130142808302
+        },
+        "lat_ratio": {
+          "mean": 0.6062439197617735,
+          "sd": 0.050300949998441015,
+          "median": 0.6062439197617735,
+          "q25": 0.588459848339762,
+          "q75": 0.624027991183785,
+          "min": 0.5706757769177504,
+          "max": 0.6418120626057966
+        },
+        "cost_ratio": {
+          "mean": 0.028518901642739583,
+          "sd": 0.004945930743449303,
+          "median": 0.028518901642739583,
+          "q25": 0.026770251058753573,
+          "q75": 0.030267552226725596,
+          "min": 0.02502160047476756,
+          "max": 0.03201620281071161
+        }
+      },
+      "r3_only": {
+        "latency": {
+          "mean": 129170.30375329283,
+          "sd": 2337.901753532081,
+          "median": 129170.30375329283,
+          "q25": 128343.73066145761,
+          "q75": 129996.87684512805,
+          "min": 127517.15756962237,
+          "max": 130823.44993696328
+        },
+        "cost": {
+          "mean": 215922.05324072554,
+          "sd": 418.5212196114921,
+          "median": 215922.05324072554,
+          "q25": 215774.08364449666,
+          "q75": 216070.0228369544,
+          "min": 215626.11404826777,
+          "max": 216217.99243318327
+        },
+        "lat_ratio": {
+          "mean": 0.9806122806695413,
+          "sd": 0.01814397999067127,
+          "median": 0.9806122806695413,
+          "q25": 0.974197415024983,
+          "q75": 0.9870271463140996,
+          "min": 0.9677825493804246,
+          "max": 0.993442011958658
+        },
+        "cost_ratio": {
+          "mean": 1.1699245112840786,
+          "sd": 0.004489555389475652,
+          "median": 1.1699245112840786,
+          "q25": 1.1683372137538732,
+          "q75": 1.1715118088142842,
+          "min": 1.1667499162236679,
+          "max": 1.1730991063444896
+        }
+      }
+    },
+    "random_walk_zipf": {
+      "online_drl": {
+        "latency": {
+          "mean": 70760.04741329879,
+          "sd": 24285.542226930633,
+          "median": 70760.04741329879,
+          "q25": 62173.81161657134,
+          "q75": 79346.28321002625,
+          "min": 53587.57581984389,
+          "max": 87932.51900675369
+        },
+        "cost": {
+          "mean": 44542.189279373575,
+          "sd": 13314.841467738333,
+          "median": 44542.189279373575,
+          "q25": 39834.68193324277,
+          "q75": 49249.69662550438,
+          "min": 35127.17458711196,
+          "max": 53957.203971635194
+        },
+        "lat_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "cost_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "r1r2_stateless": {
+        "latency": {
+          "mean": 60089.5912944196,
+          "sd": 35592.72812811863,
+          "median": 60089.5912944196,
+          "q25": 47505.661584258676,
+          "q75": 72673.52100458053,
+          "min": 34921.73187409775,
+          "max": 85257.45071474146
+        },
+        "cost": {
+          "mean": 43280.00207057163,
+          "sd": 6849.555785520791,
+          "median": 43280.00207057163,
+          "q25": 40858.318398542986,
+          "q75": 45701.68574260028,
+          "min": 38436.634726514334,
+          "max": 48123.369414628934
+        },
+        "lat_ratio": {
+          "mean": 0.9940676332239347,
+          "sd": 0.8441797567249355,
+          "median": 0.9940676332239347,
+          "q25": 0.6956050179636286,
+          "q75": 1.2925302484842405,
+          "min": 0.3971424027033227,
+          "max": 1.5909928637445465
+        },
+        "cost_ratio": {
+          "mean": 0.9930470064082123,
+          "sd": 0.1430712719315693,
+          "median": 0.9930470064082123,
+          "q25": 0.9424636731203138,
+          "q75": 1.0436303396961109,
+          "min": 0.8918803398324151,
+          "max": 1.0942136729840095
+        }
+      },
+      "r1r2r3_landlord": {
+        "latency": {
+          "mean": 129188.77348374233,
+          "sd": 37772.18738662303,
+          "median": 129188.77348374233,
+          "q25": 115834.28856307728,
+          "q75": 142543.2584044074,
+          "min": 102479.80364241221,
+          "max": 155897.74332507246
+        },
+        "cost": {
+          "mean": 31302.57996268716,
+          "sd": 9685.353246776709,
+          "median": 31302.57996268716,
+          "q25": 27878.290483195684,
+          "q75": 34726.86944217864,
+          "min": 24454.001003704205,
+          "max": 38151.15892167012
+        },
+        "lat_ratio": {
+          "mean": 2.0373256207969384,
+          "sd": 1.2330368332129868,
+          "median": 2.0373256207969384,
+          "q25": 1.6013812676880939,
+          "q75": 2.473269973905783,
+          "min": 1.1654369145792494,
+          "max": 2.9092143270146273
+        },
+        "cost_ratio": {
+          "mean": 0.7696488999492195,
+          "sd": 0.44751070070662896,
+          "median": 0.7696488999492195,
+          "q25": 0.611429974387619,
+          "q75": 0.9278678255108199,
+          "min": 0.45321104882601865,
+          "max": 1.0860867510724204
+        }
+      },
+      "r1r2r3_stateless": {
+        "latency": {
+          "mean": 62379.811561524235,
+          "sd": 35277.98865983565,
+          "median": 62379.811561524235,
+          "q25": 49907.159057528275,
+          "q75": 74852.4640655202,
+          "min": 37434.50655353232,
+          "max": 87325.11656951615
+        },
+        "cost": {
+          "mean": 9444.252721192192,
+          "sd": 1819.6501307549122,
+          "median": 9444.252721192192,
+          "q25": 8800.9092477703,
+          "q75": 10087.596194614085,
+          "min": 8157.565774348406,
+          "max": 10730.939668035979
+        },
+        "lat_ratio": {
+          "mean": 1.0276481182293555,
+          "sd": 0.8512569257860585,
+          "median": 1.0276481182293555,
+          "q25": 0.7266833458516877,
+          "q75": 1.3286128906070231,
+          "min": 0.4257185734740199,
+          "max": 1.629577662984691
+        },
+        "cost_ratio": {
+          "mean": 0.22833705846041824,
+          "sd": 0.109108284617155,
+          "median": 0.22833705846041824,
+          "q25": 0.18976145449220716,
+          "q75": 0.2669126624286293,
+          "min": 0.15118585052399608,
+          "max": 0.3054882663968404
+        }
+      },
+      "r3_only": {
+        "latency": {
+          "mean": 70178.029686797,
+          "sd": 20215.45602468959,
+          "median": 70178.029686797,
+          "q25": 63030.786666878776,
+          "q75": 77325.27270671523,
+          "min": 55883.54364696055,
+          "max": 84472.51572663346
+        },
+        "cost": {
+          "mean": 52415.16880746362,
+          "sd": 15773.245027694393,
+          "median": 52415.16880746362,
+          "q25": 46838.484547263775,
+          "q75": 57991.85306766347,
+          "min": 41261.800287063925,
+          "max": 63568.53732786332
+        },
+        "lat_ratio": {
+          "mean": 1.001748379661215,
+          "sd": 0.058119612700531766,
+          "median": 1.001748379661215,
+          "q25": 0.9811999935309741,
+          "q75": 1.022296765791456,
+          "min": 0.9606516074007332,
+          "max": 1.0428451519216968
+        },
+        "cost_ratio": {
+          "mean": 1.1763846393639685,
+          "sd": 0.0024666513087514014,
+          "median": 1.1763846393639685,
+          "q25": 1.1755125464303482,
+          "q75": 1.177256732297589,
+          "min": 1.1746404534967279,
+          "max": 1.1781288252312094
+        }
+      }
+    },
+    "shuffled_cyclic_scan": {
+      "online_drl": {
+        "latency": {
+          "mean": 74.0,
+          "sd": 25.367301787931645,
+          "median": 70.0,
+          "q25": 50.0,
+          "q75": 98.0,
+          "min": 41.0,
+          "max": 109.0
+        },
+        "cost": {
+          "mean": 74.0,
+          "sd": 25.367301787931645,
+          "median": 70.0,
+          "q25": 50.0,
+          "q75": 98.0,
+          "min": 41.0,
+          "max": 109.0
+        },
+        "lat_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "cost_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "r1r2_stateless_det": {
+        "latency": {
+          "mean": 111.0,
+          "sd": 48.373546489791295,
+          "median": 98.0,
+          "q25": 63.0,
+          "q75": 164.0,
+          "min": 61.0,
+          "max": 179.0
+        },
+        "cost": {
+          "mean": 111.0,
+          "sd": 48.373546489791295,
+          "median": 98.0,
+          "q25": 63.0,
+          "q75": 164.0,
+          "min": 61.0,
+          "max": 179.0
+        },
+        "lat_ratio": {
+          "mean": 1.4647265394106348,
+          "sd": 0.17872297079697155,
+          "median": 1.4927536231884058,
+          "q25": 1.2708333333333333,
+          "q75": 1.561904761904762,
+          "min": 1.26,
+          "max": 1.7551020408163265
+        },
+        "cost_ratio": {
+          "mean": 1.4647265394106348,
+          "sd": 0.17872297079697155,
+          "median": 1.4927536231884058,
+          "q25": 1.2708333333333333,
+          "q75": 1.561904761904762,
+          "min": 1.26,
+          "max": 1.7551020408163265
+        }
+      },
+      "r1r2_stateless_det_gate": {
+        "latency": {
+          "mean": 111.0,
+          "sd": 48.373546489791295,
+          "median": 98.0,
+          "q25": 63.0,
+          "q75": 164.0,
+          "min": 61.0,
+          "max": 179.0
+        },
+        "cost": {
+          "mean": 67.33333333333333,
+          "sd": 23.65375234502974,
+          "median": 62.0,
+          "q25": 44.0,
+          "q75": 89.0,
+          "min": 41.0,
+          "max": 107.0
+        },
+        "lat_ratio": {
+          "mean": 1.4647265394106348,
+          "sd": 0.17872297079697155,
+          "median": 1.4927536231884058,
+          "q25": 1.2708333333333333,
+          "q75": 1.561904761904762,
+          "min": 1.26,
+          "max": 1.7551020408163265
+        },
+        "cost_ratio": {
+          "mean": 0.9133628498582398,
+          "sd": 0.08537128159423273,
+          "median": 0.8857142857142857,
+          "q25": 0.8541666666666666,
+          "q75": 0.981651376146789,
+          "min": 0.7894736842105263,
+          "max": 1.048780487804878
+        }
+      },
+      "r1r2r3_landlord_gate": {
+        "latency": {
+          "mean": 110.77777777777777,
+          "sd": 47.65705031204139,
+          "median": 98.0,
+          "q25": 64.0,
+          "q75": 163.0,
+          "min": 62.0,
+          "max": 177.0
+        },
+        "cost": {
+          "mean": 67.11111111111111,
+          "sd": 22.84427961462368,
+          "median": 62.0,
+          "q25": 44.0,
+          "q75": 88.0,
+          "min": 42.0,
+          "max": 105.0
+        },
+        "lat_ratio": {
+          "mean": 1.4650441383256974,
+          "sd": 0.17444583624659388,
+          "median": 1.4782608695652173,
+          "q25": 1.2916666666666667,
+          "q75": 1.5609756097560976,
+          "min": 1.26,
+          "max": 1.7551020408163265
+        },
+        "cost_ratio": {
+          "mean": 0.9136804487733023,
+          "sd": 0.08654887041069723,
+          "median": 0.8857142857142857,
+          "q25": 0.875,
+          "q75": 0.963302752293578,
+          "min": 0.7894736842105263,
+          "max": 1.0731707317073171
+        }
+      },
+      "r1r2r3_stateless_gate": {
+        "latency": {
+          "mean": 111.0,
+          "sd": 48.373546489791295,
+          "median": 98.0,
+          "q25": 63.0,
+          "q75": 164.0,
+          "min": 61.0,
+          "max": 179.0
+        },
+        "cost": {
+          "mean": 67.33333333333333,
+          "sd": 23.65375234502974,
+          "median": 62.0,
+          "q25": 44.0,
+          "q75": 89.0,
+          "min": 41.0,
+          "max": 107.0
+        },
+        "lat_ratio": {
+          "mean": 1.4647265394106348,
+          "sd": 0.17872297079697155,
+          "median": 1.4927536231884058,
+          "q25": 1.2708333333333333,
+          "q75": 1.561904761904762,
+          "min": 1.26,
+          "max": 1.7551020408163265
+        },
+        "cost_ratio": {
+          "mean": 0.9133628498582398,
+          "sd": 0.08537128159423273,
+          "median": 0.8857142857142857,
+          "q25": 0.8541666666666666,
+          "q75": 0.981651376146789,
+          "min": 0.7894736842105263,
+          "max": 1.048780487804878
+        }
+      },
+      "r1r2r3_stateless_nogate": {
+        "latency": {
+          "mean": 111.0,
+          "sd": 48.373546489791295,
+          "median": 98.0,
+          "q25": 63.0,
+          "q75": 164.0,
+          "min": 61.0,
+          "max": 179.0
+        },
+        "cost": {
+          "mean": 111.0,
+          "sd": 48.373546489791295,
+          "median": 98.0,
+          "q25": 63.0,
+          "q75": 164.0,
+          "min": 61.0,
+          "max": 179.0
+        },
+        "lat_ratio": {
+          "mean": 1.4647265394106348,
+          "sd": 0.17872297079697155,
+          "median": 1.4927536231884058,
+          "q25": 1.2708333333333333,
+          "q75": 1.561904761904762,
+          "min": 1.26,
+          "max": 1.7551020408163265
+        },
+        "cost_ratio": {
+          "mean": 1.4647265394106348,
+          "sd": 0.17872297079697155,
+          "median": 1.4927536231884058,
+          "q25": 1.2708333333333333,
+          "q75": 1.561904761904762,
+          "min": 1.26,
+          "max": 1.7551020408163265
+        }
+      },
+      "r3_only": {
+        "latency": {
+          "mean": 74.0,
+          "sd": 25.367301787931645,
+          "median": 70.0,
+          "q25": 50.0,
+          "q75": 98.0,
+          "min": 41.0,
+          "max": 109.0
+        },
+        "cost": {
+          "mean": 74.0,
+          "sd": 25.367301787931645,
+          "median": 70.0,
+          "q25": 50.0,
+          "q75": 98.0,
+          "min": 41.0,
+          "max": 109.0
+        },
+        "lat_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "cost_ratio": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "q25": 1.0,
+          "q75": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    }
+  },
+  "note": "D2 fractional serving is a diagnostic with invalid accounting: it can hit without a completed charged download. D4 uses seed 0 for tuning and seed 1 for the test; no test-seed tuning was performed."
+}

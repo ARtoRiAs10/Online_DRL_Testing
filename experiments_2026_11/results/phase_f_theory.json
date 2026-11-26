@@ -1,0 +1,228 @@
+{
+  "config": {
+    "N": 20,
+    "Ts": [
+      8000,
+      16000,
+      32000
+    ],
+    "C": 8,
+    "K": 4
+  },
+  "rows": [
+    {
+      "T": 8000,
+      "grad_mode": "realized",
+      "zeta_signed": 0.0,
+      "zeta_mae": 0.0,
+      "zeta_pred_mae": 0.033536636895738346,
+      "delta_l1": 0.04855519268134644,
+      "delta_round": 0.10742889463728682,
+      "delta_churn_rate": 0.060625,
+      "delta_churn_sum": 485.0,
+      "repair_evictions": 18128,
+      "repair_evicted_requests": 34,
+      "repair_refetches": 1,
+      "repair_refetch_cost": 769.637873453021,
+      "downloads": 346,
+      "latency": 85600.70690483409,
+      "cost": 23254.39068074513,
+      "surrogate_regret": 3042.7357382869523,
+      "realized_regret": 3042.735738287309,
+      "bound1": 8400.0,
+      "bound2": 16800.0
+    },
+    {
+      "T": 8000,
+      "grad_mode": "expectation",
+      "zeta_signed": -0.03353663689573827,
+      "zeta_mae": 0.033536636895738346,
+      "zeta_pred_mae": 0.033536636895738346,
+      "delta_l1": 0.048649541122767474,
+      "delta_round": 0.10625575492186251,
+      "delta_churn_rate": 0.062125,
+      "delta_churn_sum": 497.0,
+      "repair_evictions": 18065,
+      "repair_evicted_requests": 33,
+      "repair_refetches": 0,
+      "repair_refetch_cost": 0.0,
+      "downloads": 349,
+      "latency": 85621.70690483409,
+      "cost": 22715.42809770351,
+      "surrogate_regret": 3046.341385438267,
+      "realized_regret": 3034.823893826033,
+      "bound1": 8400.0,
+      "bound2": 17068.293095165907
+    },
+    {
+      "T": 16000,
+      "grad_mode": "realized",
+      "zeta_signed": 0.0,
+      "zeta_mae": 0.0,
+      "zeta_pred_mae": 0.043597677809209215,
+      "delta_l1": 0.03519918015360011,
+      "delta_round": 0.10421141448954964,
+      "delta_churn_rate": 0.0510625,
+      "delta_churn_sum": 817.0,
+      "repair_evictions": 40967,
+      "repair_evicted_requests": 126,
+      "repair_refetches": 5,
+      "repair_refetch_cost": 3848.189367265105,
+      "downloads": 697,
+      "latency": 172111.43715505267,
+      "cost": 43274.936028543874,
+      "surrogate_regret": 4361.466888151976,
+      "realized_regret": 4361.466888152077,
+      "bound1": 11879.393923933998,
+      "bound2": 23758.787847867996
+    },
+    {
+      "T": 16000,
+      "grad_mode": "expectation",
+      "zeta_signed": -0.039953936897791295,
+      "zeta_mae": 0.03995393689779135,
+      "zeta_pred_mae": 0.03995393689779135,
+      "delta_l1": 0.035295390760800904,
+      "delta_round": 0.10325561024895771,
+      "delta_churn_rate": 0.05175,
+      "delta_churn_sum": 828.0,
+      "repair_evictions": 40740,
+      "repair_evicted_requests": 122,
+      "repair_refetches": 3,
+      "repair_refetch_cost": 2308.9136203590633,
+      "downloads": 714,
+      "latency": 171476.73700963537,
+      "cost": 43844.54507045991,
+      "surrogate_regret": 4372.760704435874,
+      "realized_regret": 4345.02723124405,
+      "bound1": 11879.393923933998,
+      "bound2": 24398.05083823266
+    },
+    {
+      "T": 32000,
+      "grad_mode": "realized",
+      "zeta_signed": 0.0,
+      "zeta_mae": 0.0,
+      "zeta_pred_mae": 0.04739837444884996,
+      "delta_l1": 0.02471180594825948,
+      "delta_round": 0.09441540389108562,
+      "delta_churn_rate": 0.04884375,
+      "delta_churn_sum": 1563.0,
+      "repair_evictions": 99391,
+      "repair_evicted_requests": 350,
+      "repair_refetches": 11,
+      "repair_refetch_cost": 8466.01660798323,
+      "downloads": 1478,
+      "latency": 353509.2520176368,
+      "cost": 89341.39696650293,
+      "surrogate_regret": 6147.97285106231,
+      "realized_regret": 6147.972851062426,
+      "bound1": 16800.0,
+      "bound2": 33600.0
+    },
+    {
+      "T": 32000,
+      "grad_mode": "expectation",
+      "zeta_signed": -0.052318462044763876,
+      "zeta_mae": 0.05231846204476396,
+      "zeta_pred_mae": 0.05231846204476396,
+      "delta_l1": 0.02477593543825405,
+      "delta_round": 0.09315789256762512,
+      "delta_churn_rate": 0.05003125,
+      "delta_churn_sum": 1601.0,
+      "repair_evictions": 98610,
+      "repair_evicted_requests": 363,
+      "repair_refetches": 9,
+      "repair_refetch_cost": 6926.740861077188,
+      "downloads": 1486,
+      "latency": 348458.80921456753,
+      "cost": 87036.87309891974,
+      "surrogate_regret": 6165.998780701077,
+      "realized_regret": 6145.67964322801,
+      "bound1": 16800.0,
+      "bound2": 35274.190785432445
+    }
+  ],
+  "summary": {
+    "realized": {
+      "T": [
+        8000,
+        16000,
+        32000
+      ],
+      "zeta_mae": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_l1": [
+        0.04855519268134644,
+        0.03519918015360011,
+        0.02471180594825948
+      ],
+      "delta_round": [
+        0.10742889463728682,
+        0.10421141448954964,
+        0.09441540389108562
+      ],
+      "refetch": [
+        1,
+        5,
+        11
+      ],
+      "churn": [
+        485.0,
+        817.0,
+        1563.0
+      ],
+      "refetch_per_churn": [
+        0.002061855670103093,
+        0.006119951040391677,
+        0.007037747920665387
+      ]
+    },
+    "expectation": {
+      "T": [
+        8000,
+        16000,
+        32000
+      ],
+      "zeta_mae": [
+        0.033536636895738346,
+        0.03995393689779135,
+        0.05231846204476396
+      ],
+      "delta_l1": [
+        0.048649541122767474,
+        0.035295390760800904,
+        0.02477593543825405
+      ],
+      "delta_round": [
+        0.10625575492186251,
+        0.10325561024895771,
+        0.09315789256762512
+      ],
+      "refetch": [
+        0,
+        3,
+        9
+      ],
+      "churn": [
+        497.0,
+        828.0,
+        1601.0
+      ],
+      "refetch_per_churn": [
+        0.0,
+        0.0036231884057971015,
+        0.005621486570893191
+      ]
+    }
+  },
+  "r3_check": {
+    "max_ratio": 0.9999979561759405,
+    "min_ratio": 3.928764446939232e-05,
+    "all_within_support": true
+  },
+  "note": "F1/F2 measure the churn and rounding-distortion terms; the full dependent-churn theorem is not proved. F3 checks the R3 support numerically; the analytic bound is theta_n <= M_n."
+}

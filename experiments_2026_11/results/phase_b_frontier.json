@@ -1,0 +1,2885 @@
+{
+  "config": {
+    "thetas": [
+      0.0,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0
+    ],
+    "thetas_small": [
+      0.0,
+      1.0,
+      4.0,
+      16.0
+    ],
+    "variants": {
+      "default": {
+        "eta_mult": 1.0,
+        "alpha": 0.1,
+        "K": 4
+      },
+      "eta4": {
+        "eta_mult": 4.0,
+        "alpha": 0.1,
+        "K": 4
+      },
+      "K8": {
+        "eta_mult": 1.0,
+        "alpha": 0.05,
+        "K": 8
+      }
+    },
+    "seeds": {
+      "synthetic": 10,
+      "google10k": 3,
+      "google50k": 1
+    }
+  },
+  "rows": [
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 144025.2825121844,
+      "cost": 369332.15692952427,
+      "hits": 946,
+      "downloads": 1185,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 139816.17468895108,
+      "cost": 255412.56871564087,
+      "hits": 1181,
+      "downloads": 833,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 142255.7944150698,
+      "cost": 227293.50039483942,
+      "hits": 1074,
+      "downloads": 727,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 143251.50189532587,
+      "cost": 185959.38235474515,
+      "hits": 1050,
+      "downloads": 609,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 144602.6453622192,
+      "cost": 139114.94239147668,
+      "hits": 1023,
+      "downloads": 465,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 147680.39829923725,
+      "cost": 90480.08625596292,
+      "hits": 904,
+      "downloads": 325,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 145083.49190397933,
+      "cost": 51126.88319971187,
+      "hits": 1062,
+      "downloads": 194,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 146657.78322591967,
+      "cost": 25373.801042583367,
+      "hits": 994,
+      "downloads": 104,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 132018.68748055774,
+      "cost": 24041.166643707395,
+      "hits": 1647,
+      "downloads": 129,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 152114.73055422923,
+      "cost": 92863.74101119139,
+      "hits": 630,
+      "downloads": 388,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 132630.37840358037,
+      "cost": 24333.169129268368,
+      "hits": 1616,
+      "downloads": 132,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 137185.40943362168,
+      "cost": 372028.5595094929,
+      "hits": 1314,
+      "downloads": 1056,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 128062.77142995686,
+      "cost": 254683.60325833564,
+      "hits": 1786,
+      "downloads": 718,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 134110.6548182309,
+      "cost": 224065.8065519278,
+      "hits": 1500,
+      "downloads": 627,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 131234.0590915811,
+      "cost": 184183.5376105931,
+      "hits": 1669,
+      "downloads": 525,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 126576.41105058129,
+      "cost": 134116.86265536165,
+      "hits": 1918,
+      "downloads": 396,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 123626.26452001206,
+      "cost": 86879.62218161872,
+      "hits": 2072,
+      "downloads": 271,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 132695.00808994198,
+      "cost": 49896.76156655216,
+      "hits": 1659,
+      "downloads": 164,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 126053.14250260341,
+      "cost": 24223.547642927984,
+      "hits": 1987,
+      "downloads": 87,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 71655.07932700703,
+      "cost": 7679.149328899123,
+      "hits": 4580,
+      "downloads": 19,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 84097.91155902226,
+      "cost": 49982.806944074444,
+      "hits": 3966,
+      "downloads": 157,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 73083.32114065914,
+      "cost": 10761.995472209725,
+      "hits": 4511,
+      "downloads": 28,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 131117.98234126734,
+      "cost": 353420.87316699396,
+      "hits": 1502,
+      "downloads": 1158,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 129504.65563216884,
+      "cost": 245655.85355314342,
+      "hits": 1614,
+      "downloads": 810,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 126101.09332105814,
+      "cost": 213634.05492565196,
+      "hits": 1833,
+      "downloads": 702,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 123532.82974414702,
+      "cost": 174236.89650507076,
+      "hits": 1980,
+      "downloads": 594,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 128090.66772575205,
+      "cost": 129488.38376620458,
+      "hits": 1767,
+      "downloads": 462,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 126506.20865511805,
+      "cost": 86560.53302326314,
+      "hits": 1897,
+      "downloads": 324,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 126329.05498268445,
+      "cost": 49800.26428747842,
+      "hits": 1943,
+      "downloads": 197,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 128730.51300854108,
+      "cost": 23729.047364795355,
+      "hits": 1841,
+      "downloads": 108,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 69648.1546129598,
+      "cost": 11612.870576267644,
+      "hits": 4672,
+      "downloads": 28,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 82809.54929805314,
+      "cost": 50522.40831472438,
+      "hits": 4032,
+      "downloads": 116,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 67860.61504379177,
+      "cost": 10738.103112349601,
+      "hits": 4760,
+      "downloads": 28,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 152252.68473496824,
+      "cost": 376405.69139935315,
+      "hits": 575,
+      "downloads": 1149,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 151445.6652545461,
+      "cost": 264151.4602786341,
+      "hits": 635,
+      "downloads": 794,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 150611.26514514652,
+      "cost": 231595.10504377203,
+      "hits": 692,
+      "downloads": 688,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 152210.45392243174,
+      "cost": 190991.0531261348,
+      "hits": 649,
+      "downloads": 574,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 151324.2350257291,
+      "cost": 137130.73963679984,
+      "hits": 733,
+      "downloads": 441,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 154743.51025516266,
+      "cost": 91609.63161149803,
+      "hits": 581,
+      "downloads": 306,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 158021.69163747886,
+      "cost": 51846.89842206525,
+      "hits": 450,
+      "downloads": 188,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 156619.25364965893,
+      "cost": 23835.66176872229,
+      "hits": 528,
+      "downloads": 100,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 80557.98921904873,
+      "cost": 3379.732965123723,
+      "hits": 4158,
+      "downloads": 16,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 120113.57584437322,
+      "cost": 42319.102159005444,
+      "hits": 2240,
+      "downloads": 152,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 80354.59836833482,
+      "cost": 3204.325821847536,
+      "hits": 4169,
+      "downloads": 15,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 151878.33628277446,
+      "cost": 384869.27180834225,
+      "hits": 604,
+      "downloads": 1089,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 150939.93453705005,
+      "cost": 268162.1133243126,
+      "hits": 692,
+      "downloads": 752,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 152651.50979101914,
+      "cost": 239770.75468198716,
+      "hits": 617,
+      "downloads": 667,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 153041.01019004875,
+      "cost": 196797.7130194266,
+      "hits": 631,
+      "downloads": 549,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 153591.00564961947,
+      "cost": 143506.94333428275,
+      "hits": 632,
+      "downloads": 415,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 154368.37361078605,
+      "cost": 91776.86174878714,
+      "hits": 612,
+      "downloads": 275,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 153412.27970383473,
+      "cost": 53541.22240792342,
+      "hits": 671,
+      "downloads": 163,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 157059.5101033317,
+      "cost": 23653.287702861522,
+      "hits": 510,
+      "downloads": 83,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 125247.49553166653,
+      "cost": 3197.0300004577607,
+      "hits": 2033,
+      "downloads": 18,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 153324.34118453047,
+      "cost": 73936.71498562467,
+      "hits": 637,
+      "downloads": 235,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 145958.7586485638,
+      "cost": 38905.50777359167,
+      "hits": 1011,
+      "downloads": 89,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 146568.1666739486,
+      "cost": 342065.5555155276,
+      "hits": 794,
+      "downloads": 1262,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 141134.78064602206,
+      "cost": 236453.3960194712,
+      "hits": 1100,
+      "downloads": 871,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 144155.77154781122,
+      "cost": 208400.29026467266,
+      "hits": 976,
+      "downloads": 769,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 146528.0773904094,
+      "cost": 174353.96306036628,
+      "hits": 896,
+      "downloads": 647,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 143228.45558897278,
+      "cost": 130244.00574827667,
+      "hits": 1072,
+      "downloads": 508,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 144189.51754672173,
+      "cost": 89025.99425143652,
+      "hits": 1066,
+      "downloads": 356,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 147332.39861326903,
+      "cost": 51598.04581645668,
+      "hits": 940,
+      "downloads": 216,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 145511.9696617152,
+      "cost": 25745.629007861946,
+      "hits": 1050,
+      "downloads": 119,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 106722.20875284527,
+      "cost": 17375.86286288988,
+      "hits": 2872,
+      "downloads": 78,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 155797.22428899648,
+      "cost": 77943.45648720553,
+      "hits": 456,
+      "downloads": 282,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 111973.26679212654,
+      "cost": 11830.320350336187,
+      "hits": 2661,
+      "downloads": 37,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 139165.59143628523,
+      "cost": 346066.31929713575,
+      "hits": 1088,
+      "downloads": 1330,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 135612.15949217777,
+      "cost": 241994.68606674104,
+      "hits": 1278,
+      "downloads": 955,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 135095.390274127,
+      "cost": 211199.59864995148,
+      "hits": 1359,
+      "downloads": 808,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 135539.36915520113,
+      "cost": 172084.76819454698,
+      "hits": 1364,
+      "downloads": 682,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 132044.4945325997,
+      "cost": 129191.22436406842,
+      "hits": 1558,
+      "downloads": 533,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 133862.17883104834,
+      "cost": 83694.67934582474,
+      "hits": 1513,
+      "downloads": 375,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 137185.79152218538,
+      "cost": 50052.18734460017,
+      "hits": 1403,
+      "downloads": 238,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 135716.77489801194,
+      "cost": 24387.65186757746,
+      "hits": 1511,
+      "downloads": 135,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 99399.93719811675,
+      "cost": 16109.515364491785,
+      "hits": 3237,
+      "downloads": 55,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 131447.2803330422,
+      "cost": 92265.24942690664,
+      "hits": 1587,
+      "downloads": 356,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 106921.44336539623,
+      "cost": 16807.148148872584,
+      "hits": 2851,
+      "downloads": 60,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 146232.02592776285,
+      "cost": 365389.73043840256,
+      "hits": 828,
+      "downloads": 1094,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 142722.68414249906,
+      "cost": 251443.3820013537,
+      "hits": 1037,
+      "downloads": 744,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 142435.23181177053,
+      "cost": 220222.23116787983,
+      "hits": 1069,
+      "downloads": 656,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 142174.19670453484,
+      "cost": 181884.30358469018,
+      "hits": 1116,
+      "downloads": 553,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 141948.07112679625,
+      "cost": 134177.71208477512,
+      "hits": 1145,
+      "downloads": 423,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 144493.17316375373,
+      "cost": 89575.8719521571,
+      "hits": 1061,
+      "downloads": 293,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 149638.7197960445,
+      "cost": 53943.65825147212,
+      "hits": 838,
+      "downloads": 187,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 143882.333364809,
+      "cost": 26181.57976454391,
+      "hits": 1128,
+      "downloads": 100,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 85456.68836451502,
+      "cost": 7563.212448035701,
+      "hits": 3908,
+      "downloads": 50,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 124576.59395921564,
+      "cost": 59591.998007359965,
+      "hits": 1996,
+      "downloads": 184,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 76750.15226683235,
+      "cost": 2906.9754689383203,
+      "hits": 4340,
+      "downloads": 10,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 148234.0311525001,
+      "cost": 366112.97915122553,
+      "hits": 758,
+      "downloads": 1112,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 142572.0894588072,
+      "cost": 252019.44818647648,
+      "hits": 1061,
+      "downloads": 762,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 142426.52865060547,
+      "cost": 221022.90513629027,
+      "hits": 1067,
+      "downloads": 672,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 143097.83304289554,
+      "cost": 183871.51999119765,
+      "hits": 1080,
+      "downloads": 565,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 144003.99671663909,
+      "cost": 134373.10623619487,
+      "hits": 1062,
+      "downloads": 429,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 143409.17286043693,
+      "cost": 88870.09174396073,
+      "hits": 1116,
+      "downloads": 293,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 148301.78243231412,
+      "cost": 48817.76836395937,
+      "hits": 902,
+      "downloads": 183,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 152941.9763235431,
+      "cost": 24991.282125924354,
+      "hits": 699,
+      "downloads": 103,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 84019.33826713283,
+      "cost": 16866.18058294569,
+      "hits": 3983,
+      "downloads": 52,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 90533.86940995985,
+      "cost": 59094.9014884136,
+      "hits": 3663,
+      "downloads": 180,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 83936.03515654698,
+      "cost": 16690.91645796042,
+      "hits": 3989,
+      "downloads": 51,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 148714.14212337096,
+      "cost": 390748.6900609226,
+      "hits": 789,
+      "downloads": 1058,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "online_drl",
+      "theta": 0.25,
+      "variant": "det",
+      "latency": 143623.13410012843,
+      "cost": 275048.82253255165,
+      "hits": 1057,
+      "downloads": 757,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "online_drl",
+      "theta": 0.5,
+      "variant": "det",
+      "latency": 145641.47098058584,
+      "cost": 241135.8942366999,
+      "hits": 962,
+      "downloads": 646,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 145375.01366623683,
+      "cost": 195651.11343946398,
+      "hits": 1005,
+      "downloads": 529,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "online_drl",
+      "theta": 2.0,
+      "variant": "det",
+      "latency": 146687.9599708663,
+      "cost": 142776.0266652067,
+      "hits": 957,
+      "downloads": 402,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 150060.32430840324,
+      "cost": 95762.61922880202,
+      "hits": 827,
+      "downloads": 277,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "online_drl",
+      "theta": 8.0,
+      "variant": "det",
+      "latency": 151624.0475876735,
+      "cost": 49617.23866109473,
+      "hits": 758,
+      "downloads": 167,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 143942.0922351655,
+      "cost": 24791.494046311702,
+      "hits": 1136,
+      "downloads": 91,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 77642.87335232388,
+      "cost": 12281.082093670142,
+      "hits": 4295,
+      "downloads": 30,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "eta4",
+      "latency": 95425.93192828316,
+      "cost": 64949.818144361074,
+      "hits": 3435,
+      "downloads": 181,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "K8",
+      "latency": 120413.26879495739,
+      "cost": 19097.869838492494,
+      "hits": 2242,
+      "downloads": 37,
+      "capacity": 12,
+      "frac_M_lt_l": 0.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 139425.89542289148,
+      "cost": 47608.00711855694,
+      "hits": 977,
+      "downloads": 4328,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 139425.89542289148,
+      "cost": 47608.00711855694,
+      "hits": 977,
+      "downloads": 4328,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 139586.63763481425,
+      "cost": 1551.0003488620223,
+      "hits": 1001,
+      "downloads": 141,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 141173.90565922926,
+      "cost": 1540.0003487949675,
+      "hits": 998,
+      "downloads": 140,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 139299.95748640783,
+      "cost": 28446.003715573657,
+      "hits": 998,
+      "downloads": 2586,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 139425.89542289148,
+      "cost": 47608.00711855694,
+      "hits": 977,
+      "downloads": 4328,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 139425.89542289148,
+      "cost": 47608.00711855694,
+      "hits": 977,
+      "downloads": 4328,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 139586.63763481425,
+      "cost": 1551.0003488620223,
+      "hits": 1001,
+      "downloads": 141,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 141173.90565922926,
+      "cost": 1540.0003487949675,
+      "hits": 998,
+      "downloads": 140,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 1,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 138818.58495448576,
+      "cost": 28325.003678433404,
+      "hits": 1016,
+      "downloads": 2575,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 139425.89542289148,
+      "cost": 47608.00711855694,
+      "hits": 977,
+      "downloads": 4328,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 139425.89542289148,
+      "cost": 47608.00711855694,
+      "hits": 977,
+      "downloads": 4328,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 139586.63763481425,
+      "cost": 1551.0003488620223,
+      "hits": 1001,
+      "downloads": 141,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 141173.90565922926,
+      "cost": 1540.0003487949675,
+      "hits": 998,
+      "downloads": 140,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 2,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 139282.5457541563,
+      "cost": 28050.003530927315,
+      "hits": 995,
+      "downloads": 2550,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 184210.39090925606,
+      "cost": 117411.44028124849,
+      "hits": 994,
+      "downloads": 4312,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 184239.46845750592,
+      "cost": 42304.14965625042,
+      "hits": 993,
+      "downloads": 2870,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 184376.80153573526,
+      "cost": 4536.662421875002,
+      "hits": 1003,
+      "downloads": 139,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 185331.3150924946,
+      "cost": 4119.750468750002,
+      "hits": 1002,
+      "downloads": 134,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 0,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 184272.41819151246,
+      "cost": 39265.334726562716,
+      "hits": 997,
+      "downloads": 2144,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 184210.39090925606,
+      "cost": 117411.44028124849,
+      "hits": 994,
+      "downloads": 4312,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 184239.46845750592,
+      "cost": 42304.14965625042,
+      "hits": 993,
+      "downloads": 2870,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 184376.80153573526,
+      "cost": 4536.662421875002,
+      "hits": 1003,
+      "downloads": 139,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 1,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 185331.3150924946,
+      "cost": 4119.750468750002,
+      "hits": 1002,
+      "downloads": 134,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 1,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 183931.0568837506,
+      "cost": 40259.74454687526,
+      "hits": 1013,
+      "downloads": 2158,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 184210.39090925606,
+      "cost": 117411.44028124849,
+      "hits": 994,
+      "downloads": 4312,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 184239.46845750592,
+      "cost": 42304.14965625042,
+      "hits": 993,
+      "downloads": 2870,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 184376.80153573526,
+      "cost": 4536.662421875002,
+      "hits": 1003,
+      "downloads": 139,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 2,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 185331.3150924946,
+      "cost": 4119.750468750002,
+      "hits": 1002,
+      "downloads": 134,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 2,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 184409.23820050852,
+      "cost": 39665.066468750236,
+      "hits": 991,
+      "downloads": 2134,
+      "capacity": 12,
+      "frac_M_lt_l": 0.6535299806576402
+    },
+    {
+      "family": "google50k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 0.0,
+      "variant": "det",
+      "latency": 510330.456889214,
+      "cost": 63327.00945328362,
+      "hits": 6182,
+      "downloads": 5757,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google50k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 1.0,
+      "variant": "det",
+      "latency": 510330.456889214,
+      "cost": 63327.00945328362,
+      "hits": 6182,
+      "downloads": 5757,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google50k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 4.0,
+      "variant": "det",
+      "latency": 510787.73306594416,
+      "cost": 7568.001366468796,
+      "hits": 6365,
+      "downloads": 688,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google50k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "online_drl",
+      "theta": 16.0,
+      "variant": "det",
+      "latency": 518339.7882941703,
+      "cost": 7304.001370921118,
+      "hits": 6455,
+      "downloads": 664,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    },
+    {
+      "family": "google50k",
+      "regime": "raw",
+      "seed": 0,
+      "algo": "rand_stateless",
+      "theta": NaN,
+      "variant": "default",
+      "latency": 499816.59593355004,
+      "cost": 19404.002428515563,
+      "hits": 7197,
+      "downloads": 1764,
+      "capacity": 12,
+      "frac_M_lt_l": 1.0
+    }
+  ],
+  "interp_rows": [
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "variant": "default",
+      "rand_lat": 132018.68748055774,
+      "rand_cost": 24041.166643707395,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "variant": "eta4",
+      "rand_lat": 152114.73055422923,
+      "rand_cost": 92863.74101119139,
+      "det_interp_lat": 147494.35054817045,
+      "diff": 4620.380006058782
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 0,
+      "variant": "K8",
+      "rand_lat": 132630.37840358037,
+      "rand_cost": 24333.169129268368,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "variant": "default",
+      "rand_lat": 71655.07932700703,
+      "rand_cost": 7679.149328899123,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "variant": "eta4",
+      "rand_lat": 84097.91155902226,
+      "rand_cost": 49982.806944074444,
+      "det_interp_lat": 132666.83245111792,
+      "diff": -48568.92089209566
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 1,
+      "variant": "K8",
+      "rand_lat": 73083.32114065914,
+      "rand_cost": 10761.995472209725,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "variant": "default",
+      "rand_lat": 69648.1546129598,
+      "rand_cost": 11612.870576267644,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "variant": "eta4",
+      "rand_lat": 82809.54929805314,
+      "rand_cost": 50522.40831472438,
+      "det_interp_lat": 126333.66843193621,
+      "diff": -43524.11913388307
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 2,
+      "variant": "K8",
+      "rand_lat": 67860.61504379177,
+      "rand_cost": 10738.103112349601,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "variant": "default",
+      "rand_lat": 80557.98921904873,
+      "rand_cost": 3379.732965123723,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "variant": "eta4",
+      "rand_lat": 120113.57584437322,
+      "rand_cost": 42319.102159005444,
+      "det_interp_lat": 157655.2398089359,
+      "diff": -37541.663964562686
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 3,
+      "variant": "K8",
+      "rand_lat": 80354.59836833482,
+      "rand_cost": 3204.325821847536,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "variant": "default",
+      "rand_lat": 125247.49553166653,
+      "rand_cost": 3197.0300004577607,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "variant": "eta4",
+      "rand_lat": 153324.34118453047,
+      "rand_cost": 73936.71498562467,
+      "det_interp_lat": 153984.89400782392,
+      "diff": -660.5528232934594
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 4,
+      "variant": "K8",
+      "rand_lat": 145958.7586485638,
+      "rand_cost": 38905.50777359167,
+      "det_interp_lat": 154837.84984738828,
+      "diff": -8879.091198824492
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "variant": "default",
+      "rand_lat": 106722.20875284527,
+      "rand_cost": 17375.86286288988,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "variant": "eta4",
+      "rand_lat": 155797.22428899648,
+      "rand_cost": 77943.45648720553,
+      "det_interp_lat": 144955.55233891253,
+      "diff": 10841.671950083954
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 5,
+      "variant": "K8",
+      "rand_lat": 111973.26679212654,
+      "rand_cost": 11830.320350336187,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "variant": "default",
+      "rand_lat": 99399.93719811675,
+      "rand_cost": 16109.515364491785,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "variant": "eta4",
+      "rand_lat": 131447.2803330422,
+      "rand_cost": 92265.24942690664,
+      "det_interp_lat": 133453.97213102612,
+      "diff": -2006.69179798392
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 6,
+      "variant": "K8",
+      "rand_lat": 106921.44336539623,
+      "rand_cost": 16807.148148872584,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "variant": "default",
+      "rand_lat": 85456.68836451502,
+      "rand_cost": 7563.212448035701,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "variant": "eta4",
+      "rand_lat": 124576.59395921564,
+      "rand_cost": 59591.998007359965,
+      "det_interp_lat": 148628.36049118935,
+      "diff": -24051.766531973713
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 7,
+      "variant": "K8",
+      "rand_lat": 76750.15226683235,
+      "rand_cost": 2906.9754689383203,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "variant": "default",
+      "rand_lat": 84019.33826713283,
+      "rand_cost": 16866.18058294569,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "variant": "eta4",
+      "rand_lat": 90533.86940995985,
+      "rand_cost": 59094.9014884136,
+      "det_interp_lat": 146741.50253396854,
+      "diff": -56207.63312400869
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 8,
+      "variant": "K8",
+      "rand_lat": 83936.03515654698,
+      "rand_cost": 16690.91645796042,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "variant": "default",
+      "rand_lat": 77642.87335232388,
+      "rand_cost": 12281.082093670142,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "variant": "eta4",
+      "rand_lat": 95425.93192828316,
+      "rand_cost": 64949.818144361074,
+      "det_interp_lat": 150983.66388389192,
+      "diff": -55557.73195560876
+    },
+    {
+      "family": "synthetic",
+      "regime": "raw",
+      "seed": 9,
+      "variant": "K8",
+      "rand_lat": 120413.26879495739,
+      "rand_cost": 19097.869838492494,
+      "det_interp_lat": NaN,
+      "diff": null
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 0,
+      "variant": "default",
+      "rand_lat": 184272.41819151246,
+      "rand_cost": 39265.334726562716,
+      "det_interp_lat": 184244.05360802304,
+      "diff": 28.364583489426877
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 1,
+      "variant": "default",
+      "rand_lat": 183931.0568837506,
+      "rand_cost": 40259.74454687526,
+      "det_interp_lat": 184242.51524102193,
+      "diff": -311.4583572713309
+    },
+    {
+      "family": "google10k",
+      "regime": "crossing",
+      "seed": 2,
+      "variant": "default",
+      "rand_lat": 184409.23820050852,
+      "rand_cost": 39665.066468750236,
+      "det_interp_lat": 184243.43058504577,
+      "diff": 165.8076154627488
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 0,
+      "variant": "default",
+      "rand_lat": 139299.95748640783,
+      "rand_cost": 28446.003715573657,
+      "det_interp_lat": 139450.07145113376,
+      "diff": -150.11396472592605
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 1,
+      "variant": "default",
+      "rand_lat": 138818.58495448576,
+      "rand_cost": 28325.003678433404,
+      "det_interp_lat": 139450.27156304885,
+      "diff": -631.68660856309
+    },
+    {
+      "family": "google10k",
+      "regime": "raw",
+      "seed": 2,
+      "variant": "default",
+      "rand_lat": 139282.5457541563,
+      "rand_cost": 28050.003530927315,
+      "det_interp_lat": 139450.72956059268,
+      "diff": -168.1838064363692
+    },
+    {
+      "family": "google50k",
+      "regime": "raw",
+      "seed": 0,
+      "variant": "default",
+      "rand_lat": 499816.59593355004,
+      "rand_cost": 19404.002428515563,
+      "det_interp_lat": 510585.06313388166,
+      "diff": -10768.467200331623
+    }
+  ],
+  "interp_summary": {
+    "synthetic/raw": {
+      "n": 11,
+      "mean": -23776.010860553793,
+      "ci_half": 15056.226569228615,
+      "win_rate": 0.8181818181818182
+    },
+    "google10k/crossing": {
+      "n": 3,
+      "mean": -39.09538610638507,
+      "ci_half": 278.01349566460726,
+      "win_rate": 0.3333333333333333
+    },
+    "google10k/raw": {
+      "n": 3,
+      "mean": -316.6614599084617,
+      "ci_half": 308.89389201552893,
+      "win_rate": 1.0
+    },
+    "google50k/raw": {
+      "n": 1,
+      "mean": -10768.467200331623,
+      "ci_half": 0.0,
+      "win_rate": 1.0
+    }
+  },
+  "summary": {
+    "synthetic/raw/rand/K8": {
+      "latency": [
+        99988.18379807894,
+        27339.2485295395
+      ],
+      "cost": [
+        15527.633157386688,
+        10594.890742974303
+      ],
+      "hits": [
+        3215.0,
+        1318.332954066528
+      ]
+    },
+    "synthetic/raw/rand/default": {
+      "latency": [
+        93236.84521061736,
+        21909.331653891117
+      ],
+      "cost": [
+        12010.580286648885,
+        6706.889504557079
+      ],
+      "hits": [
+        3538.5,
+        1056.1541606749988
+      ]
+    },
+    "synthetic/raw/rand/eta4": {
+      "latency": [
+        119024.10083597056,
+        29268.888866110476
+      ],
+      "cost": [
+        66347.01969688671,
+        17520.446077348068
+      ],
+      "hits": [
+        2264.2,
+        1432.4705775531852
+      ]
+    },
+    "synthetic/raw/det/theta=0": {
+      "latency": [
+        144537.36526186837,
+        6788.651626495749
+      ],
+      "cost": [
+        366643.98272769206,
+        15807.712738074717
+      ],
+      "hits": [
+        919.8,
+        299.9047256120591
+      ]
+    },
+    "synthetic/raw/det/theta=0.25": {
+      "latency": [
+        140543.40493823073,
+        7803.93510331692
+      ],
+      "cost": [
+        254502.5333936661,
+        11919.649184664164
+      ],
+      "hits": [
+        1144.1,
+        356.46675082599836
+      ]
+    },
+    "synthetic/raw/det/theta=0.5": {
+      "latency": [
+        141548.47107554247,
+        7934.487640482639
+      ],
+      "cost": [
+        223834.01410536724,
+        11296.045642157194
+      ],
+      "hits": [
+        1114.9,
+        365.00363772920883
+      ]
+    },
+    "synthetic/raw/det/theta=1": {
+      "latency": [
+        141598.43448028123,
+        9176.796702337899
+      ],
+      "cost": [
+        184001.42508862354,
+        8737.576689109863
+      ],
+      "hits": [
+        1144.0,
+        425.004052268263
+      ]
+    },
+    "synthetic/raw/det/theta=2": {
+      "latency": [
+        141209.79427497752,
+        9308.274476481436
+      ],
+      "cost": [
+        135411.99468826473,
+        5176.854854273052
+      ],
+      "hits": [
+        1186.7,
+        425.9567140241157
+      ]
+    },
+    "synthetic/raw/det/theta=4": {
+      "latency": [
+        142293.912205068,
+        10896.570077673061
+      ],
+      "cost": [
+        89423.59913433112,
+        3326.5440698964203
+      ],
+      "hits": [
+        1164.9,
+        509.01046703928944
+      ]
+    },
+    "synthetic/raw/det/theta=8": {
+      "latency": [
+        144962.42662694055,
+        9905.89163872802
+      ],
+      "cost": [
+        51024.09283213142,
+        1713.9019532769155
+      ],
+      "hits": [
+        1062.6,
+        466.58908878988774
+      ]
+    },
+    "synthetic/raw/det/theta=16": {
+      "latency": [
+        143711.53489732996,
+        10760.777512254941
+      ],
+      "cost": [
+        24691.29823341099,
+        878.4386483970004
+      ],
+      "hits": [
+        1138.4,
+        510.11179602558144
+      ]
+    },
+    "google10k/crossing/rand/default": {
+      "latency": [
+        184204.23775859052,
+        246.27377346999896
+      ],
+      "cost": [
+        39730.0485807294,
+        500.3795847568752
+      ],
+      "hits": [
+        1000.3333333333334,
+        11.372481406154654
+      ]
+    },
+    "google10k/crossing/det/theta=0": {
+      "latency": [
+        184210.39090925606,
+        0.0
+      ],
+      "cost": [
+        117411.44028124849,
+        0.0
+      ],
+      "hits": [
+        994.0,
+        0.0
+      ]
+    },
+    "google10k/crossing/det/theta=1": {
+      "latency": [
+        184239.46845750592,
+        0.0
+      ],
+      "cost": [
+        42304.14965625042,
+        0.0
+      ],
+      "hits": [
+        993.0,
+        0.0
+      ]
+    },
+    "google10k/crossing/det/theta=4": {
+      "latency": [
+        184376.80153573526,
+        0.0
+      ],
+      "cost": [
+        4536.662421875002,
+        0.0
+      ],
+      "hits": [
+        1003.0,
+        0.0
+      ]
+    },
+    "google10k/crossing/det/theta=16": {
+      "latency": [
+        185331.3150924946,
+        0.0
+      ],
+      "cost": [
+        4119.750468750002,
+        0.0
+      ],
+      "hits": [
+        1002.0,
+        0.0
+      ]
+    },
+    "google10k/raw/rand/default": {
+      "latency": [
+        139133.69606501664,
+        273.033058602798
+      ],
+      "cost": [
+        28273.67030831146,
+        202.92947722310257
+      ],
+      "hits": [
+        1003.0,
+        11.357816691600547
+      ]
+    },
+    "google10k/raw/det/theta=0": {
+      "latency": [
+        139425.89542289148,
+        0.0
+      ],
+      "cost": [
+        47608.00711855694,
+        0.0
+      ],
+      "hits": [
+        977.0,
+        0.0
+      ]
+    },
+    "google10k/raw/det/theta=1": {
+      "latency": [
+        139425.89542289148,
+        0.0
+      ],
+      "cost": [
+        47608.00711855694,
+        0.0
+      ],
+      "hits": [
+        977.0,
+        0.0
+      ]
+    },
+    "google10k/raw/det/theta=4": {
+      "latency": [
+        139586.63763481425,
+        0.0
+      ],
+      "cost": [
+        1551.0003488620223,
+        0.0
+      ],
+      "hits": [
+        1001.0,
+        0.0
+      ]
+    },
+    "google10k/raw/det/theta=16": {
+      "latency": [
+        141173.90565922926,
+        0.0
+      ],
+      "cost": [
+        1540.0003487949677,
+        2.7847474288855413e-13
+      ],
+      "hits": [
+        998.0,
+        0.0
+      ]
+    },
+    "google50k/raw/rand/default": {
+      "latency": [
+        499816.59593355004,
+        0.0
+      ],
+      "cost": [
+        19404.002428515563,
+        0.0
+      ],
+      "hits": [
+        7197.0,
+        0.0
+      ]
+    },
+    "google50k/raw/det/theta=0": {
+      "latency": [
+        510330.456889214,
+        0.0
+      ],
+      "cost": [
+        63327.00945328362,
+        0.0
+      ],
+      "hits": [
+        6182.0,
+        0.0
+      ]
+    },
+    "google50k/raw/det/theta=1": {
+      "latency": [
+        510330.456889214,
+        0.0
+      ],
+      "cost": [
+        63327.00945328362,
+        0.0
+      ],
+      "hits": [
+        6182.0,
+        0.0
+      ]
+    },
+    "google50k/raw/det/theta=4": {
+      "latency": [
+        510787.73306594416,
+        0.0
+      ],
+      "cost": [
+        7568.001366468796,
+        0.0
+      ],
+      "hits": [
+        6365.0,
+        0.0
+      ]
+    },
+    "google50k/raw/det/theta=16": {
+      "latency": [
+        518339.7882941703,
+        0.0
+      ],
+      "cost": [
+        7304.001370921118,
+        0.0
+      ],
+      "hits": [
+        6455.0,
+        0.0
+      ]
+    }
+  },
+  "b5": {
+    "synthetic/raw": {
+      "latency_min": 123532.82974414702,
+      "latency_max": 158021.69163747886,
+      "latency_range_pct": 24.194107529950582,
+      "cost_min": 23653.287702861522,
+      "cost_max": 390748.6900609226,
+      "cost_ratio": 16.51984683776753,
+      "hits_mean": 1109.425,
+      "frac_M_lt_l": 0.0,
+      "capacity": 12
+    },
+    "google10k/crossing": {
+      "latency_min": 184210.39090925606,
+      "latency_max": 185331.3150924946,
+      "latency_range_pct": 0.6074169593453721,
+      "cost_min": 4119.750468750002,
+      "cost_max": 117411.44028124849,
+      "cost_ratio": 28.499648503437875,
+      "hits_mean": 998.0,
+      "frac_M_lt_l": 0.6535299806576402,
+      "capacity": 12
+    },
+    "google10k/raw": {
+      "latency_min": 139425.89542289148,
+      "latency_max": 141173.90565922926,
+      "latency_range_pct": 1.2494436807041625,
+      "cost_min": 1540.0003487949675,
+      "cost_max": 47608.00711855694,
+      "cost_ratio": 30.914283334941874,
+      "hits_mean": 988.25,
+      "frac_M_lt_l": 1.0,
+      "capacity": 12
+    },
+    "google50k/raw": {
+      "latency_min": 510330.456889214,
+      "latency_max": 518339.7882941703,
+      "latency_range_pct": 1.562957672637069,
+      "cost_min": 7304.001370921118,
+      "cost_max": 63327.00945328362,
+      "cost_ratio": 8.670180389806987,
+      "hits_mean": 6296.0,
+      "frac_M_lt_l": 1.0,
+      "capacity": 12
+    }
+  },
+  "note": "B3 interpolates deterministic latency linearly in log cost at the randomized realized cost. The 50k trace uses 1 seed for tractability; the equal-cost comparison is in phase_b_equal.json."
+}
