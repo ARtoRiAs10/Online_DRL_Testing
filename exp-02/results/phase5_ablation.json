@@ -1,0 +1,137 @@
+{
+  "config": {
+    "seeds": 20
+  },
+  "rows": [
+    {
+      "config": "LL-RC",
+      "latency": 19339.877565631577,
+      "latency_sd": 0.0,
+      "cost": 45098.52935648452,
+      "cost_sd": 0.0,
+      "hits": 1051.0,
+      "downloads": 133.0,
+      "evictions": 115.0,
+      "phase_clears": 0.0,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "Online-DRL",
+      "latency": 20226.602612311304,
+      "latency_sd": 3.73248750142067e-12,
+      "cost": 21785.997721906002,
+      "cost_sd": 0.0,
+      "hits": 1022.0,
+      "downloads": 66.0,
+      "evictions": 54.0,
+      "phase_clears": 0.0,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "Online-DRL LRU",
+      "latency": 20226.602612311304,
+      "latency_sd": 3.73248750142067e-12,
+      "cost": 21785.997721906002,
+      "cost_sd": 0.0,
+      "hits": 1022.0,
+      "downloads": 66.0,
+      "evictions": 54.0,
+      "phase_clears": 0.0,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "R3",
+      "latency": 19451.11032240657,
+      "latency_sd": 978.0231235518236,
+      "cost": 27259.509909077322,
+      "cost_sd": 1173.0991764052526,
+      "hits": 1054.25,
+      "downloads": 82.3,
+      "evictions": 68.55,
+      "phase_clears": 0.0,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "MG",
+      "latency": 15908.75419731085,
+      "latency_sd": 1.866243750710335e-12,
+      "cost": 21322.834616876695,
+      "cost_sd": 3.73248750142067e-12,
+      "hits": 1232.0,
+      "downloads": 62.0,
+      "evictions": 49.0,
+      "phase_clears": 21.0,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "R3+MG",
+      "latency": 17501.82240744383,
+      "latency_sd": 1324.6919494875779,
+      "cost": 27408.66436286227,
+      "cost_sd": 1246.1668770395154,
+      "hits": 1151.3,
+      "downloads": 77.3,
+      "evictions": 63.9,
+      "phase_clears": 23.25,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "R3+MG size=max",
+      "latency": 17690.635086984516,
+      "latency_sd": 1172.675742630725,
+      "cost": 27027.67230325481,
+      "cost_sd": 1182.9317682174776,
+      "hits": 1140.65,
+      "downloads": 77.4,
+      "evictions": 63.3,
+      "phase_clears": 23.25,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "R3+MG victim=weighted",
+      "latency": 17735.187284993168,
+      "latency_sd": 1134.8466662538967,
+      "cost": 26815.82071378128,
+      "cost_sd": 1135.7661221410776,
+      "hits": 1138.3,
+      "downloads": 77.15,
+      "evictions": 63.7,
+      "phase_clears": 23.8,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "R3+MG redraw=miss",
+      "latency": 17759.45634202596,
+      "latency_sd": 783.3884953338531,
+      "cost": 26947.130355984653,
+      "cost_sd": 824.1746133066415,
+      "hits": 1138.15,
+      "downloads": 77.25,
+      "evictions": 63.55,
+      "phase_clears": 23.05,
+      "us_per_req": 0.0,
+      "violations": 0
+    },
+    {
+      "config": "R3+MG redraw=request",
+      "latency": 17606.573021818593,
+      "latency_sd": 952.3646262856046,
+      "cost": 26885.074184557092,
+      "cost_sd": 950.3084929189645,
+      "hits": 1144.7,
+      "downloads": 77.25,
+      "evictions": 63.75,
+      "phase_clears": 23.35,
+      "us_per_req": 0.0,
+      "violations": 0
+    }
+  ]
+}

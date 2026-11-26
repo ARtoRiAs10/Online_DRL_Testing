@@ -1,0 +1,137 @@
+{
+  "preconditions": {
+    "baseline_reproduced": false,
+    "baseline_detail": {
+      "google_dataset2_30/paper_recipe": {
+        "best_C": 1,
+        "lat_pct": 0.0,
+        "cost_pct": 0.0,
+        "latency_in_range": true,
+        "cost_in_range": false,
+        "pass_": false,
+        "frac_M_lt_l": 1.0
+      },
+      "google_dataset2_30/natural_crossing": {
+        "best_C": 2,
+        "lat_pct": -0.763028761297009,
+        "cost_pct": -41.82604440272051,
+        "latency_in_range": true,
+        "cost_in_range": false,
+        "pass_": false,
+        "frac_M_lt_l": 0.06666666666666667
+      },
+      "google_dataset2_paper/paper_recipe": {
+        "best_C": 1,
+        "lat_pct": 0.0,
+        "cost_pct": 0.0,
+        "latency_in_range": true,
+        "cost_in_range": false,
+        "pass_": false,
+        "frac_M_lt_l": 1.0
+      },
+      "google_dataset2_paper/natural_crossing": {
+        "best_C": 1,
+        "lat_pct": -1.7386124991521659,
+        "cost_pct": -37.527930233099774,
+        "latency_in_range": true,
+        "cost_in_range": false,
+        "pass_": false,
+        "frac_M_lt_l": 0.5
+      },
+      "google_50k/paper_recipe": {
+        "best_C": 1,
+        "lat_pct": 0.0,
+        "cost_pct": 0.0,
+        "latency_in_range": true,
+        "cost_in_range": false,
+        "pass_": false,
+        "frac_M_lt_l": 1.0
+      },
+      "google_50k/natural_crossing": {
+        "best_C": 50,
+        "lat_pct": -0.11303672152453356,
+        "cost_pct": -57.81844989726972,
+        "latency_in_range": true,
+        "cost_in_range": false,
+        "pass_": false,
+        "frac_M_lt_l": 0.6635635418921845
+      },
+      "sharcnet": {
+        "status": "BLOCKED",
+        "reason": "sharcnet.csv not bundled; gwa.unc.edu unreachable"
+      }
+    },
+    "sharcnet": {
+      "status": "BLOCKED",
+      "reason": "sharcnet.csv not bundled; gwa.unc.edu unreachable"
+    },
+    "reduction": true,
+    "invariants": true,
+    "pass_": false
+  },
+  "claims": [
+    {
+      "claim": "R3 improves the trigger (ratio 2 -> e/(e-1))",
+      "accept": "pure ski-rental worst ratio 1.58 +/- 0.02",
+      "observed": "1.5928 (det 1.9900)",
+      "ok": true,
+      "status": "ACCEPT (isolated trigger only)",
+      "blocked": false
+    },
+    {
+      "claim": "R3 beats deterministic at equal cost",
+      "accept": ">=3 of 4 matched levels, CI excludes 0, >=2 of 3 datasets",
+      "observed": "overall pass=False; datasets passing=[]",
+      "ok": false,
+      "status": "BLOCKED",
+      "blocked": true
+    },
+    {
+      "claim": "MG breaks eviction lockstep",
+      "accept": ">=20% lower on cyclic, paired p<0.05 over >=30 seeds",
+      "observed": "MG>=20% on majority=True; significant=True; best reduction=78.9%",
+      "ok": true,
+      "status": "BLOCKED",
+      "blocked": true
+    },
+    {
+      "claim": "MG does no harm on real traces",
+      "accept": "latency and cost within 1-2% on Google and SHARCNet",
+      "observed": "no-harm=False; SHARCNet=BLOCKED",
+      "ok": false,
+      "status": "BLOCKED",
+      "blocked": true
+    },
+    {
+      "claim": "R3+MG lowers E[ALG]/OPT_t on the Large Sequence",
+      "accept": "lower for every k in {6,12,24,48} and flatter slope",
+      "observed": "lower_every_k=True; slope det=1.667 r3mg=1.565",
+      "ok": true,
+      "status": "BLOCKED",
+      "blocked": true
+    },
+    {
+      "claim": "Improves toward O(log k)",
+      "accept": "roughly logarithmic over >=4 k, slope below deterministic",
+      "observed": "log-fit R^2=0.920, slope r3mg=31.149 det=33.182; ratio still grows ~linearly",
+      "ok": false,
+      "status": "UNSUPPORTED (conjecture)",
+      "blocked": true
+    },
+    {
+      "claim": "Overhead stays small",
+      "accept": "us/request within 2x of deterministic",
+      "observed": "max ratio=1.16x",
+      "ok": true,
+      "status": "ACCEPT (measurement)",
+      "blocked": false
+    }
+  ],
+  "overall": {
+    "go": false,
+    "preconditions": false,
+    "r3_matched_cost": false,
+    "mg_lockstep": true,
+    "mg_no_harm": false
+  }
+}

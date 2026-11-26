@@ -1,0 +1,414 @@
+{
+  "h0_deterministic_seed_independent": true,
+  "lam0_equals_llrc": true,
+  "theta0_equals_lam0": true,
+  "lam0_values": {
+    "llrc": [
+      19339.877565631577,
+      45098.52935648452,
+      1051,
+      133
+    ],
+    "r3": [
+      19339.877565631577,
+      45098.52935648452,
+      1051,
+      133
+    ],
+    "det": [
+      19339.877565631577,
+      45098.52935648452,
+      1051,
+      133
+    ]
+  },
+  "threshold_mean": {
+    "mean": 0.58187113031126,
+    "theory": 0.5819767068693265,
+    "se": 0.00044537428140355926,
+    "ci_low": 0.5809981967197091,
+    "ci_high": 0.582744063902811,
+    "n": 400000
+  },
+  "ski_rental": {
+    "random_worst": 1.592767857142857,
+    "random_argmax_n": 14,
+    "deterministic_worst": 1.99,
+    "theory_random": 1.5819767068693265,
+    "theory_deterministic": 2.0
+  },
+  "invariant_rows": [
+    {
+      "world": "zipf_s0",
+      "variant": "online_drl",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 54,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s0",
+      "variant": "ll_rc",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 115,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s0",
+      "variant": "r3",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 66,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s0",
+      "variant": "mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 49,
+      "phase_clears": 21
+    },
+    {
+      "world": "zipf_s0",
+      "variant": "r3mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 64,
+      "phase_clears": 23
+    },
+    {
+      "world": "zipf_s1",
+      "variant": "online_drl",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 81,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s1",
+      "variant": "ll_rc",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 160,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s1",
+      "variant": "r3",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 96,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s1",
+      "variant": "mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 77,
+      "phase_clears": 26
+    },
+    {
+      "world": "zipf_s1",
+      "variant": "r3mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 92,
+      "phase_clears": 31
+    },
+    {
+      "world": "zipf_s2",
+      "variant": "online_drl",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 64,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s2",
+      "variant": "ll_rc",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 134,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s2",
+      "variant": "r3",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 74,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s2",
+      "variant": "mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 60,
+      "phase_clears": 18
+    },
+    {
+      "world": "zipf_s2",
+      "variant": "r3mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 67,
+      "phase_clears": 22
+    },
+    {
+      "world": "zipf_s3",
+      "variant": "online_drl",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 64,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s3",
+      "variant": "ll_rc",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 129,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s3",
+      "variant": "r3",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 73,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s3",
+      "variant": "mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 64,
+      "phase_clears": 20
+    },
+    {
+      "world": "zipf_s3",
+      "variant": "r3mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 73,
+      "phase_clears": 23
+    },
+    {
+      "world": "zipf_s4",
+      "variant": "online_drl",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 76,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s4",
+      "variant": "ll_rc",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 150,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s4",
+      "variant": "r3",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 86,
+      "phase_clears": 0
+    },
+    {
+      "world": "zipf_s4",
+      "variant": "mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 73,
+      "phase_clears": 24
+    },
+    {
+      "world": "zipf_s4",
+      "variant": "r3mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 83,
+      "phase_clears": 27
+    },
+    {
+      "world": "large_k6",
+      "variant": "online_drl",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 33,
+      "phase_clears": 0
+    },
+    {
+      "world": "large_k6",
+      "variant": "ll_rc",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 37,
+      "phase_clears": 0
+    },
+    {
+      "world": "large_k6",
+      "variant": "r3",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 33,
+      "phase_clears": 0
+    },
+    {
+      "world": "large_k6",
+      "variant": "mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 33,
+      "phase_clears": 10
+    },
+    {
+      "world": "large_k6",
+      "variant": "r3mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 33,
+      "phase_clears": 10
+    },
+    {
+      "world": "large_k12",
+      "variant": "online_drl",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 139,
+      "phase_clears": 0
+    },
+    {
+      "world": "large_k12",
+      "variant": "ll_rc",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 147,
+      "phase_clears": 0
+    },
+    {
+      "world": "large_k12",
+      "variant": "r3",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 139,
+      "phase_clears": 0
+    },
+    {
+      "world": "large_k12",
+      "variant": "mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 139,
+      "phase_clears": 22
+    },
+    {
+      "world": "large_k12",
+      "variant": "r3mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 139,
+      "phase_clears": 22
+    },
+    {
+      "world": "cyclic_k4",
+      "variant": "online_drl",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 45,
+      "phase_clears": 0
+    },
+    {
+      "world": "cyclic_k4",
+      "variant": "ll_rc",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 45,
+      "phase_clears": 0
+    },
+    {
+      "world": "cyclic_k4",
+      "variant": "r3",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 45,
+      "phase_clears": 0
+    },
+    {
+      "world": "cyclic_k4",
+      "variant": "mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 27,
+      "phase_clears": 12
+    },
+    {
+      "world": "cyclic_k4",
+      "variant": "r3mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 23,
+      "phase_clears": 12
+    },
+    {
+      "world": "cyclic_k8",
+      "variant": "online_drl",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 81,
+      "phase_clears": 0
+    },
+    {
+      "world": "cyclic_k8",
+      "variant": "ll_rc",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 81,
+      "phase_clears": 0
+    },
+    {
+      "world": "cyclic_k8",
+      "variant": "r3",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 81,
+      "phase_clears": 0
+    },
+    {
+      "world": "cyclic_k8",
+      "variant": "mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 27,
+      "phase_clears": 11
+    },
+    {
+      "world": "cyclic_k8",
+      "variant": "r3mg",
+      "violations": {},
+      "marking_violations": 0,
+      "evictions": 27,
+      "phase_clears": 11
+    }
+  ],
+  "invariants_hold": true,
+  "budget": {
+    "bmax": 10892.998860953001,
+    "cost": 10847.141483141968,
+    "holds": true,
+    "violations": {}
+  },
+  "preconditions": {
+    "baseline_reproduced": false,
+    "reduction": true,
+    "invariants": true
+  }
+}
